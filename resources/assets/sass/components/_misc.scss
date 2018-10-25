@@ -1,0 +1,162 @@
+.show-on-scroll {
+	display: none;
+}
+
+.link-none {
+	color: inherit;
+}
+
+.link-none:hover, .link-none:active, .link-none:focus {
+	color: inherit;
+	text-decoration: none;
+}
+
+.link-dark {
+	@extend .t-2;
+	color: $brand-dark;
+}
+
+.link-dark:hover, .link-dark:active {
+	color: black;
+}
+
+.link-default {
+	@extend .t-2;
+	color: $brand-red;
+}
+
+.link-default:hover, .link-default:active {
+	color: darken($brand-red, 15);
+	text-decoration: none;
+}
+
+.link-blue {
+	@extend .t-2;
+	color: $brand-blue;
+}
+
+.link-blue:hover, .link-blue:active {
+	color: darken($brand-blue, 15);
+	text-decoration: none;
+}
+
+.link-light {
+	@extend .t-2;
+	color: $brand-dark;
+}
+
+.link-light:hover, .link-light:active {
+	color: darken($brand-dark, 15);
+	text-decoration: none;
+}
+
+
+.lead-profile-image {
+	width: 16em;
+	height: 16em;
+	margin-top: -8em;
+	z-index: 1;
+	border: .5em solid white;
+}
+
+.video-area {
+    position: relative;
+    z-index: 1;
+    background: white;
+    border: 18px solid #fff;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 10px 50px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.15);
+}
+
+.line-shape {
+	display: inline-block;
+	width: 80px;
+	height: .25em;
+	background-color: $brand-red;
+}
+
+.pace .pace-progress {
+    background: lighten($brand-red, 10);
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 2px;
+    z-index: 10000000000;
+}
+
+.books-display {
+	.front {
+		width: 18em;
+		position: absolute;
+		bottom: 13px;
+		left: 0;
+		box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+	}
+
+	.back {
+		width: 18em;
+		margin-right: 71px;
+		margin-bottom: 106px;
+		box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+	}
+}
+
+#poses-container {
+	figure {
+		width: 25%;
+	}
+}
+
+.h-card {
+	height: 300px;
+}
+
+.h-card-sm {
+	height: 200px;
+}
+
+.favorite-icon {
+	@extend .t-2;
+	background: none;
+	border: none;
+	transform: scale(1);
+}
+
+.favorite-icon:active {
+	transform: scale(0.8);
+}
+
+.plan {
+	opacity: 0.4;
+}
+
+.plan:hover {
+	opacity: 1;
+}
+
+.active-plan {
+	opacity: 1;
+}
+
+.animated-fast {
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+label.error {
+	@extend .text-danger, .ml-2;
+	font-size: 80%;
+	margin: 0;
+}
+
+.quote {
+	width: 250px;
+	border-top: 4px solid #d7b173;
+	border-bottom: 4px solid #d7b173;
+	transform: translate(-30px);
+}

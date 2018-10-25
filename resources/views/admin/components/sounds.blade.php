@@ -1,0 +1,1 @@
+<audio id="success_audio" data-status="{{session()->has('status') ? 'play' : null}}" source src="{{cloud('app/sounds/success1.mp4')}}" type="audio/mp4"></audio>

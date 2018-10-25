@@ -1,0 +1,98 @@
+body {
+	font-size: 1.1rem;
+}
+
+button:focus, button:active {
+	outline: none;
+}
+
+.input-group-text {
+	padding: 0.5rem 1rem;
+}
+
+textarea:disabled {
+    background: #f1f3f5 !important;
+}
+
+select:focus,
+textarea:focus,
+input:focus,
+a:focus,
+.btn:focus {   
+	outline: none;
+	box-shadow:none !important;
+}
+
+.alert {
+	@extend .z-30;
+}
+
+select.form-control {
+	height: auto!important;
+}
+
+.borderless td, .borderless th {
+    border: none;
+}
+
+.table td, .table th {
+	vertical-align: inherit;
+	white-space: nowrap;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.form-check-input {
+    margin-top: 0.4rem;
+}
+
+.carousel-indicators li {
+	background-color: $brand-red;
+}
+
+.carousel-indicators .active {
+	background-color: lighten($brand-red, 50%)!important;
+}
+
+.carousel-control-prev, .carousel-control-next {
+	opacity: 1;
+}
+
+.btn-outline-warning:hover {
+	color: rgba(0,0,0,0.4)!important;
+}
+
+.btn-light:hover, .btn-light:active, .btn-light:focus {
+	background-color: #f5f5f5!important;
+	border-color: #f5f5f5!important;
+}
+
+.form-control, .btn {
+    padding: 0.5rem 1rem;
+}
+
+.btn-outline-dark {
+	border-color: $brand-dark;
+	color: $brand-dark;
+}
+
+.btn-outline-dark:hover {
+	color: lightgrey;
+	background: $brand-dark;
+}
+
+.btn-dark {
+	background: $brand-dark;
+}
+
+select:disabled, input[type="text"]:disabled, input[type="password"]:disabled, input[type="email"]:disabled {
+	background: darken(#f8f9fa, 2.5)!important;
+}
+
+.badge-light {
+	background-color: #f6f7f9;
+}
+
+.dropdown-header {
+	@extend .py-2, .px-3, .bg-light;
+}

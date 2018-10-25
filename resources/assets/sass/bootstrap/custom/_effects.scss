@@ -1,0 +1,78 @@
+.t-2 {
+	-webkit-transition: 0.2s;
+	   -moz-transition: 0.2s;
+	    -ms-transition: 0.2s;
+	     -o-transition: 0.2s;
+	        transition: 0.2s;
+}
+
+.shadow {
+	-webkit-box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+	box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+}
+
+.shadow-dark {
+	-webkit-box-shadow: 0 5px 30px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0 5px 30px rgba(0,0,0,0.25);
+	box-shadow: 0 5px 30px rgba(0,0,0,0.25);
+}
+
+.no-underline {
+	text-decoration: none!important;
+}
+
+.hover-background-light:hover {
+	@extend .bg-light;
+}
+
+.hover-shadow:hover {
+	@extend .shadow-dark;
+}
+
+.hover-shadow-light:hover {
+	@extend .shadow;
+}
+
+.hover-blue:hover {
+	color: $brand-blue!important;
+}
+
+.hover-red:hover {
+	color: $brand-red!important;
+}
+
+.delay-2 {
+	animation-delay: 0.2s;
+}
+
+.delay-4 {
+	animation-delay: 0.4s;
+}
+
+.delay-6 {
+	animation-delay: 0.6s;
+}
+
+.delay-8 {
+	animation-delay: 0.8s;
+}
+
+.mirror {
+-webkit-transform: rotate(180deg);
+       -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+         -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+
+.hover-grayscale-to-normal {
+	@extend .t-2;
+	opacity: .6;
+	filter: grayscale(100%);
+}
+
+.hover-grayscale-to-normal:hover {
+	opacity: 1;
+	filter: grayscale(0);
+}

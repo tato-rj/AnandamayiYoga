@@ -1,0 +1,13 @@
+.schedule {
+	.schedule-lesson {
+		@extend .t-2;
+	}
+
+	.schedule-lesson:hover {
+		@extend .bg-light;
+	}
+
+	.schedule-future {
+		opacity: 0.5;
+	}
+}

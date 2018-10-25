@@ -1,0 +1,72 @@
+.absolute-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	   -moz-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	     -o-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+}
+
+.absolute-top-right {
+	@extend .position-absolute;
+	top: 0;
+	right: 0;
+	margin: 5px;
+}
+
+.absolute-top-left {
+	@extend .position-absolute;
+	top: 0;
+	left: 0;
+	margin: 5px;
+}
+
+.flex-grow-1 {
+	flex-grow: 1;
+}
+
+.flex-grow-2 {
+	flex-grow: 2;
+}
+
+/* enable absolute positioning */
+.inner-addon { 
+	position: relative; 
+}
+
+/* style icon */
+.inner-addon i {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	pointer-events: none;
+	color: #d6dae2;
+}
+
+/* align icon */
+.left-addon i  { 
+	left:  .85em;
+}
+
+.left-addon input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #b9c3ce;
+}
+
+.left-addon input::-moz-placeholder { /* Firefox 19+ */
+  color: #b9c3ce;
+}
+
+.left-addon input:-ms-input-placeholder { /* IE 10+ */
+  color: #b9c3ce;
+}
+
+.left-addon input:-moz-placeholder { /* Firefox 18- */
+  color: #b9c3ce;
+}
+
+/* add padding  */
+.left-addon input  {
+	padding-left:  2.85em;
+}

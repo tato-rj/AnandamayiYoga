@@ -1,0 +1,1 @@
+<button type="submit" class="btn-{{$weight or null}} btn-{{$width or null}} btn-red">{{$label}}</button>

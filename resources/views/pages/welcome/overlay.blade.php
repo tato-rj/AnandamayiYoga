@@ -1,0 +1,50 @@
+<div id="intro" class="w-100 h-100 bg-white" style="position: fixed; top: 0; left: 0; z-index: 10000">
+	<div class="d-flex align-items-center justify-content-center h-100 flex-column rotate" style="animation-duration: 1.25s">
+		<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+		<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+		<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		width="108.667px" height="76.215px" viewBox="0 0 108.667 76.215" enable-background="new 0 0 108.667 76.215"
+		xml:space="preserve">
+		<g opacity="0.8" class="fade-in" style="animation-duration: 1s">
+			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="27.3613" y1="76.2153" x2="27.3613" y2="22.1963">
+				<stop  offset="0" style="stop-color:#FFBBCA"/>
+				<stop  offset="1" style="stop-color:#EB5286"/>
+			</linearGradient>
+			<path fill="url(#SVGID_3_)" d="M54.371,76.088c-0.052,0.052-0.078,0.078-0.127,0.127C21.523,73.811,2.755,55.043,0.351,22.323
+			c0.05-0.05,0.075-0.075,0.127-0.127C33.2,24.601,51.962,43.37,54.371,76.088z"/>
+		</g>
+		<g opacity="0.8" class="fade-in" style="animation-duration: 2s">
+			<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="35.7305" y1="76.1704" x2="35.7305" y2="9.6445">
+				<stop  offset="0" style="stop-color:#FFBBCA"/>
+				<stop  offset="1" style="stop-color:#EB5286"/>
+			</linearGradient>
+			<path fill="url(#SVGID_5_)" d="M54.483,76.083c-0.063,0.035-0.094,0.053-0.156,0.088C23.47,65.018,10.464,41.891,16.977,9.732
+			c0.062-0.035,0.094-0.053,0.157-0.088C47.991,20.791,61,43.924,54.483,76.083z"/>
+		</g>
+		<g opacity="0.8" class="fade-in" style="animation-duration: 2.75s">
+			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="54.334" y1="76.2153" x2="54.334" y2="4.882813e-004">
+				<stop  offset="0" style="stop-color:#FFBBCA"/>
+				<stop  offset="1" style="stop-color:#EB5286"/>
+			</linearGradient>
+			<path fill="url(#SVGID_1_)" d="M54.423,76.215c-0.072,0-0.108,0-0.18,0C32.806,51.377,32.809,24.839,54.243,0
+			c0.072,0,0.108,0,0.18,0C75.858,24.841,75.861,51.375,54.423,76.215z"/>
+		</g>
+		<g opacity="0.8" class="fade-in" style="animation-duration: 3.25s">
+			<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="72.7681" y1="76.3032" x2="72.7681" y2="9.5244">
+				<stop  offset="0" style="stop-color:#FFBBCA"/>
+				<stop  offset="1" style="stop-color:#EB5286"/>
+			</linearGradient>
+			<path fill="url(#SVGID_4_)" d="M54.401,76.303c-0.063-0.035-0.094-0.053-0.157-0.088c-6.733-32.11,6.108-55.334,36.893-66.691
+			c0.063,0.034,0.094,0.052,0.157,0.087C98.025,41.722,85.183,64.944,54.401,76.303z"/>
+		</g>
+		<g opacity="0.8" class="fade-in" style="animation-duration: 3.75s">
+			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="81.2534" y1="76.3442" x2="81.2534" y2="22.3237">
+				<stop  offset="0" style="stop-color:#FFBBCA"/>
+				<stop  offset="1" style="stop-color:#EB5286"/>
+			</linearGradient>
+			<path fill="url(#SVGID_2_)" d="M54.37,76.344c-0.052-0.053-0.077-0.078-0.127-0.127c2.406-32.721,21.17-51.489,53.893-53.894
+			c0.051,0.05,0.074,0.075,0.127,0.127C105.856,55.172,87.091,73.937,54.37,76.344z"/>
+		</g>
+	</svg>
+</div>
+</div>

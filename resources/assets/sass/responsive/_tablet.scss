@@ -1,0 +1,128 @@
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        display: none;
+        background-color: $brand-blue;
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .navbar-light .nav-link:hover, .nav-link:hover {
+        color: white !important;
+    }
+
+    .navbar-collapse .navbar-nav {
+        margin: 20% 0 15% 0;
+    }
+
+    .navbar-collapse .navbar-nav li {
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-bottom: 1.2rem;
+    }
+
+    .navbar-collapse .navbar-nav li:not(.nav-item-signup) {
+        
+        width: 100%;
+    }
+
+    .nav-link {
+        text-align: center;
+        padding: 0.5rem 1rem !important;
+    }
+
+    .dropdown-toggle::after {
+        display: none;
+    }
+
+    .dropdown-menu:not(.notifications-dropdown), .dropdown-menu-right:not(.notifications-dropdown) {
+        background: $brand-blue-s1;
+        box-shadow: none;
+        border-radius: 0;
+        text-align: center;
+    }
+
+    .dropdown-divider {
+        display: none;
+    }
+
+    .dropdown-item {
+        padding: 0.75rem !important;
+    }
+
+    .navbar-nav .dropdown-item, .navbar-light .nav-link {
+        color: white !important;
+    }
+
+    .dropdown-item:hover, .dropdown-item:focus {
+        background-color: $brand-blue-s1;
+        color: white !important;
+    }
+
+    .navbar-light .signup {
+        border-color: white;
+    }
+
+    .btn {
+        white-space: normal;
+    }
+
+    .signup:hover {
+        background-color: transparent;
+    }
+
+    .font-lg {
+        font-size: 2.25em;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    .swiper-control {
+        display: none !important;
+    }
+
+
+    .filter-container {
+        flex-direction: column;
+        border: 0 !important;
+    }
+
+    img.gift {
+        margin-bottom: 120px;
+    }
+
+    .my-8 {
+        margin-bottom: 0 !important;
+    }
+
+    .mt-8 {
+        margin-top: 2rem !important;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+        opacity: 0 !important;
+    }
+
+    .lead-profile-image {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .notifications-dropdown {
+        background: #f8f9fa;
+        right: 3%;
+        left: unset;
+    }
+
+    .display-4 {
+        font-size: 2.4rem;
+    }
+
+    .mobile-d-block {
+        display: block;
+    }
+}

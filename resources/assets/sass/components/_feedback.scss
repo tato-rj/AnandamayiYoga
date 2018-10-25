@@ -1,0 +1,24 @@
+#fixed-feedback-container {
+	position: fixed;
+	top: 36%;
+	right: 0;
+	z-index: 1000;
+	max-width: 88%;
+
+	.label p {
+		transform: rotate(-90deg);
+		transform-origin: right bottom;
+	}
+
+	img {
+		width: 32px;
+	}
+
+	.feedback div div p {
+		opacity: 0;
+	}
+
+	.feedback div div:hover > p {
+		opacity: 1;
+	}
+}

@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Test Documentation</title>
+        <style>
+            body {
+                text-rendering: optimizeLegibility;
+                font-variant-ligatures: common-ligatures;
+                font-kerning: normal;
+                margin-left: 2em;
+            }
+
+            body > ul > li {
+                font-family: Source Serif Pro, PT Sans, Trebuchet MS, Helvetica, Arial;
+                font-size: 1em;
+            }
+
+            h2 {
+                font-family: Tahoma, Helvetica, Arial;
+                font-size: 2em;
+            }
+
+            ul {
+                list-style: none;
+                margin-bottom: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 id="Tests\Feature\Admin\AsanaTest">s\Feature\Admin\Asana</h2>
+        <ul>
+            <li style="color: #555753;">✓ A manager can create a new asana</li>
+            <li style="color: #555753;">✓ The same asana cannot be added twice</li>
+            <li style="color: #555753;">✓ A manager can edit an asana</li>
+            <li style="color: #555753;">✓ A manager can update the asana types</li>
+            <li style="color: #555753;">✓ A manager can update the asana benefits</li>
+            <li style="color: #555753;">✓ A manager can update the asana steps</li>
+            <li style="color: #555753;">✓ A manager can update the asana levels</li>
+            <li style="color: #555753;">✓ The image is removed when a new one is uploaded</li>
+            <li style="color: #555753;">✓ The video is removed when a new one is uploaded</li>
+            <li style="color: #555753;">✓ A manager can remove an asana</li>
+            <li style="color: #555753;">✓ The asana types relationship is removed when the asana is deleted</li>
+            <li style="color: #555753;">✓ The asana levels relationship is removed when the asana is deleted</li>
+            <li style="color: #555753;">✓ The asana image and video are removed when the asana is deleted</li>
+            <li style="color: #555753;">✓ When an asana is deleted its favorite relatioship with a user is also removed</li>
+            <li style="color: #555753;">✓ When an asana is deleted its benefits are also removed</li>
+        </ul>
+        <h2 id="Tests\Feature\Admin\AsanaTypeTest">s\Feature\Admin\AsanaType</h2>
+        <ul>
+            <li style="color: #555753;">✓ A manager can create a new asana type</li>
+            <li style="color: #555753;">✓ The same asana type cannot be added twice</li>
+            <li style="color: #555753;">✓ A manager can edit an asana type</li>
+            <li style="color: #555753;">✓ A manager can remove an asana type</li>
+            <li style="color: #555753;">✓ When a type is removed its relationship with asanas is also removed</li>
+        </ul>
+        <h2 id="Tests\Feature\Admin\CategoryTest">s\Feature\Admin\Category</h2>
+        <ul>
+            <li style="color: #555753;">✓ A manager can create a new category</li>
+            <li style="color: #555753;">✓ The same category cannot be added twice</li>
+            <li style="color: #555753;">✓ A manager can edit a category</li>
+            <li style="color: #555753;">✓ A manager can remove a category</li>
+            <li style="color: #555753;">✓ When a category is removed its relationship with users is also removed</li>
+            <li style="color: #555753;">✓ When a category is removed its relationship with lessons is also removed</li>
+            <li style="color: #555753;">✓ When a category is removed its relationship with programs is also removed</li>
+        </ul>
+        <h2 id="Tests\Feature\Admin\LessonTest">s\Feature\Admin\Lesson</h2>
+        <ul>
+            <li style="color: #555753;">✓ A manager can create a new lesson</li>
+            <li style="color: #555753;">✓ The same lesson cannot be added twice</li>
+            <li style="color: #555753;">✓ If the name of a lesson exists the manager is notified right after typing it</li>
+            <li style="color: #555753;">✓ A manager can edit a lesson</li>
+            <li style="color: #555753;">✓ A manager can update the lesson categories</li>
+            <li style="color: #555753;">✓ A manager can update the lesson levels</li>
+            <li style="color: #555753;">✓ The image is removed when a new one is uploaded</li>
+            <li style="color: #555753;">✓ The video is removed when a new one is uploaded</li>
+            <li style="color: #555753;">✓ A manager can remove a lesson</li>
+            <li style="color: #555753;">✓ The lesson categories relationship is removed when the lesson is deleted</li>
+            <li style="color: #555753;">✓ The lesson levels relationship is removed when the lesson is deleted</li>
+            <li style="color: #555753;">✓ The lesson image and video are removed when the lesson is deleted</li>
+            <li style="color: #555753;">✓ When a lesson is deleted its favorite relatioship with a user is also removed</li>
+            <li style="color: #555753;">✓ When a lesson is deleted its records when its completed are also removed</li>
+            <li style="color: #555753;">✓ When a lesson is deleted its relationship with any routine schedule is also removed</li>
+        </ul>
+        <h2 id="Tests\Feature\Admin\NotificationTest">s\Feature\Admin\Notification</h2>
+        <ul>
+            <li style="color: #555753;">✓ Managers can mark a notification as read</li>
+            <li style="color: #555753;">✓ Managers can mark all notifications as read</li>
+            <li style="color: #555753;">✓ Managers can mark a notification as uread</li>
+            <li style="color: #555753;">✓ Managers can see all notifications</li>
+            <li style="color: #555753;">✓ Managers are notified when a new user signs up</li>
+            <li style="color: #555753;">✓ Managers are notified when a user changes its profile picture</li>
+            <li style="color: #555753;">✓ Managers are notified when a user starts its routine</li>
+            <li style="color: #555753;">✓ Managers are notified when a user becomes a member</li>
+            <li style="color: #555753;">✓ Managers are notified when a membership is canceled</li>
+            <li style="color: #555753;">✓ Managers are notified when a membership is resumed</li>
+            <li style="color: #555753;">✓ Managers are notified when the user is removed</li>
+        </ul>
+        <h2 id="Tests\Feature\Admin\ProgramTest">s\Feature\Admin\Program</h2>
+        <ul>
+            <li style="color: #555753;">✓ A manager can create a new program</li>
+            <li style="color: #555753;">✓ The same program cannot be added twice</li>
+            <li style="color: #555753;">✓ A manager can edit a program</li>
+            <li style="color: #555753;">✓ A manager can update the program categories</li>
+            <li style="color: #555753;">✓ A manager can update the program lessons</li>
+            <li style="color: #555753;">✓ The image is removed when a new one is uploaded</li>
+            <li style="color: #555753;">✓ The video is removed when a new one is uploaded</li>
+            <li style="color: #555753;">✓ A manager can remove a program</li>
+            <li style="color: #555753;">✓ The program categories relationship is removed when the program is deleted</li>
+            <li style="color: #555753;">✓ The program image and video are removed when the program is deleted</li>
+            <li style="color: #555753;">✓ The program lessons are updated when the program is deleted</li>
+            <li style="color: #555753;">✓ When a program is deleted its favorite relatioship with a user is also removed</li>
+        </ul>
+        <h2 id="Tests\Feature\Admin\RoutineTest">s\Feature\Admin\Routine</h2>
+        <ul>
+            <li style="color: #555753;">✓ A manager can see pending requests on the admin page</li>
+            <li style="color: #555753;">✓ A manager can create a routine</li>
+            <li style="color: #555753;">✓ When a routine is created the request is maked as completed</li>
+            <li style="color: #555753;">✓ A manager can edit a routine</li>
+            <li style="color: #555753;">✓ A routine video is removed when the manager uploads a new one</li>
+            <li style="color: #555753;">✓ A manager can edit the schedule of a routine</li>
+            <li style="color: #555753;">✓ A manager can delete a routine</li>
+            <li style="color: #555753;">✓ A routines schedule is removed when the routine is deleted</li>
+            <li style="color: #555753;">✓ The questionaire is removed when the routine is deleted</li>
+            <li style="color: #555753;">✓ A routines video video is removed when the routine is deleted</li>
+        </ul>
+        <h2 id="Tests\Feature\Admin\UserTest">s\Feature\Admin\User</h2>
+        <ul>
+            <li style="color: #555753;">✓ A manager can delete a user</li>
+        </ul>
+        <h2 id="Tests\Feature\AsanaTest">s\Feature\Asana</h2>
+        <ul>
+            <li style="color: #555753;">✓ A guest can see a browse through all asanas on the discover page</li>
+        </ul>
+        <h2 id="Tests\Feature\AuthTest">s\Feature\Auth</h2>
+        <ul>
+            <li style="color: #555753;">✓ A guest is redirected to the dedicated login page if it tries to access a user restricted area</li>
+            <li style="color: #555753;">✓ A guest is redirected to the dedicated login page if the login was unsuccessful</li>
+            <li style="color: #555753;">✓ A guest is redirected back to the registration page if the input fail validation when signing up</li>
+        </ul>
+        <h2 id="Tests\Feature\AvatarTest">s\Feature\Avatar</h2>
+        <ul>
+            <li style="color: #555753;">✓ Only members can add avatars</li>
+            <li style="color: #555753;">✓ A valid avatar must be provided</li>
+            <li style="color: #555753;">✓ A user can upload an avatar to their profile</li>
+            <li style="color: #555753;">✓ An avatar is removed when a user uploads a new one</li>
+            <li style="color: #555753;">✓ An avatar is deleted when its user is deleted</li>
+        </ul>
+        <h2 id="Tests\Feature\CategoryTest">s\Feature\Category</h2>
+        <ul>
+            <li style="color: #555753;">✓ A user can select many categories</li>
+            <li style="color: #555753;">✓ A user can unselect any category</li>
+        </ul>
+        <h2 id="Tests\Feature\DeleteAccountTest">s\Feature\DeleteAccount</h2>
+        <ul>
+            <li style="color: #555753;">✓ It can delete its own account</li>
+            <li style="color: #555753;">✓ Users can submit feedback when deleting their account</li>
+        </ul>
+        <h2 id="Tests\Feature\EmailConfirmationTest">s\Feature\EmailConfirmation</h2>
+        <ul>
+            <li style="color: #555753;">✓ Users cannot sign in until they confirm their email</li>
+            <li style="color: #555753;">✓ Users can confirm their email addresses</li>
+        </ul>
+        <h2 id="Tests\Feature\EmailSubscriptionTest">s\Feature\EmailSubscription</h2>
+        <ul>
+            <li style="color: #555753;">✓ Guests can subscribe to the newsletter</li>
+            <li style="color: #555753;">✓ Guests cannot subscribe twice</li>
+            <li style="color: #555753;">✓ Guests receive an email upon subscription</li>
+            <li style="color: #555753;">✓ Users are not automatically subscribed to the newsletter upon registration</li>
+            <li style="color: #555753;">✓ Users are automatically subscribed to the journey list upon registration</li>
+            <li style="color: #555753;">✓ Users are automatically subscribed to the promo list upon registration</li>
+            <li style="color: #555753;">✓ Users are automatically subscribed to the routine reminder list upon registration</li>
+            <li style="color: #555753;">✓ Users are automatically subscribed to the routine communication list upon registration</li>
+            <li style="color: #555753;">✓ Users may selectively unsusbscribe from newsletter</li>
+            <li style="color: #555753;">✓ Users may selectively unsubscribe from the journey list</li>
+            <li style="color: #555753;">✓ Users may selectively unsubscribe from the promo list</li>
+            <li style="color: #555753;">✓ Users may selectively unsubscribe from the routine reminder list</li>
+            <li style="color: #555753;">✓ Users may selectively unsubscribe from the routine communication list</li>
+            <li style="color: #555753;">✓ Users are removed from all subscriptions when deleting their account</li>
+        </ul>
+        <h2 id="Tests\Feature\EmailTest">s\Feature\Email</h2>
+        <ul>
+            <li style="color: #555753;">✓ A confirmation email is sent upon registration</li>
+            <li style="color: #555753;">✓ Users can request the delivery of a new confirmation email</li>
+            <li style="color: #555753;">✓ Users receive an email when a routine request has been received</li>
+        </ul>
+        <h2 id="Tests\Feature\FakeMembershipTest">s\Feature\FakeMembership</h2>
+        <ul>
+            <li style="color: #555753;">✓ Only active members or users on grace period have access to paid content</li>
+            <li style="color: #555753;">✓ A user sees a message on the dashboard if their last payment was declined</li>
+            <li style="color: #555753;">✓ A user sees a message on the dashboard while on the grace period</li>
+            <li style="color: #555753;">✓ A user sees a message on the dashboard while on trial</li>
+        </ul>
+        <h2 id="Tests\Feature\FavoritesTest">s\Feature\Favorites</h2>
+        <ul>
+            <li style="color: #555753;">✓ A user can favorite any lesson</li>
+            <li style="color: #555753;">✓ A user can favorite any asana</li>
+            <li style="color: #555753;">✓ A user can unfavorite a lesson</li>
+            <li style="color: #555753;">✓ A guest cannot favorite a lesson</li>
+            <li style="color: #555753;">✓ A user cannot favorite the same lesson twice</li>
+            <li style="color: #555753;">✓ A user can favorite any program</li>
+            <li style="color: #555753;">✓ A user can unfavorite a program</li>
+            <li style="color: #555753;">✓ A guest cannot favorite a program</li>
+            <li style="color: #555753;">✓ A user cannot favorite the same program twice</li>
+        </ul>
+        <h2 id="Tests\Feature\FiltersTest">s\Feature\Filters</h2>
+        <ul>
+            <li style="color: #555753;">✓ A guest can filter lessons by category</li>
+            <li style="color: #555753;">✓ A guest can filter lessons by levels</li>
+            <li style="color: #555753;">✓ A guest can filter lessons by duration</li>
+            <li style="color: #555753;">✓ A guest can filter lessons by cost</li>
+        </ul>
+        <h2 id="Tests\Feature\LessonTest">s\Feature\Lesson</h2>
+        <ul>
+            <li style="color: #555753;">✓ A guest can see a browse through all lessons on the discover page</li>
+            <li style="color: #555753;">✓ A guest can see a tag showing that a lesson is free</li>
+            <li style="color: #555753;">✓ A guest can see the lesson page</li>
+            <li style="color: #555753;">✓ A guest can only view lessons that are free</li>
+            <li style="color: #555753;">✓ A user can view all lessons</li>
+        </ul>
+        <h2 id="Tests\Feature\LevelTest">s\Feature\Level</h2>
+        <ul>
+            <li style="color: #555753;">✓ A user can update its preferred level</li>
+        </ul>
+        <h2 id="Tests\Feature\LiveMembershipTest">s\Feature\LiveMembership</h2>
+        <ul>
+            <li style="color: #555753;">✓ A user can join the membership</li>
+            <li style="color: #555753;">✓ A user can resume the membership</li>
+            <li style="color: #555753;">✓ A user can join the membership with a coupon code</li>
+            <li style="color: #555753;">✓ A user can cancel the membership</li>
+            <li style="color: #555753;">✓ A user account can be canceled immediately without grace period</li>
+            <li style="color: #555753;">✓ Stripe will no longer charge the user when the account is deleted</li>
+        </ul>
+        <h2 id="Tests\Feature\NotificationTest">s\Feature\Notification</h2>
+        <ul>
+            <li style="color: #555753;">✓ A user can mark a notification as read</li>
+            <li style="color: #555753;">✓ A user can mark all notifications as read</li>
+            <li style="color: #555753;">✓ A user can mark a notification as uread</li>
+            <li style="color: #555753;">✓ A user can see all notifications</li>
+            <li style="color: #555753;">✓ Notifications are deleted when a user is deleted</li>
+            <li style="color: #555753;">✓ Users are notified when a new lesson is created only if they are interested in any of the lessons categories</li>
+            <li style="color: #555753;">✓ All users are notified when a new program is created</li>
+            <li style="color: #555753;">✓ The user is notified when their yoga routine is ready</li>
+        </ul>
+        <h2 id="Tests\Feature\ProgramTest">s\Feature\Program</h2>
+        <ul>
+            <li style="color: #555753;">✓ A guest can browse through all programs on the discover page</li>
+            <li style="color: #555753;">✓ A guest can see the program page</li>
+        </ul>
+        <h2 id="Tests\Feature\RoutineTest">s\Feature\Routine</h2>
+        <ul>
+            <li style="color: #555753;">✓ A user can submit a routine application</li>
+            <li style="color: #555753;">✓ A user sees on the dashboard a notification indicating that the routine is progress until it is created by the admin</li>
+            <li style="color: #555753;">✓ A user cannot submit a new request while there is a request pending</li>
+            <li style="color: #555753;">✓ A user cannot submit a new request until the current routine is finished</li>
+            <li style="color: #555753;">✓ A user sees the routine on the dashboard</li>
+            <li style="color: #555753;">✓ Routine requests are deleted when a user is deleted</li>
+            <li style="color: #555753;">✓ It keeps count of the users views</li>
+            <li style="color: #555753;">✓ It shows personalized video only if it is the first lesson watched on the routine</li>
+        </ul>
+        <h2 id="Tests\Feature\UserTest">s\Feature\User</h2>
+        <ul>
+            <li style="color: #555753;">✓ It can create an account</li>
+            <li style="color: #555753;">✓ Its default avatar matches its gender</li>
+            <li style="color: #555753;">✓ It can edit its profile</li>
+            <li style="color: #555753;">✓ It receives recommendations based on its preferred levels and styles</li>
+        </ul>
+        <h2 id="Tests\Feature\ViewsTest">s\Feature\Views</h2>
+        <ul>
+            <li style="color: #555753;">✓ All static guest pages are working</li>
+        </ul>
+        <h2 id="Tests\Unit\AdminTest">s\Unit\Admin</h2>
+        <ul>
+            <li style="color: #555753;">✓ Only managers are allowed on the office pages</li>
+        </ul>
+        <h2 id="Tests\Unit\AsanaTest">s\Unit\Asana</h2>
+        <ul>
+            <li style="color: #555753;">✓ It has many levels</li>
+            <li style="color: #555753;">✓ It has many benefits</li>
+            <li style="color: #555753;">✓ It has many steps</li>
+            <li style="color: #555753;">✓ It knows if it has all levels</li>
+            <li style="color: #555753;">✓ It has many categories</li>
+            <li style="color: #555753;">✓ It knows if it has been favorited by the user</li>
+            <li style="color: #555753;">✓ It keeps track of the number of visits</li>
+            <li style="color: #555753;">✓ The app knows the total amount of asana visits</li>
+        </ul>
+        <h2 id="Tests\Unit\AsanaTypeTest">s\Unit\AsanaType</h2>
+        <ul>
+            <li style="color: #555753;">✓ It has many lessons</li>
+            <li style="color: #555753;">✓ It knows how many asanas it has</li>
+        </ul>
+        <h2 id="Tests\Unit\CategoryTest">s\Unit\Category</h2>
+        <ul>
+            <li style="color: #555753;">✓ It has many lessons</li>
+            <li style="color: #555753;">✓ It has many programs</li>
+            <li style="color: #555753;">✓ It has many users</li>
+            <li style="color: #555753;">✓ It knows how many lessons it has</li>
+            <li style="color: #555753;">✓ It knows how many programs it has</li>
+            <li style="color: #555753;">✓ It knows how many users it has</li>
+        </ul>
+        <h2 id="Tests\Unit\CourseTest">s\Unit\Course</h2>
+        <ul>
+            <li style="color: #555753;">✓ It has many chapters</li>
+            <li style="color: #555753;">✓ Its chapter has many lectures</li>
+            <li style="color: #555753;">✓ Its chapter has many practices</li>
+            <li style="color: #555753;">✓ Its chapter has many assignments</li>
+            <li style="color: #555753;">✓ Its chapter has many quizzes</li>
+            <li style="color: #555753;">✓ Its quiz has many questions</li>
+        </ul>
+        <h2 id="Tests\Unit\FakeMembershipTest">s\Unit\FakeMembership</h2>
+        <ul>
+            <li style="color: #555753;">✓ A user can join the membership</li>
+            <li style="color: #555753;">✓ The trial period ends when a user subscribes</li>
+            <li style="color: #555753;">✓ A user can update its card information</li>
+            <li style="color: #555753;">✓ A user can resume a canceled membership</li>
+            <li style="color: #555753;">✓ A user can cancel the membership immediately</li>
+        </ul>
+        <h2 id="Tests\Unit\LessonTest">s\Unit\Lesson</h2>
+        <ul>
+            <li style="color: #555753;">✓ It has many levels</li>
+            <li style="color: #555753;">✓ It knows if it has all levels</li>
+            <li style="color: #555753;">✓ It has many categories</li>
+            <li style="color: #555753;">✓ It can belong to a program</li>
+            <li style="color: #555753;">✓ It knows if it has been favorited by the user</li>
+            <li style="color: #555753;">✓ It keeps track of the number of visits</li>
+            <li style="color: #555753;">✓ The app knows the total amount of lesson visits</li>
+        </ul>
+        <h2 id="Tests\Unit\MembershipTest">s\Unit\Membership</h2>
+        <ul>
+            <li style="color: #555753;">✓ It converts a stripe event name to a method name</li>
+        </ul>
+        <h2 id="Tests\Unit\NotificationTest">s\Unit\Notification</h2>
+        <ul>
+            <li style="color: #555753;">✓ A user receives a welcome notification upon registration</li>
+            <li style="color: #555753;">✓ A user receives trial start notification upon registration</li>
+            <li style="color: #555753;">✓ A user receives a notification about changing their profile picture upon registration</li>
+            <li style="color: #555753;">✓ A user receives an incomplete profile notification upon registration only if relevant</li>
+            <li style="color: #555753;">✓ A user receives a notification when they become members</li>
+            <li style="color: #555753;">✓ A user receives a notification when they cancel the membership</li>
+            <li style="color: #555753;">✓ A user receives a notification when they resume their membership</li>
+        </ul>
+        <h2 id="Tests\Unit\ProgramTest">s\Unit\Program</h2>
+        <ul>
+            <li style="color: #555753;">✓ It can have many categories</li>
+            <li style="color: #555753;">✓ It has many lessons</li>
+            <li style="color: #555753;">✓ It knows how many lessons it has</li>
+            <li style="color: #555753;">✓ It knows the percentage of its lessons that have been viewed by the user</li>
+            <li style="color: #555753;">✓ It knows if it has been completed by the user</li>
+            <li style="color: #555753;">✓ It knows where the user left off</li>
+            <li style="color: #555753;">✓ It knows its total duration</li>
+            <li style="color: #555753;">✓ It knows if it has been favorited by the user</li>
+            <li style="color: #555753;">✓ It keeps track of the number of visits</li>
+            <li style="color: #555753;">✓ The app knows the total amount of program visits</li>
+        </ul>
+        <h2 id="Tests\Unit\UserRecordTest">s\Unit\UserRecord</h2>
+        <ul>
+            <li style="color: #555753;">✓ It keeps record of every new signup</li>
+            <li style="color: #555753;">✓ The same event cannot be recorded twice</li>
+            <li style="color: #555753;">✓ Records persist even after a user has deleted their account</li>
+            <li style="color: #555753;">✓ It keeps record when the user confirms the email</li>
+            <li style="color: #555753;">✓ It keeps record when the user joins the membership</li>
+        </ul>
+        <h2 id="Tests\Unit\UserStatusTest">s\Unit\UserStatus</h2>
+        <ul>
+            <li style="color: #555753;">✓ It starts the free trial once the email has been confirmed</li>
+            <li style="color: #555753;">✓ A user knows if is on trial</li>
+            <li style="color: #555753;">✓ A user knows if the membership is active</li>
+            <li style="color: #555753;">✓ A user knows if is on grace period</li>
+            <li style="color: #555753;">✓ A user knows if the account is inactive</li>
+        </ul>
+        <h2 id="Tests\Unit\UserTest">s\Unit\User</h2>
+        <ul>
+            <li style="color: #555753;">✓ It has a routine</li>
+            <li style="color: #555753;">✓ It knows if it has a pending routine</li>
+            <li style="color: #555753;">✓ It knows if the routine preview video has been watched</li>
+            <li style="color: #555753;">✓ It knows if it has routine classes to watch on a given day</li>
+            <li style="color: #555753;">✓ It knows if it has a subscription</li>
+            <li style="color: #555753;">✓ It knows when was the last login</li>
+            <li style="color: #555753;">✓ It knows if has chosen a given category</li>
+            <li style="color: #555753;">✓ It knows if it has selected level and category preferences</li>
+            <li style="color: #555753;">✓ It knows if it has finished a lesson</li>
+            <li style="color: #555753;">✓ It knows if it has finished a program</li>
+            <li style="color: #555753;">✓ It knows when was the last time it finished a lesson</li>
+            <li style="color: #555753;">✓ It knows if it has finished a routine</li>
+            <li style="color: #555753;">✓ It knows how many lessons it had completed on a given date</li>
+            <li style="color: #555753;">✓ It knows about its last payment</li>
+            <li style="color: #555753;">✓ Its preferences are removed when the account is deleted</li>
+            <li style="color: #555753;">✓ Its favorite lessons are removed when the account is deleted</li>
+            <li style="color: #555753;">✓ Its favorite programs are removed when the account is deleted</li>
+            <li style="color: #555753;">✓ Its favorite asanas are removed when the account is deleted</li>
+            <li style="color: #555753;">✓ Its view records are removed when the account is deleted</li>
+            <li style="color: #555753;">✓ Its membership records are deleted when the account is deleted</li>
+            <li style="color: #555753;">✓ Its payment records are deleted when the account is deleted</li>
+            <li style="color: #555753;">✓ Its routine schedule is removed when the account is deleted</li>
+        </ul>
+        <h2 id="Tests\Unit\WebhooksTest">s\Unit\Webhooks</h2>
+        <ul>
+            <li style="color: #555753;">✓ A user knows when it has been charged successfully</li>
+            <li style="color: #555753;">✓ The same invoice cannot be recorded twice</li>
+            <li style="color: #555753;">✓ A user knows when a charge failed</li>
+            <li style="color: #555753;">✓ A user knows when a charge has been refunded</li>
+        </ul>
+    </body>
+</html>

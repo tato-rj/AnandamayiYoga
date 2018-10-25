@@ -1,0 +1,44 @@
+.card-list {
+
+	li {
+		display: inline-block;
+		height: 25px;
+		margin: 8px 12px 8px 0;
+		overflow: hidden;
+		text-indent: -500px;
+	}
+
+	.cardBrand-visa {
+	    width: 44px;
+	}
+
+	.cardBrand-masterCard {
+	    background-position: -48px 0;
+	    width: 84px;
+	}
+
+	.cardBrand-americanExpress {
+    	background-position: -138px 0;
+	    width: 52px;
+	}
+
+	.cardBrand-discover {
+	    background-position: -274px 0;
+	    width: 56px;
+	}
+
+	.cardBrand-jcb {
+	    background-position: -357px 0;
+	    width: 28px;
+	}
+
+	.cardBrand-dinersClub {
+	    background-position: -217px 0;
+	    width: 29px;
+	}
+
+	.cardBrand-chinaUnion {
+	    background-position: -408px 0;
+	    width: 31px;
+	}
+}

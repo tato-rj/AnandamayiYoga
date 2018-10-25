@@ -1,0 +1,23 @@
+.swiper-control {
+	@extend .z-10, .d-flex, .align-items-center, .justify-content-center, .cursor-pointer, .t-2, .text-red;
+	height: 100%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(255,255,255,0.75);
+	width: 100px;
+}
+
+.swiper-right {
+	right: 0;
+}
+
+.swiper-left {
+	left: 0;
+}
+
+.swiper-button-disabled {
+	@extend .text-muted;
+	opacity: 0.4;
+	width: 50px;
+}

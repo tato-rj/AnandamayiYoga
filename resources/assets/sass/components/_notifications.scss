@@ -1,0 +1,60 @@
+.notifications-badge {
+	small {
+		position: absolute;
+		top: -10px;
+		left: 12px;
+	}
+
+	.badge {
+		padding: 0.15em 0.3em;
+	}
+}
+
+.notifications-dropdown {
+	width: 22em;
+	
+	.notifications-item {
+		@extend .dropdown-item;
+		@extend .py-2;
+	    white-space: normal;
+        line-height: 1.2;
+	}
+
+	.notifications-item-empty {
+		@extend .notifications-item;
+	}
+
+	.notifications-item-empty:hover {
+		background: white;
+	}
+
+	.notifications-head {
+		@extend .dropdown-item, .d-flex, .flex-row, .justify-content-between, .pt-0, .pb-2, .px-3;
+		padding: 0rem 1.5rem;
+	}
+
+	.notifications-head:hover {
+		background: inherit;
+	}
+
+	/* width */
+	.notification-box::-webkit-scrollbar {
+	    width: 4px;
+	}
+
+	/* Track */
+	.notification-box::-webkit-scrollbar-track {
+	    background: transparent; 
+	}
+	 
+	/* Handle */
+	.notification-box::-webkit-scrollbar-thumb {
+	    background: #e5e7e9;
+	    border-radius: 2px;
+	}
+
+	/* Handle on hover */
+	.notification-box::-webkit-scrollbar-thumb:hover {
+	    background: #e0dfdf; 
+	}
+}

@@ -1,0 +1,1 @@
+<h5 class="text-red mb-4 mt-5" id="{{str_slug($slot)}}"><strong>{{$slot}}</strong></h5>

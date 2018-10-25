@@ -1,0 +1,222 @@
+///////////////////
+// Brand
+///////////////////
+
+.btn-yellow {
+	background: $brand-yellow;
+	color: darken($brand-yellow, 32);
+}
+
+.btn-yellow:hover, .btn-yellow:active, .btn-yellow:focus {
+	background: darken($brand-yellow, 5);
+	color: darken($brand-yellow, 40)!important;
+}
+
+.btn-blue {
+	background: $brand-blue;
+	color: white;
+}
+
+.btn-blue:hover, .btn-blue:active, .btn-blue:focus {
+	background: darken($brand-blue, 5);
+	color: white!important;
+}
+
+.btn-red {
+	border: 2px solid $brand-red;
+	background: $brand-red;
+	color: white;
+}
+
+.btn-red:hover, .btn-red:active, .btn-red:focus {
+	background: darken($brand-red, 5);
+	border-color: darken($brand-red, 5);
+	color: white!important;
+}
+
+///////////////////////////
+// Light buttons
+///////////////////////////
+
+.btn-red-light {
+	background: lighten($brand-red, 35);
+	color: $brand-red;
+}
+
+.btn-red-light:hover, .btn-red-light:active, .btn-red-light:focus {
+	background: lighten($brand-red, 35);
+}
+
+.btn-blue-light {
+	background: lighten($brand-blue, 35);
+	color: $brand-blue;
+}
+
+.btn-blue-light:hover, .btn-blue-light:active, .btn-blue-light:focus {
+	background: lighten($brand-blue, 35);
+}
+
+/////////////////////
+// Outline
+////////////////////
+
+.btn-outline-yellow {
+	border: .075rem solid $brand-yellow;
+	background: transparent;
+	color: $brand-yellow;
+}
+
+.btn-outline-yellow:hover, .btn-yellow:active, .btn-yellow:focus {
+	background: $brand-yellow;
+	color: darken($brand-yellow, 20)!important;
+}
+
+.btn-outline-blue-empty {
+	@extend .px-4;
+	background: transparent;
+	border: .075rem solid white;
+	color: white;
+}
+
+.btn-outline-blue-empty:hover, .btn-outline-blue-empty:active, .btn-outline-blue-empty:focus {
+	background: white;
+	color: $brand-blue;
+}
+
+.btn-outline-red-empty {
+	@extend .px-4;
+	background: transparent;
+	border: .075rem solid white;
+	color: white;
+}
+
+.btn-outline-red-empty:hover, .btn-outline-red-empty:active {
+	background: white;
+	color: $brand-red;
+}
+
+.btn-outline-red {
+	@extend .px-4;
+	background: transparent;
+	border: .075rem solid $brand-red;
+	color: $brand-red;
+}
+
+.btn-outline-red:hover, .btn-outline-red:active {
+	background: $brand-red;
+	color: white;
+	border-color: $brand-red;
+}
+
+.btn-outline-blue {
+	@extend .px-4;
+	background: transparent;
+	border: .075rem solid $brand-blue;
+	color: $brand-blue;
+}
+
+.btn-outline-blue:hover, .btn-outline-blue:active {
+	background: $brand-blue;
+	color: white;
+	border-color: $brand-blue;
+}
+
+///////////////////////
+// Social Media
+///////////////////////
+
+.btn-facebook {
+	i:hover {
+		color: white!important;
+	}
+	
+	background-color: $social-facebook;
+	color: white;
+	border-color: $social-facebook;
+	@extend .t-2;
+}
+
+.btn-facebook:hover, .btn-facebook:active, .btn-facebook:focus {
+	background-color: darken($social-facebook, 4%);
+	border-color: darken($social-facebook, 4%);
+	color: white;
+}
+
+.btn-twitter {
+	i:hover {
+		color: white!important;
+	}
+	
+	background-color: $social-twitter;
+	color: white;
+	border-color: $social-twitter;
+	@extend .t-2;
+}
+
+.btn-twitter:hover, .btn-twitter:active, .btn-twitter:focus {
+	background-color: darken($social-twitter, 4%);
+	border-color: darken($social-twitter, 4%);
+	color: white;
+}
+
+.btn-google {
+	i:hover {
+		color: white!important;
+	}
+	
+	background-color: $social-google;
+	color: white;
+	border-color: $social-google;
+	@extend .t-2;
+}
+
+.btn-google:hover, .btn-google:active, .btn-google:focus {
+	background-color: darken($social-google, 4%);
+	border-color: darken($social-google, 4%);
+	color: white;
+}
+
+.btn-instagram {
+	i:hover {
+		color: white!important;
+	}
+	
+	background-color: $social-instagram;
+	color: white;
+	border-color: $social-instagram;
+	@extend .t-2;
+}
+
+.btn-instagram:hover, .btn-instagram:active, .btn-instagram:focus {
+	background-color: darken($social-instagram, 4%);
+	border-color: darken($social-instagram, 4%);
+	color: white;
+}
+
+//////////////////
+// Layout
+//////////////////
+
+.btn-circle {
+	width: 9em;
+    height: 9em;
+    border-radius: 50%;
+}
+
+.btn-xs {
+	@extend .btn-sm;
+	padding: 0.25em .75em;
+}
+
+.btn-bold {
+	@extend .btn;
+	font-weight: bold;
+}
+
+.btn-lg {
+	@extend .px-4;
+}
+
+.btn-pill {
+	border-radius: 100px;
+}

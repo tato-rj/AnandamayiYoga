@@ -1,0 +1,167 @@
+.animated-fast {
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+}
+
+.rotate-upsidedown {
+  transform: rotate(180deg);
+}
+
+.move-control:hover {
+	.move-item-right {
+		transform: translateX(5px);
+	}
+
+    .move-item-up {
+        transform: translateY(-10px);
+    }	
+}
+
+@keyframes move-up {
+    from {
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    to {
+        -ms-transform: translateY(-200px);
+        -webkit-transform: translateY(-200px);
+        transform: translateY(-200px);
+    }
+}
+
+@keyframes grow {
+    from {
+        -ms-transform: scale(1,1);
+        -webkit-transform: scale(1,1);
+        transform: scale(1,1);
+    }
+    to {
+        -ms-transform: scale(4,4);
+        -webkit-transform: scale(4,4);
+        transform: scale(4,4);
+    }
+}
+
+@keyframes rotate {
+    from {
+        -ms-transform: rotate(-15deg);
+        -webkit-transform: rotate(-15deg);
+        transform: rotate(-15deg);
+    }
+    to {
+        -ms-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.8;
+    }
+}
+
+.fade-in {
+    animation-name: fade-in;
+}
+
+.rotate {
+    animation-name: rotate;
+}
+
+.move-up {
+    animation-name: move-up;
+    animation-duration: 1s;	
+}
+
+.grow {
+    animation-name: grow;
+    animation-duration: 2s; 
+}
+
+/* Bounce To Right */
+.bounce-to-right {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  border: 0;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+.bounce-to-right:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: lighten($brand-red, 30);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.bounce-to-right-active {
+  color: darken($brand-red, 10)!important;
+  font-weight: bold;
+}
+
+.bounce-to-right-active:before {
+  @extend .shadow;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+// Fade In Up
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 15%, 0);
+    transform: translate3d(0, 15%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 15%, 0);
+    transform: translate3d(0, 15%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}

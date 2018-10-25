@@ -1,0 +1,1 @@
+<a href="{{route('reads.learning.show', [str_slug($topic), str_slug($title)])}}" style="background-color: transparent;" class="list-group-item list-group-item-action border-0 px-3 py-1 lead"><small><i class="fas fa-ellipsis-v mr-2 text-red"></i>{{$title}}</small></a>

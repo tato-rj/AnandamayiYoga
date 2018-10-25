@@ -1,0 +1,96 @@
+.bg-full {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.bg-top {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top;
+}
+
+.bg-right {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: right;
+}
+
+.bg-blue {
+	background-color: $brand-blue;
+}
+
+.bg-blue-light {
+	background-color: lighten($brand-blue, 15);
+}
+
+.bg-blue-very-light {
+	background-color: lighten($brand-blue, 42);
+}
+
+.bg-blue-transparent {
+	background-color: rgba(0, 128, 255, 0.95);
+}
+
+.bg-red {
+	background-color: $brand-red;
+}
+
+.bg-gradient {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+48,000000+86&0.05+48,1+86 */
+	background: -moz-linear-gradient(top, rgba(0,0,0,0.05) 48%, rgba(0,0,0,1) 86%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0.05) 48%,rgba(0,0,0,1) 86%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(0,0,0,0.05) 48%,rgba(0,0,0,1) 86%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+.text-blue {
+	color: $brand-blue;
+}
+
+.text-red {
+	color: $brand-red;
+}
+
+.bg-beginner-light {
+	background-color: transparentize($brand-beginner,0.5);
+	color: darken($brand-beginner, 32);
+}
+
+.bg-intermediate-light {
+	background-color: transparentize($brand-intermediate,0.5);
+	color: darken($brand-intermediate, 32);
+}
+
+.bg-advanced-light {
+	background-color: transparentize($brand-advanced,0.5);
+	color: darken($brand-advanced, 32);
+}
+
+.bg-beginner {
+	background-color: $brand-beginner;
+}
+
+.bg-intermediate {
+	background-color: $brand-intermediate;
+}
+
+.bg-advanced {
+	background-color: $brand-advanced;
+}
+
+.bf-all-levels-light {
+	background-color: transparentize($brand-all-levels,0.5);
+}
+
+.overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	opacity: 0.6;
+}
+
+.overlay-dark {
+	@extend .overlay;
+	opacity: 0.8;
+}

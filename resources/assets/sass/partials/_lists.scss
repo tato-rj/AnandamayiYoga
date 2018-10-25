@@ -1,0 +1,8 @@
+#chapters-menu {
+	.list-group {
+		.disabled {
+			background: lighten($brand-blue, 47.5);
+			border-left: 4px solid $brand-blue !important;
+		}
+	}
+}

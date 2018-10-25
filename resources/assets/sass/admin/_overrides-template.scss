@@ -1,0 +1,32 @@
+.header {
+  @extend .z-40;
+}
+
+.widget-signups {
+  background-color: #607D8B;
+}
+
+.widget-signups__list {
+  text-align: center;
+
+  & > a {
+    @extend .no-underline;
+    vertical-align: top;
+    margin: 4px 2px;
+    display: inline-block;
+  }
+
+  .avatar-char {
+    background-color: rgba(white, 0.1);
+    color: white;
+  }
+
+  .avatar-char,
+  .avatar-img {
+    margin: 0;
+  }
+}
+
+.navigation a, .dropdown a {
+  @extend .no-underline;
+}

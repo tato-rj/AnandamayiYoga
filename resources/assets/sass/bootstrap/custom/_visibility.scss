@@ -1,0 +1,20 @@
+.opacity-4 {
+	opacity: 0.4;
+}
+
+.opacity-9 {
+	opacity: 0.9;
+}
+
+.opacity-8 {
+	opacity: 0.8;
+}
+
+.show-on-hover {
+	@extend .t-2;
+	opacity: 0;
+}
+
+.show-on-hover:hover {
+	opacity: 1;
+}

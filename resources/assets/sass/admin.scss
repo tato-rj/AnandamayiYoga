@@ -1,0 +1,24 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/jquery-ui-bundle/jquery-ui.min";
+
+@import "variables";
+@import "animations";
+@import "bootstrap/override";
+@import "bootstrap/custom";
+
+@import "admin/overrides-template";
+
+@import "components/backgrounds";
+@import "components/badges";
+@import "components/pagination";
+@import "components/misc";
+@import "components/schedule";
+@import "components/slider";
+@import "components/spinners";
+@import "components/notifications";
+@import "components/togglers";
+@import "components/trix";
+
+.invalid-feedback {
+	@extend .d-block;
+}

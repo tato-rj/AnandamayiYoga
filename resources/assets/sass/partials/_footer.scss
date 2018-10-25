@@ -1,0 +1,16 @@
+footer {
+	background: #164894;
+
+	a {
+		color: lightgrey;
+	}
+
+	a:hover, a:active, a:focus {
+		color: white;
+		text-decoration: none;
+	}
+
+	> div:last-of-type {
+		background: darken(#164894, 10);
+	}
+}

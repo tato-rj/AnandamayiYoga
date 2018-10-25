@@ -1,0 +1,37 @@
+@media (max-width: 575.98px) {
+    .asana-card {
+        height: 380px !important;
+    }
+
+    .notifications-dropdown {
+        width: 94%;
+        transform: translateX(-50%);
+        left: 50% !important;
+        right: unset !important;
+    }
+
+    .mobile-block {
+        width: 100%;
+    }
+
+    .mobile-mx-auto {
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+
+    .quote {
+        width: 100%;
+        border-top: 4px solid $brand-gold;
+        border-bottom: 4px solid $brand-gold;
+        transform: none;
+    }
+
+    .alert-popup {
+        right: 1em !important;
+        left: 1em !important;
+    }
+
+    #video-container, #preview-container {
+      height: 320px !important;
+    }
+}

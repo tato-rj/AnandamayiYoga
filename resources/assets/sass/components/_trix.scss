@@ -1,0 +1,61 @@
+trix-editor {
+	color: #495057;
+	overflow-y: scroll;
+
+	figure {
+		position: relative;
+		width: 60%;
+		margin: 0 auto;
+	}
+
+	figcaption {
+		display: none;
+	}
+
+	.attachment__progress {
+		position: absolute;
+		z-index: 1;
+		height: 20px;
+		top: calc(50% - 10px);
+		left: 5%;
+		width: 90%;
+		opacity: 0.9;
+		transition: opacity 200ms ease-in;
+	}
+
+	h1 {
+		font-size: 1.25em;
+	}
+}
+
+trix-toolbar {
+	button[data-trix-attribute="code"], button[data-trix-action="decreaseNestingLevel"], button[data-trix-action="increaseNestingLevel"] {
+		display: none;
+	}
+}
+
+.trix-disabled {
+	pointer-events: none;
+	background: #f1f3f5 !important;
+}
+
+.trix-content {
+	img {
+		width: 60%;
+		height: auto;
+		display: block;
+		margin: 0 auto;
+	}
+
+	figure {
+		margin: 0 !important;
+	}
+
+	figcaption {
+		display: none;
+	}
+
+	h1 {
+		font-size: 1.25em;
+	}
+}

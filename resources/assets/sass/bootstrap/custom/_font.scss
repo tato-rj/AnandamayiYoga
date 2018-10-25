@@ -1,0 +1,36 @@
+.font-lg {
+	font-size: 2.8em;
+}
+
+.text-lightgrey {
+	color: lightgrey !important;
+}
+
+.l-height-1 {
+	line-height: 1;
+}
+
+.elipsis {
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.clamp-1 {
+	overflow: hidden !important;
+	max-height: 80px !important;
+	text-overflow: ellipsis !important;
+	display: -webkit-box !important;
+	-webkit-line-clamp: 1 !important;
+	-webkit-box-orient: vertical;
+}
+
+.clamp-2 {
+	overflow: hidden !important;
+	max-height: 80px !important;
+	text-overflow: ellipsis !important;
+	display: -webkit-box !important;
+	-webkit-line-clamp: 2 !important;
+	-webkit-box-orient: vertical;
+}

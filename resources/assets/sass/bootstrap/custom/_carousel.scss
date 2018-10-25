@@ -1,0 +1,15 @@
+.carousel-indicators li.bullets {
+	@extend .mx-1;
+	display: inline-block;
+	width: .75em;
+	height: .75em;
+	text-indent: -999px;
+	cursor: pointer;
+	background-color: white;
+	border: 1px solid $brand-red;
+	border-radius: 50%;
+}
+
+.carousel-indicators li.active {
+	background-color: $brand-red!important;
+}

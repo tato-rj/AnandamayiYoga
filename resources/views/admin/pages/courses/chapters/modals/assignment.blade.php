@@ -1,0 +1,25 @@
+@component('admin/pages/courses/chapters/modals/layout', ['title' => 'assignment', 'chapter' => $chapter])
+
+<form method="POST" action="{{route('admin.courses.chapters.content.create', [$course->slug, $chapter->id])}}">
+	{{csrf_field()}}
+	<input type="hidden" name="content_type" value="App\Assignment">
+	<input type="hidden" name="order" value="{{$chapter->content->count()}}">
+
+	<div class="form-group">
+		<input required type="text" class="form-control" name="name" value="" placeholder="Assignment Name">
+	</div>
+
+	<div class="form-group">
+		<textarea required name="question" placeholder="Assignment's question or instruction here" rows="5" class="form-control"></textarea>
+	</div>
+	
+	<div class="text-right">
+
+	@include('components/buttons/spinner', [
+	  'classes' => 'btn btn-red block-screen-button',
+	  'label' => 'Create Assignment'])
+
+	</div>
+</form>
+
+@endcomponent
