@@ -30,6 +30,7 @@ class PostNewLessonNotification
         User::hasCategories(
             $event->lesson->categories()->pluck('id')
         )->each(function($user) use ($event) {
+            dd('We are here');
             $user->notify(new NewLessonNotification($user, $event->lesson));
         });
 

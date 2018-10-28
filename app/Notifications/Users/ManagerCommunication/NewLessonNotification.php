@@ -21,7 +21,6 @@ class NewLessonNotification extends Notification
      */
     public function __construct($user, $lesson)
     {
-        dd('It reaches this point!');
         $this->user = $user;
         $this->lesson = $lesson;
     }
