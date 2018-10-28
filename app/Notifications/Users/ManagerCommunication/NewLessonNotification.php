@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 
 class NewLessonNotification extends Notification
 {
-    // use Queueable;
+    use Queueable;
 
     protected $user;
     protected $lesson;
