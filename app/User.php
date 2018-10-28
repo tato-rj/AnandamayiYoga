@@ -208,7 +208,6 @@ class User extends Authenticatable
 
     public function scopeHasCategories($query, $categories)
     {
-        dd('test!');
         return $query->whereHas('categories', function($query) use ($categories) {
             $query->whereIn('id', $categories);
         });

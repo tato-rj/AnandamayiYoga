@@ -27,9 +27,9 @@ class PostNewLessonNotification
      */
     public function handle(LessonCreated $event)
     {
-        User::hasCategories(
-            $event->lesson->categories()->pluck('id')
-        )->each(function($user) use ($event) {
+        $users = User::hasCategories($event->lesson->categories()->pluck('id'));
+        dd($users);
+        $users->each(function($user) use ($event) {
             $user->notify(new NewLessonNotification($user, $event->lesson));
         });
 
