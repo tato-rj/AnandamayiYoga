@@ -66,7 +66,7 @@ class OfficeController extends Controller
 
         $lessons = Lesson::whereNull('program_id')->orderBy('name')->get();
 
-        $teachers = Teacher::orderBy('first_name')->get();
+        $teachers = Teacher::orderBy('name')->get();
 
         return view('admin/pages/programs/index', compact(['programs', 'lessons', 'teachers']));
 	}
@@ -74,7 +74,7 @@ class OfficeController extends Controller
 	public function courses()
 	{
         $courses = Course::paginate(8);
-        $teachers = Teacher::orderBy('first_name')->get();
+        $teachers = Teacher::orderBy('name')->get();
 
         return view('admin/pages/courses/index', compact(['courses', 'teachers']));
 	}

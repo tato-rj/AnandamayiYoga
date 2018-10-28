@@ -88,7 +88,7 @@ class CoursesController extends Controller
      */
     public function edit(Course $course)
     {
-        $teachers = Teacher::orderBy('first_name')->get();
+        $teachers = Teacher::orderBy('name')->get();
 
         return view('admin/pages/courses/edit/index', compact(['course', 'teachers']));
     }

@@ -5,7 +5,7 @@ Route::prefix('/classes')->name('classes.')->group(function() {
     Route::get('', function() {
         $lessons = \App\Lesson::paginate(11);
         $programs = \App\Program::orderBy('name')->get();
-        $teachers = \App\Teacher::orderBy('first_name')->get();
+        $teachers = \App\Teacher::orderBy('name')->get();
 
         return view('admin/pages/lessons/index', compact(['lessons', 'programs', 'teachers']));
     })->name('index');
