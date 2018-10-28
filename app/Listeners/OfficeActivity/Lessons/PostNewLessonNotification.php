@@ -27,12 +27,13 @@ class PostNewLessonNotification
      */
     public function handle(LessonCreated $event)
     {
+        dd('It works until here');
         User::hasCategories(
             $event->lesson->categories()->pluck('id')
         )->each(function($user) use ($event) {
             $user->notify(new NewLessonNotification($user, $event->lesson));
         });
-        dd('It works until here');
+
         if ($event->lesson->teacher()->exists())
             $event->lesson->teacher->notify(new LessonPublishedNotification($event->lesson));
     }
