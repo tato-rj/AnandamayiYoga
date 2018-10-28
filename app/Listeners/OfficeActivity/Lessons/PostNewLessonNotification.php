@@ -32,7 +32,7 @@ class PostNewLessonNotification
         )->each(function($user) use ($event) {
             $user->notify(new NewLessonNotification($user, $event->lesson));
         });
-
+        dd('It works until here');
         if ($event->lesson->teacher()->exists())
             $event->lesson->teacher->notify(new LessonPublishedNotification($event->lesson));
     }
