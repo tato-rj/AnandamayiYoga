@@ -69,8 +69,14 @@ class RegisterController extends Controller
      */
     public function register(Request $request)
     {
-        $this->validator($request->all())->validate();
+        $validator = $this->validator($request->all());
 
+        if ($validator->fails()) {
+            return redirect('register')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+        
         if (! empty($request->coupon) && ! Coupon::validate($request->coupon))
             return redirect()->back()->with('error', 'The code you entered could not be redeemed at this time.');
 
