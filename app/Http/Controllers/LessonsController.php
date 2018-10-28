@@ -69,7 +69,7 @@ class LessonsController extends Controller
 
         event(new LessonCreated($lesson));
 
-        return back()->with('status', "The lesson {$lesson->name} has been successfully created.");
+        return redirect()->back()->with('status', "The lesson {$lesson->name} has been successfully created.");
     }
 
     /**
