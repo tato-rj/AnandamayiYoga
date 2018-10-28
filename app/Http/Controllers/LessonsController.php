@@ -68,8 +68,8 @@ class LessonsController extends Controller
         $lesson->levels()->attach($request->levels);
 
         event(new LessonCreated($lesson));
-
-        return redirect()->back()->with('status', "The lesson {$lesson->name} has been successfully created.");
+        return 'It works until here';
+        // return redirect()->back()->with('status', "The lesson {$lesson->name} has been successfully created.");
     }
 
     /**
