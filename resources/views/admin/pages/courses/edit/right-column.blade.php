@@ -52,7 +52,7 @@
     <select multiple name="teachers[]" disabled class="form-control">
        @foreach($teachers as $teacher)
        <option value="{{$teacher->id}}" 
-        @exists($course->teachers, $teacher->id) selected @endexists>{{$teacher->fullName}}</option>
+        @exists($course->teachers, $teacher->id) selected @endexists>{{$teacher->name}}</option>
         @endforeach
     </select>
   </div>

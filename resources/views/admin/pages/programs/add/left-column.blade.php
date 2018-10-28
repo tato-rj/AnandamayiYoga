@@ -10,7 +10,7 @@
     <select name="teacher_id" class="form-control {{ $errors->has('teacher_id') ? 'is-invalid' : '' }}">
       <option selected disabled>Choose the teacher</option>
       @foreach($teachers as $teacher)
-      <option value="{{$teacher->id}}" @old('teacher_id', $teacher->id) selected @endold>{{$teacher->full_name}}</option>
+      <option value="{{$teacher->id}}" @old('teacher_id', $teacher->id) selected @endold>{{$teacher->name}}</option>
       @endforeach
     </select>
     @if ($errors->has('teacher_id'))

@@ -36,7 +36,7 @@
       <select multiple name="teachers[]" required class="form-control {{ $errors->has('teachers[]') ? 'is-invalid' : '' }}">
          @foreach($teachers as $teacher)
          <option value="{{$teacher->id}}" 
-          @oldArray('teachers', $teacher->id) selected @endoldArray>{{$teacher->fullName}}</option>
+          @oldArray('teachers', $teacher->id) selected @endoldArray>{{$teacher->name}}</option>
           @endforeach
       </select>
     @if ($errors->has('teachers[]'))

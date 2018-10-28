@@ -125,7 +125,7 @@
       <select disabled class="form-control">
         <option selected value="">No teacher</option>
         @foreach($teachers as $teacher)
-          <option value="{{$teacher->id}}" @match($lesson->teacher_id, $teacher->id) selected @endmatch>{{$teacher->full_name}}</option>
+          <option value="{{$teacher->id}}" @match($lesson->teacher_id, $teacher->id) selected @endmatch>{{$teacher->name}}</option>
         @endforeach
       </select>
 
