@@ -9,7 +9,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 
 class NewProgramNotification extends Notification
 {
-    use Queueable;
+    // use Queueable;
 
     protected $user;
     protected $program;
