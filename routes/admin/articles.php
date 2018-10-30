@@ -16,6 +16,8 @@ Route::prefix('/articles')->name('articles.')->group(function() {
 
     Route::get('', 'OfficeController@articles')->name('index');
 
+    Route::get('/blog', 'OfficeController@blog')->name('blog');
+
     Route::get('/create', 'ArticlesController@create')->name('create');
 
     Route::get('/{article}', 'ArticlesController@edit')->name('edit');

@@ -11,6 +11,7 @@ class Article extends Model
 	use FindBySlug, InteractsWithCloud;
 
     protected $guarded = [];
+    protected $subjects = ['Yoga Basics', 'Yoga Philosophy'];
 
     protected static function boot()
     {
@@ -27,9 +28,19 @@ class Article extends Model
         return $this->belongsToMany(ArticleTopic::class);
     }
 
-    public function getPathAttribute()
+    public function author()
     {
-    	return "/reads/articles/{$this->slug}";
+        return $this->belongsTo(Teacher::class, 'author_id');
+    }
+
+    public function getIsBlogAttribute()
+    {
+        return ! is_null($this->subject);
+    }
+
+    public function scopeSubjects($query)
+    {
+        return $this->subjects;
     }
 
     public function preview($length)
@@ -60,43 +71,18 @@ class Article extends Model
         }
     }
 
-    public function scopeLearningAboutYoga($query)
+    public function scopeBlog($query)
     {
-        return [
-            'Yoga basics' => [
-                'What is Yoga?',
-                'History of Yoga',
-                'The benefits of Yoga practice',
-                'Asanas: the Yoga Postures',
-                'Mudras: the Yoga spiritual gestures',
-                'Pranayamas: the Yoga breathing exercises'
-            ],
-            'Yoga Philosophy' => [
-                'The Eight Limbs of Yoga',
-                'The Bhagavad Gita',
-                'The Kundalini Energy',
-                'The Seven Chakaras',
-                'The Five Koshas',
-                'The Hatha Yoga Pradipika'
-            ],
-            'Yoga Therapy' => [
-                'Stress',
-                'Chronic pain',
-                'Depression and Anxiety',
-                'Detoxification',
-                'Eating disorders',
-                'Inflammation',
-                'Insomnia',
-                'Osteoporosis'
-            ],
-            'Shatkarma: the six purification techniques' => [
-                'Netī',
-                'Dhautī',
-                'Naulī',
-                'Basti',
-                'Kapālabhātī',
-                'Trāṭaka'
-            ]
-        ];
+        return $query->whereNull('subject');
+    }
+
+    public function scopeLearning($query)
+    {
+        return $query->whereNotNull('subject')->orderBy('order');
+    }
+
+    public function scopeSubject($query, $subject)
+    {
+        return $query->where('subject', $subject)->orderBy('order');
     }
 }

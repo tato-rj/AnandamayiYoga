@@ -2,9 +2,9 @@
 
 @section('content')
 
-@component('admin/components/page-title', ['title' => 'Create a new article'])
+@component('admin/components/page-title', ['title' => 'Blog topics'])
   @slot('subtitle')
-    <a href="/office/articles" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all articles</a>
+    <a href="{{route('admin.articles.blog')}}" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all blog posts</a>
   @endslot
 @endcomponent
 

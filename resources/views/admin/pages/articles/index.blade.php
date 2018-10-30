@@ -4,29 +4,23 @@
 
 @include('admin/components/page-title', [
   'title' => 'Articles',
-  'subtitle' => "Showing {$articles->firstItem()}-{$articles->lastItem()} of a total of {$articles->total()} articles"
+  'subtitle' => "We have 43 articles in total"
 ])
 
-<div class="row">
-  {{-- PLUS --}}
-  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4">
-    <a href="{{route('admin.articles.create')}}">
-      <div class="rounded cursor-pointer position-relative p-0 t-2 h-100" style="border: dashed 10px lightgrey; min-height: 271.6px">
-        <i class="fas fa-plus fa-4x absolute-center" style="color: lightgrey"></i>
-      </div>
-    </a>
+<div class="row mb-4">
+  <div class="col-12">
+    <a href="{{route('admin.articles.create')}}" class="btn-bold btn-red btn-xs">Create a new article</a>
   </div>
-
-  {{-- CARDS --}}
-  @foreach($articles as $article)
-    @include('admin/components/cards/article')
-  @endforeach
 </div>
-{{-- PAGINATION --}}
-<div class="row mt-4">
-    <div class="d-flex align-items-center w-100 justify-content-center my-4">
-    {{ $articles->links() }}    
+
+<div class="row">
+  @foreach($subjects as $subject => $articles)
+    <div class="col-lg-6 col-md-6 col-12 sortable-list" id="{{$subject}}">
+      @foreach($articles as $article)
+      @include('admin/pages/articles/draggable')
+      @endforeach
     </div>
+  @endforeach
 </div>
 
 @component('admin/components/modals/delete', ['title' => 'Delete article'])
@@ -37,4 +31,11 @@ Are you sure you want to delete this article?
 
 @section('scripts')
 <script src="{{asset('js/modal.delete.js')}}"></script>
+<script src="{{asset('js/sortable.js')}}"></script>
+<script type="text/javascript">
+$('.sortable-list').each(function() {
+  id = $(this).attr('id');
+  autoSortable($('#'+id));
+});
+</script>
 @endsection

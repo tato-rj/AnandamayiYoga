@@ -15,21 +15,31 @@ class ArticleTest extends AppTest
 	/** @test */
 	public function a_manager_can_publish_an_article()
 	{
+		$this->managerSignIn();
+
+		$this->createNewArticle($blog = false);
+
+		$articles = Article::learning()->get();
+		$blog = Article::blog()->get();
+
+		$this->assertCount(1, $articles);
+		$this->assertCount(0, $blog);
+	}
+
+	/** @test */
+	public function a_manager_can_publish_a_blog_post()
+	{
 		Storage::fake('s3');
 
 		$this->managerSignIn();
 
-		$request = $this->createNewArticle();
+		$this->createNewBlogPost();
 
-		$this->assertDatabaseHas('articles', [
-			'title' => $request->title
-		]);
+		$articles = Article::learning()->get();
+		$blog = Article::blog()->get();
 
-		$article = Article::first();
-
-		$this->assertEquals(4, $article->topics()->count());
-
-		Storage::disk('s3')->assertExists("local/articles/images/{$request->image->hashName()}");
+		$this->assertCount(0, $articles);
+		$this->assertCount(1, $blog);
 	}
 
 	/** @test */

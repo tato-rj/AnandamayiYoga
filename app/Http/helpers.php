@@ -1,5 +1,15 @@
 <?php
 
+function anandamayi()
+{
+    return \App\Teacher::anandamayi();
+}
+
+function slug_str($slug)
+{
+    return ucwords(str_replace('-', ' ', $slug));
+}
+
 function randomGreeting($type)
 {
     $greetings = [

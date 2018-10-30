@@ -46,8 +46,18 @@ class Teacher extends Model
         return $this->hasMany(Program::class);
     }
 
+    public function articles()
+    {
+        return $this->hasMany(Article::class, 'author_id');
+    }
+
     public function categoriesIds()
     {
         return $this->categories->pluck('id');
+    }
+
+    public function scopeAnandamayi($query)
+    {
+        return $query->where('name', 'LIKE', '%Anandamayi%')->first();
     }
 }

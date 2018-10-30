@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix('/reads')->name('reads.')->group(function() {
+Route::prefix('reads')->name('reads.')->group(function() {
 
     Route::get('/books', function () {
 
@@ -8,19 +8,23 @@ Route::prefix('/reads')->name('reads.')->group(function() {
 
     })->name('books');
 
-    Route::prefix('/articles')->name('articles.')->group(function() {
+    Route::namespace('Reads')->prefix('articles')->name('articles.')->group(function() {
 
-        Route::get('', 'ArticlesController@index')->name('index');
+        Route::get('', 'BlogController@index')->name('index');
 
-        Route::get('/{article}', 'ArticlesController@show')->name('show');
+        Route::get('/{article}', 'BlogController@show')->name('show');
 
     });
 
     Route::namespace('Reads')->prefix('learning-about-yoga')->name('learning.')->group(function() {
+            
+        Route::prefix('{subject}')->group(function() {
 
-        Route::get('/', 'LearningAboutYogaController@index')->name('index');
-        
-        Route::get('/{section}/{article}', 'LearningAboutYogaController@show')->name('show');
+            Route::get('', 'LearningAboutYogaController@index')->name('index');
+
+            Route::get('/{article}', 'LearningAboutYogaController@show')->name('show');
+
+        });
 
     });
 

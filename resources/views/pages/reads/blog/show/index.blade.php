@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
 
-    @include('pages/reads/articles/show/lead')
+    @include('pages/reads/blog/show/lead')
     
     <div id="scroll-mark" class="row">
     	<div class="col-lg-8 col-md-10 col-sm-12 col-12 mx-auto d-flex justify-content-between py-3 border-bottom">
@@ -21,7 +21,7 @@
     			<div class="col-lg-9 col-md-9 col-sm-9 col-12">
 		    		<h2>{{$article->title}}</h2>
 		    		<div class="d-flex justify-content-between align-items-center">
-			    		<p class="text-muted"><small>by {{$article->author}} on {{$article->created_at->toFormattedDateString()}}</small></p>
+			    		<p class="text-muted"><small>by {{$article->author->name}} on {{$article->created_at->toFormattedDateString()}}</small></p>
 			    		<p class="text-muted"><small><i class="fas fa-eye mr-2"></i>{{$article->views_count}}</small></p>
 			    	</div>
 			    	<div>
@@ -40,7 +40,7 @@
 			    	</div>
     			</div>
 
-    			@include('pages/reads/articles/sidebar')
+    			@include('pages/reads/blog/sidebar')
 
     		</div>
     	</div>

@@ -2,13 +2,11 @@
     <div class="row my-3">
     	
         @component('components/sections/title', [
-            'title' => 'Reads'])
+            'title' => 'Articles'])
             @slot('subtitle')
             Browse through our collection of articles and books. If you couldn't find what you're looking for, please <a href="{{route('support.contact.show')}}" class="link-blue">let us know</a>!
             @endslot
         @endcomponent
-
-        @include('pages/reads/menu', ['articles' => 'btn-red'])
         
         <div class="col-lg-9 col-md-9 col-sm-9 col-12">
             @if(request()->has('topic'))
@@ -22,11 +20,11 @@
             </div>
             @endif
             @foreach($articles as $article)
-                @include('pages/reads/articles/item')
+                @include('pages/reads/blog/item')
             @endforeach
         </div>
 
-        @include('pages/reads/articles/sidebar')
+        @include('pages/reads/blog/sidebar')
 
     </div>
 </section>

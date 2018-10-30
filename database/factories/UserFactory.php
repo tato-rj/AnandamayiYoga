@@ -300,7 +300,9 @@ $factory->define(App\Article::class, function(Faker $faker) {
         'title' => $title,
         'summary' => $faker->paragraph,
         'content' => $faker->paragraph,
-        'author' => $faker->name
+        'author_id' => function() {
+            return create('App\Teacher')->id;
+        }
     ];
 });
 

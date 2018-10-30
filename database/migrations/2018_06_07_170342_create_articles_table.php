@@ -20,8 +20,10 @@ class CreateArticlesTable extends Migration
             $table->text('summary');
             $table->text('content');
             $table->string('image_path')->nullable();
-            $table->string('author');
+            $table->unsignedInteger('author_id');
             $table->unsignedInteger('views_count')->default(0);
+            $table->string('subject')->nullable();
+            $table->smallInteger('order')->nullable();
             $table->timestamps();
         });
     }

@@ -40,10 +40,20 @@
         </a>
         <div class="shadow dropdown-menu  animated-fast fadeInUp dropdown-menu-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{{route('discover.browse')}}">Our catalogue</a>
-          <a class="dropdown-item" href="{{route('reads.articles.index')}}">Reads</a>
           <a class="dropdown-item" href="{{route('courses.index')}}">Courses</a>
           <a class="dropdown-item" href="{{route('discover.asanas.index')}}">Glossary of Asanas</a>
           <a class="dropdown-item" href="{{route('discover.wallpapers')}}">Yoga wallpapers</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Reads
+        </a>
+        <div class="shadow dropdown-menu  animated-fast fadeInUp dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{{route('reads.learning.index', 'yoga-basics')}}">Learning about Yoga</a>
+          <a class="dropdown-item" href="{{route('reads.articles.index')}}">Articles</a>
+          <a class="dropdown-item" href="{{route('reads.books')}}">Books</a>
         </div>
       </li>
 

@@ -21,12 +21,13 @@
 
             <div class="dropdown-divider"></div>
 
-            <li class="navigation__sub {{checkActive(['office/articles', 'office/article-topics'])}}">
-                <a href="" class="d-flex align-items-center"><i class="fas fa-book mr-2"></i>Articles
+            <li class="navigation__sub {{checkActive(['office/articles', 'office/articles/blog', 'office/article-topics'])}}">
+                <a href="" class="d-flex align-items-center"><i class="fas fa-book mr-2"></i>Reads
                     <small><i class="ml-2 fas fa-caret-down"></i></small>
                 </a>
                 <ul>
                     <li class="{{checkActive(['office/articles'])}}"><a href="/office/articles">Articles</a></li>
+                    <li class="{{checkActive(['office/articles/blog'])}}"><a href="/office/articles/blog">Blog</a></li>
                     <li class="{{checkActive(['office/article-topics'])}}"><a href="/office/articles/topics">Topics</a></li>
                 </ul>
             </li>

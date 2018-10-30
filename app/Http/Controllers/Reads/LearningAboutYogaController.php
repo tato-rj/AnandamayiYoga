@@ -8,15 +8,15 @@ use App\Http\Controllers\Controller;
 
 class LearningAboutYogaController extends Controller
 {
-	public function index()
+	public function index($subject)
 	{
-		$topics = Article::learningAboutYoga();
+		$articles = Article::subject($subject)->paginate(12);
 
-		return view('pages/reads/learning/index', compact('topics'));
+		return view("pages/reads/learning/index", compact(['articles', 'subject']));
 	}
 
-	public function show($section, $article)
-	{
-        return view("pages/reads/learning/articles/{$section}/{$article}", compact(['section', 'article']));
+	public function show($subject, Article $article)
+	{		
+        return view("pages/reads/learning/show/index", compact(['subject', 'article']));
 	}
 }

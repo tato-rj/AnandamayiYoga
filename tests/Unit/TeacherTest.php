@@ -68,6 +68,14 @@ class TeacherTest extends AppTest
 	}
 
 	/** @test */
+	public function it_has_many_articles()
+	{
+		create('App\Article', ['author_id' => $this->teacher->id]);
+
+		$this->assertInstanceOf('App\Article', $this->teacher->articles()->first());		 
+	}
+
+	/** @test */
 	public function it_has_many_categories()
 	{
 		$this->assertInstanceOf('App\Category', $this->teacher->categories()->first());

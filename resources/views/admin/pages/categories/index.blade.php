@@ -6,7 +6,7 @@
   'title' => 'Classes Categories',
   'subtitle' => 'Manage the categories for single-classes, full-classes and programs'])
 
-<div class="row">
+<div class="row mb-4">
 	<div class="col-12">
 		<button class="btn-bold btn-red btn-xs" 
       type="button" 
@@ -17,7 +17,7 @@
 	</div>
 </div>
 
-<div class="row mt-4">
+<div class="row">
   <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12" id="categories-list">
     @foreach($categories as $category)
       @include('admin/pages/categories/draggable')

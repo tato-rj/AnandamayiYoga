@@ -81,9 +81,19 @@ class OfficeController extends Controller
 	
 	public function articles()
 	{
-        $articles = Article::paginate(11);
+        $basics = Article::subject('yoga-basics')->get();
+        $philosophy = Article::subject('yoga-philosophy')->get();
+        $subjects['basics'] = $basics;
+        $subjects['philosophy'] = $philosophy;
 
-        return view('admin/pages/articles/index', compact('articles'));
+        return view('admin/pages/articles/index', compact('subjects'));
+	}
+	
+	public function blog()
+	{
+        $articles = Article::blog()->paginate(12);
+
+        return view('admin/pages/articles/blog', compact('articles'));
 	}
 	
 	public function articleTopics()

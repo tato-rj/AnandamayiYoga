@@ -17,7 +17,8 @@
     </title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}?version=55" rel="stylesheet">
+    <link href="{{asset('css/primer.css') }}" rel="stylesheet">
+    <link href="{{mix('css/app.css') }}" rel="stylesheet">
 
     <script>
         window.app = <?php echo json_encode([

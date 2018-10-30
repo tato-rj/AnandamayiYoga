@@ -2,24 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\{Article, ArticleTopic};
+use App\{Article, ArticleTopic, Teacher};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class ArticlesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $articles = Article::latest()->filter(request(['month', 'year', 'topic']))->paginate(6);
-
-        return view('pages/reads/articles/index', compact('articles'));
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -28,8 +16,9 @@ class ArticlesController extends Controller
     public function create()
     {        
         $topics = ArticleTopic::orderBy('name')->get();
+        $teachers = Teacher::orderBy('name')->get();
 
-        return view('admin/pages/articles/create/index', compact('topics'));
+        return view('admin/pages/articles/create/index', compact(['topics', 'teachers']));
     }
 
     /**
@@ -43,7 +32,8 @@ class ArticlesController extends Controller
         $request->validate([
             'title' => 'unique:articles|required',
             'content' => 'required',
-            'author' => 'required'
+            'author_id' => 'required',
+            'subject' => 'sometimes|required|string'
         ]);
 
         $article = Article::create([
@@ -51,13 +41,16 @@ class ArticlesController extends Controller
             'title' => $request->title,
             'summary' => $request->summary,
             'content' => $request->content,
-            'image_path' => imageToS3($request, 'articles'),
-            'author' => $request->author
+            'image_path' => $request->has('image') ? imageToS3($request, 'articles') : null,
+            'subject' => $request->subject ?? null,
+            'author_id' => $request->author_id
         ]);
 
         $article->topics()->attach($request->topic);
+        
+        $route = $request->has('subject') ? route('admin.articles.index') : route('admin.articles.blog');
 
-        return redirect(route('admin.articles.index'))->with('status', "The article {$article->title} has been successfully created.");
+        return redirect($route)->with('status', "The article {$article->title} has been successfully created.");
     }
 
     public function checkTitle(Request $request)
@@ -88,8 +81,9 @@ class ArticlesController extends Controller
     public function edit(Article $article)
     {
         $topics = ArticleTopic::orderBy('name')->get();
+        $teachers = Teacher::orderBy('name')->get();
 
-        return view('admin/pages/articles/edit/index', compact(['article', 'topics']));
+        return view('admin/pages/articles/edit/index', compact(['article', 'topics', 'teachers']));
     }
 
     /**

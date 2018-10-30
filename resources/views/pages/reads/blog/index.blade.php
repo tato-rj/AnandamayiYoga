@@ -4,7 +4,7 @@
 <div class="container-fluid">
 
     @include('components/sections/lead', ['image' => 'library'])
-    @include('pages/reads/articles/content')
+    @include('pages/reads/blog/content')
 
 </div>
 
