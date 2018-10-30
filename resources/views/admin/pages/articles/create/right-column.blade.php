@@ -18,7 +18,7 @@
     @include('components/feedback/form', ['field' => 'subject'])
   </div>
   @else
-  <input type="hidden" name="author_id" value="{{anandamayi()->id}}">
+  <input type="hidden" name="author_id" value="{{anandamayi()->exists() ? anandamayi()->id : null}}">
   {{-- SUBJECT --}}
   <div class="form-group">
     <select required class="form-control {{ $errors->has('subject') ? 'is-invalid' : '' }}" name="subject">

@@ -2,10 +2,8 @@
     <div class="row my-3">
     	
         @include('components/sections/title', [
-            'title' => 'Reads',
-            'subtitle' => 'Browse through our collection of articles and books'])
-
-        @include('pages/reads/menu', ['books' => 'btn-red'])
+            'title' => 'Books',
+            'subtitle' => 'Browse through our collection of books'])
 
     	<div class="col-lg-10 col-md-12 col-sm-12 col-12 mx-auto">
     		{{-- Livros --}}
