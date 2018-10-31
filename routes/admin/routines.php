@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix('/routines')->name('routines.')->group(function() {
+Route::prefix('/routines')->namespace('Routines')->name('routines.')->group(function() {
 
     Route::get('/pending', 'RoutineQuestionairesController@index')->name('pending');
 

@@ -24,4 +24,5 @@ mix.js('resources/assets/js/app.js', 'js/app.js')
    	], 'public/js/app.js')
    .copy('node_modules/pace-js/pace.min.js', 'public/js/pace.min.js')
    .copyDirectory('resources/assets/fonts', 'public/fonts/')
-   .copyDirectory('resources/assets/vendor/font-awesome/webfonts', 'public/fonts/font-awesome');
+   .copyDirectory('resources/assets/vendor/font-awesome/webfonts', 'public/fonts/font-awesome')
+   .version();

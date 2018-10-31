@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix('/mail')->name('email.')->group(function() {
+Route::prefix('/mail')->namespace('Admin')->name('email.')->group(function() {
 
     Route::get('/mail', 'OfficeController@createMail')->name('create');
 

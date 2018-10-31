@@ -66,7 +66,7 @@ Route::prefix('/support')->name('support.')->group(function() {
 
     });
 
-    Route::prefix('/contact')->name('contact.')->group(function() {
+    Route::prefix('/contact')->namespace('Emails')->name('contact.')->group(function() {
 
         Route::get('', function () {
  

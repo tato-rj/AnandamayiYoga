@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix('/wallpapers')->name('wallpapers.')->group(function() {
+Route::prefix('/wallpapers')->namespace('Downloads')->name('wallpapers.')->group(function() {
 
     Route::get('/category/{category}', 'WallpapersController@create')->name('create');
 

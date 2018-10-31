@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix('/categories')->name('categories.')->group(function() {
+Route::prefix('/categories')->namespace('Classes')->name('categories.')->group(function() {
 
     Route::get('', function() {
         return view('admin/pages/categories/index');

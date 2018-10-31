@@ -2,10 +2,10 @@
 
 Route::name('update.')->group(function() {
 
-    Route::post('', 'UsersController@update')->name('all');
+    Route::post('', 'Users\UsersController@update')->name('all');
     
-    Route::post('/categories/{category}', 'UsersController@updateCategory')->name('category');
+    Route::post('/categories/{category}', 'Users\UsersController@updateCategory')->name('category');
 
-    Route::post('/levels/{level}', 'UsersController@updateLevel')->name('level');
+    Route::post('/levels/{level}', 'Users\UsersController@updateLevel')->name('level');
 
 });

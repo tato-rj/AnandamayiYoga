@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix('/courses/{course}')->name('course.')->group(function() {
+Route::prefix('/courses/{course}')->namespace('Courses')->name('course.')->group(function() {
 
 	Route::prefix('/chapters/{chapter}')->name('chapter.')->group(function() {
 

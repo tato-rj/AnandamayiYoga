@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix('/my-yoga-routine')->name('routine.')->group(function() {
+Route::prefix('/my-yoga-routine')->namespace('Routines')->name('routine.')->group(function() {
 
     Route::get('/instructions', function() {
         return view('pages/user/routine/instructions/index');

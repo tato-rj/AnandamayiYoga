@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix('/feedbacks')->name('feedbacks.')->group(function() {
+Route::prefix('/feedbacks')->namespace('Users')->name('feedbacks.')->group(function() {
 
     Route::get('', 'FeedbacksController@index')->name('index');
 

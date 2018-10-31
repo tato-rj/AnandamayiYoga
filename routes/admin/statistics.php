@@ -1,3 +1,3 @@
 <?php
 
-Route::get('/statistics', 'OfficeController@statistics')->name('statistics');
+Route::get('/statistics', 'Admin\OfficeController@statistics')->name('statistics');

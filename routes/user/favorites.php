@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix('/favorites')->name('favorite.')->group(function() {
+Route::prefix('/favorites')->namespace('Users')->name('favorite.')->group(function() {
 
     Route::post('', 'FavoritesController@store')->name('store');
 

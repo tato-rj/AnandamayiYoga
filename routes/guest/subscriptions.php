@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix('subscriptions')->name('subscriptions.')->group(function() {
+Route::prefix('subscriptions')->namespace('Emails')->name('subscriptions.')->group(function() {
 
     Route::post('/{list}', 'SubscriptionsController@store')->name('store');
     

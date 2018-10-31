@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix('/notifications')->name('notifications.')->group(function() {
+Route::prefix('/notifications')->namespace('Users')->name('notifications.')->group(function() {
 
     Route::get('', 'NotificationsController@index')->name('index');
 

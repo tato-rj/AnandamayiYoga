@@ -2,24 +2,24 @@
 
 Route::prefix('/programs')->name('programs.')->group(function() {
 
-    Route::get('', 'OfficeController@programs')->name('index');
+    Route::get('', 'Admin\OfficeController@programs')->name('index');
 
-    Route::get('/{program}', 'ProgramsController@edit')->name('edit');
+    Route::get('/{program}', 'Classes\ProgramsController@edit')->name('edit');
 
-    Route::post('', 'ProgramsController@store')->name('store');
+    Route::post('', 'Classes\ProgramsController@store')->name('store');
 
-    Route::post('/validate', 'ProgramsController@checkTitle')->name('lookup');
+    Route::post('/validate', 'Classes\ProgramsController@checkTitle')->name('lookup');
 
-    Route::patch('/{program}', 'ProgramsController@update')->name('update');
+    Route::patch('/{program}', 'Classes\ProgramsController@update')->name('update');
 
-    Route::patch('/{program}/image', 'ProgramsController@updateImage')->name('image.update');
+    Route::patch('/{program}/image', 'Classes\ProgramsController@updateImage')->name('image.update');
 
-    Route::patch('/{program}/video', 'ProgramsController@updateVideo')->name('video.update');
+    Route::patch('/{program}/video', 'Classes\ProgramsController@updateVideo')->name('video.update');
 
-    Route::patch('/{program}/lessons', 'ProgramsController@updateLessons')->name('lessons.update');
+    Route::patch('/{program}/lessons', 'Classes\ProgramsController@updateLessons')->name('lessons.update');
 
-    Route::patch('/{program}/categories', 'ProgramsController@updateCategories')->name('categories.update');
+    Route::patch('/{program}/categories', 'Classes\ProgramsController@updateCategories')->name('categories.update');
 
-    Route::delete('/{program}', 'ProgramsController@destroy')->name('destroy');
+    Route::delete('/{program}', 'Classes\ProgramsController@destroy')->name('destroy');
 
 });

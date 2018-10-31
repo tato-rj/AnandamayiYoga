@@ -4,54 +4,54 @@ Route::prefix('/courses')->name('courses.')->group(function() {
 
     Route::prefix('/{course}/chapters')->name('chapters.')->group(function() {
 
-        Route::get('', 'ChaptersController@manage')->name('manage');
+        Route::get('', 'Courses\ChaptersController@manage')->name('manage');
 
-        Route::post('', 'ChaptersController@store')->name('store');
+        Route::post('', 'Courses\ChaptersController@store')->name('store');
 
         Route::prefix('/{chapter}/materials')->name('materials.')->group(function() {
     
-            Route::post('', 'SupportingMaterialsController@store')->name('store');
+            Route::post('', 'Courses\SupportingMaterialsController@store')->name('store');
 
-            Route::delete('/{material}', 'SupportingMaterialsController@destroy')->name('destroy');
+            Route::delete('/{material}', 'Courses\SupportingMaterialsController@destroy')->name('destroy');
     
         });
 
-        Route::patch('/{chapter}', 'ChaptersController@update')->name('update');
+        Route::patch('/{chapter}', 'Courses\ChaptersController@update')->name('update');
 
-        Route::patch('/{chapter}/quiz/{quiz}', 'QuizzesController@update')->name('quiz.update');
+        Route::patch('/{chapter}/quiz/{quiz}', 'Courses\QuizzesController@update')->name('quiz.update');
 
         Route::prefix('/{chapter}/content')->name('content.')->group(function() {
 
-            Route::post('', 'ChaptersController@createContent')->name('create');
+            Route::post('', 'Courses\ChaptersController@createContent')->name('create');
 
-            Route::patch('/{name}/{id}', 'ChaptersController@updateContent')->name('update');
+            Route::patch('/{name}/{id}', 'Courses\ChaptersController@updateContent')->name('update');
 
-            Route::patch('/{name}/{id}/video', 'ChaptersController@updateVideo')->name('video.update');
+            Route::patch('/{name}/{id}/video', 'Courses\ChaptersController@updateVideo')->name('video.update');
 
-            Route::delete('', 'ChaptersController@deleteContent')->name('delete');
+            Route::delete('', 'Courses\ChaptersController@deleteContent')->name('delete');
 
         });
 
-        Route::delete('/{chapter}', 'ChaptersController@destroy')->name('destroy');
+        Route::delete('/{chapter}', 'Courses\ChaptersController@destroy')->name('destroy');
 
     });
 
-    Route::get('', 'OfficeController@courses')->name('index');
+    Route::get('', 'Admin\OfficeController@courses')->name('index');
 
-    Route::get('/{course}', 'CoursesController@edit')->name('edit');
+    Route::get('/{course}', 'Courses\CoursesController@edit')->name('edit');
 
-    Route::post('', 'CoursesController@store')->name('store');
+    Route::post('', 'Courses\CoursesController@store')->name('store');
 
-    Route::patch('/{courseId}', 'CoursesController@update')->name('update');
+    Route::patch('/{courseId}', 'Courses\CoursesController@update')->name('update');
 
-    Route::patch('/{courseId}/status', 'CoursesController@status')->name('status');
+    Route::patch('/{courseId}/status', 'Courses\CoursesController@status')->name('status');
 
-    Route::patch('/{courseId}/teachers', 'CoursesController@updateTeachers')->name('teachers.update');
+    Route::patch('/{courseId}/teachers', 'Courses\CoursesController@updateTeachers')->name('teachers.update');
 
-    Route::patch('/{course}/image', 'CoursesController@updateImage')->name('image.update');
+    Route::patch('/{course}/image', 'Courses\CoursesController@updateImage')->name('image.update');
 
-    Route::patch('/{course}/video', 'CoursesController@updateVideo')->name('video.update');
+    Route::patch('/{course}/video', 'Courses\CoursesController@updateVideo')->name('video.update');
 
-    Route::delete('/{course}', 'CoursesController@destroy')->name('destroy');
+    Route::delete('/{course}', 'Courses\CoursesController@destroy')->name('destroy');
 
 });

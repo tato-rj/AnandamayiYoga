@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix('/subscriptions')->name('subscriptions.')->group(function() {
+Route::prefix('/subscriptions')->namespace('Emails')->name('subscriptions.')->group(function() {
 
 	Route::get('', 'SubscriptionsController@index')->name('index');
 

@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix('/feedback')->name('feedback.')->group(function() {
+Route::prefix('/feedback')->namespace('Users')->name('feedback.')->group(function() {
 
     Route::get('goodbye', function() {
 

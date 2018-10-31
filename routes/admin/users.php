@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix('/users')->name('users.')->group(function() {
+Route::prefix('/users')->namespace('Admin')->name('users.')->group(function() {
 
     Route::get('', 'OfficeController@users')->name('index');
 

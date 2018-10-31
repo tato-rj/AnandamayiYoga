@@ -132,9 +132,8 @@ class Membership extends StripeModel
 
     public function getFormattedCardLastFourAttribute()
     {
-        return "&middot;&middot;&middot;&middot; 
-        &middot;&middot;&middot;&middot; 
-        &middot;&middot;&middot;&middot; 
-        {$this->card_last_four}";
+        return html_entity_decode("&middot;&middot;&middot;&middot; 
+                &middot;&middot;&middot;&middot; 
+                &middot;&middot;&middot;&middot; {$this->card_last_four}");
     }
 }

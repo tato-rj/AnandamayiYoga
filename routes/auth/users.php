@@ -9,7 +9,7 @@ Auth::routes();
 
 Route::prefix('/login')->name('login.')->group(function() {
 
-	Route::post('/record', 'UsersController@recordLogin')->name('record');
+	Route::post('/record', 'Users\UsersController@recordLogin')->name('record');
 
 	Route::get('/{provider}', 'Auth\SocialiteController@login')->name('social');
 

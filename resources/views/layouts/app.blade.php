@@ -62,7 +62,7 @@
     @include('components/buttons/help')
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
     <script src="{{ asset('js/clamp.min.js') }}"></script>
     <script src="{{ asset('js/jquery.validate.min.js') }}"></script>
     <script type="text/javascript">

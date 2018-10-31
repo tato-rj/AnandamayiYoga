@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix('/classes')->name('classes.')->group(function() {
+Route::prefix('/classes')->namespace('Classes')->name('classes.')->group(function() {
 
     Route::get('', function() {
         $lessons = \App\Lesson::paginate(11);
