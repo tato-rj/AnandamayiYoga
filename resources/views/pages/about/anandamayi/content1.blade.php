@@ -1,7 +1,8 @@
 <section class="container pb-5">
-    <div class="row mb-5">
 
-        @include('components/sections/title', ['title' => 'Ali Anandamayi'])
+    @title(['title' => 'Ali Anandamayi'])
+
+    <div class="row mb-5">
 
         <div class="col-lg-8 col-md-10 col-sm-12 col-12 mx-auto">
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat tincidunt dolor, ut interdum mauris imperdiet eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>

@@ -1,8 +1,7 @@
 <section id="scroll-mark" class="container py-4">
-    <div class="row my-3">
-        @include('components/sections/title', ['title' => 'Glossary of Asanas'])
-    </div>        
 
+    @title(['title' => 'Glossary of Asanas'])
+  
     <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-12 col-12">
             <form>

@@ -61,6 +61,7 @@
 
     @include('components/buttons/help')
 
+    <div id="validator-messages" data-required="@lang('This field is required')"></div>
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
     <script src="{{ asset('js/clamp.min.js') }}"></script>
@@ -68,6 +69,9 @@
     <script type="text/javascript">
     $('form').each(function() {
         $(this).validate();
+    });
+    jQuery.extend(jQuery.validator.messages, {
+        required: $('#validator-messages').attr('data-required'),
     });
     </script>
 

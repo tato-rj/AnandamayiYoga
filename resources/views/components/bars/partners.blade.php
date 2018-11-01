@@ -1,11 +1,9 @@
 <section class="row mb-7">
     <div class="container">
+
+      @title(['title' => 'Our Partners'])
+
       <div class="row align-items-end justify-content-center">
-
-        @include('components/sections/title', [
-            'title' => 'Our Partners',
-            'margin' => '0'])
-
         <div class="col-3 px-3 pb-3">
           <div class="px-5 py-4">
             <a href="" class="link-none">

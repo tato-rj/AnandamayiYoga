@@ -6,9 +6,9 @@
                 <img class="reveal front" reveal-origin="left" reveal-delay="200" reveal-duration="750" src="{{cloud('app/images/books/saudacao_da_lua/front.jpg')}}">
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <p class="mb-1" style="opacity: .4"><small><strong>PUBLICATIONS</strong></small></p>
-                <h3>LEARNING ABOUT YOGA</h3>
-                <p class="lead">Pellentesque neque enim, tempus eget tincidunt non, suscipit in velit. Fusce diam est, sollicitudin vitae pretium quis, porttitor quis tortor.</p>
+                <p class="mb-1 text-uppercase" style="opacity: .4"><small><strong>@lang('Publications')</strong></small></p>
+                <h3 class="text-uppercase">@lang('Learning about Yoga')</h3>
+                <p class="lead">@lang('Whether you are looking to deepen your knowloedge of Yoga or want to start learning about it, our books will guide you through your journey.')</p>
 
                 @component('components/buttons/simple', [
                     'path' => route('reads.books'),
@@ -16,7 +16,7 @@
                     'color' => 'red',
                     'extra' => 'shadow-dark'])
                     @slot('label')
-                    <i class="far fa-lightbulb mr-2"></i>Learn more about our publications
+                    <i class="far fa-lightbulb mr-2"></i>@lang('Learn more about our publications')
                     @endslot
                 @endcomponent
 

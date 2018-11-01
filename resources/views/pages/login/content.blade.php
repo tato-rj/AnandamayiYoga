@@ -1,7 +1,8 @@
-<section id="scroll-mark" class="container py-y">
-    <div class="row my-3">
-        
-        @include('components/sections/title', ['title' => 'Login'])
+<section id="scroll-mark" class="container py-4">
+
+    @title(['title' => 'Login'])
+
+    <div class="row">
 
         <div class="col-lg-5 col-md-8 col-sm-10 mx-auto">
         	<article>

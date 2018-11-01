@@ -21,10 +21,10 @@
 		<div class="row pb-2">
 			<div class="col-lg-8 col-md-6 col-sm-12 col-xs-12 mb-4">
 				<h3 class="text-white mb-1" style="font-family: yogafont"><strong>Anandamayi<span style="opacity: 0.6" class="ml-1">Yoga</span></strong></h3>
-				<p class="text-white" style="max-width: 400px; opacity: .4"><small>Online yoga and meditation that is right for you. In as little as two hours per week, you can improve your physical and mental health through Yoga.</small></p>
+				<p class="text-white" style="max-width: 400px; opacity: .4"><small>@lang('Online yoga and meditation that is right for you. In as little as two hours per week, you can improve your physical and mental health through Yoga.')</small></p>
 			</div>
 			<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-4">
-				<p class="text-white m-0"><strong>Connect with us</strong></p>
+				<p class="text-white m-0"><strong>@lang('Connect with us')</strong></p>
 				<div class="d-flex align-items-center">
 					<h4 class="m-2 text-white" style="opacity: .5"><a class="link-none" href="#"><i class="t-2 fab fa-facebook-f"></i></a></h4>
 					<h4 class="m-2 text-white" style="opacity: .5"><a class="link-none" href="#"><i class="t-2 fab fa-youtube"></i></a></h4>
@@ -37,7 +37,7 @@
 		</div>
 		<div class="row mt-4 py-2 d-none d-sm-flex">
 			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
-				<p class="m-0 text-white"><small><strong>ABOUT US</strong></small></p>
+				<p class="m-0 text-white text-uppercase"><small><strong>@lang('About us')</strong></small></p>
 				<ul class="p-0 list-style-none">
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('about.our-platform')}}">
@@ -51,127 +51,122 @@
 					</li>
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('support.membership')}}">
-							<small>Eranthus Books</small>
+							<small>@lang('Eranthus books')</small>
 						</a>
 					</li>
 				</ul>
 			</div>
 			
 			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
-				<p class="m-0 text-white"><small><strong>DISCOVER</strong></small></p>
+				<p class="m-0 text-white text-uppercase"><small><strong>@lang('Discover')</strong></small></p>
 				<ul class="p-0 list-style-none">
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('discover.classes.index')}}">
-							<small>Classes</small>
+							<small>@lang('Classes')</small>
 						</a>
 					</li>
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('discover.programs.index')}}">
-							<small>Programs</small>
+							<small>@lang('Programs')</small>
 						</a>
 					</li>
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('courses.index')}}">
-							<small>Courses</small>
+							<small>@lang('Courses')</small>
 						</a>
 					</li>
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('discover.asanas.index')}}">
-							<small>Glossary of Asanas</small>
+							<small>@lang('Glossary of Asanas')</small>
 						</a>
 					</li>
 				</ul>
 			</div>
 
 			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
-				<p class="m-0 text-white"><small><strong>READS</strong></small></p>
+				<p class="m-0 text-white text-uppercase"><small><strong>@lang('Reads')</strong></small></p>
 				<ul class="p-0 list-style-none">
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('support.membership')}}">
-							<small>Learning about Yoga</small>
+							<small>@lang('Learning about Yoga')</small>
 						</a>
 					</li>
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('reads.books')}}">
-							<small>Books</small>
+							<small>@lang('Books')</small>
 						</a>								
 					</li>
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('reads.articles.index')}}">
-							<small>Online Articles</small>
+							<small>@lang('Articles')</small>
 						</a>
 					</li>
 				</ul>
 			</div>
 
 			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
-				<p class="m-0 text-white"><small><strong>MEMBERSHIP</strong></small></p>
+				<p class="m-0 text-white text-uppercase"><small><strong>@lang('Membership')</strong></small></p>
 				<ul class="p-0 list-style-none">
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('support.membership')}}">
-							<small>My Yoga Routine</small>
+							<small>@lang('My Yoga Routine')</small>
 						</a>
 					</li>
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('support.account')}}">
-							<small>Account Settings</small>
+							<small>@lang('Account Settings')</small>
 						</a>
 					</li>
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('support.policy')}}">
-							<small>Billing</small>
+							<small>@lang('Billing')</small>
 						</a>
 					</li>
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('support.membership')}}">
-							<small>Invoices</small>
+							<small>@lang('Invoices')</small>
 						</a>
-					</li>
-					<li>
-						<a class="text-white" style="opacity: .5" href="{{route('support.faq')}}">
-							<small>FAQ</small>
-						</a>								
 					</li>
 				</ul>
 			</div>
 
 			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
-				<p class="m-0 text-white"><small><strong>SERVICES</strong></small></p>
+				<p class="m-0 text-white text-uppercase"><small><strong>@lang('Services')</strong></small></p>
 				<ul class="p-0 list-style-none">
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('support.membership')}}">
-							<small>Site Map</small>
+							<small>@lang('Site Map')</small>
 						</a>
 					</li>
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('support.policy')}}">
-							<small>Privacy Policy</small>
+							<small>@lang('Privacy Policy')</small>
 						</a>
 					</li>
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('support.terms')}}">
-							<small>Terms & Conditions</small>
+							<small>@lang('Terms & Conditions')</small>
 						</a>								
 					</li>
 				</ul>
 			</div>
 
 			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
-				<p class="m-0 text-white"><small><strong>SUPPORT</strong></small></p>
+				<p class="m-0 text-white text-uppercase"><small><strong>@lang('Support')</strong></small></p>
 				<ul class="p-0 list-style-none">
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('support.index')}}">
-							<small>Resources</small>
+							<small>@lang('Resources')</small>
 						</a>								
 					</li>
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('support.faq')}}">
-							<small>FAQ</small>
+							<small>@lang('FAQ')</small>
 						</a>
 					</li>
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('support.contact.show')}}">
-							<small>Contact</small>
+							<small>@lang('Contact us')</small>
 						</a>
 					</li>
 				</ul>
@@ -182,9 +177,17 @@
 		<div class="container py-2">
 			<div class="d-flex justify-content-between">
 				<p class="m-0 text-left" style="opacity: .5"><small>Copyright ©{{date('Y')}} Anandamayi Yoga</small></p>
-				<div class="d-none d-sm-block">
-					<a href="" class="badge">EN</a>
-					<a href="" class="badge">PT</a>
+				<div class="d-none d-sm-flex">
+					<form method="POST" action="{{route('localization.set')}}" class="mx-1">
+						@csrf
+						<input type="hidden" name="language" value="en">
+						<button style="border: none; background: none;" type="submit" class="badge cursor-pointer text-light">EN</button>
+					</form>
+					<form method="POST" action="{{route('localization.set')}}" class="mx-1">
+						@csrf
+						<input type="hidden" name="language" value="pt">
+						<button style="border: none; background: none;" type="submit" class="badge cursor-pointer text-light">PT</button>
+					</form>
 				</div>
 			</div>
 		</div>

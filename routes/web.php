@@ -5,5 +5,5 @@ getRoutes([
 	'admin.index',
 	'auth.users|admin',
 	'user.index',
-	'guest.about|courses|discover|feedback|home|reads|subscriptions|support|teachers'
+	'guest.about|courses|discover|feedback|home|reads|subscriptions|support|teachers|localization'
 ]);

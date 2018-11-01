@@ -1,12 +1,8 @@
 <section id="scroll-mark" class="container py-4">
-    <div class="row my-3">
-    	
-        @component('components/sections/title', [
-            'title' => 'Articles'])
-            @slot('subtitle')
-            Browse through our collection of articles and books. If you couldn't find what you're looking for, please <a href="{{route('support.contact.show')}}" class="link-blue">let us know</a>!
-            @endslot
-        @endcomponent
+
+    @title(['title' => 'Articles'])
+
+    <div class="row">
         
         <div class="col-lg-9 col-md-9 col-sm-9 col-12">
             @if(request()->has('topic'))

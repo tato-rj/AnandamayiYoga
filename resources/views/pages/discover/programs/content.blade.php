@@ -1,10 +1,8 @@
 <section id="scroll-mark" class="container py-4">
 
-    <div class="row my-3">
-
-        @include('components/sections/title', [
-            'title' => 'Our Catalogue',
-            'subtitle' => 'Browse through our collection of videos for teachers & practitioners. We are constantly creating new videos and programs for you, enjoy!'])
+    @title(['title' => 'Our Catalogue'])
+    
+    <div class="row">        
         
         @include('pages/discover/menu', ['programs' => 'btn-red'])
         

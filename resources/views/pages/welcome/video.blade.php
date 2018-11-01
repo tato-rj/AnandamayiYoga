@@ -18,18 +18,18 @@
         {{-- Change background: India landscape --}}
         <div class="row text-white align-items-center">
             <div class="col-lg-8 col-md-8 col-sm-12">
-                <h2>Join our Membership</h2>
-                <p>Find the perfect plan for you — You can pause/cancel anytime, in less than 10 seconds</p>
+                <h2>@lang('Join our Membership')</h2>
+                <p>@lang('Find the perfect plan for you — You can pause/cancel anytime, in less than 10 seconds')</p>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 text-center">
 
                 @include('components/buttons/simple', [
                     'path' => route('register'),
-                    'label' => 'GET STARTED',
+                    'label' => __('GET STARTED'),
                     'color' => 'outline-blue-empty', 
                     'size' => 'lg'])
 
-                <p class="mb-0 mt-1">just ${{config('membership.cost')/100}}/month</p>
+                <p class="mb-0 mt-1">@lang('just $15/month')</p>
             </div>
         </div>
     </div>

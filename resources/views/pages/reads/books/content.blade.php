@@ -1,10 +1,9 @@
 <section id="scroll-mark" class="container py-4">
-    <div class="row my-3">
-    	
-        @include('components/sections/title', [
-            'title' => 'Books',
-            'subtitle' => 'Browse through our collection of books'])
 
+    @title(['title' => 'Books'])
+
+    <div class="row">
+    	
     	<div class="col-lg-10 col-md-12 col-sm-12 col-12 mx-auto">
     		{{-- Livros --}}
             @component('pages/reads/books/show')

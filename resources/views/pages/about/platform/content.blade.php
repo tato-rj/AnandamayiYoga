@@ -1,7 +1,8 @@
 <section id="scroll-mark" class="container py-4">
-    <div class="row my-3">
 
-        @include('components/sections/title', ['title' => 'About Anandamayi Yoga'])
+    @title(['title' => 'About Anandamayi Yoga'])
+
+    <div class="row">
 
         <div class="col-lg-8 col-md-10 col-sm-12 col-12 mx-auto">
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat tincidunt dolor, ut interdum mauris imperdiet eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>

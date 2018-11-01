@@ -27,20 +27,20 @@
 				<div class="form-check">
 					<input class="form-check-input" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
 					<label class="form-check-label">
-						Remember me
+						@lang('Remember me')
 					</label>
 				</div>
 			</div>
 			<div>
 				<small>
-					<a href="{{ route('password.request') }}">Forgot password?</a>
+					<a href="{{ route('password.request') }}">@lang('Forgot password?')</a>
 				</small>
 			</div>
 		</div>
 		
 		<div class="mt-4">
 			@include('components/buttons/form', [
-				'label' => 'Continue',
+				'label' => __('Continue'),
 				'weight' => 'bold',
 				'width' => 'block'])
 		</div>
@@ -48,12 +48,12 @@
 </div>
 <div class="modal-body">
 	<div class="text-center text-muted mb-4">
-		<span>OR</span>
+		<span>@lang('OR')</span>
 	</div>
 	@include('pages/login/social')
 </div>
 <div class="modal-footer flex-column">
-	<small>Don't have an account yet? <a href="{{ route('register') }}">Click here</a> to sign up</small>
+	<small>@lang('Don\'t have an account yet?') <a href="{{ route('register') }}">@lang('Join our Membership')</a></small>
 </div>
 </form>
 @endcomponent

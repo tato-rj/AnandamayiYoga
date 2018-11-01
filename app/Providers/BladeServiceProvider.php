@@ -57,6 +57,8 @@ class BladeServiceProvider extends ServiceProvider
         Blade::if('trial', function ($user) {
             return $user->isOnTrial();
         });
+
+        Blade::include('components.sections.title');
     }
 
     /**

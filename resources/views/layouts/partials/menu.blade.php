@@ -36,43 +36,43 @@
     <ul class="navbar-nav ml-auto align-items-center">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Discover
+          @lang('Discover')
         </a>
         <div class="shadow dropdown-menu  animated-fast fadeInUp dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{route('discover.browse')}}">Our catalogue</a>
-          <a class="dropdown-item" href="{{route('courses.index')}}">Courses</a>
-          <a class="dropdown-item" href="{{route('discover.asanas.index')}}">Glossary of Asanas</a>
-          <a class="dropdown-item" href="{{route('discover.wallpapers')}}">Yoga wallpapers</a>
+          <a class="dropdown-item" href="{{route('discover.browse')}}">@lang('Our catalogue')</a>
+          <a class="dropdown-item" href="{{route('courses.index')}}">@lang('Courses')</a>
+          <a class="dropdown-item" href="{{route('discover.asanas.index')}}">@lang('Glossary of Asanas')</a>
+          <a class="dropdown-item" href="{{route('discover.wallpapers')}}">@lang('Yoga wallpapers')</a>
         </div>
       </li>
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Reads
+          @lang('Reads')
         </a>
         <div class="shadow dropdown-menu  animated-fast fadeInUp dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{route('reads.learning.index', 'yoga-basics')}}">Learning about Yoga</a>
-          <a class="dropdown-item" href="{{route('reads.articles.index')}}">Articles</a>
-          <a class="dropdown-item" href="{{route('reads.books')}}">Books</a>
+          <a class="dropdown-item" href="{{route('reads.learning.index', 'yoga-basics')}}">@lang('Learning about Yoga')</a>
+          <a class="dropdown-item" href="{{route('reads.articles.index')}}">@lang('Articles')</a>
+          <a class="dropdown-item" href="{{route('reads.books')}}">@lang('Books')</a>
         </div>
       </li>
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          About us
+          @lang('About us')
         </a>
         <div class="shadow dropdown-menu  animated-fast fadeInUp dropdown-menu-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{{route('about.our-platform')}}">Anandamayi Yoga</a>
           <a class="dropdown-item" href="{{route('about.ali-anandamayi')}}">Ali Anandamayi</a>
-          <a class="dropdown-item" href="{{route('about.eranthus-books')}}">Eranthus books</a>
+          <a class="dropdown-item" href="{{route('about.eranthus-books')}}">@lang('Eranthus books')</a>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{route('support.index')}}">Help</a>
+        <a class="nav-link" href="{{route('support.index')}}">@lang('Help')</a>
       </li>
    
       <li class="nav-item">
-        <a class="nav-link" href="{{route('support.contact.show')}}">Contact us</a>
+        <a class="nav-link" href="{{route('support.contact.show')}}">@lang('Contact us')</a>
       </li>
 
       @auth
@@ -130,7 +130,7 @@
         <a class="nav-link" data-toggle="modal" data-target="#login" href="">Login</a>
       </li>
       <li class="nav-item nav-item-signup">
-        <a class="nav-link signup" href="{{route('register')}}"><strong>Sign up</strong></a>
+        <a class="nav-link signup" href="{{route('register')}}"><strong>@lang('Sign up')</strong></a>
       </li>
       @endauth
 

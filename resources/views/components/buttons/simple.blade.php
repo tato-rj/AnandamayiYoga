@@ -1,8 +1,8 @@
 <a 
 	href="{{$path}}" 
-	id="{{$id or null}}"
-	{{$attr or null}}
-	class="btn btn-{{$size or null}} btn-{{$type or null}} btn-{{$weight or null}} btn-{{$width or null}} btn-{{$color}} {{$extra or null}}">
+	id="{{$id ?? null}}"
+	{{$attr ?? null}}
+	class="btn btn-{{$size ?? null}} btn-{{$type ?? null}} btn-{{$weight ?? null}} btn-{{$width ?? null}} btn-{{$color}} {{$extra ?? null}}">
 
 	{{$label}}
 

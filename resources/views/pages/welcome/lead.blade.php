@@ -6,8 +6,12 @@
                 <h1 class="text-white mb-4"><strong>We're glad to see you here!</strong></h1>
                 <p class="lead text-white mb-4">Click below to go to your page</p>
             @else
-                <h1 class="text-white mb-4"><strong>Welcome to Anandamayi Yoga</strong></h1>
-                <p class="lead text-white mb-4">Online yoga and meditation that is right for you. In as little as two hours per week, you can improve your physical and mental health through Yoga.</p>
+                <h1 class="text-white mb-4"><strong>
+                    @lang('Welcome to Anandamayi Yoga')
+                </strong></h1>
+                <p class="lead text-white mb-4">
+                    @lang('Online yoga and meditation that is right for you. In as little as two hours per week, you can improve your physical and mental health through Yoga.')
+                </p>
             @endauth
                        
             @auth
@@ -23,7 +27,7 @@
 
                 @include('components/buttons/simple', [
                     'path' => route('register'),
-                    'label' => 'Start your '.config('membership.trial_duration').'-day trial',
+                    'label' => __('Start your free trial'),
                     'color' => 'red',
                     'id' => 'btn-hero',
                     'size' => 'lg', 

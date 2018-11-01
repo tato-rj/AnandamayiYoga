@@ -1,13 +1,11 @@
 <section id="scroll-mark" class="container py-4">
-    <div class="row my-3">
 
-        @component('components/sections/title', ['title' => 'Let\'s get started'])
-        @slot('subtitle')
-        You're just one step away from your {{config('membership.trial_duration')}} day free trial! Just fill out the form below to enjoy full access to all of our classes, programs, articles and much more.
-        @endslot
-        @endcomponent
+    @title(['title' => 'Let\'s get started'])
 
-        <div class="col-lg-10 col-md-12 col-sm-12 col-12 mx-auto mt-4">
+    <div class="row">
+
+        <div class="col-lg-10 col-md-12 col-sm-12 col-12 mx-auto">
+            <p class="lead mb-5">You're just one step away from your {{config('membership.trial_duration')}} day free trial! Just fill out the form below to enjoy full access to all of our classes, programs, articles and much more.</p>
             <div class="row">
                 <div class="col-lg-7 col-md-7 col-sm-10 col-12 mx-auto mb-4">
                     @component('pages/register/form')

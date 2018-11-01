@@ -4,8 +4,8 @@
         <div class="row text-center">
 
             <div class="col-12 mb-5">
-                <h1>Choose the best practice for you</h1>
-                <p class="lead text-center m-0">Let's find you the right classes to start your <strong>15 day free trial.</strong></p>
+                <h1>@lang('Choose the best practice for you')</h1>
+                <p class="lead text-center m-0">@lang('Let\'s find you the right classes to start your <strong>15 day free trial.</strong>')</p>
             </div>
 
             @foreach($levels as $level)

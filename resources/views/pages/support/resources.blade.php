@@ -1,12 +1,8 @@
 <section id="scroll-mark" class="container py-4">
-    <div class="row my-3">
 
-        @include('components/sections/title', ['title' => 'Resources'])
-
-        <div class="col-lg-10 col-md-10 col-sm-10 col-12 mx-auto mb-4">
-            <p class="lead text-center">If you have any questions or just want to learn more about how our platform works you've come to the right place! Browse through the main topics below or take a look at the most common questions we get from our users. If you still need help, don't hesitate to <a href="{{route('support.contact.show')}}" class="link-blue">let us know</a>.</p>
-        </div>
-
+    @title(['title' => 'Resources'])
+    
+    <div class="row">
         <div class="col-lg-10 col-md-10 col-sm-12 mx-auto mt-4">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mb-4">

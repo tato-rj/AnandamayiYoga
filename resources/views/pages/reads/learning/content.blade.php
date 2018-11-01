@@ -1,9 +1,8 @@
 <section id="scroll-mark" class="container py-4">
-    <div class="row my-3">
-    	
-        @include('components/sections/title', [
-            'title' => 'Learning about Yoga',
-            'subtitle' => 'Resources for yoga teachers and practitioners. If you can\'t find what you\'re looking for, please let us know!'])
+
+    @title(['title' => 'Learning about Yoga'])
+
+    <div class="row">
 
         @include('pages/reads/learning/menu')
 
