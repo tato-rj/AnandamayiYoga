@@ -5,9 +5,8 @@
 
     @include('components/sections/lead', ['image' => 'library'])
     @include('pages/reads/learning/content')
-    @include('components/bars/gift')
-    @include('components/bars/partners')
     @include('components/bars/devices')
+    @include('components/bars/partners')
 
 </div>
 

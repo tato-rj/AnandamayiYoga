@@ -19,6 +19,9 @@ class CreateCategoriesTable extends Migration
             $table->string('name', 25);
             $table->string('subtitle', 80);
             $table->text('description');
+            $table->string('name_pt', 25)->nullable();
+            $table->string('subtitle_pt', 80)->nullable();
+            $table->text('description_pt')->nullable();
             $table->tinyInteger('order')->nullable();
             $table->timestamps();
         });

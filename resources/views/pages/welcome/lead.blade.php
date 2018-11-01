@@ -1,4 +1,4 @@
-<div class="row mb-6">
+<div class="row mb-7">
     <section class="col-12 h-100vh bg-right" style="background-image:url({{cloud('app/images/backgrounds/main.jpg')}})">
         <div class="row align-items-center h-100">
             <div class="col-lg-6 col-md-8 col-10 offset-lg-2 offset-md-1 offset-1 z-10">
@@ -9,9 +9,10 @@
                 <h1 class="text-white mb-4"><strong>
                     @lang('Welcome to Anandamayi Yoga')
                 </strong></h1>
-                <p class="lead text-white mb-4">
-                    @lang('Online yoga and meditation that is right for you. In as little as two hours per week, you can improve your physical and mental health through Yoga.')
-                </p>
+                <div class="text-white mb-4">
+                    <p class="lead mb-1">@lang('Online yoga and meditation that is right for you.')</p> 
+                    <p class="lead">@lang('In as little as two hours per week, you can improve your physical and mental health through Yoga.')</p>
+                </div>
             @endauth
                        
             @auth

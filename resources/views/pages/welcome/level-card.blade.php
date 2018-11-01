@@ -6,7 +6,7 @@
         <img class="w-100 rounded-top-half" src="{{cloud('app/covers/levels/'.strtolower($name).'.jpg')}}">
         <button class="btn btn-lg btn-block border-0 bg-{{strtolower($name)}}-light" 
         	style="border-top-right-radius: 0; border-top-left-radius: 0;">
-            <strong>@lang($name)</strong>
+            <strong>{{$level->localize('name')}}</strong>
         </button>                         
     </div>
 </div>

@@ -16,11 +16,11 @@
             </div>
             @endif
             @foreach($articles as $article)
-                @include('pages/reads/blog/item')
+                @include('pages/reads/articles/item')
             @endforeach
         </div>
 
-        @include('pages/reads/blog/sidebar')
+        @include('pages/reads/articles/sidebar')
 
     </div>
 </section>

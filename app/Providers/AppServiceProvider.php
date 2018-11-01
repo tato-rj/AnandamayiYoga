@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
             ]);
         });
 
-        \View::composer('pages/reads/blog/sidebar', function($view) {
+        \View::composer('pages/reads/articles/sidebar', function($view) {
             $topics = ArticleTopic::has('articles')->orderBy('name')->get();
 
             $view->with([

@@ -19,8 +19,6 @@
     
 	</div>
 
-    @include('components/bars/devices')
-
 	@include('components/feedback/fixed-box')
 
 </div>

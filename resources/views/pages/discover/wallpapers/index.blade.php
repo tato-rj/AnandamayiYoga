@@ -62,8 +62,6 @@
     @include('components/sections/lead', ['image' => 'poses'])
     
     @include('pages/discover/wallpapers/content')
-
-    @include('components/bars/devices')
   
   	@include('components/feedback/fixed-box')
 

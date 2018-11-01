@@ -17,6 +17,7 @@
     
     @unless(auth()->check())
         @include('components/bars/gift')
+        @include('pages/welcome/levels')
     @endunless
 
     @auth
@@ -24,13 +25,12 @@
     @else
         @include('pages/welcome/video')
     @endauth
-    
-    @include('components/bars/books')
-    @include('components/bars/partners')
+
     @include('components/bars/devices')
     
+    @include('components/bars/partners')
+
     @if(!auth()->check())
-        @include('pages/welcome/levels')
         @include('components/bars/testimonials')
     @endif
 

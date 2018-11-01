@@ -7,12 +7,8 @@
 
     @include('pages/register/content')
     
-    @include('components/bars/gift')
-    
     @include('components/bars/devices')
 	
-	@include('components/bars/benefits')
-    
     @include('components/bars/testimonials')
 
 </div>

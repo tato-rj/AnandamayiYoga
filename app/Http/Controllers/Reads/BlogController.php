@@ -17,11 +17,11 @@ class BlogController extends Controller
     {
         $articles = Article::blog()->paginate(6);
 
-        return view('pages/reads/blog/index', compact('articles'));
+        return view('pages/reads/articles/index', compact('articles'));
     }
 
     public function show(Article $article)
     {
-        return view('pages/reads/blog/show/index', compact('article'));
+        return view('pages/reads/articles/show/index', compact('article'));
     }
 }

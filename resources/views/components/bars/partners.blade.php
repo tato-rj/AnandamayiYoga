@@ -1,7 +1,7 @@
 <section class="row mb-7">
     <div class="container">
 
-      @title(['title' => 'Our Partners'])
+      <h2 class="text-center mb-4">@lang('Our Partners')</h2>
 
       <div class="row align-items-end justify-content-center">
         <div class="col-3 px-3 pb-3">

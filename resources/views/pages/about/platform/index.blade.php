@@ -11,8 +11,6 @@
 		'image' => 'mountain',
 		'overlay' => 'blue',
 		'title' => 'INVEST IN YOURSELF'])
-
-    @include('components/bars/devices')
     
 	@include('components/bars/testimonials')
 

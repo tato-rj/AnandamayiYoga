@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
 
-    @include('pages/reads/blog/show/lead')
+    @include('pages/reads/articles/show/lead')
     
     <div id="scroll-mark" class="row">
     	<div class="col-lg-8 col-md-10 col-sm-12 col-12 mx-auto d-flex justify-content-between py-3 border-bottom">
@@ -40,7 +40,7 @@
 			    	</div>
     			</div>
 
-    			@include('pages/reads/blog/sidebar')
+    			@include('pages/reads/articles/sidebar')
 
     		</div>
     	</div>

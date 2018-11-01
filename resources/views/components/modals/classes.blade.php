@@ -1,12 +1,12 @@
 @component('components/modals/layout', [
   'id' => 'classes',
-  'title' => 'Let\'s get started!',
+  'title' => __('Let\'s get started!'),
   'size' => 'modal-lg'])
   
   <div class="modal-body text-center">
     <div class="row no-gutters">
       <div class="col-10 mx-auto text-center">
-        <p class="lead py-2">Please select the styles and categories you are interested in</p>
+        <p class="lead py-2">@lang('Please select the styles and categories you are most interested in')</p>
       </div>
 
       @foreach($categories as $category)
@@ -24,13 +24,13 @@
     @include('components/buttons/simple', [
         'id' => 'classes-modal-submit',
         'path' => route('register'),
-        'label' => 'Start your '.config('membership.trial_duration').' day Free Trial',
+        'label' => __('Start your free trial'),
         'color' => 'red',
         'weight' => 'bold',
         'extra' => 'mobile-block'])
 
   </div>
-  <div class="text-muted text-center mb-4">
-    <small>You'll get immediate and unlimited access to all of our classes and programs right away. The free trial begins the moment you sign up and we encourage you to explore our website to see all that we have to offer. If you have any questions please check out our <a class="link-blue" href="{{route('support.index')}}">support</a> page or <a class="link-blue" href="{{route('support.contact.show')}}">get in touch</a> with us.</small>
+  <div class="text-muted border-top pt-3 mb-3">
+    <small>@lang('You\'ll get immediate and unlimited access to all of our classes and programs right away. The free trial begins the moment you sign up and we encourage you to explore our website to see all that we have to offer. If you have any questions please check out our support page or get in touch with us.')</small>
   </div>
 @endcomponent

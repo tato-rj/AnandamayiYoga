@@ -1,4 +1,4 @@
-<div class="d-none d-sm-block mb-7">
+<div class="d-none d-sm-block">
 <section class="container pt-5 pb-4 mt-5">
     <div class="row">
         <div class="col-12">

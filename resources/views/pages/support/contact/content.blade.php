@@ -1,9 +1,6 @@
 <section id="scroll-mark" class="container py-4">
+    @title(['title' => 'Get in touch'])
     <div class="row my-3">
-        
-        @include('components/sections/title', [
-            'title' => 'Contact us',
-            'subtitle' => 'Whether you have a question, a comment or just want to say hello, you\'ve come to the right place!'])
         
         <div class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto mt-4">
             <article>
