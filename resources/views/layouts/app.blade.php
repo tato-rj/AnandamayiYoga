@@ -13,7 +13,7 @@
         ({{count($notifications)}})
         @endif
     @endauth
-    {{config('app.name')}}
+    {{config('app.name')}} | @lang('Yoga online that is right for you')
     </title>
 
     <!-- Styles -->

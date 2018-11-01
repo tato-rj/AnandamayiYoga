@@ -5,10 +5,11 @@
 		"Continue": "Continuar",
 
 
-		"_SECTION": "ALERTS",
-			"Hey there! We use cookies to ensure you get the best experience on our website.": "Olá! Nós usamos cookies para garantir a melhor experiência possível para você no nosso site.",
-			"Learn more": "Leia mais",
-			"Got it": "Entendi",
+	"_SECTION": "ALERTS",
+		"Hey there! We use cookies to ensure you get the best experience on our website.": "Olá! Nós usamos cookies para garantir a melhor experiência possível para você no nosso site.",
+		"Learn more": "Leia mais",
+		"Got it": "Entendi",
+
 
 	"_SECTION": "MENU",
 		"Discover": "Descubra",
@@ -51,6 +52,7 @@
 		"Get in touch": "Entrar em contato",
 		"Other": "Outro",
 
+
 	"_SECTION": "LOGIN MODAL",
 		"Remember me": "Lembrar de mim",
 		"Forgot password?": "Esquece o password?",
@@ -68,6 +70,7 @@
 
 	"_SECTION": "WELCOME PAGE",
 	    "Welcome to Anandamayi Yoga": "O seu espaço de Yoga online",
+	    "Yoga online that is right for you": "O seu site de Yoga online",
 	    "Online yoga and meditation that is right for you. In as little as two hours per week, you can improve your physical and mental health through Yoga.": "Meditação e yoga online feita para você. Com apenas duas horas por semana, você irá melhorar a sua saúde física e mental com Yoga.",
 	    "Start your free trial": "Começar o período gratuito",
 	    "Why should I practice Yoga?": "Por que devo praticar Yoga?",
