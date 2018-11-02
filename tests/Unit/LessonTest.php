@@ -96,11 +96,11 @@ class LessonTest extends AppTest
 	{
 		$lesson = create('App\Lesson');
 
-		$this->assertEquals(0, $lesson->views_count);
+		$this->assertEquals(0, $lesson->views);
 
 		$this->get($lesson->path());
 
-		$this->assertEquals(1, $lesson->fresh()->views_count);
+		$this->assertEquals(1, $lesson->fresh()->views);
 	}
 
 	/** @test */
@@ -116,6 +116,6 @@ class LessonTest extends AppTest
 		$this->get($lesson2->path());
 		$this->get($lesson3->path());
 
-		$this->assertEquals(5, \App\Lesson::all()->sum('views_count'));
+		$this->assertEquals(5, \App\Lesson::all()->sum('views'));
 	}
 }

@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ManagerEmail extends Mailable
+class AdminEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -32,7 +32,7 @@ class ManagerEmail extends Mailable
     {
         $email = $this->from($this->request->from)
                       ->subject($this->request->subject)
-                      ->markdown('emails/manager');
+                      ->markdown('emails/admin');
 
         if ($this->request->attachment) {
             $email->attach($this->request->attachment->getRealPath(), array(

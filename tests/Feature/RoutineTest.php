@@ -56,7 +56,7 @@ class RoutineTest extends AppTest
 		
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 		
 		$routine = $this->createRoutine($request);
 
@@ -74,7 +74,7 @@ class RoutineTest extends AppTest
 		
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 		
 		$routine = $this->createRoutine($request);
 
@@ -106,7 +106,7 @@ class RoutineTest extends AppTest
 		
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 		
 		$routine = $this->createRoutine($request);
 
@@ -114,11 +114,11 @@ class RoutineTest extends AppTest
 
 		$lessonOne = $routine->lessons()->first();
 
-		$this->assertEquals(0, $routine->fresh()->views_count);
+		$this->assertEquals(0, $routine->fresh()->views);
 
 		$this->get(route('user.routine.show', ['routine' => $routine->id, 'lesson' => $lessonOne]));
 
-		$this->assertEquals(1, $routine->fresh()->views_count);
+		$this->assertEquals(1, $routine->fresh()->views);
 	}
 
 	/** @test */
@@ -128,7 +128,7 @@ class RoutineTest extends AppTest
 		
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 		
 		$routine = $this->createRoutine($request);
 

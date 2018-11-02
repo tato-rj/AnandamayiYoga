@@ -1,16 +1,9 @@
 <?php
 
-Route::prefix('/feedback')->namespace('Users')->name('feedback.')->group(function() {
+Route::prefix('/feedback')->name('feedback.')->group(function() {
 
-    Route::get('goodbye', function() {
-
-        if (session()->get('user-deleted'))
-            return view('pages/user/settings/remove/feedback');
-
-        return view('pages/welcome/index');
-
-    })->name('delete');
+    Route::get('goodbye', 'Guests\PagesController@goodbye')->name('delete');
     
-    Route::post('/store', 'FeedbacksController@store')->name('store')->middleware('throttle:2');
+    Route::post('/store', 'Users\FeedbacksController@store')->name('store')->middleware('throttle:2');
 
 });

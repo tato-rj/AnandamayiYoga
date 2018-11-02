@@ -7,11 +7,11 @@ use App\Http\Controllers\Controller;
 
 class LoginController extends Controller
 {
-	protected $defaultRedirectTo = '/office';
+	protected $defaultRedirectTo = '/admin';
 
     public function __construct()
     {
-        $this->middleware('guest:manager');
+        $this->middleware('guest:admin');
     }
 
 	public function showLoginForm()
@@ -37,8 +37,8 @@ class LoginController extends Controller
 			'password' => $request->password
 		];
 
-		if (\Auth::guard('manager')->attempt($credentials, $request->remember)) {
-			return redirect()->intended('/office');
+		if (\Auth::guard('admin')->attempt($credentials, $request->remember)) {
+			return redirect()->intended('/admin');
 		}
 
 		return $this->sendFailedLoginResponse($request);
@@ -52,7 +52,7 @@ class LoginController extends Controller
      */
     protected function sendFailedLoginResponse(Request $request)
     {
-        return redirect()->to(route('manager.login.show'))
+        return redirect()->to(route('admin.login.show'))
             ->withInput($request->only('email', 'remember'))
             ->withErrors([
                 'email' => \Lang::get('auth.failed'),

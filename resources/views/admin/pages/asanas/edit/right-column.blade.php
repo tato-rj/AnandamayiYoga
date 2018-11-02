@@ -5,7 +5,7 @@
     @include('components/editing/label', [
       'title' => 'The name in sanskrit of this asana is',
       'id' => "sanskrit-{$asana->id}",
-      'path' => "/office/asanas/{$asana->id}"
+      'path' => "/admin/asanas/{$asana->id}"
     ])
     
     <input type="text" disabled class="form-control" value="{{$asana->sanskrit}}" name="sanskrit">
@@ -18,7 +18,7 @@
     @include('components/editing/label', [
       'title' => 'The english name of this asana is',
       'id' => "name-{$asana->id}",
-      'path' => "/office/asanas/{$asana->id}"
+      'path' => "/admin/asanas/{$asana->id}"
     ])
     
     <input type="text" disabled class="form-control" value="{{$asana->name}}" name="name">
@@ -31,7 +31,7 @@
     @include('components/editing/label', [
       'title' => 'This asana is also known as',
       'id' => "also_known_as-{$asana->id}",
-      'path' => "/office/asanas/{$asana->id}"
+      'path' => "/admin/asanas/{$asana->id}"
     ])
     
     <input type="text" disabled class="form-control" value="{{$asana->also_known_as}}" name="also_known_as">
@@ -44,7 +44,7 @@
     @include('components/editing/label', [
       'title' => 'The etymology of this asana is',
       'id' => "etymology-{$asana->id}",
-      'path' => "/office/asanas/{$asana->id}"
+      'path' => "/admin/asanas/{$asana->id}"
     ])
     
     <input type="text" disabled class="form-control" value="{{$asana->etymology}}" name="etymology">
@@ -57,7 +57,7 @@
     @include('components/editing/label', [
       'title' => 'The benefits of this asana are',
       'id' => "benefits-{$asana->id}",
-      'path' => "/office/asanas/{$asana->id}/benefits"
+      'path' => "/admin/asanas/{$asana->id}/benefits"
     ])
 
     @include('admin/components/multitype/layout', [
@@ -73,7 +73,7 @@
     @include('components/editing/label', [
       'title' => 'The steps of this asana are',
       'id' => "steps-{$asana->id}",
-      'path' => "/office/asanas/{$asana->id}/steps"
+      'path' => "/admin/asanas/{$asana->id}/steps"
     ])
 
     @include('admin/components/multitype/layout', [
@@ -88,7 +88,7 @@
     @include('components/editing/label', [
       'title' => 'For those who are',
       'id' => "levels-{$asana->id}",
-      'path' => "/office/asanas/{$asana->id}/levels"
+      'path' => "/admin/asanas/{$asana->id}/levels"
     ])
 
     @foreach($levels as $level)
@@ -111,7 +111,7 @@
     @include('components/editing/label', [
       'title' => 'Asana\'s types',
       'id' => "type-{$asana->id}",
-      'path' => "/office/asanas/{$asana->id}/types"
+      'path' => "/admin/asanas/{$asana->id}/types"
     ])
     
     @foreach($asanaTypes as $type)
@@ -135,7 +135,7 @@
     @include('components/editing/label', [
       'title' => 'Asana\'s subtypes',
       'id' => "subtype-{$asana->id}",
-      'path' => "/office/asanas/{$asana->id}/subtypes"
+      'path' => "/admin/asanas/{$asana->id}/subtypes"
     ])
     
     @foreach($asanaSubtypes as $subtype)

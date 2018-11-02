@@ -6,7 +6,7 @@
 	<form class="d-inline" method="POST" action="{{$path}}">
 		{{csrf_field()}}
 		{{method_field('DELETE')}}
-		{{$inputs or null}}
+		{{$inputs ?? null}}
 		<button type="submit" class="btn btn-xs btn-danger px-1 py-0" style="margin-top: -3px;">confirm</button>
 	</form>
 </div>

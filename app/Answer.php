@@ -2,9 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Answer extends Model
+class Answer extends Anandamayi
 {
     protected $guarded = [];
     protected $casts = ['is_correct' => 'boolean'];

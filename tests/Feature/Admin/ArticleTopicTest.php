@@ -8,9 +8,9 @@ class ArticleTopicTest extends AppTest
 {
 
 	/** @test */
-	public function a_manager_can_create_an_article_topic()
+	public function a_admin_can_create_an_article_topic()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$topic = make('App\ArticleTopic');
 
@@ -24,9 +24,9 @@ class ArticleTopicTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_edit_an_article_topic()
+	public function a_admin_can_edit_an_article_topic()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$topic = create('App\ArticleTopic');
 
@@ -37,9 +37,9 @@ class ArticleTopicTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_remove_a_topic()
+	public function a_admin_can_remove_a_topic()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$topic = create('App\ArticleTopic');
 
@@ -54,7 +54,7 @@ class ArticleTopicTest extends AppTest
 	/** @test */
 	public function the_topics_relationships_are_removed_when_an_article_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$article = create('App\Article');
 

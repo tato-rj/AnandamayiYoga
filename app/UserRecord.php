@@ -2,11 +2,10 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Traits\HasStatistics;
 use App\Records\Records;
 
-class UserRecord extends Model
+class UserRecord extends Anandamayi
 {
     use HasStatistics;
 

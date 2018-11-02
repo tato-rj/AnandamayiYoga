@@ -3,7 +3,7 @@
       <h5 class="mb-4">Most Recent Signups</h5>
       <div class="widget-signups__list">
           @forelse($latestUsers as $user)
-          <a data-toggle="tooltip" title="{{$user->fullName}}" href="/office/users/{{$user->id}}">
+          <a data-toggle="tooltip" title="{{$user->fullName}}" href="/admin/users/{{$user->id}}">
             <img class="avatar-img" src="{{$user->avatar()}}" alt=""
             @notActive($user)
               style="filter: grayscale(100);"

@@ -2,7 +2,7 @@
 @slot('title')
 <div class="d-flex justify-content-between">
   <span>Purchases</span>
-  <a href="/office/users/{{$user->id}}/invoices" class="link-blue"><small>view all</small></a>
+  <a href="/admin/users/{{$user->id}}/invoices" class="link-blue"><small>view all</small></a>
 </div>
 @endslot
 

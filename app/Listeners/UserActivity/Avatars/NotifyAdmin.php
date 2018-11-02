@@ -2,13 +2,13 @@
 
 namespace App\Listeners\UserActivity\Avatars;
 
-use App\Manager;
-use App\Notifications\Managers\UserActivity\AvatarUpdateNotification;
+use App\Admin;
+use App\Notifications\Admins\UserActivity\AvatarUpdateNotification;
 use App\Events\UserChangesAvatar;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class NotifyManager
+class NotifyAdmin
 {
     /**
      * Create the event listener.
@@ -28,8 +28,8 @@ class NotifyManager
      */
     public function handle(UserChangesAvatar $event)
     {
-        Manager::all()->each(function($manager) use ($event) {
-            $manager->notify(new AvatarUpdateNotification($event->user));
+        Admin::all()->each(function($admin) use ($event) {
+            $admin->notify(new AvatarUpdateNotification($event->user));
         });
     }
 }

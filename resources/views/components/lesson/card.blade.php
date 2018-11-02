@@ -1,4 +1,4 @@
-<div class="p-3 {{$sizes or 'col-lg-4 col-md-6 col-sm-12 col-xs-12'}} h-card-sm move-control swiper-slide">
+<div class="p-3 {{$sizes ?? 'col-lg-4 col-md-6 col-sm-12 col-xs-12'}} h-card-sm move-control swiper-slide">
     <a href="{{$lesson->path()}}" class="link-none">
     	<div class="row no-gutters t-2 hover-shadow-light move-item-up h-100 w-100">
     		<div class="col-5 bg-full d-flex align-items-center justify-content-center rounded-left" 

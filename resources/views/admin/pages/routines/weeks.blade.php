@@ -33,7 +33,7 @@
 					@component('components/editing/label', [
 		              'title' => 'This day has the following lessons',
 		              'id' => "schedule-{$loop->iteration}-{$loop->parent->iteration}",
-		              'path' => "/office/routines/{$request->user->activeRoutine()->id}/schedule"
+		              'path' => "/admin/routines/{$request->user->activeRoutine()->id}/schedule"
 		            ])
 		            @endcomponent
 		            <div class="row"> 

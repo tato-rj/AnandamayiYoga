@@ -36,7 +36,7 @@ Route::prefix('/courses')->name('courses.')->group(function() {
 
     });
 
-    Route::get('', 'Admin\OfficeController@courses')->name('index');
+    Route::get('', 'Admin\AdminController@courses')->name('index');
 
     Route::get('/{course}', 'Courses\CoursesController@edit')->name('edit');
 

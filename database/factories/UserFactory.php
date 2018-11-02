@@ -34,7 +34,7 @@ $factory->define(App\User::class, function (Faker $faker) {
     ];
 });
 
-$factory->define(App\Manager::class, function (Faker $faker) {
+$factory->define(App\Admin::class, function (Faker $faker) {
     return [
         'first_name' => $faker->firstName,
         'last_name' => $faker->lastName,
@@ -275,8 +275,7 @@ $factory->define(App\Wallpaper::class, function(Faker $faker) {
         'image_path' => 'image.jpg',
         'category_id' => function() {
             return factory('App\WallpaperCategory')->create()->id;
-        },
-        'downloads_count' => 0
+        }
     ];
 });
 

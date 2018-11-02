@@ -150,11 +150,11 @@ class ProgramTest extends AppTest
 		$program = create('App\Program');
 		$program->lessons()->save(create('App\Lesson'));
 
-		$this->assertEquals(0, $program->views_count);
+		$this->assertEquals(0, $program->views);
 
 		$this->get($program->path());
 
-		$this->assertEquals(1, $program->fresh()->views_count);
+		$this->assertEquals(1, $program->fresh()->views);
 	}
 
 	/** @test */
@@ -173,6 +173,6 @@ class ProgramTest extends AppTest
 		$this->get($program2->path());
 		$this->get($program3->path());
 
-		$this->assertEquals(5, \App\Program::all()->sum('views_count'));
+		$this->assertEquals(5, \App\Program::all()->sum('views'));
 	}
 }

@@ -40,10 +40,10 @@ abstract class AppTest extends TestCase
         return auth()->user();
     }
 
-    protected function managerSignIn($manager = null)
+    protected function adminSignIn($admin = null)
     {
-        $manager = ($manager) ?: create('App\Manager');
-        return $this->actingAs($manager, 'manager');
+        $admin = ($admin) ?: create('App\Admin');
+        return $this->actingAs($admin, 'admin');
     }
     
     protected function signIn($user = null)

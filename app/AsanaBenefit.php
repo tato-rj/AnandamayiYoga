@@ -2,9 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class AsanaBenefit extends Model
+class AsanaBenefit extends Anandamayi
 {
     protected $guarded = [];
     public $timestamps = false;

@@ -5,7 +5,7 @@
     @include('components/editing/label', [
       'title' => 'The name of this program is',
       'id' => "name-{$program->id}",
-      'path' => "/office/programs/{$program->id}"])
+      'path' => "/admin/programs/{$program->id}"])
     
     <input type="text" disabled class="form-control" value="{{$program->name}}" name="name" placeholder="Program Name" >
 
@@ -16,7 +16,7 @@
     @include('components/editing/label', [
       'title' => 'This program is about',
       'id' => "description-{$program->id}",
-      'path' => "/office/programs/{$program->id}"])
+      'path' => "/admin/programs/{$program->id}"])
 
     <textarea disabled class="form-control" placeholder="Description" rows="3">{{$program->description}}</textarea>
 
@@ -28,7 +28,7 @@
     @include('components/editing/label', [
       'title' => 'This program is good for',
       'id' => "category-{$program->id}",
-      'path' => "/office/programs/{$program->id}/categories"])
+      'path' => "/admin/programs/{$program->id}/categories"])
     
     <div class="row mx-2">
       @foreach($categories as $category)
@@ -47,7 +47,7 @@
     @include('components/editing/label', [
       'title' => 'This program has the following lessons',
       'id' => "lessons-{$program->id}",
-      'path' => "/office/programs/{$program->id}/lessons"])
+      'path' => "/admin/programs/{$program->id}/lessons"])
 
     <div class="row">
       @include('admin/components/dragndrop/edit')

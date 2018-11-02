@@ -21,7 +21,7 @@ class CreateRoutinesTable extends Migration
             $table->string('video_path')->nullable();
             $table->timestamp('started_at')->nullable();
             $table->timestamp('completed_at')->nullable();
-            $table->unsignedInteger('views_count')->default(0);
+            $table->unsignedInteger('views')->default(0);
             $table->timestamps();
         });
 

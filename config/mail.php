@@ -56,14 +56,11 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@anandamayiyoga.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'contact@anandamayiyoga.com'),
         'name' => env('MAIL_FROM_NAME', 'AnandamayiYoga'),
         'mailboxes' => [
             'contact@anandamayiyoga.com',
-            'membership@anandamayiyoga.com',
-            'office@anandamayiyoga.com',
-            'promotions@anandamayiyoga.com',
-            'press@anandamayiyoga.com'
+            'admin@anandamayiyoga.com'
         ]
     ],
 

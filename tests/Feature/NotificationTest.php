@@ -3,13 +3,13 @@
 namespace Tests\Feature;
 
 use Tests\AppTest;
-use Tests\Traits\{Admin, HasRoutine, UsesFakeStripe};
+use Tests\Traits\{Administrator, HasRoutine, UsesFakeStripe};
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
 class NotificationTest extends AppTest
 {
-	use Admin, HasRoutine, UsesFakeStripe;
+	use Administrator, HasRoutine, UsesFakeStripe;
 
 	/** @test */
 	public function a_user_can_mark_a_notification_as_read()
@@ -104,7 +104,7 @@ class NotificationTest extends AppTest
 
 		$this->assertCount($firstNotificationsCount, auth()->user()->unreadNotifications);
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$lessonUserWontLike = $this->createNewLesson();
 
@@ -126,9 +126,9 @@ class NotificationTest extends AppTest
 		$request->category = $categoryUserLikes;
 		$request->levels = create('App\Level');
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 		
-		$this->post('/office/classes', $request->toArray())
+		$this->post('/admin/classes', $request->toArray())
 			 ->assertSessionHas('status');
 
 		$this->signIn($user);
@@ -143,7 +143,7 @@ class NotificationTest extends AppTest
 
 		$firstNotificationsCount = $user->notifications()->count();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 		
 		$this->createNewProgram();
 

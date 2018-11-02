@@ -6,7 +6,7 @@
   'title' => 'Edit Program'])
 
   @slot('subtitle')
-    <a href="/office/programs" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all programs</a>
+    <a href="/admin/programs" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all programs</a>
   @endslot
 
 @endcomponent

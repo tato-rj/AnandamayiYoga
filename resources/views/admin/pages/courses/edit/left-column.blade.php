@@ -2,12 +2,12 @@
   {{-- COVER IMAGE --}}
   @include('admin/components/uploads/image-edit', [
     'image' => $course->image_path,
-    'path' => "/office/courses/{$course->slug}/image"])
+    'path' => "/admin/courses/{$course->slug}/image"])
   
   {{-- VIDEO --}}
   @include('admin/components/uploads/video-edit', [
     'video' => $course->video_path,
-    'path' => "/office/courses/{$course->slug}/video"])
+    'path' => "/admin/courses/{$course->slug}/video"])
 
   {{-- COST --}}          
   <div class="form-group edit-control" id="cost-{{$course->id}}" name="cost">
@@ -15,7 +15,7 @@
     @component('components/editing/label', [
       'title' => 'This course costs',
       'id' => "cost-{$course->id}",
-      'path' => "/office/courses/{$course->id}"
+      'path' => "/admin/courses/{$course->id}"
     ])
     @endcomponent
 

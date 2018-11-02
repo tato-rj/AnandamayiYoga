@@ -2,11 +2,11 @@
 
 namespace App\Listeners\Memberships\ResumedMembership;
 
-use App\Manager;
+use App\Admin;
 use App\Events\UserResumedMembership;
-use App\Notifications\Managers\Membership\ResumedMembershipNotification;
+use App\Notifications\Admins\Membership\ResumedMembershipNotification;
 
-class NotifyManager
+class NotifyAdmin
 {
     /**
      * Create the event listener.
@@ -26,8 +26,8 @@ class NotifyManager
      */
     public function handle(UserResumedMembership $event)
     {
-        Manager::all()->each(function($manager) use ($event) {
-            $manager->notify(new ResumedMembershipNotification($event->user));
+        Admin::all()->each(function($admin) use ($event) {
+            $admin->notify(new ResumedMembershipNotification($event->user));
         });
     }
 }

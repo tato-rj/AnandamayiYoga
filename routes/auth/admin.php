@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix('/office/login')->namespace('Admin')->name('manager.login.')->group(function() {
+Route::prefix('/office/login')->namespace('Admin')->name('admin.login.')->group(function() {
 
     Route::get('', 'LoginController@showLoginForm')->name('show');
 

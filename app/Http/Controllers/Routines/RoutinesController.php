@@ -23,6 +23,11 @@ class RoutinesController extends Controller
         return view('/admin/pages/routines/active', compact('routines'));
     }
 
+    public function instructions()
+    {
+        return view('pages/user/routine/instructions/index');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -70,7 +75,7 @@ class RoutinesController extends Controller
      */
     public function show(Routine $routine, Lesson $lesson)
     {
-        $routine->increment('views_count');
+        $routine->increment('views');
 
         if (is_null($routine->started_at)) {
             $routine->start();

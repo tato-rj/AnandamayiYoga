@@ -2,12 +2,12 @@
   {{-- COVER IMAGE --}}
   @include('admin/components/uploads/image-edit', [
     'image' => $program->image_path,
-    'path' => "/office/programs/{$program->slug}/image"])
+    'path' => "/admin/programs/{$program->slug}/image"])
 
   {{-- VIDEO --}}
   @include('admin/components/uploads/video-edit', [
     'video' => $program->video_path,
-    'path' => "/office/programs/{$program->slug}/video"])
+    'path' => "/admin/programs/{$program->slug}/video"])
 
 {{-- TEACHER --}}
 <div class="form-group edit-control" name="teacher_id" id="teacher_id-{{$program->id}}">
@@ -15,7 +15,7 @@
   @include('components/editing/label', [
     'title' => 'This program is taught by',
     'id' => "teacher_id-{$program->id}",
-    'path' => "/office/programs/{$program->id}"
+    'path' => "/admin/programs/{$program->id}"
   ])
 
   <select disabled class="form-control">

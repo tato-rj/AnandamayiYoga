@@ -2,11 +2,10 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Traits\{FindBySlug, InteractsWithCloud};
 use Carbon\Carbon;
 
-class Article extends Model
+class Article extends Anandamayi
 {
 	use FindBySlug, InteractsWithCloud;
 

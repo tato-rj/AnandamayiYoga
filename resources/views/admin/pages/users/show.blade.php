@@ -5,7 +5,7 @@
 @component('admin/components/page-title', ['title' => $user->fullName])
 
 @slot('subtitle')
-<a href="/office/users" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all users</a>
+<a href="/admin/users" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all users</a>
 @endslot
 
 @endcomponent
@@ -45,7 +45,7 @@
 <div class="text-right mt-5">
   @include('admin/components/email', ['email' => $user->email])
 
-  <button class="btn btn-danger" data-path="/office/users/{{$user->id}}" data-toggle="modal" data-target="#delete-confirm">
+  <button class="btn btn-danger" data-path="/admin/users/{{$user->id}}" data-toggle="modal" data-target="#delete-confirm">
     <i class="fas fa-trash-alt mr-2"></i>Delete user
   </button>
 </div>
@@ -62,7 +62,7 @@ Are you sure you want to delete this user?
 $('.delete').on('click', function () {
   $id = $(this).attr('data-id');
 
-  $('#delete-confirm').find('form').attr('action', '/office/categories/'+$id);
+  $('#delete-confirm').find('form').attr('action', '/admin/categories/'+$id);
 });
 
 </script>

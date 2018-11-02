@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Mail\{EmailConfirmation, WelcomeEmail, ManagerEmail, FeedbackEmail, ContactEmail};
+use App\Mail\{EmailConfirmation, WelcomeEmail, AdminEmail, FeedbackEmail, ContactEmail};
 use Tests\Traits\{SendsMail, UsesFakeStripe, HasRoutine};
 use App\Notifications\Users\Membership\{NewMembershipNotification, CanceledMembershipNotification, ResumedMembershipNotification};
 use App\Notifications\Users\Welcome\WelcomeNotification;
@@ -116,7 +116,7 @@ class EmailTest extends AppTest
 
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 		
 		$routine = $this->createRoutine($request);
 

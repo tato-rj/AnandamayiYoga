@@ -13,25 +13,25 @@ class RoutineTest extends AppTest
 	use HasRoutine;
 
 	/** @test */
-	public function a_manager_can_see_pending_requests_on_the_admin_page()
+	public function a_admin_can_see_pending_requests_on_the_admin_page()
 	{
 		$user = $this->register();
 
 		$this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$this->get(route('admin.routines.pending'))->assertSee($user->first_name);
 	}
 
 	/** @test */
-	public function a_manager_can_create_a_routine()
+	public function a_admin_can_create_a_routine()
 	{
 		$user = $this->register();
 
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$routine = $this->createRoutine($request);
 
@@ -51,7 +51,7 @@ class RoutineTest extends AppTest
 
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$routine = $this->createRoutine($request);
 
@@ -61,13 +61,13 @@ class RoutineTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_edit_a_routine()
+	public function a_admin_can_edit_a_routine()
 	{
 		$user = $this->register();
 
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$routine = $this->createRoutine($request);
 
@@ -84,13 +84,13 @@ class RoutineTest extends AppTest
 	}
 
 	/** @test */
-	public function a_routine_video_is_removed_when_the_manager_uploads_a_new_one()
+	public function a_routine_video_is_removed_when_the_admin_uploads_a_new_one()
 	{
 		$user = $this->register();
 
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$routine = $this->createRoutine($request);
 
@@ -111,13 +111,13 @@ class RoutineTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_edit_the_schedule_of_a_routine()
+	public function a_admin_can_edit_the_schedule_of_a_routine()
 	{
 		$user = $this->register();
 
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$routine = $this->createRoutine($request);
 
@@ -142,13 +142,13 @@ class RoutineTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_delete_a_routine()
+	public function a_admin_can_delete_a_routine()
 	{
 		$user = $this->register();
 
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$routine = $this->createRoutine($request);
 
@@ -168,7 +168,7 @@ class RoutineTest extends AppTest
 
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$routine = $this->createRoutine($request);
 
@@ -188,7 +188,7 @@ class RoutineTest extends AppTest
 
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$routine = $this->createRoutine($request);
 
@@ -208,7 +208,7 @@ class RoutineTest extends AppTest
 
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$routine = $this->createRoutine($request);
 

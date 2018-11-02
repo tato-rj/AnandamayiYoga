@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Classes;
 
 use App\Filters\LessonFilters;
-use App\{Lesson, Program};
+use App\{Lesson, Program, Teacher};
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateSingleLessonForm;
 use App\Events\LessonCreated;
@@ -25,6 +25,20 @@ class LessonsController extends Controller
         // }
 
         return view('pages/discover/lessons/index', compact('lessons'));
+    }
+
+    public function admin()
+    {
+        $lessons = Lesson::paginate(11);
+        $programs = Program::orderBy('name')->get();
+        $teachers = Teacher::orderBy('name')->get();
+
+        return view('admin/pages/lessons/index', compact(['lessons', 'programs', 'teachers']));   
+    }
+
+    public function browse()
+    {
+        return view('pages/discover/browse/index');
     }
 
     /**
@@ -81,7 +95,7 @@ class LessonsController extends Controller
      */
     public function show(Lesson $lesson)
     {
-        $lesson->increment('views_count');
+        $lesson->increment('views');
 
         return view('pages/lesson/index', ['mainLesson' => $lesson]);
     }

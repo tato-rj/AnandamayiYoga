@@ -22,7 +22,7 @@ class CreateAsanasTable extends Migration
             $table->string('image_path')->nullable();
             $table->string('video_path')->nullable();
             $table->string('etymology')->nullable();
-            $table->unsignedInteger('views_count')->default(0);
+            $table->unsignedInteger('views')->default(0);
             $table->timestamps();
         });
     }

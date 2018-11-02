@@ -2,7 +2,7 @@
 
 Route::prefix('/teachers')->namespace('Admin')->name('teachers.')->group(function() {
 
-    Route::get('', 'OfficeController@teachers')->name('index');
+    Route::get('', 'AdminController@teachers')->name('index');
 
     Route::get('/create', 'TeachersController@create')->name('create');
 
@@ -18,6 +18,6 @@ Route::prefix('/teachers')->namespace('Admin')->name('teachers.')->group(functio
 
     Route::patch('/{teacher}/cover', 'TeachersController@updateCover')->name('cover.update');
 
-    Route::delete('/{teacher}', 'OfficeController@destroyTeacher')->name('destroy');
+    Route::delete('/{teacher}', 'AdminController@destroyTeacher')->name('destroy');
 
 });

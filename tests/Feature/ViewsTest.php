@@ -28,7 +28,7 @@ class ViewsTest extends AppTest
 
 		$this->register();
 
-		$userPages = $this->getRoutes($except = $this->managerAuthMiddlewares);
+		$userPages = $this->getRoutes($except = $this->adminAuthMiddlewares);
 
 		foreach ($userPages as $page) {
 			$this->check($page);
@@ -36,13 +36,13 @@ class ViewsTest extends AppTest
 	}
 
 	/** @test */
-	public function all_manager_views_are_working()
+	public function all_admin_views_are_working()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
-		$managerPages = $this->getRoutes($except = $this->userAuthMiddlewares, $only = 'office');
+		$adminPages = $this->getRoutes($except = $this->userAuthMiddlewares, $only = 'admin');
 
-		foreach ($managerPages as $page) {
+		foreach ($adminPages as $page) {
 			$this->check($page);
 		}
 	}

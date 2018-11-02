@@ -2,79 +2,35 @@
 
 Route::prefix('/support')->name('support.')->group(function() {
 
-    Route::get('', function () {
- 
-        return view('pages/support/index');
- 
-    })->name('index');
+    Route::get('', 'Guests\PagesController@support')->name('index');
 
     Route::prefix('/resources')->group(function() {
 
-        Route::get('/getting-started', function () {
- 
-            return view('pages/support/resources/getting_started/index');
- 
-        })->name('getting-started');
+        Route::get('/getting-started', 'Guests\PagesController@getting_started')->name('getting-started');
 
-        Route::get('/membership', function () {
- 
-            return view('pages/support/resources/membership/index');
- 
-        })->name('membership');
+        Route::get('/membership', 'Guests\PagesController@membership')->name('membership');
 
-        Route::get('/profile', function () {
- 
-            return view('pages/support/resources/profile/index');
- 
-        })->name('profile');
+        Route::get('/profile', 'Guests\PagesController@profile')->name('profile');
 
-        Route::get('/privacy-policy', function () {
- 
-            return view('pages/support/resources/policy/index');
- 
-        })->name('policy');
+        Route::get('/privacy-policy', 'Guests\PagesController@privacy')->name('policy');
 
-        Route::get('/terms-and-conditions', function () {
- 
-            return view('pages/support/resources/terms/index');
- 
-        })->name('terms');
+        Route::get('/terms-and-conditions', 'Guests\PagesController@terms')->name('terms');
 
-        Route::get('/courses', function () {
- 
-            return view('pages/support/resources/courses/index');
- 
-        })->name('courses');
+        Route::get('/courses', 'Guests\PagesController@courses')->name('courses');
 
-        Route::get('/partnership', function () {
- 
-            return view('pages/support/resources/partnership/index');
- 
-        })->name('partnership');
+        Route::get('/partnership', 'Guests\PagesController@membership')->name('partnership');
 
-        Route::get('/account', function () {
- 
-            return view('pages/support/resources/account/index');
- 
-        })->name('account');
+        Route::get('/account', 'Guests\PagesController@account')->name('account');
 
-        Route::get('/faq', function () {
- 
-            return view('pages/support/resources/faq/index');
- 
-        })->name('faq');
+        Route::get('/faq', 'Guests\PagesController@faq')->name('faq');
 
     });
 
-    Route::prefix('/contact')->namespace('Emails')->name('contact.')->group(function() {
+    Route::prefix('/contact')->name('contact.')->group(function() {
 
-        Route::get('', function () {
- 
-            return view('pages/support/contact/index');
- 
-        })->name('show');
+        Route::get('', 'Guests\PagesController@contact')->name('show');
 
-        Route::post('', 'ContactsController@send')->name('send');
+        Route::post('', 'Emails\ContactsController@send')->name('send');
 
     });
 

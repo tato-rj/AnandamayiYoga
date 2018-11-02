@@ -2,13 +2,13 @@
 
 namespace App\Listeners\Signups;
 
-use App\Manager;
-use App\Notifications\Managers\Signups\NewUserNotification;
+use App\Admin;
+use App\Notifications\Admins\Signups\NewUserNotification;
 use App\Events\UserConfirmedEmail;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class NotifyManager
+class NotifyAdmin
 {
     /**
      * Create the event listener.
@@ -28,8 +28,8 @@ class NotifyManager
      */
     public function handle(UserConfirmedEmail $event)
     {
-        Manager::all()->each(function($manager) use ($event) {
-            $manager->notify(new NewUserNotification($event->user));
+        Admin::all()->each(function($admin) use ($event) {
+            $admin->notify(new NewUserNotification($event->user));
         });
     }
 }

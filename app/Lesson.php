@@ -4,9 +4,8 @@ namespace App;
 
 use App\Filters\LessonFilters;
 use App\Traits\{FindBySlug, Favoritable, SwiperQueries, InteractsWithCloud, Filterable};
-use Illuminate\Database\Eloquent\Model;
 
-class Lesson extends Model
+class Lesson extends Anandamayi
 {
     use FindBySlug, Favoritable, SwiperQueries, InteractsWithCloud, Filterable;
 

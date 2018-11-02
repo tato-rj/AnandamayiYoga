@@ -1,5 +1,5 @@
 @component('admin/components/modals/add', ['title' => 'Create a new Category'])
-    <form method="POST" action="/office/categories">
+    <form method="POST" action="/admin/categories">
       {{csrf_field()}}
       <div class="form-group">
         <input required type="text" class="form-control" name="name" placeholder="Category Name">

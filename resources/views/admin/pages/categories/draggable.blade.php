@@ -21,7 +21,7 @@
       data-target="#edit-modal">Edit</span>
     
     <i class="fas text-danger fa-trash-alt mx-2 cursor-pointer delete" 
-      data-path="/office/categories/{{$category->id}}" 
+      data-path="/admin/categories/{{$category->id}}" 
       data-toggle="modal" 
       data-target="#delete-confirm"></i>
   </div>

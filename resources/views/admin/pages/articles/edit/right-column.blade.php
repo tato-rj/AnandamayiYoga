@@ -5,7 +5,7 @@
     @component('components/editing/label', [
       'title' => 'The title of this article is',
       'id' => "title-{$article->id}",
-      'path' => "/office/articles/{$article->id}"
+      'path' => "/admin/articles/{$article->id}"
     ])
     @endcomponent
     
@@ -20,7 +20,7 @@
     @component('components/editing/label', [
       'title' => 'The author of this article is',
       'id' => "author-{$article->id}",
-      'path' => "/office/articles/{$article->id}"
+      'path' => "/admin/articles/{$article->id}"
     ])
     @endcomponent
     
@@ -39,7 +39,7 @@
     @component('components/editing/label', [
       'title' => 'The subject of this article is',
       'id' => "subject-{$article->id}",
-      'path' => "/office/articles/{$article->id}"
+      'path' => "/admin/articles/{$article->id}"
     ])
     @endcomponent
     
@@ -60,7 +60,7 @@
     @include('components/editing/label', [
       'title' => 'The summary of this article is',
       'id' => "summary-{$article->id}",
-      'path' => "/office/articles/{$article->id}"
+      'path' => "/admin/articles/{$article->id}"
     ])
 
     <textarea class="form-control" disabled rows="5" name="summary" maxlength="380" placeholder="Summary">{{$article->summary}}</textarea>
@@ -73,7 +73,7 @@
     @include('components/editing/label', [
       'title' => 'The content of this article is',
       'id' => "content-{$article->id}",
-      'path' => "/office/articles/{$article->id}"
+      'path' => "/admin/articles/{$article->id}"
     ])
 
     <input type="hidden" bind="trix" id="trix-content" name="content" value="{{strip_tags($article->content, '<br><strong><em><img><sub><sup><small><div><h1><h2><p>')}}">

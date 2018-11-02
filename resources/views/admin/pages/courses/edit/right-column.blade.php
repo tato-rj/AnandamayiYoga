@@ -5,7 +5,7 @@
     @component('components/editing/label', [
       'title' => 'The name of this course is',
       'id' => "name-{$course->id}",
-      'path' => "/office/courses/{$course->id}"
+      'path' => "/admin/courses/{$course->id}"
     ])
     @endcomponent
     
@@ -19,7 +19,7 @@
     @component('components/editing/label', [
       'title' => 'A short description of this course is',
       'id' => "headline-{$course->id}",
-      'path' => "/office/courses/{$course->id}"
+      'path' => "/admin/courses/{$course->id}"
     ])
     @endcomponent
     
@@ -33,7 +33,7 @@
     @include('components/editing/label', [
       'title' => 'A long description of this course is',
       'id' => "description-{$course->id}",
-      'path' => "/office/courses/{$course->id}"
+      'path' => "/admin/courses/{$course->id}"
     ])
 
     <input type="hidden" bind="trix" id="trix-description" name="description" value="{{$course->description}}">
@@ -46,7 +46,7 @@
     @include('components/editing/label', [
       'title' => 'Teachers',
       'id' => "teachers-{$course->id}",
-      'path' => "/office/courses/{$course->id}/teachers"
+      'path' => "/admin/courses/{$course->id}/teachers"
     ])
 
     <select multiple name="teachers[]" disabled class="form-control">

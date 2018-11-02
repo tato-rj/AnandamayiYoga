@@ -2,9 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class SupportingMaterial extends Model
+class SupportingMaterial extends Anandamayi
 {
     protected $guarded = [];
 

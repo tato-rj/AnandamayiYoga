@@ -2,7 +2,7 @@
   'title' => 'Create a new Program',
   'size' => 'modal-lg'
 ])
-<form method="POST" id="create-program" class="p-4" action="/office/programs" enctype="multipart/form-data">
+<form method="POST" id="create-program" class="p-4" action="/admin/programs" enctype="multipart/form-data">
   {{csrf_field()}}
   <div class="row">
 

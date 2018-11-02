@@ -1,8 +1,8 @@
 <input type="hidden" name="stripeToken" id="stripeToken">
 <input type="hidden" name="stripeEmail" id="stripeEmail" value="{{$email}}">
 <input type="hidden" name="planId" id="planId">
-<input type="hidden" name="type" id="type" value="{{$productType or null}}">
-<input type="hidden" name="typeId" id="typeId" value="{{$productId or null}}">
+<input type="hidden" name="type" id="type" value="{{$productType ?? null}}">
+<input type="hidden" name="typeId" id="typeId" value="{{$productId ?? null}}">
 @auth
 <input type="hidden" name="first_name" value="{{auth()->user()->first_name}}">
 <input type="hidden" name="last_name" value="{{auth()->user()->last_name}}">

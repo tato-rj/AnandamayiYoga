@@ -17,7 +17,7 @@
 @endif
 
 <div class="row">
-  <form method="POST" id="create-article" class="p-4 row w-100" action="/office/articles" enctype="multipart/form-data">
+  <form method="POST" id="create-article" class="p-4 row w-100" action="/admin/articles" enctype="multipart/form-data">
     {{csrf_field()}}
     
     @if(request()->has('blog'))

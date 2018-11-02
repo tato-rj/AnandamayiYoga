@@ -78,6 +78,9 @@ abstract class AppStats
     
     public function percentage($value)
     {
+        if (! $this->total)
+            return null;
+        
         return round($value*100/$this->total);
     }
 }

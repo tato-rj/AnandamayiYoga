@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Notifications\Managers\Membership;
+namespace App\Notifications\Admins\Membership;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
@@ -59,7 +59,7 @@ class ResumedMembershipNotification extends Notification
         return [
             'type' => 'membership',
             'message' => "{$this->user->fullName} resumed the membership!",
-            'url' => "/office/users/{$this->user->id}",
+            'url' => "/admin/users/{$this->user->id}",
             'image' => 'app/misc/happy-emoji.png'
         ];
     }

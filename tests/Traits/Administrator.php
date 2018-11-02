@@ -2,11 +2,11 @@
 
 namespace Tests\Traits;
 
-use App\{Manager, Chapter};
+use App\{Admin, Chapter};
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
-trait Admin
+trait Administrator
 {
 	public function createNewArticle()
 	{
@@ -182,7 +182,7 @@ trait Admin
 		$request->subtypes = create('App\AsanaSubType', [], 2);
 		$request->levels = create('App\Level');
 
-		$this->post('/office/asanas', $request->toArray())
+		$this->post('/admin/asanas', $request->toArray())
 			 ->assertSessionHas('status');
 
 		return $request;
@@ -200,18 +200,18 @@ trait Admin
 		$request->category = create('App\Category', [], 4)->pluck('id');
 		$request->lessons = create('App\Lesson', [], 2)->pluck('id');
 
-		$this->post('/office/programs', $request->toArray())
+		$this->post('/admin/programs', $request->toArray())
 			 ->assertSessionHas('status');
 
 		return $request;		
 	}
 
-	public function prepareManager()
+	public function prepareAdmin()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$this->logout();
 
-		return Manager::first();	
+		return Admin::first();	
 	}
 }

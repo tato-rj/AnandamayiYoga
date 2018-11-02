@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Notifications\Managers\Membership;
+namespace App\Notifications\Admins\Signups;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class NewMembershipNotification extends Notification
+class NewUserNotification extends Notification
 {
     use Queueable;
 
@@ -42,10 +42,10 @@ class NewMembershipNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'type' => 'membership',
-            'message' => "We have a new member! {$this->user->fullName} just joined the membership.",
-            'url' => "/office/users/{$this->user->id}",
-            'image' => 'app/misc/happy-emoji.png'
+            'type' => 'user',
+            'message' => "{$this->user->fullName} has just signed up!",
+            'url' => "/admin/users/{$this->user->id}",
+            'image' => $this->user->avatar()
         ];
     }
 }

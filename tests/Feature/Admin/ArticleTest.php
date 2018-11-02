@@ -4,18 +4,18 @@ namespace Tests\Feature\Admin;
 
 use App\Article;
 use Tests\AppTest;
-use Tests\Traits\Admin;
+use Tests\Traits\Administrator;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
 class ArticleTest extends AppTest
 {
-	use Admin;
+	use Administrator;
 
 	/** @test */
-	public function a_manager_can_publish_an_article()
+	public function a_admin_can_publish_an_article()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$this->createNewArticle($blog = false);
 
@@ -27,11 +27,11 @@ class ArticleTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_publish_a_blog_post()
+	public function a_admin_can_publish_a_blog_post()
 	{
 		Storage::fake('s3');
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$this->createNewBlogPost();
 
@@ -45,7 +45,7 @@ class ArticleTest extends AppTest
 	/** @test */
 	public function the_same_article_cannot_be_added_twice()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewArticle();
 
@@ -55,9 +55,9 @@ class ArticleTest extends AppTest
 	}
 
 	/** @test */
-	public function if_the_name_of_a_lesson_exists_the_manager_is_notified_right_after_typing_it()
+	public function if_the_name_of_a_lesson_exists_the_admin_is_notified_right_after_typing_it()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewArticle();
 
@@ -69,9 +69,9 @@ class ArticleTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_edit_an_article()
+	public function a_admin_can_edit_an_article()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$article = create('App\Article');
 
@@ -87,9 +87,9 @@ class ArticleTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_update_the_article_topics()
+	public function a_admin_can_update_the_article_topics()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewArticle();
 
@@ -106,7 +106,7 @@ class ArticleTest extends AppTest
 	/** @test */
 	public function the_image_is_removed_when_a_new_one_is_uploaded()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$articleRequest = $this->createNewArticle();
 
@@ -127,9 +127,9 @@ class ArticleTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_remove_an_article()
+	public function a_admin_can_remove_an_article()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$article = create('App\Article');
 
@@ -144,7 +144,7 @@ class ArticleTest extends AppTest
 	/** @test */
 	public function the_topics_relationships_are_removed_when_an_article_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$article = create('App\Article');
 
@@ -163,7 +163,7 @@ class ArticleTest extends AppTest
 	/** @test */
 	public function the_article_image_is_removed_when_the_article_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewArticle();
 

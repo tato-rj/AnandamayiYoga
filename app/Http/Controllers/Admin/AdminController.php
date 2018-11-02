@@ -3,15 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Records\Records;
-use App\Http\Requests\ManagerEmailForm;
+use App\Http\Requests\AdminEmailForm;
 use Carbon\Carbon;
-use App\{Lesson, Program, Level, User, Course, UserRecord, Manager, Asana, AsanaType, RoutineQuestionaire, Feedback, Teacher, Article, ArticleTopic};
+use App\{Lesson, Program, Level, User, Course, UserRecord, Admin, Asana, AsanaType, RoutineQuestionaire, Feedback, Teacher, Article, ArticleTopic};
 use App\Billing\Membership;
 use App\Filters\UserFilters;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class OfficeController extends Controller
+class AdminController extends Controller
 {
 	public function index(Membership $membership)
 	{
@@ -130,12 +130,12 @@ class OfficeController extends Controller
         Feedback::create([
         	'about' => 'delete',
             'email' => $user->email,
-            'comment' => 'User deleted by a manager.'
+            'comment' => 'User deleted by an administrator.'
         ]);
 
 		$user->delete();
 
-		return redirect('/office/users')->with('status', 'The user has been successfully deleted.');
+		return redirect('/admin/users')->with('status', 'The user has been successfully deleted.');
 	}
 
 	public function teachers(Request $request)
@@ -154,10 +154,10 @@ class OfficeController extends Controller
 	{
 		$teacher->delete();
 
-		return redirect('/office/teachers')->with('status', 'The teacher has been successfully deleted.');
+		return redirect('/admin/teachers')->with('status', 'The teacher has been successfully deleted.');
 	}
 
-	public function sendMail(Request $request, ManagerEmailForm $form)
+	public function sendMail(Request $request, AdminEmailForm $form)
 	{
 		$form->send($request);
 

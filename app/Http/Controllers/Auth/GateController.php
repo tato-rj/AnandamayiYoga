@@ -16,38 +16,43 @@ class GateController
 
 	protected static function enter()
 	{
-		Route::post('/enter', function (){
-			if (self::isAdmin()) {
-				self::authorize();
-				
-				return back();
-			} else {
-				return back()->with('denied', 'Ops, wrong password!');
-			}
-		});		
+		Route::post('/enter', 'Auth\GateController@open');		
+	}
+
+	public function open()
+	{
+		if ($this->isAdmin()) {
+			$this->authorize();
+			
+			return back();
+		} else {
+			return back()->with('denied', 'Ops, wrong password!');
+		}
 	}
 
 	protected static function exit()
 	{
-		Route::get('/exit', function() {
-			self::unAuthorize();
-			return redirect()->route('home');
-		});		
+		Route::get('/exit', 'Auth\GateController@close');		
 	}
 
-	protected static function isAdmin()
+	public function close()
+	{
+		$this->unAuthorize();
+		return redirect()->route('home');		
+	}
+
+	public function isAdmin()
 	{
 		return request()->gatepass == self::PASS;
 	}
 
-	protected static function unAuthorize()
+	public function unAuthorize()
 	{
 		session()->pull('gate');			
 	}
 
-	protected static function authorize()
+	public function authorize()
 	{
 		session()->put('gate', 'authorized');
-				
 	}
 }

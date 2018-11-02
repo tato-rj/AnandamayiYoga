@@ -2,8 +2,8 @@
 
 Route::prefix('/mail')->namespace('Admin')->name('email.')->group(function() {
 
-    Route::get('/mail', 'OfficeController@createMail')->name('create');
+    Route::get('/mail', 'AdminController@createMail')->name('create');
 
-    Route::post('/mail', 'OfficeController@sendMail')->name('send');
+    Route::post('/mail', 'AdminController@sendMail')->name('send');
 
 });

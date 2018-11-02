@@ -1,6 +1,6 @@
 <div class="col-lg-3 col-md-3 col-sm-4 col-6 mb-4">
   <div class="border rounded t-2 hover-shadow-light">
-    <a href="/office/courses/{{$course->slug}}" class="link-none">
+    <a href="/admin/courses/{{$course->slug}}" class="link-none">
       <div class="m-3 bg-full rounded" style="background-image:url({{cloud($course->image_path)}}); height: 120px;"></div>
       <div class="m-3">
         <p class="mb-2 clamp-1 border-bottom pb-1"><strong>{{$course->name}}</strong></p>

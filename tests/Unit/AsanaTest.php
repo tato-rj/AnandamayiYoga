@@ -98,11 +98,11 @@ class AsanaTest extends AppTest
 	{
 		$asana = create('App\Asana');
 
-		$this->assertEquals(0, $asana->views_count);
+		$this->assertEquals(0, $asana->views);
 
 		$this->get($asana->path());
 
-		$this->assertEquals(1, $asana->fresh()->views_count);
+		$this->assertEquals(1, $asana->fresh()->views);
 	}
 
 	/** @test */
@@ -118,7 +118,7 @@ class AsanaTest extends AppTest
 		$this->get($asana2->path());
 		$this->get($asana3->path());
 
-		$this->assertEquals(5, \App\Asana::all()->sum('views_count'));
+		$this->assertEquals(5, \App\Asana::all()->sum('views'));
 	}
 
 	/** @test */

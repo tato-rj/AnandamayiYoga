@@ -2,7 +2,7 @@
 
 Route::prefix('/programs')->name('programs.')->group(function() {
 
-    Route::get('', 'Admin\OfficeController@programs')->name('index');
+    Route::get('', 'Admin\AdminController@programs')->name('index');
 
     Route::get('/{program}', 'Classes\ProgramsController@edit')->name('edit');
 

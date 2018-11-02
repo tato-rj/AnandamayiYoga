@@ -7,9 +7,9 @@ use Tests\AppTest;
 class CategoryTest extends AppTest
 {
 	/** @test */
-	public function a_manager_can_create_a_new_category()
+	public function a_admin_can_create_a_new_category()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$category = make('App\Category');
 
@@ -24,7 +24,7 @@ class CategoryTest extends AppTest
 	/** @test */
 	public function the_same_category_cannot_be_added_twice()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$category = make('App\Category');
 
@@ -37,9 +37,9 @@ class CategoryTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_edit_a_category()
+	public function a_admin_can_edit_a_category()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$category = create('App\Category');
 
@@ -55,9 +55,9 @@ class CategoryTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_remove_a_category()
+	public function a_admin_can_remove_a_category()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$category = create('App\Category');
 
@@ -78,7 +78,7 @@ class CategoryTest extends AppTest
 
 		$this->post(route('user.update.category', $category->id));
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$this->delete(route('admin.categories.destroy', $category->id))
 			 ->assertSessionHas('status');
@@ -91,7 +91,7 @@ class CategoryTest extends AppTest
 	/** @test */
 	public function when_a_category_is_removed_its_relationship_with_lessons_is_also_removed()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$category = create('App\Category');
 
@@ -110,7 +110,7 @@ class CategoryTest extends AppTest
 	/** @test */
 	public function when_a_category_is_removed_its_relationship_with_programs_is_also_removed()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 		
 		$category = create('App\Category');
 

@@ -17,7 +17,7 @@ class UserTest extends AppTest
 
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$this->createRoutine($request);
 
@@ -123,7 +123,7 @@ class UserTest extends AppTest
 
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$routine = $this->createRoutine($request);
 
@@ -145,7 +145,7 @@ class UserTest extends AppTest
 
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$routine = $this->createRoutine($request);
 
@@ -275,7 +275,7 @@ class UserTest extends AppTest
 		
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 		
 		$routine = $this->createRoutine($request);
 
@@ -470,7 +470,7 @@ class UserTest extends AppTest
 
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 		
 		$this->createRoutine($request);
 

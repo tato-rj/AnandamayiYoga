@@ -2,10 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Traits\Localized;
 
-class Level extends Model
+class Level extends Anandamayi
 {
 	use Localized;
 	

@@ -5,11 +5,11 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
-use App\Mail\ManagerEmail;
+use App\Mail\AdminEmail;
 
-class ManagerEmailForm extends FormRequest
+class AdminEmailForm extends FormRequest
 {
-    protected $redirectRoute = 'office@createMail';
+    protected $redirectRoute = 'admin@createMail';
     
     /**
      * Determine if the user is authorized to make this request.
@@ -42,7 +42,7 @@ class ManagerEmailForm extends FormRequest
         $recipients = explode(', ', $request->recipients);
 
         foreach ($recipients as $recipient) {
-            Mail::to($recipient)->send(new ManagerEmail($request));
+            Mail::to($recipient)->send(new AdminEmail($request));
         }
     }
 }

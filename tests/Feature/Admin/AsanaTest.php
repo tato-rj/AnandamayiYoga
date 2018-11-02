@@ -3,19 +3,19 @@
 namespace Tests\Feature\Admin;
 
 use Tests\AppTest;
-use Tests\Traits\Admin;
+use Tests\Traits\Administrator;
 use App\Asana;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
 class AsanaTest extends AppTest
 {
-	use Admin;
+	use Administrator;
 
 	/** @test */
-	public function a_manager_can_create_a_new_asana()
+	public function a_admin_can_create_a_new_asana()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewAsana();
 
@@ -37,7 +37,7 @@ class AsanaTest extends AppTest
 	/** @test */
 	public function the_same_asana_cannot_be_added_twice()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$asana = $this->createNewAsana();
 
@@ -48,9 +48,9 @@ class AsanaTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_edit_an_asana()
+	public function a_admin_can_edit_an_asana()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$asana = create('App\Asana');
 
@@ -66,9 +66,9 @@ class AsanaTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_update_the_asana_types()
+	public function a_admin_can_update_the_asana_types()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewAsana();
 
@@ -83,9 +83,9 @@ class AsanaTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_update_the_asana_subtypes()
+	public function a_admin_can_update_the_asana_subtypes()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewAsana();
 
@@ -100,9 +100,9 @@ class AsanaTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_update_the_asana_benefits()
+	public function a_admin_can_update_the_asana_benefits()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewAsana();
 
@@ -117,9 +117,9 @@ class AsanaTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_update_the_asana_steps()
+	public function a_admin_can_update_the_asana_steps()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewAsana();
 
@@ -134,9 +134,9 @@ class AsanaTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_update_the_asana_levels()
+	public function a_admin_can_update_the_asana_levels()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewAsana();
 
@@ -153,7 +153,7 @@ class AsanaTest extends AppTest
 	/** @test */
 	public function the_image_is_removed_when_a_new_one_is_uploaded()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$asanaRequest = $this->createNewAsana();
 
@@ -176,7 +176,7 @@ class AsanaTest extends AppTest
 	/** @test */
 	public function the_video_is_removed_when_a_new_one_is_uploaded()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$asanaRequest = $this->createNewAsana();
 
@@ -197,9 +197,9 @@ class AsanaTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_remove_an_asana()
+	public function a_admin_can_remove_an_asana()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$asana = create('App\Asana');
 
@@ -214,7 +214,7 @@ class AsanaTest extends AppTest
 	/** @test */
 	public function the_asana_types_relationship_is_removed_when_the_asana_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewAsana();
 
@@ -235,7 +235,7 @@ class AsanaTest extends AppTest
 	/** @test */
 	public function the_asana_levels_relationship_is_removed_when_the_asana_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewAsana();
 
@@ -256,7 +256,7 @@ class AsanaTest extends AppTest
 	/** @test */
 	public function the_asana_image_and_video_are_removed_when_the_asana_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewAsana();
 
@@ -272,7 +272,7 @@ class AsanaTest extends AppTest
 	/** @test */
 	public function when_an_asana_is_deleted_its_favorite_relatioship_with_a_user_is_also_removed()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewAsana();
 
@@ -298,7 +298,7 @@ class AsanaTest extends AppTest
 	/** @test */
 	public function when_an_asana_is_deleted_its_benefits_are_also_removed()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewAsana();
 

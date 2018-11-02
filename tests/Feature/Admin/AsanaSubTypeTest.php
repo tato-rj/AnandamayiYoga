@@ -7,9 +7,9 @@ use Tests\AppTest;
 class AsanaSubTypeTest extends AppTest
 {
 	/** @test */
-	public function a_manager_can_create_a_new_asana_sub_type()
+	public function a_admin_can_create_a_new_asana_sub_type()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$subtype = make('App\AsanaSubType');
 
@@ -24,7 +24,7 @@ class AsanaSubTypeTest extends AppTest
 	/** @test */
 	public function the_same_asana_sub_type_cannot_be_added_twice()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$subtype = make('App\AsanaSubType');
 
@@ -33,13 +33,13 @@ class AsanaSubTypeTest extends AppTest
 
 		$this->expectException('Illuminate\Validation\ValidationException');
 
-		$this->post('/office/asana-subtypes', $subtype->toArray());
+		$this->post('/admin/asana-subtypes', $subtype->toArray());
 	}
 
 	/** @test */
-	public function a_manager_can_edit_an_asana_sub_type()
+	public function a_admin_can_edit_an_asana_sub_type()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$subtype = create('App\AsanaSubType');
 
@@ -55,9 +55,9 @@ class AsanaSubTypeTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_remove_an_asana_sub_type()
+	public function a_admin_can_remove_an_asana_sub_type()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$subtype = create('App\AsanaSubType');
 
@@ -72,7 +72,7 @@ class AsanaSubTypeTest extends AppTest
 	/** @test */
 	public function when_a_type_is_removed_its_relationship_with_asanas_is_also_removed()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$subtype = create('App\AsanaSubType');
 

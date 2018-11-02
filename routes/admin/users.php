@@ -2,12 +2,12 @@
 
 Route::prefix('/users')->namespace('Admin')->name('users.')->group(function() {
 
-    Route::get('', 'OfficeController@users')->name('index');
+    Route::get('', 'AdminController@users')->name('index');
 
-    Route::get('/{user}', 'OfficeController@user')->name('show');
+    Route::get('/{user}', 'AdminController@user')->name('show');
 
-    Route::get('/{user}/invoices', 'OfficeController@invoices')->name('invoices');
+    Route::get('/{user}/invoices', 'AdminController@invoices')->name('invoices');
 
-    Route::delete('/{user}', 'OfficeController@destroyUser')->name('destroy');
+    Route::delete('/{user}', 'AdminController@destroyUser')->name('destroy');
 
 });

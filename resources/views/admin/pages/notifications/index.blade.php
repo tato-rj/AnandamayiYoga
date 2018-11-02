@@ -10,7 +10,7 @@
 <script type="text/javascript">
 function markNotification(action, label, button, message)
 {
-	$.post("/office/notifications/"+button.attr('data-id')+"/mark-"+action, function() {
+	$.post("/admin/notifications/"+button.attr('data-id')+"/mark-"+action, function() {
 		button.text(label).toggleClass('mark-read').toggleClass('mark-unread');
 		message.toggleClass('opacity-4');
 	}).fail(function(request, status, error) {

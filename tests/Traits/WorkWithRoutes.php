@@ -4,10 +4,10 @@ namespace Tests\Traits;
 
 trait WorkWithRoutes
 {
-	protected $exceptions = ['goodbye', 'login', 'office/login', 'office', 'office/statistics', 'password/reset', 'register/confirm'];
-	protected $allAuthMiddlewares = ['auth:api', 'auth:manager', 'auth:manager-api','auth'];
+	protected $exceptions = ['goodbye', 'login', 'admin/login', 'admin', 'admin/statistics', 'password/reset', 'register/confirm'];
+	protected $allAuthMiddlewares = ['auth:api', 'auth:admin', 'auth:admin-api','auth'];
 	protected $userAuthMiddlewares = ['auth:api', 'auth'];
-	protected $managerAuthMiddlewares = ['auth:api', 'auth:manager', 'auth:manager-api'];
+	protected $adminAuthMiddlewares = ['auth:api', 'auth:admin', 'auth:admin-api'];
 	
 	public function getRoutes($except, $only = '/')
 	{

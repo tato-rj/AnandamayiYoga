@@ -19,7 +19,7 @@ trait HasRoutine
 	{
 		Storage::fake('s3');
 		
-		$this->post('office/routines', [
+		$this->post('admin/routines', [
 			'request_id' => $request->id,
 			'user_id' => $request->user->id,
 			'comment' => 'A new comment',

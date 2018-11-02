@@ -4,7 +4,7 @@ Route::prefix('/articles')->name('articles.')->group(function() {
 
     Route::prefix('/topics')->name('topics.')->group(function() {
 
-        Route::get('', 'Admin\OfficeController@articleTopics')->name('index');
+        Route::get('', 'Admin\AdminController@articleTopics')->name('index');
 
         Route::post('', 'Reads\ArticleTopicsController@store')->name('store');
 
@@ -14,9 +14,9 @@ Route::prefix('/articles')->name('articles.')->group(function() {
 
     });
 
-    Route::get('', 'Admin\OfficeController@articles')->name('index');
+    Route::get('', 'Admin\AdminController@articles')->name('index');
 
-    Route::get('/blog', 'Admin\OfficeController@blog')->name('blog');
+    Route::get('/blog', 'Admin\AdminController@blog')->name('blog');
 
     Route::get('/create', 'Reads\ArticlesController@create')->name('create');
 

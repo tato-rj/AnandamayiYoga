@@ -11,6 +11,6 @@ class AdminTest extends AppTest
 	{
 		$this->expectException('Illuminate\Auth\AuthenticationException');
 		
-		$this->get('/office'); 
+		$this->get('/admin'); 
 	}
 }

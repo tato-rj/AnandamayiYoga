@@ -3,19 +3,19 @@
 namespace Tests\Feature\Admin;
 
 use Tests\AppTest;
-use Tests\Traits\Admin;
+use Tests\Traits\Administrator;
 use App\{Course, Teacher};
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\UploadedFile;
 
 class TeacherTest extends AppTest
 {
-	use Admin;
+	use Administrator;
 
 	/** @test */
-	public function a_manager_can_create_a_new_teacher()
+	public function a_admin_can_create_a_new_teacher()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$teacherRequest = $this->createNewTeacher();
 
@@ -31,7 +31,7 @@ class TeacherTest extends AppTest
 	/** @test */
 	public function the_same_teacher_cannot_be_added_twice()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$teacher = $this->createNewTeacher();
 
@@ -41,9 +41,9 @@ class TeacherTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_edit_a_teacher()
+	public function a_admin_can_edit_a_teacher()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$teacherRequest = $this->createNewTeacher();
 
@@ -60,9 +60,9 @@ class TeacherTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_update_the_teachers_categories()
+	public function a_admin_can_update_the_teachers_categories()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$teacherRequest = $this->createNewTeacher();
 
@@ -79,7 +79,7 @@ class TeacherTest extends AppTest
 	/** @test */
 	public function the_image_is_removed_when_a_new_one_is_uploaded()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$teacherRequest = $this->createNewTeacher();
 
@@ -100,9 +100,9 @@ class TeacherTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_remove_a_teacher()
+	public function a_admin_can_remove_a_teacher()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$teacherRequest = $this->createNewTeacher();
 
@@ -119,7 +119,7 @@ class TeacherTest extends AppTest
 	/** @test */
 	public function the_teachers_image_is_removed_when_the_teacher_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$teacherRequest = $this->createNewTeacher();
 
@@ -133,7 +133,7 @@ class TeacherTest extends AppTest
 	/** @test */
 	public function the_teachers_courses_are_removed_when_the_teacher_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$teacherRequest = $this->createNewTeacher();
 
@@ -159,7 +159,7 @@ class TeacherTest extends AppTest
 	/** @test */
 	public function the_teachers_lessons_are_removed_when_the_teacher_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$lesson = $this->createNewLesson();
 
@@ -171,7 +171,7 @@ class TeacherTest extends AppTest
 	/** @test */
 	public function the_teachers_programs_are_removed_when_the_teacher_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$program = $this->createNewProgram();
 

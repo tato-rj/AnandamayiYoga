@@ -2,11 +2,7 @@
 
 Route::prefix('reads')->name('reads.')->group(function() {
 
-    Route::get('/books', function () {
-
-        return view('pages/reads/books/index');
-
-    })->name('books');
+    Route::get('/books', 'Reads\BooksController@index')->name('books');
 
     Route::namespace('Reads')->prefix('articles')->name('articles.')->group(function() {
 

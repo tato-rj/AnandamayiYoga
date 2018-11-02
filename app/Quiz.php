@@ -2,10 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Traits\Completable;
 
-class Quiz extends Model
+class Quiz extends Anandamayi
 {
     use Completable;
     

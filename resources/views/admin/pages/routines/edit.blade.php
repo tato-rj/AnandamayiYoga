@@ -6,7 +6,7 @@
   'title' => "Edit the routine for {$routine->user->fullName}",
 ])
 @slot('subtitle')
-<a href="/office/routines/active" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all active requests</a>
+<a href="/admin/routines/active" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all active requests</a>
 @endslot
 @endcomponent
 
@@ -28,7 +28,7 @@
 	
 	@include('admin/components/uploads/video-edit', [
 	'video' => $routine->video_path,
-	'path' => "/office/routines/{$routine->id}/video"])
+	'path' => "/admin/routines/{$routine->id}/video"])
 
 	</div>
 	<div class="col-lg-9 col-md-3 col-sm-8 col-6">
@@ -38,7 +38,7 @@
         @include('components/editing/label', [
           'title' => 'Comments',
           'id' => "comment-{$routine->id}",
-          'path' => "/office/routines/{$routine->id}"])
+          'path' => "/admin/routines/{$routine->id}"])
     
         <textarea rows="5" disabled class="form-control" placeholder="This program has no comments"></textarea>
       </div>

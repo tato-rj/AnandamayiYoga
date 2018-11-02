@@ -2,8 +2,8 @@
 
 namespace App\Listeners\Routines;
 
-use App\Manager;
-use App\Notifications\Managers\Routines\StartRoutineNotification;
+use App\Admin;
+use App\Notifications\Admins\Routines\StartRoutineNotification;
 use App\Events\Routines\StartRoutine;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -28,8 +28,8 @@ class PostRoutineStartNotification
      */
     public function handle(StartRoutine $event)
     {
-        Manager::all()->each(function($manager) use ($event) {
-            $manager->notify(new StartRoutineNotification($event->user));
+        Admin::all()->each(function($admin) use ($event) {
+            $admin->notify(new StartRoutineNotification($event->user));
         });
     }
 }

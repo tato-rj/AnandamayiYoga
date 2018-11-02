@@ -4,9 +4,8 @@ namespace App;
 
 use App\Events\CourseCreated;
 use App\Traits\{FindBySlug, InteractsWithCloud};
-use Illuminate\Database\Eloquent\Model;
 
-class Course extends Model
+class Course extends Anandamayi
 {
 	use FindBySlug, InteractsWithCloud;
 

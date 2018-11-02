@@ -2,9 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class CompletedLesson extends Model
+class CompletedLesson extends Anandamayi
 {
     protected $guarded = [];
 }

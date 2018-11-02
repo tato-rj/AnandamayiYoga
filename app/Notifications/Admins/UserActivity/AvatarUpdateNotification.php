@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Notifications\Managers\Routines;
+namespace App\Notifications\Admins\UserActivity;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class StartRoutineNotification extends Notification
+class AvatarUpdateNotification extends Notification
 {
     use Queueable;
 
@@ -43,8 +43,8 @@ class StartRoutineNotification extends Notification
     {
         return [
             'type' => 'user',
-            'message' => "{$this->user->fullName} started the 4-week Yoga routine.",
-            'url' => "/office/users/{$this->user->id}",
+            'message' => "{$this->user->fullName} change the avatar picture.",
+            'url' => "/admin/users/{$this->user->id}",
             'image' => $this->user->avatar()
         ];
     }

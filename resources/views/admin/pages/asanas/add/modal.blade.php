@@ -2,7 +2,7 @@
   'title' => 'Create a new Asana',
   'size' => 'modal-lg'
 ])
-<form method="POST" id="create-asana" class="p-4" action="/office/asanas" enctype="multipart/form-data">
+<form method="POST" id="create-asana" class="p-4" action="/admin/asanas" enctype="multipart/form-data">
   {{csrf_field()}}
   <div class="row">
     

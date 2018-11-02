@@ -6,9 +6,9 @@
         <div class="col-lg-3 col-md-4 col-sm-8 col-xs-10 mx-auto text-center">
             <div class="d-flex align-items-end mb-4">
                 <img src="{{cloud('app/brand/logo-pink.svg')}}" style="width: 20%; min-width: 45px; max-width: 90px">
-                <h3 class="text-red ml-2 mb-0">Login<span class="lead text-muted">MANAGER</span></h3>
+                <h3 class="text-red ml-2 mb-0">Login<span class="lead text-muted">ADMIN</span></h3>
             </div>
-            <form method="POST" action="{{ route('manager.login.submit') }}">
+            <form method="POST" action="{{ route('admin.login.submit') }}">
                 {{csrf_field()}}
                 @if($errors->has('email'))
                 <div class="invalid-feedback mb-2 mt-0 text-center d-block" data-modal="login-box">

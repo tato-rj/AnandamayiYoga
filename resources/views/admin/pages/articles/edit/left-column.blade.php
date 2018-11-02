@@ -2,7 +2,7 @@
 	{{-- COVER IMAGE --}}
 	@include('admin/components/uploads/image-edit', [
 	'image' => $article->image_path,
-	'path' => "/office/articles/{$article->slug}/image"])
+	'path' => "/admin/articles/{$article->slug}/image"])
 
     {{-- TOPICS --}}
     <div class="form-group edit-control" id="topic-{{$article->id}}" name="topic">
@@ -10,7 +10,7 @@
       @include('components/editing/label', [
         'title' => 'This article is about',
         'id' => "topic-{$article->id}",
-        'path' => "/office/articles/{$article->id}/topics"
+        'path' => "/admin/articles/{$article->id}/topics"
       ])
 
       <div class="row mx-2">

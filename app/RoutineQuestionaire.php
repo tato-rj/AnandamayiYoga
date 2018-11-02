@@ -3,9 +3,8 @@
 namespace App;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
 
-class RoutineQuestionaire extends Model
+class RoutineQuestionaire extends Anandamayi
 {
     protected $guarded = [];
     protected $with = ['user'];

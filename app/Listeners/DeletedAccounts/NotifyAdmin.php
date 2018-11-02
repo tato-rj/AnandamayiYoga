@@ -2,11 +2,11 @@
 
 namespace App\Listeners\DeletedAccounts;
 
-use App\Manager;
+use App\Admin;
 use App\Events\UserRemoved;
-use App\Notifications\Managers\DeletedAccounts\UserRemovedNotification;
+use App\Notifications\Admins\DeletedAccounts\UserRemovedNotification;
 
-class NotifyManager
+class NotifyAdmin
 {
     /**
      * Handle the event.
@@ -16,8 +16,8 @@ class NotifyManager
      */
     public function handle(UserRemoved $event)
     {
-        Manager::all()->each(function($manager) use ($event) {
-            $manager->notify(new UserRemovedNotification($event->user));
+        Admin::all()->each(function($admin) use ($event) {
+            $admin->notify(new UserRemovedNotification($event->user));
         });
     }
 }

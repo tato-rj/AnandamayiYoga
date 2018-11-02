@@ -8,7 +8,7 @@
     </div>
 
     <div class="header__logo hidden-sm-down">
-        <h1><a href="/office" class="no-underline"><img src="{{cloud('app/brand/logo.svg')}}" class="mr-2" style="width: 3.2em"></a></h1>
+        <h1><a href="/admin" class="no-underline"><img src="{{cloud('app/brand/logo.svg')}}" class="mr-2" style="width: 3.2em"></a></h1>
     </div>
 
     <ul class="top-nav d-flex">
@@ -24,7 +24,7 @@
                 </h5>
             </a>
 
-            @include('components/notifications/layout', ['guard' => '/office'])
+            @include('components/notifications/layout', ['guard' => '/admin'])
 
         </li>
 

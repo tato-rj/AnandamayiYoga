@@ -5,7 +5,7 @@
 @component('admin/components/page-title', ['title' => 'Edit Asana'])
 
   @slot('subtitle')
-    <a href="/office/asanas" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all asanas</a>
+    <a href="/admin/asanas" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all asanas</a>
   @endslot
 
 @endcomponent

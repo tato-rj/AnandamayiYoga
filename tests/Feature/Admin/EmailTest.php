@@ -3,22 +3,22 @@
 namespace Tests\Feature\Admin;
 
 use App\Course;
-use App\Mail\ManagerEmail;
+use App\Mail\AdminEmail;
 use App\Notifications\Teachers\{LessonPublishedNotification, ProgramPublishedNotification, CoursePublishedNotification};
-use Tests\Traits\{SendsMail, Admin};
+use Tests\Traits\{SendsMail, Administrator};
 use Illuminate\Support\Facades\{Mail, Notification};
 use Tests\AppTest;
 
 class EmailTest extends AppTest
 {
-	use SendsMail, Admin;
+	use SendsMail, Administrator;
 
 	/** @test */
-	public function a_manager_can_send_an_email_from_the_managers_page()
+	public function a_admin_can_send_an_email_from_the_admin_page()
 	{
 		Mail::fake();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$email = [
 			'from' => 'email@email.com',
@@ -30,15 +30,15 @@ class EmailTest extends AppTest
 
 		$this->post(route('admin.email.send', $email));
 
-		Mail::assertSent(ManagerEmail::class, function($mail) {
+		Mail::assertSent(AdminEmail::class, function($mail) {
 		    return $mail->hasTo('johndoe@email.com');
 		});
 
-		Mail::assertSent(ManagerEmail::class, function($mail) {
+		Mail::assertSent(AdminEmail::class, function($mail) {
 		    return $mail->hasTo('maryjane@email.com');
 		});
 
-		Mail::assertSent(ManagerEmail::class, function($mail) {
+		Mail::assertSent(AdminEmail::class, function($mail) {
 		    return $mail->hasTo('chrismatt@email.com');
 		});
 	}
@@ -48,7 +48,7 @@ class EmailTest extends AppTest
 	{
 		Notification::fake();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$lesson = $this->createNewLesson();
 
@@ -60,7 +60,7 @@ class EmailTest extends AppTest
 	{
 		Notification::fake();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$program = $this->createNewProgram();
 
@@ -72,7 +72,7 @@ class EmailTest extends AppTest
 	{
 		Notification::fake();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 

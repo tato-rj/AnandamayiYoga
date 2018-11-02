@@ -24,7 +24,7 @@
 
 		<div>
 			{{-- DELETE BUTTON --}}
-            <i class="fas text-danger fa-trash-alt mr-1 cursor-pointer delete" data-path="/office/articles/topics/{{$topic->slug}}" data-toggle="modal" data-target="#delete-confirm"></i>
+            <i class="fas text-danger fa-trash-alt mr-1 cursor-pointer delete" data-path="/admin/articles/topics/{{$topic->slug}}" data-toggle="modal" data-target="#delete-confirm"></i>
 			{{-- EDIT BUTTON --}}
 			<i class="fas fa-edit cursor-pointer text-warning edit" data-id="name-{{$topic->id}}"></i>
 			{{-- SAVE BUTTON --}}

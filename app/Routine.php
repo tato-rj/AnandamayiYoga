@@ -3,10 +3,9 @@
 namespace App;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 
-class Routine extends Model
+class Routine extends Anandamayi
 {
     protected $guarded = [];
     protected $with = ['schedules', 'user'];

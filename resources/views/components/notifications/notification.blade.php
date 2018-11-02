@@ -1,6 +1,6 @@
 <div class="dropdown-divider m-0"></div>
 
-<a href="{{$notification->data['url'] or null}}" class="notifications-item t-2 d-block" data-guard="{{$guard or null}}" data-id="{{$notification->id}}">
+<a href="{{$notification->data['url'] ?? null}}" class="notifications-item t-2 d-block" data-guard="{{$guard ?? null}}" data-id="{{$notification->id}}">
   <div class="d-flex align-items-center h-100">
     {{-- IMAGE --}}
     <div style="width: 20%; height: 54px">

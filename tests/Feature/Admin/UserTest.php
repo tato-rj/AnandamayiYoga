@@ -7,11 +7,11 @@ use Tests\AppTest;
 class UserTest extends AppTest
 {
 	/** @test */
-	public function a_manager_can_delete_a_user()
+	public function a_admin_can_delete_a_user()
 	{
 		$user = $this->register();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$this->delete(route('admin.users.destroy', $user->id));
 

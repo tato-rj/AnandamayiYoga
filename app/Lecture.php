@@ -2,10 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Traits\{InteractsWithCloud, Completable};
 
-class Lecture extends Model
+class Lecture extends Anandamayi
 {
 	use InteractsWithCloud, Completable;
 

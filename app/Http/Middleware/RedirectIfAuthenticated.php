@@ -21,7 +21,7 @@ class RedirectIfAuthenticated
             case 'manager':
 
                 if (Auth::guard($guard)->check())
-                    return redirect('/office');
+                    return redirect('/admin');
 
                 break;
             

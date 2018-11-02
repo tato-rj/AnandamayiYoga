@@ -1,1 +1,1 @@
-<i class="{{$position or null}} fas text-danger fa-heart"></i>
+<i class="{{$position ?? null}} fas text-danger fa-heart"></i>

@@ -6,7 +6,7 @@
   'title' => 'Create a routine',
 ])
 @slot('subtitle')
-<a href="/office/routines/pending" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all pending requests</a>
+<a href="/admin/routines/pending" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all pending requests</a>
 @endslot
 @endcomponent
 
@@ -22,7 +22,7 @@
 	])
 	@endcomponent
 
-	<form method="POST" action="/office/routines" enctype="multipart/form-data">
+	<form method="POST" action="/admin/routines" enctype="multipart/form-data">
 	  {{csrf_field()}}
 	  	<input type="hidden" name="schedule">
 	  	<input type="hidden" name="user_id" value="{{$request->user->id}}">

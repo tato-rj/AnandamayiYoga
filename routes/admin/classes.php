@@ -2,13 +2,7 @@
 
 Route::prefix('/classes')->namespace('Classes')->name('classes.')->group(function() {
 
-    Route::get('', function() {
-        $lessons = \App\Lesson::paginate(11);
-        $programs = \App\Program::orderBy('name')->get();
-        $teachers = \App\Teacher::orderBy('name')->get();
-
-        return view('admin/pages/lessons/index', compact(['lessons', 'programs', 'teachers']));
-    })->name('index');
+    Route::get('', 'LessonsController@admin')->name('index');
 
     Route::get('/{lesson}', 'LessonsController@edit')->name('edit');
 

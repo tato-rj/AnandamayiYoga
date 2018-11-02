@@ -2,9 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Completable extends Model
+class Completable extends Anandamayi
 {
     protected $guarded = [];
 

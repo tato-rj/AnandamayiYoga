@@ -1,5 +1,5 @@
 @component('admin/components/modals/add', ['title' => 'Create a new Asana Type'])
-    <form method="POST" action="/office/asana-types">
+    <form method="POST" action="/admin/asana-types">
       {{csrf_field()}}
       <div class="form-group">
         <input required type="text" class="form-control" name="name" placeholder="Type Name">

@@ -4,9 +4,8 @@ namespace App;
 
 use App\Traits\{FindBySlug, Favoritable, InteractsWithCloud};
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Database\Eloquent\Model;
 
-class Program extends Model
+class Program extends Anandamayi
 {
     use FindBySlug, Favoritable, InteractsWithCloud;
     

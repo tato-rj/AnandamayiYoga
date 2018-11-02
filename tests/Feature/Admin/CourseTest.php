@@ -3,19 +3,19 @@
 namespace Tests\Feature\Admin;
 
 use Tests\AppTest;
-use Tests\Traits\Admin;
+use Tests\Traits\Administrator;
 use App\Course;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\UploadedFile;
 
 class CourseTest extends AppTest
 {
-	use Admin;
+	use Administrator;
 
 	/** @test */
-	public function a_manager_can_create_a_new_course()
+	public function a_admin_can_create_a_new_course()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$course = $this->createNewCourse();
 
@@ -28,9 +28,9 @@ class CourseTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_edit_a_course()
+	public function a_admin_can_edit_a_course()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -44,9 +44,9 @@ class CourseTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_change_the_teachers_of_a_course()
+	public function a_admin_can_change_the_teachers_of_a_course()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -62,7 +62,7 @@ class CourseTest extends AppTest
 	/** @test */
 	public function the_course_image_is_removed_when_a_new_one_is_uploaded()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -84,7 +84,7 @@ class CourseTest extends AppTest
 	/** @test */
 	public function the_course_preview_video_is_removed_when_a_new_one_is_uploaded()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -104,9 +104,9 @@ class CourseTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_remove_a_course()
+	public function a_admin_can_remove_a_course()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -121,7 +121,7 @@ class CourseTest extends AppTest
 	/** @test */
 	public function the_course_chapters_and_all_its_contents_are_removed_when_the_course_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -152,7 +152,7 @@ class CourseTest extends AppTest
 	/** @test */
 	public function the_course_image_and_preview_video_are_removed_when_the_course_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewcourse();
 

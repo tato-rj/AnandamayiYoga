@@ -2,10 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Traits\{InteractsWithCloud, Filterable};
 
-class Wallpaper extends Model
+class Wallpaper extends Anandamayi
 {
 	use InteractsWithCloud, Filterable;
 

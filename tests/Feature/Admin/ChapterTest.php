@@ -4,19 +4,19 @@ namespace Tests\Feature\Admin;
 
 use Carbon\Carbon;
 use Tests\AppTest;
-use Tests\Traits\Admin;
+use Tests\Traits\Administrator;
 use App\{Course, Chapter, CourseContent};
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\UploadedFile;
 
 class ChapterTest extends AppTest
 {
-	use Admin;
+	use Administrator;
 
 	/** @test */
-	public function a_manager_can_create_an_empty_new_chapter()
+	public function a_admin_can_create_an_empty_new_chapter()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -29,7 +29,7 @@ class ChapterTest extends AppTest
 	/** @test */
 	public function a_course_sets_the_order_of_a_new_chapter_automatically()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -46,11 +46,11 @@ class ChapterTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_upload_many_supporting_materials_to_a_chapter()
+	public function a_admin_can_upload_many_supporting_materials_to_a_chapter()
 	{
 		Storage::fake('s3');
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -80,11 +80,11 @@ class ChapterTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_delete_supporting_materials_from_a_chapter()
+	public function a_admin_can_delete_supporting_materials_from_a_chapter()
 	{
 		Storage::fake('s3');
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -109,9 +109,9 @@ class ChapterTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_reorder_the_chapters()
+	public function a_admin_can_reorder_the_chapters()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -129,9 +129,9 @@ class ChapterTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_edit_a_chapter()
+	public function a_admin_can_edit_a_chapter()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -148,9 +148,9 @@ class ChapterTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_add_a_lecture_to_a_chapter()
+	public function a_admin_can_add_a_lecture_to_a_chapter()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -165,9 +165,9 @@ class ChapterTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_add_a_demonstration_to_a_chapter()
+	public function a_admin_can_add_a_demonstration_to_a_chapter()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -182,9 +182,9 @@ class ChapterTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_add_an_assignment_to_a_chapter()
+	public function a_admin_can_add_an_assignment_to_a_chapter()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -197,9 +197,9 @@ class ChapterTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_add_a_quiz_to_a_chapter()
+	public function a_admin_can_add_a_quiz_to_a_chapter()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -213,9 +213,9 @@ class ChapterTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_update_a_lecture()
+	public function a_admin_can_update_a_lecture()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -235,9 +235,9 @@ class ChapterTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_update_a_demonstration()
+	public function a_admin_can_update_a_demonstration()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -257,9 +257,9 @@ class ChapterTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_update_an_assignment()
+	public function a_admin_can_update_an_assignment()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -279,9 +279,9 @@ class ChapterTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_update_a_quiz()
+	public function a_admin_can_update_a_quiz()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -303,7 +303,7 @@ class ChapterTest extends AppTest
 	/** @test */
 	public function the_lecture_video_is_removed_when_a_new_one_is_uploaded()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -332,7 +332,7 @@ class ChapterTest extends AppTest
 	/** @test */
 	public function the_demonstration_video_is_removed_when_a_new_one_is_uploaded()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -358,9 +358,9 @@ class ChapterTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_delete_a_lecture()
+	public function a_admin_can_delete_a_lecture()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -380,9 +380,9 @@ class ChapterTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_delete_a_demonstration()
+	public function a_admin_can_delete_a_demonstration()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -404,7 +404,7 @@ class ChapterTest extends AppTest
 	/** @test */
 	public function the_lecture_video_is_removed_when_the_lecture_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -428,7 +428,7 @@ class ChapterTest extends AppTest
 	/** @test */
 	public function the_demonstration_video_is_removed_when_the_demonstration_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -450,9 +450,9 @@ class ChapterTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_delete_an_assignment()
+	public function a_admin_can_delete_an_assignment()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -472,9 +472,9 @@ class ChapterTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_delete_a_quiz()
+	public function a_admin_can_delete_a_quiz()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -494,9 +494,9 @@ class ChapterTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_remove_a_chapter()
+	public function a_admin_can_remove_a_chapter()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -514,7 +514,7 @@ class ChapterTest extends AppTest
 	/** @test */
 	public function a_chapters_content_is_removed_when_the_chapter_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();
@@ -537,7 +537,7 @@ class ChapterTest extends AppTest
 	/** @test */
 	public function a_course_automatically_reorders_its_chapters_once_a_chapter_has_been_removed()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
 		$course = Course::where('name', $courseRequest->name)->first();

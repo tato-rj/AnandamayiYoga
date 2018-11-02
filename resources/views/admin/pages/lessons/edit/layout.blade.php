@@ -5,7 +5,7 @@
 @component('admin/components/page-title', ['title' => 'Edit Class'])
 
   @slot('subtitle')
-    <a href="/office/classes" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all single classes</a>
+    <a href="/admin/classes" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all single classes</a>
   @endslot
 
 @endcomponent

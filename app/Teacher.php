@@ -2,11 +2,10 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Traits\{FindBySlug, InteractsWithCloud};
 use Illuminate\Notifications\Notifiable;
 
-class Teacher extends Model
+class Teacher extends Anandamayi
 {
 	use FindBySlug, InteractsWithCloud, Notifiable;
 

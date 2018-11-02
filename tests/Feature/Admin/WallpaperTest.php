@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\Storage;
 class WallpaperTest extends AppTest
 {
 	/** @test */
-	public function a_manager_can_see_all_walpapers_from_a_category()
+	public function a_admin_can_see_all_walpapers_from_a_category()
 	{
-	 	$this->managerSignIn();
+	 	$this->adminSignIn();
 
 	 	$wallpaper = create('App\Wallpaper');
 
@@ -21,9 +21,9 @@ class WallpaperTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_upload_a_wallpaper()
+	public function a_admin_can_upload_a_wallpaper()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		Storage::fake('s3');
 
@@ -48,7 +48,7 @@ class WallpaperTest extends AppTest
 	/** @test */
 	public function a_thumbnail_is_automatically_generated_when_the_image_is_uploaded()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		Storage::fake('s3');
 
@@ -67,9 +67,9 @@ class WallpaperTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_delete_a_wallpaper()
+	public function a_admin_can_delete_a_wallpaper()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		Storage::fake('s3');
 

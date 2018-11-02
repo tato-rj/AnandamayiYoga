@@ -2,7 +2,7 @@
   'title' => 'Create a new Teacher',
   'size' => 'modal-lg'])
 
-<form method="POST" id="create-teacher" class="p-4" action="/office/teachers" enctype="multipart/form-data">
+<form method="POST" id="create-teacher" class="p-4" action="/admin/teachers" enctype="multipart/form-data">
   {{csrf_field()}}
     
     @include('admin/pages/teachers/add/top')

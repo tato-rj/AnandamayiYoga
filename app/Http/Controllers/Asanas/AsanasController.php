@@ -72,7 +72,7 @@ class AsanasController extends Controller
      */
     public function show(Asana $asana)
     {
-        $asana->increment('views_count');
+        $asana->increment('views');
 
         return view('pages/discover/asanas/asana/index', compact('asana'));
     }

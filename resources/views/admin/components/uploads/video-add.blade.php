@@ -1,6 +1,6 @@
 <div class="form-group">
   <div class="custom-file">
-    <input {{$video_required or 'required'}} type="file" class="custom-file-input video" name="video" id="video">
+    <input {{$video_required ?? 'required'}} type="file" class="custom-file-input video" name="video" id="video">
     <label class="custom-file-label clamp-1" for="video">Choose video</label>
   </div>
   <div class="file-info" style="display: none;">

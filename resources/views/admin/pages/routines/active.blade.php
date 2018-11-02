@@ -62,7 +62,7 @@ Are you sure you want to delete this routine?
 $('.delete').on('click', function () {
   $id = $(this).attr('data-id');
 
-  $('#delete-confirm').find('form').attr('action', '/office/routines/'+$id);
+  $('#delete-confirm').find('form').attr('action', '/admin/routines/'+$id);
 });
 
 </script>

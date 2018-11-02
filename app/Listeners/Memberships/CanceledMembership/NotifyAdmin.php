@@ -2,11 +2,11 @@
 
 namespace App\Listeners\Memberships\CanceledMembership;
 
-use App\Manager;
+use App\Admin;
 use App\Events\UserCanceledMembership;
-use App\Notifications\Managers\Membership\CanceledMembershipNotification;
+use App\Notifications\Admins\Membership\CanceledMembershipNotification;
 
-class NotifyManager
+class NotifyAdmin
 {
     /**
      * Create the event listener.
@@ -26,8 +26,8 @@ class NotifyManager
      */
     public function handle(UserCanceledMembership $event)
     {
-        Manager::all()->each(function($manager) use ($event) {
-            $manager->notify(new CanceledMembershipNotification($event->user));
+        Admin::all()->each(function($admin) use ($event) {
+            $admin->notify(new CanceledMembershipNotification($event->user));
         });
     }
 }

@@ -2,9 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Subscription extends Model
+class Subscription extends Anandamayi
 {
     protected $guarded = [];
     static $lists = ['newsletter', 'promo', 'journey'];

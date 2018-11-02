@@ -2,11 +2,11 @@
 
 namespace App\Listeners\Memberships\NewMembership;
 
-use App\Manager;
+use App\Admin;
 use App\Events\UserJoinedMembership;
-use App\Notifications\Managers\Membership\NewMembershipNotification;
+use App\Notifications\Admins\Membership\NewMembershipNotification;
 
-class NotifyManager
+class NotifyAdmin
 {
     /**
      * Create the event listener.
@@ -26,8 +26,8 @@ class NotifyManager
      */
     public function handle(UserJoinedMembership $event)
     {        
-        Manager::all()->each(function($manager) use ($event) {
-            $manager->notify(new NewMembershipNotification($event->user));
+        Admin::all()->each(function($admin) use ($event) {
+            $admin->notify(new NewMembershipNotification($event->user));
         });
     }
 }

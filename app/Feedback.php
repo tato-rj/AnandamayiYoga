@@ -2,10 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Records\Records;
 
-class Feedback extends Model
+class Feedback extends Anandamayi
 {
 	protected $table = 'feedbacks';
     protected $guarded = [];

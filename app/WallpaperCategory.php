@@ -2,9 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
-class WallpaperCategory extends Model
+class WallpaperCategory extends Anandamayi
 {
     public function wallpapers()
     {

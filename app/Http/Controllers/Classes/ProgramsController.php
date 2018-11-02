@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Classes;
 
-use App\{Program, Lesson};
+use App\{Program, Lesson, Teacher};
 use App\Records\Visits;
 use App\Http\Requests\AddProgramForm;
 use Illuminate\Http\Request;
@@ -76,7 +76,7 @@ class ProgramsController extends Controller
      */
     public function show(Program $program)
     {
-        $program->increment('views_count');
+        $program->increment('views');
 
         $list = $program->lessons->pluck('slug')->toArray();
 
@@ -109,7 +109,7 @@ class ProgramsController extends Controller
     public function edit(Program $program)
     {
         $lessons = Lesson::whereNull('program_id')->get();
-        $teachers = \App\Teacher::orderBy('first_name')->get();
+        $teachers = Teacher::orderBy('first_name')->get();
 
         return view('admin/pages/programs/edit/layout', compact(['program', 'lessons', 'teachers']));
     }

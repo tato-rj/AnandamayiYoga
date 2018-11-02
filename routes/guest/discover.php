@@ -2,11 +2,7 @@
 
 Route::prefix('/discover')->name('discover.')->group(function() {
 
-    Route::get('/browse', function () {
-
-        return view('pages/discover/browse/index');
-
-    })->name('browse');
+    Route::get('/browse', 'Classes\LessonsController@browse')->name('browse');
 
     Route::get('/categories/{category}', 'Classes\CategoriesController@show')->name('category');
 

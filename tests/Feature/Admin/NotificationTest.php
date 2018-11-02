@@ -3,83 +3,83 @@
 namespace Tests\Feature\Admin;
 
 use Tests\AppTest;
-use Tests\Traits\{Admin, HasRoutine, UsesFakeStripe, SendsFeedback};
+use Tests\Traits\{Administrator, HasRoutine, UsesFakeStripe, SendsFeedback};
 use Illuminate\Http\UploadedFile;
 
 class NotificationTest extends AppTest
 {
-	use Admin, HasRoutine, UsesFakeStripe, SendsFeedback;
+	use Administrator, HasRoutine, UsesFakeStripe, SendsFeedback;
 
 	/** @test */
-	public function managers_can_mark_a_notification_as_read()
+	public function admins_can_mark_a_notification_as_read()
 	{
-		$manager = $this->prepareManager();
+		$admin = $this->prepareAdmin();
 
 		$this->register();
 
-		$this->managerSignIn($manager);
+		$this->adminSignIn($admin);
 
-		$this->assertCount(1, $manager->unreadNotifications);
-		$this->assertCount(0, $manager->readNotifications);
+		$this->assertCount(1, $admin->unreadNotifications);
+		$this->assertCount(0, $admin->readNotifications);
 
-		$this->post(route('admin.notifications.read', $manager->unreadNotifications()->first()->id));
+		$this->post(route('admin.notifications.read', $admin->unreadNotifications()->first()->id));
 
-		$this->assertCount(0, $manager->fresh()->unreadNotifications);
-		$this->assertCount(1, $manager->fresh()->readNotifications);
+		$this->assertCount(0, $admin->fresh()->unreadNotifications);
+		$this->assertCount(1, $admin->fresh()->readNotifications);
 	}
 
 	/** @test */
-	public function managers_can_mark_all_notifications_as_read()
+	public function admins_can_mark_all_notifications_as_read()
 	{
-		$manager = $this->prepareManager();
+		$admin = $this->prepareAdmin();
 
 		$this->register();
 
-		$this->managerSignIn($manager);
+		$this->adminSignIn($admin);
 
-		$this->assertCount(1, $manager->unreadNotifications);
-		$this->assertCount(0, $manager->readNotifications);
+		$this->assertCount(1, $admin->unreadNotifications);
+		$this->assertCount(0, $admin->readNotifications);
 
 		$this->post(route('admin.notifications.read-all'));
 
-		$this->assertCount(0, $manager->fresh()->unreadNotifications);
-		$this->assertCount(1, $manager->fresh()->readNotifications);
+		$this->assertCount(0, $admin->fresh()->unreadNotifications);
+		$this->assertCount(1, $admin->fresh()->readNotifications);
 	}
 
 	/** @test */
-	public function managers_can_mark_a_notification_as_uread()
+	public function admins_can_mark_a_notification_as_uread()
 	{
-		$manager = $this->prepareManager();
+		$admin = $this->prepareAdmin();
 
 		$this->register();
 		$this->createFakeMember();
 
-		$this->managerSignIn($manager);
+		$this->adminSignIn($admin);
 
-		$notification = $manager->unreadNotifications()->first();
+		$notification = $admin->unreadNotifications()->first();
 
 		$this->post(route('admin.notifications.read', $notification->id));
 
-		$this->assertCount(1, $manager->fresh()->unreadNotifications);
-		$this->assertCount(1, $manager->fresh()->readNotifications);
+		$this->assertCount(1, $admin->fresh()->unreadNotifications);
+		$this->assertCount(1, $admin->fresh()->readNotifications);
 
 		$this->post(route('admin.notifications.unread', $notification->id));
 
-		$this->assertCount(2, $manager->fresh()->unreadNotifications);
-		$this->assertCount(0, $manager->fresh()->readNotifications);
+		$this->assertCount(2, $admin->fresh()->unreadNotifications);
+		$this->assertCount(0, $admin->fresh()->readNotifications);
 	}
 
 	/** @test */
-	public function managers_can_see_all_notifications()
+	public function admins_can_see_all_notifications()
 	{
-		$manager = $this->prepareManager();
+		$admin = $this->prepareAdmin();
 
 		$this->register();
 
-		$this->managerSignIn($manager);
+		$this->adminSignIn($admin);
 
 		// After marking a notification as unread...
-		$this->post(route('admin.notifications.read', $manager->unreadNotifications()->first()->id));
+		$this->post(route('admin.notifications.read', $admin->unreadNotifications()->first()->id));
 
 		// The user can still see all of them
 		$response = $this->getJson(route('admin.notifications.index'))->json();
@@ -88,19 +88,19 @@ class NotificationTest extends AppTest
 	}
 
 	/** @test */
-	public function managers_are_notified_when_a_new_user_signs_up()
+	public function admins_are_notified_when_a_new_user_signs_up()
 	{
-		$manager = $this->prepareManager();
+		$admin = $this->prepareAdmin();
 
 		$this->register();
 		
-		$this->assertCount(1, $manager->fresh()->unreadNotifications);
+		$this->assertCount(1, $admin->fresh()->unreadNotifications);
 	}
 
 	/** @test */
-	public function managers_are_notified_when_a_user_changes_its_profile_picture()
+	public function admins_are_notified_when_a_user_changes_its_profile_picture()
 	{
-		$manager = $this->prepareManager();
+		$admin = $this->prepareAdmin();
 
 		$this->register();
 
@@ -108,18 +108,18 @@ class NotificationTest extends AppTest
 		
 		$this->uploadAvatar($file);
 
-		$this->assertCount(2, $manager->fresh()->unreadNotifications);
+		$this->assertCount(2, $admin->fresh()->unreadNotifications);
 	}
 
 	/** @test */
-	public function managers_are_notified_when_a_user_starts_its_routine()
+	public function admins_are_notified_when_a_user_starts_its_routine()
 	{
-		$manager = $this->prepareManager();
+		$admin = $this->prepareAdmin();
 
 		$user = $this->register();
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn($manager);
+		$this->adminSignIn($admin);
 
 		$routine = $this->createRoutine($request);
 
@@ -129,39 +129,25 @@ class NotificationTest extends AppTest
 
 		$this->get(route('user.routine.show', ['routine' => $routine->id, 'lesson' => $lessonOne]));
 
-		$this->assertCount(2, $manager->fresh()->unreadNotifications);
+		$this->assertCount(2, $admin->fresh()->unreadNotifications);
 	}
 
 	/** @test */
-	public function managers_are_notified_when_a_user_becomes_a_member()
+	public function admins_are_notified_when_a_user_becomes_a_member()
 	{
-		$manager = $this->prepareManager();
+		$admin = $this->prepareAdmin();
 
 		$this->register();
 
 		$this->createFakeMember();
 
-		$this->assertCount(2, $manager->fresh()->unreadNotifications);
+		$this->assertCount(2, $admin->fresh()->unreadNotifications);
 	}
 
 	/** @test */
-	public function managers_are_notified_when_a_membership_is_canceled()
+	public function admins_are_notified_when_a_membership_is_canceled()
 	{
-		$manager = $this->prepareManager();
-
-		$this->register();
-
-		$this->createFakeMember();
-
-		$this->cancelFakeMembership();
-
-		$this->assertCount(3, $manager->fresh()->unreadNotifications);
-	}
-
-	/** @test */
-	public function managers_are_notified_when_a_membership_is_resumed()
-	{
-		$manager = $this->prepareManager();
+		$admin = $this->prepareAdmin();
 
 		$this->register();
 
@@ -169,24 +155,38 @@ class NotificationTest extends AppTest
 
 		$this->cancelFakeMembership();
 
-		$this->createFakeMember();
-
-		$this->assertCount(4, $manager->fresh()->unreadNotifications);
+		$this->assertCount(3, $admin->fresh()->unreadNotifications);
 	}
 
 	/** @test */
-	public function managers_are_notified_when_the_user_is_removed()
+	public function admins_are_notified_when_a_membership_is_resumed()
 	{
-		$manager = $this->prepareManager();
+		$admin = $this->prepareAdmin();
+
+		$this->register();
+
+		$this->createFakeMember();
+
+		$this->cancelFakeMembership();
+
+		$this->createFakeMember();
+
+		$this->assertCount(4, $admin->fresh()->unreadNotifications);
+	}
+
+	/** @test */
+	public function admins_are_notified_when_the_user_is_removed()
+	{
+		$admin = $this->prepareAdmin();
 
 		$user = $this->register();
 		
-		$this->assertCount(1, $manager->fresh()->unreadNotifications);
+		$this->assertCount(1, $admin->fresh()->unreadNotifications);
 
-		$this->managerSignIn($manager);
+		$this->adminSignIn($admin);
 
 		$this->delete(route('admin.users.destroy', $user->id));
 
-		$this->assertCount(2, $manager->fresh()->unreadNotifications);
+		$this->assertCount(2, $admin->fresh()->unreadNotifications);
 	}
 }

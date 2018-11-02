@@ -5,7 +5,7 @@
 @component('admin/components/page-title', ['title' => 'Edit Teacher'])
 
   @slot('subtitle')
-    <a href="/office/teachers" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all teachers</a>
+    <a href="/admin/teachers" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all teachers</a>
   @endslot
 
 @endcomponent
@@ -22,7 +22,7 @@
   
   @include('admin/components/email', ['email' => $teacher->email])
 
-  <button class="btn btn-danger" data-path="/office/teachers/{{$teacher->slug}}" data-toggle="modal" data-target="#delete-confirm">
+  <button class="btn btn-danger" data-path="/admin/teachers/{{$teacher->slug}}" data-toggle="modal" data-target="#delete-confirm">
     <i class="fas fa-trash-alt mr-2"></i>Delete teacher
   </button>
 </div>

@@ -28,7 +28,7 @@
 
 @component('admin/components/page-title', ['title' => "Chapters from {$course->name}"])
   @slot('subtitle')
-    <a href="/office/courses/{{$course->slug}}" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to the course</a>
+    <a href="/admin/courses/{{$course->slug}}" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to the course</a>
   @endslot
 @endcomponent
 

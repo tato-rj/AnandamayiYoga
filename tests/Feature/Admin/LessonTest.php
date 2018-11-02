@@ -3,19 +3,19 @@
 namespace Tests\Feature\Admin;
 
 use Tests\AppTest;
-use Tests\Traits\{Admin, HasRoutine};
+use Tests\Traits\{Administrator, HasRoutine};
 use App\Lesson;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
 class LessonTest extends AppTest
 {
-	use Admin, HasRoutine;
+	use Administrator, HasRoutine;
 
 	/** @test */
-	public function a_manager_can_create_a_new_lesson()
+	public function a_admin_can_create_a_new_lesson()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$lesson = $this->createNewLesson();
 
@@ -34,7 +34,7 @@ class LessonTest extends AppTest
 	/** @test */
 	public function a_lesson_can_be_assigned_to_a_teacher_when_created()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$lesson = $this->createNewLesson();
 
@@ -44,7 +44,7 @@ class LessonTest extends AppTest
 	/** @test */
 	public function the_same_lesson_cannot_be_added_twice()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$lesson = $this->createNewLesson();
 
@@ -54,9 +54,9 @@ class LessonTest extends AppTest
 	}
 
 	/** @test */
-	public function if_the_name_of_a_lesson_exists_the_manager_is_notified_right_after_typing_it()
+	public function if_the_name_of_a_lesson_exists_the_admin_is_notified_right_after_typing_it()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$lesson = $this->createNewLesson();
 
@@ -68,9 +68,9 @@ class LessonTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_edit_a_lesson()
+	public function a_admin_can_edit_a_lesson()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$lesson = create('App\Lesson');
 
@@ -86,9 +86,9 @@ class LessonTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_update_the_lesson_categories()
+	public function a_admin_can_update_the_lesson_categories()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewLesson();
 
@@ -103,9 +103,9 @@ class LessonTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_update_the_lesson_levels()
+	public function a_admin_can_update_the_lesson_levels()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewLesson();
 
@@ -122,7 +122,7 @@ class LessonTest extends AppTest
 	/** @test */
 	public function the_image_is_removed_when_a_new_one_is_uploaded()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$lessonRequest = $this->createNewLesson();
 
@@ -145,7 +145,7 @@ class LessonTest extends AppTest
 	/** @test */
 	public function the_video_is_removed_when_a_new_one_is_uploaded()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$lessonRequest = $this->createNewLesson();
 
@@ -167,9 +167,9 @@ class LessonTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_remove_a_lesson()
+	public function a_admin_can_remove_a_lesson()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$lesson = create('App\Lesson');
 
@@ -184,7 +184,7 @@ class LessonTest extends AppTest
 	/** @test */
 	public function the_lesson_categories_relationship_is_removed_when_the_lesson_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewLesson();
 
@@ -205,7 +205,7 @@ class LessonTest extends AppTest
 	/** @test */
 	public function the_lesson_levels_relationship_is_removed_when_the_lesson_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewLesson();
 
@@ -226,7 +226,7 @@ class LessonTest extends AppTest
 	/** @test */
 	public function the_lesson_image_and_video_are_removed_when_the_lesson_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewLesson();
 
@@ -242,7 +242,7 @@ class LessonTest extends AppTest
 	/** @test */
 	public function when_a_lesson_is_deleted_its_favorite_relatioship_with_a_user_is_also_removed()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewLesson();
 
@@ -268,7 +268,7 @@ class LessonTest extends AppTest
 	/** @test */
 	public function when_a_lesson_is_deleted_its_records_when_its_completed_are_also_removed()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewLesson();
 
@@ -281,7 +281,7 @@ class LessonTest extends AppTest
 
 		$this->json('POST', route('discover.classes.record-view', $lesson->slug));
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$this->delete(route('admin.classes.destroy', $lesson->slug));
 
@@ -297,7 +297,7 @@ class LessonTest extends AppTest
 
 		$request = $this->requestRoutine();
 
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$routine = $this->createRoutine($request);
 

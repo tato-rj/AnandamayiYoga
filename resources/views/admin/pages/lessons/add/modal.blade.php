@@ -2,7 +2,7 @@
   'title' => 'Create a new Class',
   'size' => 'modal-lg'])
 
-<form method="POST" id="create-class" class="p-4" action="/office/classes" enctype="multipart/form-data">
+<form method="POST" id="create-class" class="p-4" action="/admin/classes" enctype="multipart/form-data">
   {{csrf_field()}}
   <div class="row">
     

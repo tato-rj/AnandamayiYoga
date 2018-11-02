@@ -5,7 +5,7 @@
     @include('components/editing/label', [
       'title' => 'Name',
       'id' => "name-{$teacher->id}",
-      'path' => "/office/teachers/{$teacher->id}"
+      'path' => "/admin/teachers/{$teacher->id}"
     ])
     
     <input type="text" disabled class="form-control" value="{{$teacher->name}}" name="name">
@@ -19,7 +19,7 @@
       @include('components/editing/label', [
         'title' => 'E-mail',
         'id' => "email-{$teacher->id}",
-        'path' => "/office/teachers/{$teacher->id}"
+        'path' => "/admin/teachers/{$teacher->id}"
       ])
       
       <input type="text" disabled class="form-control" value="{{$teacher->email}}" name="email">
@@ -32,7 +32,7 @@
       @include('components/editing/label', [
         'title' => 'Website (optional)',
         'id' => "website-{$teacher->id}",
-        'path' => "/office/teachers/{$teacher->id}"
+        'path' => "/admin/teachers/{$teacher->id}"
       ])
       
       <input type="text" disabled class="form-control" value="{{$teacher->website}}" name="website">
@@ -46,7 +46,7 @@
     @include('components/editing/label', [
       'title' => 'Biography',
       'id' => "biography-{$teacher->id}",
-      'path' => "/office/teachers/{$teacher->id}"
+      'path' => "/admin/teachers/{$teacher->id}"
     ])
 
     <input type="hidden" bind="trix" id="trix-biography" name="biography" value="{{$teacher->biography}}">

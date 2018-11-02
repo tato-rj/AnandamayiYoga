@@ -17,7 +17,7 @@ class CreateWallpapersTable extends Migration
             $table->increments('id');
             $table->string('image_path');
             $table->unsignedInteger('category_id');
-            $table->unsignedInteger('downloads_count')->default(0);
+            $table->unsignedInteger('downloads')->default(0);
             $table->timestamps();
         });
     }

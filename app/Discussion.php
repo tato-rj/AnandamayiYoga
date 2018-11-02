@@ -2,10 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Traits\Filterable;
 
-class Discussion extends Model
+class Discussion extends Anandamayi
 {
     use Filterable;
     

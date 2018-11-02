@@ -5,7 +5,7 @@
     @include('components/editing/label', [
       'title' => 'The name of this lesson is',
       'id' => "name-{$lesson->id}",
-      'path' => "/office/classes/{$lesson->id}"
+      'path' => "/admin/classes/{$lesson->id}"
     ])
     
     <input type="text" disabled class="form-control" value="{{$lesson->name}}" name="name" placeholder="Class Name" >
@@ -17,7 +17,7 @@
     @include('components/editing/label', [
       'title' => 'This lesson is about',
       'id' => "description-{$lesson->id}",
-      'path' => "/office/classes/{$lesson->id}"
+      'path' => "/admin/classes/{$lesson->id}"
     ])
 
     <textarea disabled class="form-control" placeholder="Description" rows="3">{{$lesson->description}}</textarea>
@@ -30,7 +30,7 @@
       @include('components/editing/label', [
         'title' => 'This lesson is good for',
         'id' => "category-{$lesson->id}",
-        'path' => "/office/classes/{$lesson->id}/categories"
+        'path' => "/admin/classes/{$lesson->id}/categories"
       ])
 
       <div class="row mx-2">
@@ -54,7 +54,7 @@
       @include('components/editing/label', [
         'title' => 'The Yoga level is',
         'id' => "levels-{$lesson->id}",
-        'path' => "/office/classes/{$lesson->id}/levels"
+        'path' => "/admin/classes/{$lesson->id}/levels"
       ])
 
       @foreach($levels as $level)
@@ -78,7 +78,7 @@
       @include('components/editing/label', [
         'title' => 'This lesson is part of the program',
         'id' => "program_id-{$lesson->id}",
-        'path' => "/office/classes/{$lesson->id}"
+        'path' => "/admin/classes/{$lesson->id}"
       ])
 
       <select disabled class="form-control">
@@ -96,7 +96,7 @@
       @include('components/editing/label', [
         'title' => 'Is this lesson free?',
         'id' => "is_free-{$lesson->id}",
-        'path' => "/office/classes/{$lesson->id}"
+        'path' => "/admin/classes/{$lesson->id}"
       ])
 
       <div class="custom-control custom-radio custom-control-inline">
@@ -119,7 +119,7 @@
       @include('components/editing/label', [
         'title' => 'This lesson is taught by',
         'id' => "teacher_id-{$lesson->id}",
-        'path' => "/office/classes/{$lesson->id}"
+        'path' => "/admin/classes/{$lesson->id}"
       ])
 
       <select disabled class="form-control">

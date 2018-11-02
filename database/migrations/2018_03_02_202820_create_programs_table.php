@@ -20,7 +20,7 @@ class CreateProgramsTable extends Migration
             $table->text('description');
             $table->string('video_path')->nullable();
             $table->string('image_path')->nullable();
-            $table->unsignedInteger('views_count')->default(0);
+            $table->unsignedInteger('views')->default(0);
             $table->unsignedInteger('teacher_id')->nullable();
             $table->timestamps();
         });

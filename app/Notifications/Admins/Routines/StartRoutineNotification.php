@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Notifications\Managers\Membership;
+namespace App\Notifications\Admins\Routines;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class CanceledMembershipNotification extends Notification
+class StartRoutineNotification extends Notification
 {
     use Queueable;
 
@@ -42,10 +42,10 @@ class CanceledMembershipNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'type' => 'membership',
-            'message' => "{$this->user->fullName} has canceled the membership.",
-            'url' => "/office/users/{$this->user->id}",
-            'image' => 'app/misc/sad-emoji.png'
+            'type' => 'user',
+            'message' => "{$this->user->fullName} started the 4-week Yoga routine.",
+            'url' => "/admin/users/{$this->user->id}",
+            'image' => $this->user->avatar()
         ];
     }
 }

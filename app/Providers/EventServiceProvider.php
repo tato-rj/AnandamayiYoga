@@ -18,29 +18,29 @@ class EventServiceProvider extends ServiceProvider
             'App\Listeners\Signups\EmailConfirmation\SendRequest'
         ],
         'App\Events\UserConfirmedEmail' => [
-            'App\Listeners\Signups\NotifyManager',
+            'App\Listeners\Signups\NotifyAdmin',
             'App\Listeners\Signups\NotifyUser',
             'App\Listeners\Signups\EmailConfirmation\CreateRecord'
         ],
         'App\Events\UserChangesAvatar' => [
-            'App\Listeners\UserActivity\Avatars\NotifyManager'
+            'App\Listeners\UserActivity\Avatars\NotifyAdmin'
         ],
         'App\Events\UserJoinedMembership' => [
             'App\Listeners\Memberships\NewMembership\CreateRecord',
             'App\Listeners\Memberships\NewMembership\EndTrialPeriod',
             'App\Listeners\Memberships\NewMembership\NotifyUser',
-            'App\Listeners\Memberships\NewMembership\NotifyManager'
+            'App\Listeners\Memberships\NewMembership\NotifyAdmin'
         ],
         'App\Events\UserCanceledMembership' => [
             'App\Listeners\Memberships\CanceledMembership\NotifyUser',
-            'App\Listeners\Memberships\CanceledMembership\NotifyManager'
+            'App\Listeners\Memberships\CanceledMembership\NotifyAdmin'
         ],
         'App\Events\UserResumedMembership' => [
             'App\Listeners\Memberships\ResumedMembership\NotifyUser',
-            'App\Listeners\Memberships\ResumedMembership\NotifyManager'
+            'App\Listeners\Memberships\ResumedMembership\NotifyAdmin'
         ],
         'App\Events\UserRemoved' => [
-            'App\Listeners\DeletedAccounts\NotifyManager',
+            'App\Listeners\DeletedAccounts\NotifyAdmin',
             'App\Listeners\DeletedAccounts\NotifyUser'
         ],
         'App\Events\Purchases\CoursePurchased' => [

@@ -2,10 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Traits\{FindBySlug};
 
-class Category extends Model
+class Category extends Anandamayi
 {
     use FindBySlug;
 

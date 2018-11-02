@@ -3,10 +3,9 @@
 namespace App;
 
 use App\Traits\{FindBySlug, Favoritable, InteractsWithCloud, Filterable};
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 
-class Asana extends Model
+class Asana extends Anandamayi
 {
     use FindBySlug, Favoritable, InteractsWithCloud, Filterable;
 

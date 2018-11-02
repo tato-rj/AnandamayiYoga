@@ -19,6 +19,11 @@ class CategoriesController extends Controller
         //
     }
 
+    public function admin()
+    {
+        return view('admin/pages/categories/index');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

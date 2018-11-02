@@ -2,7 +2,7 @@
 
 Route::prefix('/asanas')->name('asanas.')->group(function() {
 
-    Route::get('', 'Admin\OfficeController@asanas')->name('index');
+    Route::get('', 'Admin\AdminController@asanas')->name('index');
 
     Route::get('/{asana}', 'Asanas\AsanasController@edit')->name('edit');
 
@@ -32,7 +32,7 @@ Route::prefix('/asanas')->name('asanas.')->group(function() {
 
 Route::prefix('/asana-types')->name('asanas.types.')->group(function() {
 
-    Route::get('', 'Admin\OfficeController@asanaTypes')->name('index');
+    Route::get('', 'Admin\AdminController@asanaTypes')->name('index');
 
     Route::post('', 'Asanas\AsanaTypesController@store')->name('store');
 
@@ -43,7 +43,7 @@ Route::prefix('/asana-types')->name('asanas.types.')->group(function() {
 
 Route::prefix('/asana-subtypes')->name('asanas.subtypes.')->group(function() {
 
-    Route::get('', 'Admin\OfficeController@asanaSubtypes')->name('index');
+    Route::get('', 'Admin\AdminController@asanaSubtypes')->name('index');
 
     Route::post('', 'Asanas\AsanaSubTypesController@store')->name('store');
 

@@ -27,7 +27,7 @@
     <label class="m-0"><small>
       <strong>Last payment</strong>
     @if($user->payments()->exists())
-      | <a href="/office/users/{{$user->id}}/invoices" class="link-blue">view all</a>
+      | <a href="/admin/users/{{$user->id}}/invoices" class="link-blue">view all</a>
       </small></label>
       <p class="mb-1">
         <strong>{{$user->payments->first()->usd}}</strong> paid on {{$user->payments->first()->created_at->toFormattedDateString()}}

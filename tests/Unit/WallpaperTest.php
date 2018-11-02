@@ -19,10 +19,10 @@ class WallpaperTest extends AppTest
 	{
 		$wallpaper = create('App\Wallpaper');
 
-		$this->assertEquals(0, $wallpaper->downloads_count);
+		$this->assertEquals(0, $wallpaper->downloads);
 
-		$wallpaper->increment('downloads_count');
+		$wallpaper->increment('downloads');
 
-		$this->assertEquals(1, $wallpaper->downloads_count);
+		$this->assertEquals(1, $wallpaper->downloads);
 	}
 }

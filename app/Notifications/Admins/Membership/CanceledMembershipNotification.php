@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Notifications\Managers\UserActivity;
+namespace App\Notifications\Admins\Membership;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class AvatarUpdateNotification extends Notification
+class CanceledMembershipNotification extends Notification
 {
     use Queueable;
 
@@ -42,10 +42,10 @@ class AvatarUpdateNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'type' => 'user',
-            'message' => "{$this->user->fullName} change the avatar picture.",
-            'url' => "/office/users/{$this->user->id}",
-            'image' => $this->user->avatar()
+            'type' => 'membership',
+            'message' => "{$this->user->fullName} has canceled the membership.",
+            'url' => "/admin/users/{$this->user->id}",
+            'image' => 'app/misc/sad-emoji.png'
         ];
     }
 }

@@ -3,9 +3,8 @@
 namespace App;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
 
-class Schedule extends Model
+class Schedule extends Anandamayi
 {
     protected $guarded = [];
     protected $with = ['lesson'];

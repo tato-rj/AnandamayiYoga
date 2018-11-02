@@ -4,18 +4,18 @@ namespace Tests\Feature\Admin;
 
 use App\Program;
 use Tests\AppTest;
-use Tests\Traits\Admin;
+use Tests\Traits\Administrator;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
 class ProgramTest extends AppTest
 {
-	use Admin;
+	use Administrator;
 
 	/** @test */
-	public function a_manager_can_create_a_new_program()
+	public function a_admin_can_create_a_new_program()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewProgram();
 
@@ -36,7 +36,7 @@ class ProgramTest extends AppTest
 	/** @test */
 	public function a_program_can_be_assigned_to_a_teacher_when_created()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$program = $this->createNewProgram();
 
@@ -46,7 +46,7 @@ class ProgramTest extends AppTest
 	/** @test */
 	public function the_same_program_cannot_be_added_twice()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$program = $this->createNewProgram();
 
@@ -57,9 +57,9 @@ class ProgramTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_edit_a_program()
+	public function a_admin_can_edit_a_program()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$program = create('App\Program');
 
@@ -75,9 +75,9 @@ class ProgramTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_update_the_program_categories()
+	public function a_admin_can_update_the_program_categories()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewProgram();
 
@@ -92,9 +92,9 @@ class ProgramTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_update_the_program_lessons()
+	public function a_admin_can_update_the_program_lessons()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewProgram();
 
@@ -111,7 +111,7 @@ class ProgramTest extends AppTest
 	/** @test */
 	public function the_image_is_removed_when_a_new_one_is_uploaded()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$programRequest = $this->createNewProgram();
 
@@ -134,7 +134,7 @@ class ProgramTest extends AppTest
 	/** @test */
 	public function the_video_is_removed_when_a_new_one_is_uploaded()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$programRequest = $this->createNewProgram();
 
@@ -155,9 +155,9 @@ class ProgramTest extends AppTest
 	}
 
 	/** @test */
-	public function a_manager_can_remove_a_program()
+	public function a_admin_can_remove_a_program()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$program = create('App\Program');
 
@@ -172,7 +172,7 @@ class ProgramTest extends AppTest
 	/** @test */
 	public function the_program_categories_relationship_is_removed_when_the_program_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewProgram();
 
@@ -193,7 +193,7 @@ class ProgramTest extends AppTest
 	/** @test */
 	public function the_program_image_and_video_are_removed_when_the_program_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewProgram();
 
@@ -209,7 +209,7 @@ class ProgramTest extends AppTest
 	/** @test */
 	public function the_program_lessons_are_updated_when_the_program_is_deleted()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 		
 		$request = $this->createNewProgram();
 
@@ -226,7 +226,7 @@ class ProgramTest extends AppTest
 	/** @test */
 	public function when_a_program_is_deleted_its_favorite_relatioship_with_a_user_is_also_removed()
 	{
-		$this->managerSignIn();
+		$this->adminSignIn();
 
 		$request = $this->createNewProgram();
 

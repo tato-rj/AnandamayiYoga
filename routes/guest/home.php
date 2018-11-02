@@ -1,7 +1,3 @@
 <?php
 
-Route::get('/', function () {
-	
-    return view('pages/welcome/index');
-
-})->name('home');
+Route::get('/', 'Guests\PagesController@home')->name('home');

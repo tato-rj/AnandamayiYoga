@@ -7,7 +7,7 @@
       </small>
     </div>
     <div>
-      <small><a href="{{$guard or null}}/notifications" class="link-blue">see all</a></small>
+      <small><a href="{{$guard ?? null}}/notifications" class="link-blue">see all</a></small>
     </div>
   </div>
   
@@ -20,7 +20,7 @@
         <div class="dropdown-divider m-0"></div>
 
         <div class="text-center mt-2">
-          <form method="POST" action="{{$guard or null}}/notifications/mark-read">
+          <form method="POST" action="{{$guard ?? null}}/notifications/mark-read">
             {{csrf_field()}}
             <button type="submit" class="m-0 text-blue bg-transparent border-0 p-0 cursor-pointer"><small>mark all as read</small></button>
           </form>

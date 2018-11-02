@@ -2,11 +2,10 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Collection;
 use App\Traits\ManageContents;
 
-class Chapter extends Model
+class Chapter extends Anandamayi
 {
     use ManageContents;
 

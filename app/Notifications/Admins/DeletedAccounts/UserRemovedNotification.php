@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Notifications\Managers\DeletedAccounts;
+namespace App\Notifications\Admins\DeletedAccounts;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
@@ -58,7 +58,7 @@ class UserRemovedNotification extends Notification
         return [
             'type' => 'account-removed',
             'message' => "{$this->user->fullName} has been removed.",
-            'url' => "/office",
+            'url' => "/admin",
             'image' => 'app/misc/removed-user.png'
         ];
     }

@@ -4,7 +4,7 @@
 
 @component('admin/components/page-title', ['title' => $course->name])
   @slot('subtitle')
-    <a href="/office/courses" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all courses</a>
+    <a href="/admin/courses" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all courses</a>
   @endslot
 @endcomponent
 
