@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Classes;
 
+use App\Http\Requests\CreateCategoryForm;
 use App\Filters\LessonFilters;
 use App\{Category, Lesson};
 use Illuminate\Http\Request;
@@ -25,32 +26,21 @@ class CategoriesController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|unique:categories'
-        ]);
-        
+    public function store(Request $request, CreateCategoryForm $form)
+    {        
         $category = Category::firstOrCreate([
             'slug' => str_slug($request->name),
             'name' => $request->name,
             'subtitle' => $request->subtitle,
-            'description' => $request->description
+            'description' => $request->description,
+            'name_pt' => $request->name_pt ?? null,
+            'subtitle_pt' => $request->subtitle_pt ?? null,
+            'description_pt' => $request->description_pt ?? null
         ]);
 
         return back()->with('status', "The category {$category->name} has been successfully created.");

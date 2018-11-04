@@ -1,49 +1,35 @@
 <div class="col-lg-9 col-md-8 col-sm-12 col-12">
-  {{-- NAME --}}          
-  <div class="form-group edit-control" id="name-{{$course->id}}" name="name">
 
-    @component('components/editing/label', [
-      'title' => 'The name of this course is',
-      'id' => "name-{$course->id}",
-      'path' => "/admin/courses/{$course->id}"
-    ])
-    @endcomponent
-    
-    <input type="text" disabled class="form-control" value="{{$course->name}}" name="name" placeholder="Course Name" >
-
-  </div>
-
-  {{-- SHORT DESCRIPTION --}}          
-  <div class="form-group edit-control" id="headline-{{$course->id}}" name="headline">
-
-    @component('components/editing/label', [
-      'title' => 'A short description of this course is',
-      'id' => "headline-{$course->id}",
-      'path' => "/admin/courses/{$course->id}"
-    ])
-    @endcomponent
-    
-    <textarea disabled class="form-control" name="headline" placeholder="Short description" rows="3">{{$course->headline}}</textarea>
-
-  </div>
-
-  {{-- LONG DESCRIPTION --}}
-  <div class="form-group edit-control" id="description-{{$course->id}}" name="description">
-    
-    @include('components/editing/label', [
-      'title' => 'A long description of this course is',
-      'id' => "description-{$course->id}",
-      'path' => "/admin/courses/{$course->id}"
+  @editInput([
+    'name' => 'name', 
+    'label' => 'The name of this course is', 
+    'lang' => null, 
+    'id' => "name-{$course->id}", 
+    'path' => "/admin/courses/{$course->id}",
+    'value' => $course->name
     ])
 
-    <input type="hidden" bind="trix" id="trix-description" name="description" value="{{$course->description}}">
-    <trix-editor input="trix-description" style="height: 260px" class="trix-disabled"></trix-editor>
+  @editTextarea([
+    'name' => 'headline', 
+    'label' => 'A quick description for this course is', 
+    'lang' => null, 
+    'id' => "headline-{$course->id}", 
+    'path' => "/admin/courses/{$course->id}",
+    'value' => $course->headline
+    ])
 
-  </div>
+  @editTrix([
+    'name' => 'description', 
+    'label' => 'A complete description of this course is', 
+    'lang' => null, 
+    'id' => "description-{$course->id}", 
+    'path' => "/admin/courses/{$course->id}",
+    'value' => $course->description
+    ])
 
   {{-- TEACHERS --}}
   <div class="form-group edit-control" id="teachers-{{$course->id}}" name="teachers[]">
-    @include('components/editing/label', [
+    @include('components.form.edit.label', [
       'title' => 'Teachers',
       'id' => "teachers-{$course->id}",
       'path' => "/admin/courses/{$course->id}/teachers"

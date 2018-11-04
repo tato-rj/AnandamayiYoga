@@ -16,10 +16,13 @@ class CreateCoursesTable extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('slug');
+
             $table->string('name', 80)->unique();
-            $table->unsignedInteger('cost');
             $table->text('headline');
             $table->text('description');
+
+            $table->string('language', 4)->default('en');
+            $table->unsignedInteger('cost');
             $table->string('image_path')->nullable();
             $table->string('video_path')->nullable();
             $table->boolean('published')->default(0);

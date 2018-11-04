@@ -9,30 +9,23 @@
 			<p class="lead">Use this section to add contents to the chapter</p>
 		</div>
 
-		{{-- NAME --}}          
-		<div class="form-group edit-control" id="name-{{$chapter->id}}" name="name">
+		@editInput([
+			'name' => 'name', 
+			'label' => 'The name of this chapter is', 
+			'lang' => null, 
+			'id' => "name-{$chapter->id}", 
+			'path' => route('admin.courses.chapters.update', [$chapter->course->slug, $chapter->id]),
+			'value' => $chapter->name
+			])
 
-		@include('components/editing/label', [
-		  'title' => 'The name of this chapter is',
-		  'id' => "name-{$chapter->id}",
-		  'path' => route('admin.courses.chapters.update', [$chapter->course->slug, $chapter->id])
-		])
-
-		<input type="text" disabled class="form-control" value="{{$chapter->name}}" name="name" placeholder="Chapter Name" >
-
-		</div>
-
-		{{-- DESCRIPTION --}}          
-		<div class="form-group edit-control" id="description-{{$chapter->id}}" name="description">
-
-			@include('components/editing/label', [
-				'title' => 'The description of this chapter is',
-				'id' => "description-{$chapter->id}",
-				'path' => route('admin.courses.chapters.update', [$chapter->course->slug, $chapter->id])
-				])
-			<textarea name="description" placeholder="This chapter is about..." rows="4" class="form-control">{{$chapter->description}}</textarea>
-
-		</div>
+		@editTextarea([
+			'name' => 'description', 
+			'label' => 'This chapter is about', 
+			'lang' => null, 
+			'id' => "description-{$chapter->id}", 
+			'path' => route('admin.courses.chapters.update', [$chapter->course->slug, $chapter->id]),
+			'value' => $chapter->description
+			])
 
 		@include('admin/pages/courses/chapters/content/nav')
 

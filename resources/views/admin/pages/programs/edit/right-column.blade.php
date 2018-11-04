@@ -1,31 +1,48 @@
 <div class="col-8">
-  {{-- NAME --}}          
-  <div class="form-group edit-control" id="name-{{$program->id}}" name="name">
-
-    @include('components/editing/label', [
-      'title' => 'The name of this program is',
-      'id' => "name-{$program->id}",
-      'path' => "/admin/programs/{$program->id}"])
-    
-    <input type="text" disabled class="form-control" value="{{$program->name}}" name="name" placeholder="Program Name" >
-
+  <div class="form-group">
+    @include('admin.components.input-lang')
   </div>
-  {{-- DESCRIPTION --}}
-  <div class="form-group edit-control" id="description-{{$program->id}}" name="description">
-    
-    @include('components/editing/label', [
-      'title' => 'This program is about',
-      'id' => "description-{$program->id}",
-      'path' => "/admin/programs/{$program->id}"])
 
-    <textarea disabled class="form-control" placeholder="Description" rows="3">{{$program->description}}</textarea>
+  @editInput([
+    'name' => 'name', 
+    'label' => 'The name of this program is', 
+    'lang' => 'en', 
+    'id' => "name-{$program->id}", 
+    'path' => "/admin/programs/{$program->id}",
+    'value' => $program->name
+    ])
 
-  </div>
+  @editInput([
+    'name' => 'name_pt', 
+    'label' => 'O nome desse programa é', 
+    'lang' => 'pt', 
+    'id' => "name_pt-{$program->id}", 
+    'path' => "/admin/programs/{$program->id}",
+    'value' => $program->name_pt
+    ])
+
+  @editTextarea([
+    'name' => 'description', 
+    'label' => 'This program is about', 
+    'lang' => 'en', 
+    'id' => "description-{$program->id}", 
+    'path' => "/admin/programs/{$program->id}",
+    'value' => $program->description
+    ])
+
+  @editTextarea([
+    'name' => 'description_pt', 
+    'label' => 'Esse programa é sobre', 
+    'lang' => 'pt', 
+    'id' => "description_pt-{$program->id}", 
+    'path' => "/admin/programs/{$program->id}",
+    'value' => $program->description_pt
+    ])
 
   {{-- CATEGORIES --}}
   <div class="form-group edit-control" id="category-{{$program->id}}" name="category">
 
-    @include('components/editing/label', [
+    @include('components.form.edit.label', [
       'title' => 'This program is good for',
       'id' => "category-{$program->id}",
       'path' => "/admin/programs/{$program->id}/categories"])
@@ -44,7 +61,7 @@
   {{-- LESSONS --}}
   <div class="mt-2 pt-4 border-top edit-control" id="lessons-{{$program->id}}" name="lessons">
 
-    @include('components/editing/label', [
+    @include('components.form.edit.label', [
       'title' => 'This program has the following lessons',
       'id' => "lessons-{$program->id}",
       'path' => "/admin/programs/{$program->id}/lessons"])

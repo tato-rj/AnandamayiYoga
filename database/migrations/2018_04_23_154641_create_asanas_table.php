@@ -16,12 +16,17 @@ class CreateAsanasTable extends Migration
         Schema::create('asanas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('slug');
-            $table->string('sanskrit');
+
             $table->string('name')->unique();
+            $table->string('name_pt')->nullable();
+            $table->string('sanskrit');
             $table->string('also_known_as')->nullable();
+            $table->string('also_known_as_pt')->nullable();
+            $table->string('etymology')->nullable();
+            $table->string('etymology_pt')->nullable();
+
             $table->string('image_path')->nullable();
             $table->string('video_path')->nullable();
-            $table->string('etymology')->nullable();
             $table->unsignedInteger('views')->default(0);
             $table->timestamps();
         });

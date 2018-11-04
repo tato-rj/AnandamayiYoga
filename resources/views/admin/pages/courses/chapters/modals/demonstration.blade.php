@@ -13,17 +13,17 @@
 		</div>
 		<div class="col-8">
 			<div class="form-group">
-				<input required type="text" class="form-control" name="name" value="" placeholder="Demonstration Name">
+        		@input(['lang' => null, 'name' => 'name', 'label' => 'Demonstration name', 'value' => old('name')])
 			</div>
 			<div class="form-group">
-				<textarea required name="description" placeholder="Description" rows="5" class="form-control"></textarea>
+        		@textarea(['lang' => null, 'name' => 'description', 'label' => 'Description', 'value' => old('description')])
 			</div>
 		</div>
 	</div>
 	<div class="text-right">
 
 	@include('components/buttons/spinner', [
-	  'classes' => 'btn btn-red block-screen-button',
+	  'classes' => 'btn btn-xs btn-red block-screen-button',
 	  'label' => 'Create Demonstration'])
 
 	</div>

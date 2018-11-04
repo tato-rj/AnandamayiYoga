@@ -1,33 +1,17 @@
 <div class="col-8">
   {{-- NAME --}}
   <div class="form-group">
-    <input required type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Course Name">
+    @input(['required' => true, 'lang' => null, 'name' => 'name', 'label' => 'Course name', 'value' => old('name')])
     <p class="m-0 ml-2 text-danger" id="validate-name" style="display: none;"><small>A course with this name already exists</small></p>
-    @if ($errors->has('name'))
-    <div class="invalid-feedback">
-      {{ $errors->first('name') }}
-    </div>
-    @endif
   </div>
   {{-- HEADLINE --}}
   <div class="form-group">
-    <textarea required name="headline" class="form-control {{ $errors->has('headline') ? 'is-invalid' : '' }}" placeholder="Short description" rows="3">{{ old('headline') }}</textarea>
-    @if ($errors->has('headline'))
-    <div class="invalid-feedback">
-      {{ $errors->first('headline') }}
-    </div>
-    @endif
+    @textarea(['required' => true, 'lang' => null, 'name' => 'headline', 'label' => 'Short description', 'value' => old('headline')])
   </div>
 
   {{-- DESCRIPTION --}}
   <div class="form-group">
-    <input type="hidden" id="trix-description" name="description" value="{{old('description')}}">
-    <trix-editor class="{{ $errors->has('description') ? 'is-invalid' : '' }}" input="trix-description" placeholder="Long Description" required style="height: 280px"></trix-editor>
-    @if ($errors->has('description'))
-    <div class="invalid-feedback">
-      {{ $errors->first('description') }}
-    </div>
-    @endif
+    @trix(['required' => true, 'lang' => null, 'name' => 'description', 'label' => 'Complete description', 'value' => old('description')])
   </div>
 
   {{-- TEACHERS --}}

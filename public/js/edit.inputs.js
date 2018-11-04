@@ -20,7 +20,7 @@ $('.edit-control .save').on(' click', function() {
   var data = new Object();
   data.key = $element.attr('name');
   data.value = getData($element);
-  
+
   patch($path, data, $showNotification = true);
 });
 

@@ -23,7 +23,7 @@ class AsanaTypesController extends Controller
         $type = AsanaType::firstOrCreate([
             'slug' => str_slug($request->name),
             'name' => $request->name,
-            'description' => $request->description
+            'name_pt' => $request->name_pt ?? null
         ]);
 
         return back()->with('status', "The asana type {$type->name} has been successfully created.");

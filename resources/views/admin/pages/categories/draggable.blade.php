@@ -3,6 +3,9 @@
   data-name="{{$category->name}}"
   data-subtitle="{{$category->subtitle}}"
   data-description="{{$category->description}}"
+  data-name_pt="{{$category->name_pt}}"
+  data-subtitle_pt="{{$category->subtitle_pt}}"
+  data-description_pt="{{$category->description_pt}}"
   data-path="{{route('admin.categories.update', $category->id)}}">
 
   {{-- SORT HANDLE --}}

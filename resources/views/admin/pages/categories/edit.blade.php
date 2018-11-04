@@ -1,36 +1,12 @@
 @component('admin/components/modals/edit', ['title' => 'Edit category'])
 
-<div class="form-group edit-control" id="" name="name">
-	@component('components/editing/label', [
-		'title' => 'Name',
-		'id' => "",
-		'path' => ""
-		])
-	@endcomponent
+	@editInput(['name' => 'name', 'label' => 'Name', 'lang' => 'en'])
+	@editInput(['name' => 'name_pt', 'label' => 'Nome', 'lang' => 'pt'])
 
-	<input type="text" disabled class="form-control" value="" name="name">
-</div>
+	@editInput(['name' => 'subtitle', 'label' => 'Subtitle', 'lang' => 'en'])
+	@editInput(['name' => 'subtitle_pt', 'label' => 'Subtítulo', 'lang' => 'pt'])
 
-<div class="form-group edit-control" id="" name="subtitle">
-	@component('components/editing/label', [
-		'title' => 'Subtitle',
-		'id' => "",
-		'path' => ""
-		])
-	@endcomponent
-
-	<input type="text" disabled class="form-control" value="" name="subtitle">
-</div>
-
-<div class="form-group edit-control" id="" name="description">
-	@component('components/editing/label', [
-		'title' => 'Description',
-		'id' => "",
-		'path' => ""
-		])
-	@endcomponent
-
-	<textarea disabled class="form-control" name="description" rows="5"></textarea>
-</div>
+	@editTextarea(['name' => 'description', 'label' => 'Subtitle', 'lang' => 'en'])
+	@editTextarea(['name' => 'description_pt', 'label' => 'Subtítulo', 'lang' => 'pt'])
 
 @endcomponent

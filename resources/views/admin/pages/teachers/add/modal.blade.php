@@ -2,16 +2,16 @@
   'title' => 'Create a new Teacher',
   'size' => 'modal-lg'])
 
-<form method="POST" id="create-teacher" class="p-4" action="/admin/teachers" enctype="multipart/form-data">
-  {{csrf_field()}}
+<form method="POST" id="create-teacher" action="/admin/teachers" enctype="multipart/form-data">
+  @csrf
     
-    @include('admin/pages/teachers/add/top')
+  @include('admin/pages/teachers/add/top')
 
-    @include('admin/pages/teachers/add/bottom')
+  @include('admin/pages/teachers/add/bottom')
 
   <div class="text-right">
     @include('components/buttons/spinner', [
-      'classes' => 'btn btn-red block-screen-button',
+      'classes' => 'btn btn-xs btn-red block-screen-button',
       'label' => 'Create Teacher'])
 
   </div>

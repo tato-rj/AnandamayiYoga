@@ -76,9 +76,11 @@ class Asana extends Anandamayi
 
     public function createMany($collection, $type)
     {
-        foreach ($collection as $content) {
-            if ($content != '')
-                $this->$type()->create(['content' => $content]);
+        for ($i = 0; $i < count($collection['en']); $i++) {
+            $this->$type()->create([
+                'content' => $collection['en'][$i],
+                'content_pt' => $collection['pt'][$i]
+            ]);
         }
     }
 

@@ -16,7 +16,9 @@ class CreateSupportingMaterialsTable extends Migration
         Schema::create('supporting_materials', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('chapter_id');
+            
             $table->string('name');
+
             $table->string('file_path');
             $table->unsignedInteger('downloads')->default(0);
             $table->timestamps();

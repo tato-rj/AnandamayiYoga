@@ -14,7 +14,7 @@
           <form action="" method="POST">
             {{csrf_field()}}
             {{method_field('DELETE')}}
-            <button type="submit" class="btn btn-danger">Yes, go ahead</button>
+            <button type="submit" class="btn-bold btn-xs btn-danger">Yes, go ahead</button>
           </form>
         </div>
       </div>

@@ -1,14 +1,12 @@
 @component('admin/components/modals/add', ['title' => 'Create a new Asana Sub Type'])
-    <form method="POST" action="/admin/asana-subtypes">
+    <form method="POST" action="{{route('admin.asanas.subtypes.store')}}">
       {{csrf_field()}}
       <div class="form-group">
-        <input required type="text" class="form-control" name="name" placeholder="Sub Type Name">
-      </div>
-      <div class="form-group">
-        <textarea class="form-control" name="description" rows="3" placeholder="Description"></textarea>
+        @input(['required' => true, 'lang' => 'en', 'name' => 'name', 'label' => 'Sub type name', 'value' => old('name')])
+        @input(['required' => false, 'lang' => 'pt', 'name' => 'name_pt', 'label' => 'Nome do sub-tipo', 'value' => old('name_pt')])
       </div>
       <div class="text-right">
-        <button type="submit" class="btn btn-red btn-xs">Save</button>
+        <button type="submit" class="btn-bold btn-red btn-xs">Save</button>
       </div>
     </form>
 @endcomponent

@@ -1,40 +1,23 @@
 <div class="col-8">
   {{-- SANSKRIT --}}
   <div class="form-group">
-    <input required type="text" class="form-control {{ $errors->has('sanskrit') ? 'is-invalid' : '' }}" name="sanskrit" value="{{ old('sanskrit') }}" placeholder="Sanskrit">
+    @input(['name' => 'sanskrit', 'label' => 'Sanskrit', 'value' => old('sanskrit')])
     <p class="m-0 ml-2 text-danger" id="validate-name" style="display: none;"><small>An asana with this name already exists</small></p>
-    @if ($errors->has('sanskrit'))
-    <div class="invalid-feedback">
-      {{ $errors->first('sanskrit') }}
-    </div>
-    @endif
   </div>
   {{-- NAME --}}
   <div class="form-group">
-    <input required type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Name">
-    @if ($errors->has('name'))
-    <div class="invalid-feedback">
-      {{ $errors->first('name') }}
-    </div>
-    @endif
+    @input(['lang' => 'en', 'name' => 'name', 'label' => 'Name', 'value' => old('name')])
+    @input(['lang' => 'pt', 'name' => 'name_pt', 'label' => 'Nome', 'value' => old('name_pt')])
   </div>
   {{-- ALSO KNOWN AS --}}
   <div class="form-group">
-    <input type="text" class="form-control {{ $errors->has('also_known_as') ? 'is-invalid' : '' }}" name="also_known_as" value="{{ old('also_known_as') }}" placeholder="Also known as">
-    @if ($errors->has('also_known_as'))
-    <div class="invalid-feedback">
-      {{ $errors->first('also_known_as') }}
-    </div>
-    @endif
+    @input(['lang' => 'en', 'name' => 'also_knwon_as', 'label' => 'Also known as', 'value' => old('also_knwon_as')])
+    @input(['lang' => 'pt', 'name' => 'also_knwon_as_pt', 'label' => 'Também conhecido como', 'value' => old('also_knwon_as_pt')])
   </div>
   {{-- ETYMOLOGY --}}
   <div class="form-group">
-    <input type="text" class="form-control {{ $errors->has('etymology') ? 'is-invalid' : '' }}" name="etymology" value="{{ old('etymology') }}" placeholder="Etymology">
-    @if ($errors->has('etymology'))
-    <div class="invalid-feedback">
-      {{ $errors->first('etymology') }}
-    </div>
-    @endif
+    @input(['lang' => 'en', 'name' => 'etymology', 'label' => 'Etymology', 'value' => old('etymology')])
+    @input(['lang' => 'pt', 'name' => 'etymology_pt', 'label' => 'Etimologia', 'value' => old('etymology_pt')])
   </div>
 
   {{-- BENEFITS --}}
@@ -43,11 +26,11 @@
 
     <div class="form-group type-container original-type" style="display: none;">
 
-      <a class="align-self-stretch btn btn-danger text-white mr-1">
+      <a class="align-self-stretch btn btn-danger text-white mr-1 d-flex justify-content-center align-items-center">
         <i class="fas fa-minus"></i>
       </a>
-      
-      <textarea rows="1" class="form-control" name="benefits[]"></textarea>
+
+      @include('components.form.edit.input-group', ['type' => 'benefits', 'disabled' => false])
 
     </div>
 
@@ -68,11 +51,11 @@
 
     <div class="form-group type-container original-type" style="display: none;">
 
-      <a class="align-self-stretch btn btn-danger text-white mr-1">
+      <a class="align-self-stretch btn btn-danger text-white mr-1 d-flex justify-content-center align-items-center">
         <i class="fas fa-minus"></i>
       </a>
-      
-      <textarea rows="1" class="form-control" name="steps[]"></textarea>
+
+      @include('components.form.edit.input-group', ['type' => 'steps', 'disabled' => false])
 
     </div>
 
@@ -80,9 +63,9 @@
       <small><i class="fas fa-plus mr-2"></i>Add a new step</small>
     </a>
 
-    @if ($errors->has('benefits'))
+    @if ($errors->has('steps'))
     <div class="invalid-feedback">
-      {{ $errors->first('benefits') }}
+      {{ $errors->first('steps') }}
     </div>
     @endif
   </div>

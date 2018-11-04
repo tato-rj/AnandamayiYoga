@@ -16,6 +16,7 @@ class CreateWallpaperCategoriesTable extends Migration
         Schema::create('wallpaper_categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('name_pt')->nullable();
             $table->timestamps();
         });
     }

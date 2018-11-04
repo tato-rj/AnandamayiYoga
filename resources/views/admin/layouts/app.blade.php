@@ -24,8 +24,9 @@
         <link rel="stylesheet" href="{{asset('css/admin/vendor/trix.css')}}">
 
         <!-- App styles -->
-        <link href="{{ asset('css/admin/vendor/template.css') }}?version=3" rel="stylesheet">
-        <link href="{{ asset('css/admin.css') }}?version=12" rel="stylesheet">
+        <link href="{{ asset('css/admin/vendor/template.css') }}" rel="stylesheet">
+        <link href="{{asset('css/primer.css') }}" rel="stylesheet">
+        <link href="{{ mix('css/admin.css') }}" rel="stylesheet">
         
         <script>
             window.app = <?php echo json_encode([
@@ -74,6 +75,21 @@
         <script src="{{asset('js/admin/vendor/sortable.min.js')}}"></script>
         <script src="{{asset('js/admin/vendor/template.min.js')}}"></script>
         <script src="{{ asset('js/jquery.validate.min.js') }}"></script>
+
+        <script type="text/javascript">
+        $('#input-lang button').on('click', function() {
+            $thisButton = $(this);
+            thisTarget = $thisButton.attr('data-target');
+            $otherButton = $thisButton.siblings('button');
+            otherTarget = $otherButton.attr('data-target');
+
+            $('#input-lang button[data-target="'+thisTarget+'"]').removeClass('btn-light').addClass('btn-secondary');
+            $('#input-lang button[data-target="'+otherTarget+'"]').addClass('btn-light').removeClass('btn-secondary');
+
+            $(thisTarget).show();
+            $(otherTarget).hide();
+        });
+        </script>
 
         <script type="text/javascript">
         $('form').each(function() {

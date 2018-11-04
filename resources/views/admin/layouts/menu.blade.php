@@ -48,9 +48,9 @@
                     <small><i class="ml-2 fas fa-caret-down"></i></small>
                 </a>
                 <ul>
+                    <li class="{{checkActive(['admin/asanas'])}}"><a href="/admin/asanas">Poses</a></li>
                     <li class="{{checkActive(['admin/asana-types'])}}"><a href="/admin/asana-types">Types</a></li>
                     <li class="{{checkActive(['admin/asana-subtypes'])}}"><a href="/admin/asana-subtypes">Sub Types</a></li>
-                    <li class="{{checkActive(['admin/asanas'])}}"><a href="/admin/asanas">Poses</a></li>
                 </ul>
             </li>
             

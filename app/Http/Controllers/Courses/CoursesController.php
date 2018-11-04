@@ -32,9 +32,10 @@ class CoursesController extends Controller
         $course = Course::create([
             'slug' => str_slug($request->name),
             'name' => $request->name,
-            'cost' => $request->cost,
             'headline' => $request->headline,
             'description' => $request->description,
+            'language' => $request->language,
+            'cost' => $request->cost,
             'image_path' => imageToS3($request, 'courses'),
             'video_path' => videoToS3($request, 'courses')
         ]);

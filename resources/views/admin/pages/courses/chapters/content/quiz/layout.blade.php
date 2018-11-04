@@ -17,7 +17,7 @@
 			  </div>
 			  <input type="text" name="{{empty($hidden) ? 'content[0][answers][options][0]' : null }}" value="" class="form-control">
 			  <div class="input-group-append">
-			    <span class="input-group-text p-2">
+			    <span class="input-group-text p-2 h-100">
 			    	<input type="checkbox" title="Check if this answer is correct" name="{{empty($hidden) ? 'content[0][answers][correct][0]' : null }}">
 			    </span>
 			  </div>
@@ -30,7 +30,7 @@
 			  </div>
 			  <input type="text" name="{{empty($hidden) ? 'content[0][answers][options][1]' : null }}" value="" class="form-control">
 			  <div class="input-group-append">
-			    <span class="input-group-text p-2">
+			    <span class="input-group-text p-2 h-100">
 			    	<input type="checkbox" title="Check if this answer is correct" name="{{empty($hidden) ? 'content[0][answers][correct][1]' : null }}">
 			    </span>
 			  </div>
@@ -43,7 +43,7 @@
 			  </div>
 			  <input type="text" name="{{empty($hidden) ? 'content[0][answers][options][2]' : null }}" value="" class="form-control">
 			  <div class="input-group-append">
-			    <span class="input-group-text p-2">
+			    <span class="input-group-text p-2 h-100">
 			    	<input type="checkbox" title="Check if this answer is correct" name="{{empty($hidden) ? 'content[0][answers][correct][2]' : null }}">
 			    </span>
 			  </div>
@@ -56,7 +56,7 @@
 			  </div>
 			  <input type="text" name="{{empty($hidden) ? 'content[0][answers][options][3]' : null }}" value="" class="form-control">
 			  <div class="input-group-append">
-			    <span class="input-group-text p-2">
+			    <span class="input-group-text p-2 h-100">
 			    	<input type="checkbox" title="Check if this answer is correct" name="{{empty($hidden) ? 'content[0][answers][correct][3]' : null }}">
 			    </span>
 			  </div>

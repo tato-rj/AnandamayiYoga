@@ -15,8 +15,10 @@ class CreateAssignmentsTable extends Migration
     {
         Schema::create('assignments', function (Blueprint $table) {
             $table->increments('id');
+
             $table->string('name');
             $table->text('question');
+            
             $table->unsignedInteger('chapter_id');
             $table->tinyInteger('order')->nullable();
             $table->timestamps();

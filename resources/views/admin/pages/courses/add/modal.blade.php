@@ -2,8 +2,8 @@
   'title' => 'Create a new Course',
   'size' => 'modal-lg'])
 
-<form method="POST" id="create-course" class="p-4" action="{{route('admin.courses.store')}}" enctype="multipart/form-data">
-  {{csrf_field()}}
+<form method="POST" id="create-course" action="{{route('admin.courses.store')}}" enctype="multipart/form-data">
+  @csrf
   <div class="row">
     
     @include('admin/pages/courses/add/left-column')
@@ -14,7 +14,7 @@
   <div class="text-right">
 
     @include('components/buttons/spinner', [
-      'classes' => 'btn btn-red block-screen-button',
+      'classes' => 'btn btn-xs btn-red block-screen-button',
       'label' => 'Continue to create chapters'])
 
   </div>

@@ -15,7 +15,8 @@ class CreateAsanaBenefitsTable extends Migration
     {
         Schema::create('asana_benefits', function (Blueprint $table) {
             $table->unsignedInteger('asana_id');
-            $table->text('content');
+            $table->text('content')->nullable();
+            $table->text('content_pt')->nullable();
         });
     }
 

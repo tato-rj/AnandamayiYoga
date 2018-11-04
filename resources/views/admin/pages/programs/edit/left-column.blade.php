@@ -12,7 +12,7 @@
 {{-- TEACHER --}}
 <div class="form-group edit-control" name="teacher_id" id="teacher_id-{{$program->id}}">
   
-  @include('components/editing/label', [
+  @include('components.form.edit.label', [
     'title' => 'This program is taught by',
     'id' => "teacher_id-{$program->id}",
     'path' => "/admin/programs/{$program->id}"

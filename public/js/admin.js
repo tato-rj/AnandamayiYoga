@@ -34733,7 +34733,7 @@ checkName = function checkName(model) {
     $name = $(this).val();
     $message = $('#validate-name');
 
-    $.post("/office/" + model + "/validate", { 'name': $name }, function (response) {
+    $.post("/admin/" + model + "/validate", { 'name': $name }, function (response) {
       if (!response.passes) {
         $message.show();
       } else {
@@ -34807,6 +34807,21 @@ patch = function patch(address, data) {
 
 getData = function getData(element) {
   var data = [];
+
+  if (element.has('div[data-lang="en"]').length) {
+    var fields = new Object();
+    fields.en = [];
+    fields.pt = [];
+
+    $element.find('div[data-lang="en"]:not(:first)').each(function () {
+      fields.en.push($(this).find('input').val());
+    });
+    $element.find('div[data-lang="pt"]:not(:first)').each(function () {
+      fields.pt.push($(this).find('input').val());
+    });
+
+    return fields;
+  }
 
   if (element.has('input[type="checkbox"]').length) {
     element.find('input:checked').each(function () {

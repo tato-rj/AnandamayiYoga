@@ -61,8 +61,7 @@ $factory->define(App\AsanaType::class, function (Faker $faker) {
     
     return [
         'name' => $name,
-        'slug' => str_slug($name),
-        'description' => $faker->sentence,
+        'slug' => str_slug($name)
     ];
 });
 
@@ -71,8 +70,7 @@ $factory->define(App\AsanaSubType::class, function (Faker $faker) {
     
     return [
         'name' => $name,
-        'slug' => str_slug($name),
-        'description' => $faker->sentence,
+        'slug' => str_slug($name)
     ];
 });
 
@@ -82,6 +80,7 @@ $factory->define(App\AsanaBenefit::class, function (Faker $faker) {
             return factory('App\Asana')->create()->id;
         },
         'content' => $faker->sentence,
+        'content_pt' => $faker->sentence,
     ];
 });
 
@@ -91,6 +90,7 @@ $factory->define(App\AsanaStep::class, function (Faker $faker) {
             return factory('App\Asana')->create()->id;
         },
         'content' => $faker->sentence,
+        'content_pt' => $faker->sentence,
     ];
 });
 
@@ -151,7 +151,8 @@ $factory->define(App\Course::class, function(Faker $faker) {
         'cost' => 10000,
         'published' => 0,
         'headline' => $faker->sentence,
-        'description' => $faker->sentence
+        'description' => $faker->sentence,
+        'language' => 'en'
     ];
 });
 

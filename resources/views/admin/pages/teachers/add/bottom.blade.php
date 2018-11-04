@@ -30,13 +30,8 @@
 
 {{-- BIOGRAPHY --}}
 <div class="form-group">
-  <input type="hidden" id="trix-biography" name="biography" value="{{ old('biography') }}">
-  <trix-editor input="trix-biography" placeholder="Biography" style="height: 280px" class="{{ $errors->has('description') ? 'is-invalid' : '' }}"></trix-editor>
-  @if ($errors->has('biography'))
-  <div class="invalid-feedback">
-    {{ $errors->first('biography') }}
-  </div>
-  @endif
+  @trix(['lang' => 'en', 'name' => 'biography', 'label' => 'Biography', 'value' => old('biography')])
+  @trix(['lang' => 'pt', 'name' => 'biography_pt', 'label' => 'Biografia', 'value' => old('biography_pt')])
 </div>
 
 {{-- CATEGORIES --}}

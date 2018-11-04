@@ -12442,6 +12442,17 @@ input[type="email"]:disabled {
   background-color: #f6f7f9;
 }
 
+.form-control-sm,
+.input-group-sm > .form-control,
+.input-group-sm > .input-group-prepend > .input-group-text,
+.input-group-sm > .input-group-append > .input-group-text,
+.input-group-sm > .input-group-prepend > .btn,
+.input-group-sm > .input-group-prepend > .btn-bold,
+.input-group-sm > .input-group-append > .btn,
+.input-group-sm > .input-group-append > .btn-bold {
+  padding: 0.324em .75em !important;
+}
+
 .t-2,
 .hover-grayscale-to-normal,
 .show-on-hover,

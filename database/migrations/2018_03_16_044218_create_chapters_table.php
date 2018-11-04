@@ -16,8 +16,10 @@ class CreateChaptersTable extends Migration
         Schema::create('chapters', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('course_id');
+
             $table->string('name')->nullable();
             $table->text('description')->nullable();
+
             $table->tinyInteger('order');
             $table->timestamps();
         });

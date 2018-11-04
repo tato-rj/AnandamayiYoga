@@ -5,10 +5,7 @@
 
 @foreach($collection as $item)
   
-  @include('admin/components/multitype/field', [
-    'value' => $item->content,
-    'rows' => 1
-  ])
+  @include('admin/components/multitype/field', ['value' => ['en' => $item->content, 'pt' => $item->content_pt]])
 
 @endforeach    
 

@@ -2,22 +2,21 @@
 
 @section('content')
 
-@component('admin/components/page-title', [
+@include('admin/components/page-title', [
   'title' => 'Asana Sub Types',
   'subtitle' => 'Manage the sub types of asanas'
 ])
-@endcomponent
 
 <div class="row">
 	<div class="col-12">
-		<button type="button" class="btn btn-red" data-toggle="modal" data-target="#add-modal"><i class="fas fa-plus mr-2"></i>Create a new sub type</button>
+		<button type="button" class="btn-bold btn-xs btn-red" data-toggle="modal" data-target="#add-modal"><i class="fas fa-plus mr-2"></i>Create a new sub type</button>
 	</div>
 </div>
 
 <div class="row mt-4">
   <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12" id="asanaSubTypes-list">
     @foreach($asanaSubtypes as $subtype)
-      @include('admin/pages/asanas/subtypes/show')
+      @include('admin/pages/asanas/subtypes/draggable')
     @endforeach
   </div>
 </div>
@@ -54,7 +53,7 @@ $('.open-edit-modal').on('click', function() {
 
     $group.attr('id', $name+$id);
     $group.find('.edit').attr('data-id', $name+$id);
-    $group.find('.save').attr('data-id', $name+$id).attr('data-path', $path+$id);
+    $group.find('.save').attr('data-id', $name+$id).attr('data-path', $path);
   });
 
 });

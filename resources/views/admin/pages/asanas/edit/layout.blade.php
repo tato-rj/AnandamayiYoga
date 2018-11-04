@@ -34,9 +34,13 @@
 <script type="text/javascript">
 $('button.add-field').on('click', function() {
   $button = $(this);
+  
   $clone = $button.siblings('.original-type').clone();
-
-  $clone.find('button').removeAttr('disabled');
+  
+  $clone.find('input').each(function() {
+    $(this).attr('name', $(this).attr('data-name')).removeAttr('disabled');
+  });
+  
   $clone.removeClass('original-type').insertBefore($button).addClass('d-flex');
 });
 </script>

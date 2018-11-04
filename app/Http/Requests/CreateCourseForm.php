@@ -28,6 +28,7 @@ class CreateCourseForm extends FormRequest
             'cost' => 'required',
             'headline' => 'required',
             'description' => 'required',
+            'language' => 'required',
             'image' => 'required|image|max:800',
             'video' => 'required',
             'teachers' => 'required'

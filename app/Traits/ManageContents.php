@@ -13,8 +13,8 @@ trait ManageContents
         return $this->$relationship()->create([
             'type' => $request->type,
             'name' => $request->name,
-            'duration' => $request->duration,
             'description' => $request->description,
+            'duration' => $request->duration,
             'video_path' => videoToS3($request, "courses/{$relationship}"),
             'order' => $request->order,
         ]);

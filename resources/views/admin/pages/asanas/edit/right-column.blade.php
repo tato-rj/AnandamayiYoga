@@ -1,60 +1,75 @@
 <div class="col-8">
-  {{-- SANSKRIT --}}          
-  <div class="form-group edit-control" id="sanskrit-{{$asana->id}}" name="sanskrit">
-
-    @include('components/editing/label', [
-      'title' => 'The name in sanskrit of this asana is',
-      'id' => "sanskrit-{$asana->id}",
-      'path' => "/admin/asanas/{$asana->id}"
-    ])
-    
-    <input type="text" disabled class="form-control" value="{{$asana->sanskrit}}" name="sanskrit">
-
+  <div class="form-group">
+    @include('admin.components.input-lang')
   </div>
 
-  {{-- NAME --}}          
-  <div class="form-group edit-control" id="name-{{$asana->id}}" name="name">
-
-    @include('components/editing/label', [
-      'title' => 'The english name of this asana is',
-      'id' => "name-{$asana->id}",
-      'path' => "/admin/asanas/{$asana->id}"
+  @editInput([
+    'name' => 'sanskrit', 
+    'label' => 'The name in sanskrit of this asana is', 
+    'lang' => null, 
+    'id' => "sanskrit-{$asana->id}", 
+    'path' => "/admin/asanas/{$asana->id}",
+    'value' => $asana->sanskrit
     ])
-    
-    <input type="text" disabled class="form-control" value="{{$asana->name}}" name="name">
 
-  </div>
-
-  {{-- ALSO KNOWN AS --}}          
-  <div class="form-group edit-control" id="also_known_as-{{$asana->id}}" name="also_known_as">
-
-    @include('components/editing/label', [
-      'title' => 'This asana is also known as',
-      'id' => "also_known_as-{$asana->id}",
-      'path' => "/admin/asanas/{$asana->id}"
+  @editInput([
+    'name' => 'name', 
+    'label' => 'The english name of this asana is', 
+    'lang' => 'en', 
+    'id' => "name-{$asana->id}", 
+    'path' => "/admin/asanas/{$asana->id}",
+    'value' => $asana->name
     ])
-    
-    <input type="text" disabled class="form-control" value="{{$asana->also_known_as}}" name="also_known_as">
 
-  </div>
-
-  {{-- ETYMOLOGY --}}          
-  <div class="form-group edit-control" id="etymology-{{$asana->id}}" name="etymology">
-
-    @include('components/editing/label', [
-      'title' => 'The etymology of this asana is',
-      'id' => "etymology-{$asana->id}",
-      'path' => "/admin/asanas/{$asana->id}"
+  @editInput([
+    'name' => 'name_pt', 
+    'label' => 'O nome em portugês é', 
+    'lang' => 'pt', 
+    'id' => "name_pt-{$asana->id}", 
+    'path' => "/admin/asanas/{$asana->id}",
+    'value' => $asana->name_pt
     ])
-    
-    <input type="text" disabled class="form-control" value="{{$asana->etymology}}" name="etymology">
 
-  </div>
+  @editInput([
+    'name' => 'also_known_as', 
+    'label' => 'This asana is also known as', 
+    'lang' => 'en', 
+    'id' => "also_known_as-{$asana->id}", 
+    'path' => "/admin/asanas/{$asana->id}",
+    'value' => $asana->also_known_as
+    ])
+
+  @editInput([
+    'name' => 'also_known_as_pt', 
+    'label' => 'Esse asana também é conhecido como', 
+    'lang' => 'pt', 
+    'id' => "also_known_as_pt-{$asana->id}", 
+    'path' => "/admin/asanas/{$asana->id}",
+    'value' => $asana->also_known_as_pt
+    ])
+
+  @editInput([
+    'name' => 'etymology', 
+    'label' => 'The etymology of this asana is', 
+    'lang' => 'en', 
+    'id' => "etymology-{$asana->id}", 
+    'path' => "/admin/asanas/{$asana->id}",
+    'value' => $asana->etymology
+    ])
+
+  @editInput([
+    'name' => 'etymology_pt', 
+    'label' => 'A etimologia desse asana é', 
+    'lang' => 'pt', 
+    'id' => "etymology_pt-{$asana->id}", 
+    'path' => "/admin/asanas/{$asana->id}",
+    'value' => $asana->etymology_pt
+    ])
 
   {{-- BENEFITS --}}          
   <div class="form-group edit-control" id="benefits-{{$asana->id}}" name="benefits[]">
 
-    @include('components/editing/label', [
+    @include('components.form.edit.label', [
       'title' => 'The benefits of this asana are',
       'id' => "benefits-{$asana->id}",
       'path' => "/admin/asanas/{$asana->id}/benefits"
@@ -70,7 +85,7 @@
   {{-- STEPS --}}          
   <div class="form-group edit-control" id="steps-{{$asana->id}}" name="steps[]">
 
-    @include('components/editing/label', [
+    @include('components.form.edit.label', [
       'title' => 'The steps of this asana are',
       'id' => "steps-{$asana->id}",
       'path' => "/admin/asanas/{$asana->id}/steps"
@@ -85,7 +100,7 @@
   
   {{-- LEVELS --}}
   <div class="form-group edit-control" id="levels-{{$asana->id}}" name="levels">
-    @include('components/editing/label', [
+    @include('components.form.edit.label', [
       'title' => 'For those who are',
       'id' => "levels-{$asana->id}",
       'path' => "/admin/asanas/{$asana->id}/levels"
@@ -108,7 +123,7 @@
   {{-- TYPES --}}
   <div class="form-group edit-control" id="type-{{$asana->id}}" name="types">
 
-    @include('components/editing/label', [
+    @include('components.form.edit.label', [
       'title' => 'Asana\'s types',
       'id' => "type-{$asana->id}",
       'path' => "/admin/asanas/{$asana->id}/types"
@@ -132,7 +147,7 @@
   {{-- SUBTYPES --}}
   <div class="form-group edit-control" id="subtype-{{$asana->id}}" name="subtypes">
 
-    @include('components/editing/label', [
+    @include('components.form.edit.label', [
       'title' => 'Asana\'s subtypes',
       'id' => "subtype-{$asana->id}",
       'path' => "/admin/asanas/{$asana->id}/subtypes"

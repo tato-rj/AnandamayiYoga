@@ -51,7 +51,9 @@ class ProgramsController extends Controller
         $program = Program::create([
             'slug' => str_slug($request->name),
             'name' => $request->name,
+            'name_pt' => $request->name_pt,
             'description' => $request->description,
+            'description_pt' => $request->description_pt,
             'image_path' => imageToS3($request, 'programs'),
             'video_path' => videoToS3($request, 'programs'),
             'teacher_id' => $request->teacher_id,
@@ -109,7 +111,7 @@ class ProgramsController extends Controller
     public function edit(Program $program)
     {
         $lessons = Lesson::whereNull('program_id')->get();
-        $teachers = Teacher::orderBy('first_name')->get();
+        $teachers = Teacher::orderBy('name')->get();
 
         return view('admin/pages/programs/edit/layout', compact(['program', 'lessons', 'teachers']));
     }

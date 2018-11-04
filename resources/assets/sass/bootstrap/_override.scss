@@ -96,3 +96,7 @@ select:disabled, input[type="text"]:disabled, input[type="password"]:disabled, i
 .dropdown-header {
 	@extend .py-2, .px-3, .bg-light;
 }
+
+.form-control-sm {
+	padding: 0.324em .75em !important;
+}

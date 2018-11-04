@@ -113,6 +113,7 @@ class ChaptersController extends Controller
      */
     public function createContent(Request $request, Course $course, Chapter $chapter)
     {
+
         $model = $request->content_type;
 
         $method = $chapter->stringToMethodName($model);

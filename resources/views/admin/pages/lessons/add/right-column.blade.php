@@ -1,22 +1,14 @@
 <div class="col-8">
   {{-- NAME --}}
   <div class="form-group">
-    <input required type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" name="name" value="{{ old('name') }}" placeholder="Class Name">
+    @input(['lang' => 'en', 'name' => 'name', 'label' => 'Class name', 'value' => old('name')])
     <p class="m-0 ml-2 text-danger" id="validate-name" style="display: none;"><small>A lesson with this name already exists</small></p>
-    @if ($errors->has('name'))
-    <div class="invalid-feedback">
-      {{ $errors->first('name') }}
-    </div>
-    @endif
+    @input(['lang' => 'pt', 'name' => 'name_pt', 'label' => 'Nome da aula', 'value' => old('name_pt')])
   </div>
   {{-- DESCRIPTION --}}
   <div class="form-group">
-    <textarea required name="description" class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" placeholder="Description" rows="3">{{ old('description') }}</textarea>
-    @if ($errors->has('description'))
-    <div class="invalid-feedback">
-      {{ $errors->first('description') }}
-    </div>
-    @endif
+    @textarea(['lang' => 'en', 'name' => 'description', 'label' => 'Description', 'value' => old('description')])
+    @textarea(['lang' => 'pt', 'name' => 'description_pt', 'label' => 'Descrição', 'value' => old('description_pt')])
   </div>
 
   {{-- CATEGORIES --}}

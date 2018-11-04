@@ -27,11 +27,6 @@ class AsanaTest extends AppTest
 
 		Storage::disk('s3')->assertExists("local/asanas/images/{$request->image->hashName()}");
 		Storage::disk('s3')->assertExists("local/asanas/videos/{$request->video->hashName()}");
-
-		$this->assertCount(2, $asana->benefits);
-		$this->assertCount(3, $asana->steps);
-		$this->assertCount(4, $asana->types);
-		$this->assertCount(2, $asana->subtypes);
 	}
 
 	/** @test */
@@ -110,7 +105,10 @@ class AsanaTest extends AppTest
 
 		$this->json('PATCH', route('admin.asanas.benefits.update', $asana->id), [
 			'key' => 'benefits',
-			'value' => ['First benefit', 'Second benefit']
+			'value' => [
+				'en' => ['First benefit', 'Second benefit'],
+				'pt' => ['Primeiro benefício', null]
+			]
 		])->assertSuccessful();
 
 		$this->assertCount(2, $asana->fresh()->benefits);
@@ -127,7 +125,10 @@ class AsanaTest extends AppTest
 
 		$this->json('PATCH', route('admin.asanas.steps.update', $asana->id), [
 			'key' => 'steps',
-			'value' => ['First step', 'Second step', 'Third step']
+			'value' => [
+				'en' => ['First step', 'Second step', 'Third step'],
+				'pt' => ['Primeiro passo',null,null]
+			]
 		])->assertSuccessful();
 
 		$this->assertCount(3, $asana->fresh()->steps);

@@ -43,10 +43,13 @@ class AsanasController extends Controller
             'sanskrit' => $request->sanskrit,
             'slug' => str_slug($request->name),
             'name' => $request->name,
+            'name_pt' => $request->name_pt,
+            'etymology' => $request->etymology,
+            'etymology_pt' => $request->etymology_pt,
+            'also_known_as' => $request->also_known_as,
+            'also_known_as_pt' => $request->also_known_as_pt,
             'image_path' => imageToS3($request, 'asanas'),
             'video_path' => videoToS3($request, 'asanas'),
-            'etymology' => $request->etymology,
-            'also_known_as' => $request->also_known_as,
         ]);
 
         if ($request->benefits)
@@ -135,6 +138,7 @@ class AsanasController extends Controller
         $asana = Asana::find($asanaId);
 
         $asana->benefits()->delete();
+
         if ($request->value)
             $asana->createMany($request->value, 'benefits');
 

@@ -2,6 +2,6 @@
 
 	@include('admin/components/multitype/remove')
 
-	<textarea rows="{{$rows}}" disabled class="form-control" name="{{str_plural($type)}}[]">{{$value ?? null}}</textarea>
+	@include('components/form/edit/input-group', ['type' => str_plural($type), 'value' => $value ?? null, 'disabled' => true])
 
 </div>

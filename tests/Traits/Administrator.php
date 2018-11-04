@@ -176,8 +176,14 @@ trait Administrator
 		$request->image = UploadedFile::fake()->image('image.jpg');
 		$request->video = UploadedFile::fake()->image('video.mp4');
 
-		$request->benefits = create('App\AsanaBenefit', [], 2)->pluck('content');
-		$request->steps = create('App\AsanaStep', [], 3)->pluck('content');
+		$benefit = create('App\AsanaBenefit');
+		$request->benefits['en'] = [$benefit->content];
+		$request->benefits['pt'] = [$benefit->content_pt];
+
+		$step = create('App\AsanaStep');
+		$request->steps['en'] = [$step->content];
+		$request->steps['pt'] = [$step->content_pt];
+
 		$request->types = create('App\AsanaType', [], 4);
 		$request->subtypes = create('App\AsanaSubType', [], 2);
 		$request->levels = create('App\Level');

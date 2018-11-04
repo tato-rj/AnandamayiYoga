@@ -1,63 +1,61 @@
 <div class="col-8">
-  {{-- NAME --}}
-  <div class="form-group edit-control" id="name-{{$teacher->id}}" name="name">
-
-    @include('components/editing/label', [
-      'title' => 'Name',
-      'id' => "name-{$teacher->id}",
-      'path' => "/admin/teachers/{$teacher->id}"
-    ])
-    
-    <input type="text" disabled class="form-control" value="{{$teacher->name}}" name="name">
-
+  <div class="form-group">
+    @include('admin.components.input-lang')
   </div>
+
+  @editInput([
+    'name' => 'name', 
+    'label' => 'Name', 
+    'lang' => null, 
+    'id' => "name-{$teacher->id}", 
+    'path' => "/admin/teachers/{$teacher->id}",
+    'value' => $teacher->name
+    ])
 
   <div class="row">
-    {{-- EMAIL --}}
-    <div class="col form-group edit-control" id="email-{{$teacher->id}}" name="email">
-
-      @include('components/editing/label', [
-        'title' => 'E-mail',
-        'id' => "email-{$teacher->id}",
-        'path' => "/admin/teachers/{$teacher->id}"
+    @editInput([
+      'name' => 'email', 
+      'classes' => 'col',
+      'label' => 'E-mail', 
+      'lang' => null, 
+      'id' => "email-{$teacher->id}", 
+      'path' => "/admin/teachers/{$teacher->id}",
+      'value' => $teacher->email
       ])
-      
-      <input type="text" disabled class="form-control" value="{{$teacher->email}}" name="email">
 
-    </div>
-
-    {{-- WEBSITE --}}
-    <div class="col form-group edit-control" id="website-{{$teacher->id}}" name="website">
-
-      @include('components/editing/label', [
-        'title' => 'Website (optional)',
-        'id' => "website-{$teacher->id}",
-        'path' => "/admin/teachers/{$teacher->id}"
+    @editInput([
+      'name' => 'website', 
+      'classes' => 'col',
+      'label' => 'Website (optional)', 
+      'lang' => null, 
+      'id' => "website-{$teacher->id}", 
+      'path' => "/admin/teachers/{$teacher->id}",
+      'value' => $teacher->website
       ])
-      
-      <input type="text" disabled class="form-control" value="{{$teacher->website}}" name="website">
-
-    </div>
   </div>
 
-  {{-- BIOGRAPHY --}}
-  <div class="form-group edit-control" id="biography-{{$teacher->id}}" name="biography">
-    
-    @include('components/editing/label', [
-      'title' => 'Biography',
-      'id' => "biography-{$teacher->id}",
-      'path' => "/admin/teachers/{$teacher->id}"
+  @editTrix([
+    'name' => 'biography', 
+    'label' => 'Biography', 
+    'lang' => 'en', 
+    'id' => "biography-{$teacher->id}", 
+    'path' => "/admin/teachers/{$teacher->id}",
+    'value' => $teacher->biography
     ])
 
-    <input type="hidden" bind="trix" id="trix-biography" name="biography" value="{{$teacher->biography}}">
-    <trix-editor input="trix-biography" style="height: 180px" class="trix-disabled"></trix-editor>
-
-  </div>
+  @editTrix([
+    'name' => 'biography_pt', 
+    'label' => 'Biografia', 
+    'lang' => 'pt', 
+    'id' => "biography_pt-{$teacher->id}", 
+    'path' => "/admin/teachers/{$teacher->id}",
+    'value' => $teacher->biography_pt
+    ])
 
     {{-- CATEGORIES --}}
     <div class="form-group edit-control" id="category-{{$teacher->id}}" name="category">
 
-      @include('components/editing/label', [
+      @include('components.form.edit.label', [
         'title' => 'This teacher focuses on',
         'id' => "category-{$teacher->id}",
         'path' => route('admin.teachers.categories.update', $teacher->slug)

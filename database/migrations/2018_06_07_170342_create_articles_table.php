@@ -16,9 +16,14 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('slug');
-            $table->string('title');
+
+            $table->string('title')->unique();
+            $table->string('title_pt')->nullable();
             $table->text('summary');
+            $table->text('summary_pt')->nullable();
             $table->text('content');
+            $table->text('content_pt')->nullable();
+            
             $table->string('image_path')->nullable();
             $table->unsignedInteger('author_id');
             $table->unsignedInteger('views')->default(0);

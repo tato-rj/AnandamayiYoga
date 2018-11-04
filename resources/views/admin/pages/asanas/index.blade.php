@@ -44,8 +44,13 @@ checkName('asanas');
 <script type="text/javascript">
 $('a.add-new-field').on('click', function() {
   $button = $(this);
+  
   $clone = $button.siblings('.original-type').clone();
-
+  
+  $clone.find('input').each(function() {
+    $(this).attr('name', $(this).attr('data-name')).removeAttr('disabled');
+  });
+  
   $clone.removeClass('original-type').insertBefore($button).addClass('d-flex');
 });
 </script>

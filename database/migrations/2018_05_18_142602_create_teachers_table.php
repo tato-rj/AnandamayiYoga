@@ -21,6 +21,7 @@ class CreateTeachersTable extends Migration
             $table->string('cover_path')->nullable();
             $table->string('email')->unique();
             $table->text('biography');
+            $table->text('biography_pt')->nullable();
             $table->string('website')->nullable();
             $table->timestamps();
         });

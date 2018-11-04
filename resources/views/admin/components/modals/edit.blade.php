@@ -8,6 +8,9 @@
         </button>
       </div>
       <div class="modal-body">
+        <div class="form-group">
+          @include('admin.components.input-lang')
+        </div>
       	{{$slot}}
       </div>
     </div>

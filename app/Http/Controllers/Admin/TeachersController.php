@@ -43,6 +43,7 @@ class TeachersController extends Controller
             'image_path' => imageToS3($request, 'teachers'),
             'cover_path' => coverToS3($request, 'teachers'),
             'biography' => $request->biography,
+            'biography_pt' => $request->biography_pt,
             'email' => $request->email,
             'website' => $request->website
         ]);

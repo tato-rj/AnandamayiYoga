@@ -15,9 +15,11 @@ class CreateAsanaTypesTable extends Migration
     {
         Schema::create('asana_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
             $table->string('slug');
-            $table->text('description')->nullable();
+
+            $table->string('name')->unique();
+            $table->string('name_pt')->nullable();
+
             $table->tinyInteger('order')->nullable();
             $table->timestamps();
         });

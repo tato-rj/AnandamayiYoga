@@ -70,7 +70,9 @@ class LessonsController extends Controller
         $lesson = Lesson::create([
             'slug' => str_slug($request->name),
             'name' => $request->name,
+            'name_pt' => $request->name_pt,
             'description' => $request->description,
+            'description_pt' => $request->description_pt,
             'image_path' => imageToS3($request, 'lessons'),
             'video_path' => videoToS3($request, 'lessons'),
             'duration' => $request->duration,

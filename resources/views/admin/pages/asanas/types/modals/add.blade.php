@@ -1,14 +1,12 @@
 @component('admin/components/modals/add', ['title' => 'Create a new Asana Type'])
-    <form method="POST" action="/admin/asana-types">
+    <form method="POST" action="{{route('admin.asanas.types.store')}}">
       {{csrf_field()}}
       <div class="form-group">
-        <input required type="text" class="form-control" name="name" placeholder="Type Name">
-      </div>
-      <div class="form-group">
-        <textarea class="form-control" name="description" rows="3" placeholder="Description"></textarea>
+        @input(['required' => true, 'lang' => 'en', 'name' => 'name', 'label' => 'Type name', 'value' => old('name')])
+        @input(['required' => false, 'lang' => 'pt', 'name' => 'name_pt', 'label' => 'Nome do tipo', 'value' => old('name_pt')])
       </div>
       <div class="text-right">
-        <button type="submit" class="btn btn-red btn-xs">Save</button>
+        <button type="submit" class="btn-bold btn-red btn-xs">Save</button>
       </div>
     </form>
 @endcomponent

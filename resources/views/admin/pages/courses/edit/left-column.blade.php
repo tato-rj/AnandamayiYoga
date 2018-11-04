@@ -12,12 +12,11 @@
   {{-- COST --}}          
   <div class="form-group edit-control" id="cost-{{$course->id}}" name="cost">
 
-    @component('components/editing/label', [
+    @include('components.form.edit.label', [
       'title' => 'This course costs',
       'id' => "cost-{$course->id}",
       'path' => "/admin/courses/{$course->id}"
     ])
-    @endcomponent
 
     <div class="input-group mb-3">
       <div class="input-group-prepend">
@@ -27,4 +26,17 @@
     </div>
   </div>
 
+  {{-- LANGUAGE --}}
+  <div class="form-group edit-control" id="language-{{$course->id}}" name="language">
+    @include('components.form.edit.label', [
+      'title' => 'Language',
+      'id' => "language-{$course->id}",
+      'path' => "/admin/courses/{$course->id}"
+    ])
+
+    <select name="language" disabled class="form-control">
+      <option value="en" @match($course->language, 'en') selected @endmatch>English</option>
+      <option value="pt" @match($course->language, 'pt') selected @endmatch>Português</option>
+    </select>
+  </div>
 </div>

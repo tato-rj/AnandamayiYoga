@@ -1,33 +1,48 @@
 <div class="col-8">
-  {{-- NAME --}}          
-  <div class="form-group edit-control" id="name-{{$lesson->id}}" name="name">
-
-    @include('components/editing/label', [
-      'title' => 'The name of this lesson is',
-      'id' => "name-{$lesson->id}",
-      'path' => "/admin/classes/{$lesson->id}"
-    ])
-    
-    <input type="text" disabled class="form-control" value="{{$lesson->name}}" name="name" placeholder="Class Name" >
-
+  <div class="form-group">
+    @include('admin.components.input-lang')
   </div>
-  {{-- DESCRIPTION --}}
-  <div class="form-group edit-control" id="description-{{$lesson->id}}" name="description">
-    
-    @include('components/editing/label', [
-      'title' => 'This lesson is about',
-      'id' => "description-{$lesson->id}",
-      'path' => "/admin/classes/{$lesson->id}"
+
+  @editInput([
+    'name' => 'name', 
+    'label' => 'The name of this lesson is', 
+    'lang' => 'en', 
+    'id' => "name-{$lesson->id}", 
+    'path' => "/admin/classes/{$lesson->id}",
+    'value' => $lesson->name
     ])
 
-    <textarea disabled class="form-control" placeholder="Description" rows="3">{{$lesson->description}}</textarea>
+  @editInput([
+    'name' => 'name', 
+    'label' => 'The name of this lesson is', 
+    'lang' => 'pt', 
+    'id' => "name-{$lesson->id}", 
+    'path' => "/admin/classes/{$lesson->id}",
+    'value' => $lesson->name
+    ])
 
-  </div>
+  @editTextarea([
+    'name' => 'description', 
+    'label' => 'This lesson is about', 
+    'lang' => 'en', 
+    'id' => "description-{$lesson->id}", 
+    'path' => "/admin/classes/{$lesson->id}",
+    'value' => $lesson->description
+    ])
+
+  @editTextarea([
+    'name' => 'description', 
+    'label' => 'This lesson is about', 
+    'lang' => 'pt', 
+    'id' => "description-{$lesson->id}", 
+    'path' => "/admin/classes/{$lesson->id}",
+    'value' => $lesson->description
+    ])
 
     {{-- CATEGORIES --}}
     <div class="form-group edit-control" id="category-{{$lesson->id}}" name="category">
 
-      @include('components/editing/label', [
+      @include('components.form.edit.label', [
         'title' => 'This lesson is good for',
         'id' => "category-{$lesson->id}",
         'path' => "/admin/classes/{$lesson->id}/categories"
@@ -51,7 +66,7 @@
 
     {{-- LEVELS --}}
     <div class="form-group edit-control" id="levels-{{$lesson->id}}" name="levels">
-      @include('components/editing/label', [
+      @include('components.form.edit.label', [
         'title' => 'The Yoga level is',
         'id' => "levels-{$lesson->id}",
         'path' => "/admin/classes/{$lesson->id}/levels"
@@ -75,7 +90,7 @@
     {{-- PROGRAM --}}
     <div class="form-group edit-control col" name="program_id" id="program_id-{{$lesson->id}}">
       
-      @include('components/editing/label', [
+      @include('components.form.edit.label', [
         'title' => 'This lesson is part of the program',
         'id' => "program_id-{$lesson->id}",
         'path' => "/admin/classes/{$lesson->id}"
@@ -93,7 +108,7 @@
     {{-- COST --}}
     <div class="form-group edit-control col" id="is_free-{{$lesson->id}}" name="is_free">
       
-      @include('components/editing/label', [
+      @include('components.form.edit.label', [
         'title' => 'Is this lesson free?',
         'id' => "is_free-{$lesson->id}",
         'path' => "/admin/classes/{$lesson->id}"
@@ -116,7 +131,7 @@
     {{-- TEACHER --}}
     <div class="form-group edit-control col" name="teacher_id" id="teacher_id-{{$lesson->id}}">
       
-      @include('components/editing/label', [
+      @include('components.form.edit.label', [
         'title' => 'This lesson is taught by',
         'id' => "teacher_id-{$lesson->id}",
         'path' => "/admin/classes/{$lesson->id}"

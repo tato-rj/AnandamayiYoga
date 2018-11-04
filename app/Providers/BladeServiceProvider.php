@@ -59,6 +59,13 @@ class BladeServiceProvider extends ServiceProvider
         });
 
         Blade::include('components.sections.title');
+
+        Blade::include('components.form.input');
+        Blade::include('components.form.textarea');
+        Blade::include('components.form.trix');
+        Blade::include('components.form.edit.input', 'editInput');
+        Blade::include('components.form.edit.textarea', 'editTextarea');
+        Blade::include('components.form.edit.trix', 'editTrix');
     }
 
     /**

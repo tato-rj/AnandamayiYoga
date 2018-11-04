@@ -16,8 +16,13 @@ class CreateProgramsTable extends Migration
         Schema::create('programs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('slug');
+
             $table->string('name', 80)->unique();
+            $table->string('name_pt', 80)->nullable();
+
             $table->text('description');
+            $table->text('description_pt')->nullable();
+
             $table->string('video_path')->nullable();
             $table->string('image_path')->nullable();
             $table->unsignedInteger('views')->default(0);
