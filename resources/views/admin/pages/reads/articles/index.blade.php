@@ -3,14 +3,14 @@
 @section('content')
 
 @include('admin/components/page-title', [
-  'title' => 'Blog',
-  'subtitle' => "Showing {$articles->firstItem()}-{$articles->lastItem()} of a total of {$articles->total()} posts"
+  'title' => 'Articles',
+  'subtitle' => "Showing {$articles->firstItem()}-{$articles->lastItem()} of a total of {$articles->total()} articles"
 ])
 
 <div class="row">
   {{-- PLUS --}}
   <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4">
-    <a href="{{route('admin.articles.create', 'blog')}}">
+    <a href="{{route('admin.articles.create')}}">
       <div class="rounded cursor-pointer position-relative p-0 t-2 h-100" style="border: dashed 10px lightgrey; min-height: 271.6px">
         <i class="fas fa-plus fa-4x absolute-center" style="color: lightgrey"></i>
       </div>

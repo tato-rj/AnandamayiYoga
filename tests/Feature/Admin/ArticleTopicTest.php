@@ -62,7 +62,7 @@ class ArticleTopicTest extends AppTest
 
 		$article->topics()->save($topic);
 
-		$this->delete(route('admin.articles.topics.destroy', $topic->slug))
+		$this->delete(route('admin.articles.destroy', $article->slug))
 			 ->assertSessionHas('status');
 
 		$this->assertDatabaseMissing('article_article_topic', [

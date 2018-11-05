@@ -12,8 +12,8 @@
         <small class="text-danger mb-4 d-block">This action cannot be undone</small>
         <div class="text-right">
           <form action="" method="POST">
-            {{csrf_field()}}
-            {{method_field('DELETE')}}
+            @csrf
+            @method('DELETE')
             <button type="submit" class="btn-bold btn-xs btn-danger">Yes, go ahead</button>
           </form>
         </div>

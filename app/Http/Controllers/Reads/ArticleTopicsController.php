@@ -10,9 +10,14 @@ class ArticleTopicsController extends Controller
 {
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|unique:article_topics'
+        ]);
+
     	ArticleTopic::create([
     		'slug' => str_slug($request->name),
-    		'name' => $request->name
+    		'name' => $request->name,
+            'name_pt' => $request->name_pt
     	]);
 
         return redirect()->back()->with('status', 'The topic has been successfully created.');
@@ -46,9 +51,12 @@ class ArticleTopicsController extends Controller
      * @param  \App\ArticleTopic  $topic
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ArticleTopic $topic)
+    public function destroy($topicId)
     {
-        $topic->delete();
+        $topic = ArticleTopic::find($topicId);
+
+        if ($topic)
+            $topic->delete();
 
         return redirect()->back()->with('status', 'The topic has been deleted.');
     }

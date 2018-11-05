@@ -10,7 +10,7 @@
   </div>
   {{-- INPUTS --}}
   <div class="flex-grow-2 p-1">
-    <input type="hidden" name="sorting_order" data-id="{{$subtype->id}}" value="{{$subtype->sorting_order}}">
+    <input type="hidden" name="order" data-id="{{$subtype->id}}" value="{{$subtype->order}}">
     <p class="my-1">{{$subtype->name}}</p>
   </div>
   {{-- ACTION BUTTONS --}}

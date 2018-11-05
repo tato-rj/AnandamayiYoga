@@ -4,6 +4,7 @@
 	name="{{$name}}" 
 	style="display: {{! empty($lang) && $lang == 'pt' ? 'none' : null}}"
 	rows="{{$rows ?? 4}}" 
+	maxlength="{{$limit ?? null}}" 
 	placeholder="{{$label}}">{{$value}}</textarea>
 
 @if ($errors->has($name))

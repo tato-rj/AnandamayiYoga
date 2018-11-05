@@ -21,14 +21,14 @@
 
             <div class="dropdown-divider"></div>
 
-            <li class="navigation__sub {{checkActive(['admin/articles', 'admin/articles/blog', 'admin/article-topics'])}}">
+            <li class="navigation__sub {{checkActive(['admin/reads/learning', 'admin/reads/articles', 'admin/reads/topics'])}}">
                 <a href="" class="d-flex align-items-center"><i class="fas fa-book mr-2"></i>Reads
                     <small><i class="ml-2 fas fa-caret-down"></i></small>
                 </a>
                 <ul>
-                    <li class="{{checkActive(['admin/articles'])}}"><a href="/admin/articles">Articles</a></li>
-                    <li class="{{checkActive(['admin/articles/blog'])}}"><a href="/admin/articles/blog">Blog</a></li>
-                    <li class="{{checkActive(['admin/article-topics'])}}"><a href="/admin/articles/topics">Topics</a></li>
+                    <li class="{{checkActive(['admin/reads/learning'])}}"><a href="/admin/reads/learning">Learning</a></li>
+                    <li class="{{checkActive(['admin/reads/articles'])}}"><a href="/admin/reads/articles">Articles</a></li>
+                    <li class="{{checkActive(['admin/reads/topics'])}}"><a href="/admin/reads/topics">Topics</a></li>
                 </ul>
             </li>
 

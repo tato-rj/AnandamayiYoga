@@ -18,6 +18,7 @@ class CreateArticleTopicsTable extends Migration
             $table->string('slug');
             $table->string('name')->unique();
             $table->string('name_pt')->nullable();
+            $table->smallInteger('order')->nullable();
             $table->timestamps();
         });
 

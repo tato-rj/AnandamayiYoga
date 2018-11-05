@@ -2,29 +2,23 @@
 
 @section('content')
 
-@if(request()->has('blog'))
-@component('admin/components/page-title', ['title' => 'Create a new blog post'])
-  @slot('subtitle')
-    <a href="{{route('admin.articles.blog')}}" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all posts</a>
-  @endslot
-@endcomponent
-@else
 @component('admin/components/page-title', ['title' => 'Create a new article'])
   @slot('subtitle')
-    <a href="{{route('admin.articles.index')}}" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all articles</a>
+    <a href="{{request()->has('learning') ? 
+              route('admin.articles.learning') : 
+              route('admin.articles.articles')}}" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all articles</a>
   @endslot
 @endcomponent
-@endif
 
 <div class="row">
-  <form method="POST" id="create-article" class="p-4 row w-100" action="/admin/articles" enctype="multipart/form-data">
+  <form method="POST" id="create-article" class="p-4 row w-100" action="{{route('admin.articles.store')}}" enctype="multipart/form-data">
     {{csrf_field()}}
     
-    @if(request()->has('blog'))
-    	@include('admin/pages/articles/create/left-column')
+    @if(! request()->has('learning'))
+    	@include('admin/pages/reads/articles/create/left-column')
     @endif
 
-    @include('admin/pages/articles/create/right-column')
+    @include('admin/pages/reads/articles/create/right-column')
 
   </form>
 </div>

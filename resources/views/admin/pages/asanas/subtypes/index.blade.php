@@ -16,7 +16,10 @@
 <div class="row mt-4">
   <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12" id="asanaSubTypes-list">
     @foreach($asanaSubtypes as $subtype)
-      @include('admin/pages/asanas/subtypes/draggable')
+      @draggable([
+        'model' => $subtype, 
+        'editPath' => route('admin.asanas.subtypes.update', $subtype->id), 
+        'deletePath' => route('admin.asanas.subtypes.destroy', $subtype->id)])
     @endforeach
   </div>
 </div>

@@ -56,6 +56,6 @@ var reorder = function(element, showNotification = true) {
 
   $path = $element.attr('data-path');
   $value = $element.parent().children().index($element);
-
+  
   patch($path, {'key': 'order', 'value': $value}, showNotification);
 }

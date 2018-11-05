@@ -1,12 +1,16 @@
 <div class="col-lg-9 col-md-8 col-sm-12 col-12 mx-auto">
-  {{-- TITLE --}}
   <div class="form-group">
-    <input required type="text" class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" name="title" value="{{ old('title') }}" placeholder="Title">
-    <p class="m-0 ml-2 text-danger" id="validate-name" style="display: none;"><small>An article with this title already exists</small></p>
-    @include('components/feedback/form', ['field' => 'title'])
+    @include('admin.components.input-lang')
   </div>
 
-  @if(request()->has('blog'))
+  {{-- TITLE --}}
+  <div class="form-group">
+    @input(['lang' => 'en', 'name' => 'title', 'label' => 'Title', 'value' => old('title')])
+    <p class="m-0 ml-2 text-danger" id="validate-title" style="display: none;"><small>A lesson with this title already exists</small></p>
+    @input(['lang' => 'pt', 'name' => 'title_pt', 'label' => 'Título', 'value' => old('title_pt')])
+  </div>
+
+  @if(! request()->has('learning'))
   {{-- AUTHOR --}}
   <div class="form-group">
     <select required class="form-control {{ $errors->has('author_id') ? 'is-invalid' : '' }}" name="author_id">
@@ -33,15 +37,14 @@
 
   {{-- SUMMARY --}}
   <div class="form-group">
-    <textarea required class="form-control {{ $errors->has('summary') ? 'is-invalid' : '' }}" name="summary" rows="5" maxlength="380" placeholder="Summary (max 380 characters)">{{old('summary')}}</textarea>
-    @include('components/feedback/form', ['field' => 'summary'])
+    @textarea(['lang' => 'en', 'limit' => 380, 'name' => 'summary', 'label' => 'Summary (max 380 characters)', 'value' => old('summary')])
+    @textarea(['lang' => 'pt', 'limit' => 380, 'name' => 'summary_pt', 'label' => 'Resumo (limite de 380 characteres)', 'value' => old('summary_pt')])
   </div>
 
   {{-- CONTENT --}}
   <div class="form-group">
-    <input type="hidden" id="trix-content" name="content" value="{{old('content')}}">
-    <trix-editor input="trix-content" placeholder="Content" required style="height: 560px"></trix-editor>
-    @include('components/feedback/form', ['field' => 'content'])
+    @trix(['lang' => 'en', 'name' => 'content', 'label' => 'Content', 'value' => old('content')])
+    @trix(['lang' => 'pt', 'name' => 'content_pt', 'label' => 'Conteúdo', 'value' => old('content_pt')])
   </div>
 
   <div class="form-group text-right">

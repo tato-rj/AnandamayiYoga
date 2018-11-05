@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix('/articles')->name('articles.')->group(function() {
+Route::prefix('/reads')->name('articles.')->group(function() {
 
     Route::prefix('/topics')->name('topics.')->group(function() {
 
@@ -10,13 +10,13 @@ Route::prefix('/articles')->name('articles.')->group(function() {
 
         Route::patch('/{topic}', 'Reads\ArticleTopicsController@update')->name('update');
 
-        Route::delete('/{topic}', 'Reads\ArticleTopicsController@destroy')->name('destroy');
+        Route::delete('/{topicId}', 'Reads\ArticleTopicsController@destroy')->name('destroy');
 
     });
 
-    Route::get('', 'Admin\AdminController@articles')->name('index');
+    Route::get('/learning', 'Admin\AdminController@learning')->name('learning');
 
-    Route::get('/blog', 'Admin\AdminController@blog')->name('blog');
+    Route::get('/articles', 'Admin\AdminController@articles')->name('articles');
 
     Route::get('/create', 'Reads\ArticlesController@create')->name('create');
 

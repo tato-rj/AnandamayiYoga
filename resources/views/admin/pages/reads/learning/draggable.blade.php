@@ -16,10 +16,10 @@
   {{-- ACTION BUTTONS --}}
   <div class="text-right text-nowrap px-1 py-1">
     <span class="text-muted text-nowrap"><small><strong>{{slug_str($article->subject)}}</strong></small></span>
-    <a href="/admin/articles/{{$article->slug}}" class="badge cursor-pointer text-warning link-none">Edit</a>
+    <a href="{{route('admin.articles.update', $article->slug, 'learning')}}" class="badge cursor-pointer text-warning link-none">Edit</a>
     
     <i class="fas text-danger fa-trash-alt mx-2 cursor-pointer delete" 
-      data-path="/admin/articles/{{$article->slug}}" 
+      data-path="{{route('admin.articles.destroy', $article->slug)}}"
       data-toggle="modal" 
       data-target="#delete-confirm"></i>
   </div>

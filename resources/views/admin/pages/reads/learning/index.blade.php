@@ -3,23 +3,25 @@
 @section('content')
 
 @include('admin/components/page-title', [
-  'title' => 'Articles',
-  'subtitle' => "We have 43 articles in total"
+  'title' => 'Learning About Yoga',
+  'subtitle' => "We have {$totalCount} ".str_plural('article', $totalCount)." in total"
 ])
 
 <div class="row mb-4">
   <div class="col-12">
-    <a href="{{route('admin.articles.create')}}" class="btn-bold btn-red btn-xs">Create a new article</a>
+    <a href="{{route('admin.articles.create', 'learning')}}" class="btn-bold btn-red btn-xs">Create a new learning article</a>
   </div>
 </div>
 
 <div class="row">
   @foreach($subjects as $subject => $articles)
-    <div class="col-lg-6 col-md-6 col-12 sortable-list" id="{{$subject}}">
-      @foreach($articles as $article)
-      @include('admin/pages/articles/draggable')
-      @endforeach
-    </div>
+    @if($articles->count())
+      <div class="col-lg-6 col-md-6 col-12 sortable-list" id="{{$subject}}">
+        @foreach($articles as $article)
+          @include('admin/pages/reads/learning/draggable')
+        @endforeach
+      </div>
+    @endif
   @endforeach
 </div>
 

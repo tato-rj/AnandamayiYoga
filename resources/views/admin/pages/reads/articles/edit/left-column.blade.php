@@ -7,7 +7,7 @@
     {{-- TOPICS --}}
     <div class="form-group edit-control" id="topic-{{$article->id}}" name="topic">
 
-      @include('components/editing/label', [
+      @include('components/form/edit/label', [
         'title' => 'This article is about',
         'id' => "topic-{$article->id}",
         'path' => "/admin/articles/{$article->id}/topics"

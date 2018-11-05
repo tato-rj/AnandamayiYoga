@@ -3,35 +3,35 @@
 @section('content')
 
 @include('admin/components/page-title', [
-  'title' => 'Asana Types',
-  'subtitle' => 'Manage the types of asanas'
+  'title' => 'Article Topics',
+  'subtitle' => "We have a total of {$topics->count()} ".str_plural('topic', $topics->count())
 ])
 
 <div class="row">
 	<div class="col-12">
-		<button type="button" class="btn-bold btn-xs btn-red" data-toggle="modal" data-target="#add-modal"><i class="fas fa-plus mr-2"></i>Create a new type</button>
+		<button type="button" class="btn-bold btn-xs btn-red" data-toggle="modal" data-target="#add-modal"><i class="fas fa-plus mr-2"></i>Create a new topic</button>
 	</div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12" id="asanaTypes-list">
-    @foreach($asanaTypes as $type)
+<div class="row my-4">
+	<div class="col-lg-6 col-md-6 col-sm-8 col-xs-12" id="topics-list">
+		@foreach($topics as $topic)
       @draggable([
-        'model' => $type, 
-        'editPath' => route('admin.asanas.types.update', $type->id), 
-        'deletePath' => route('admin.asanas.types.destroy', $type->id)])
-    @endforeach
-  </div>
+        'model' => $topic, 
+        'editPath' => route('admin.articles.topics.update', $topic->id), 
+        'deletePath' => route('admin.articles.topics.destroy', $topic->id)])
+		@endforeach
+	</div>
 </div>
 
-@include('admin/pages/asanas/types/modals/add')
+@include('admin/pages/reads/topics/modals/add')
 
-@include('admin/pages/asanas/types/modals/edit')
+@include('admin/pages/reads/topics/modals/edit')
 
 @component('admin/components/modals/delete', [
-  'title' => 'Delete Types'
+  'title' => 'Delete Topics'
 ])
-Are you sure you want to delete this type?
+Are you sure you want to delete this topic?
 @endcomponent
 
 @endsection
@@ -63,7 +63,11 @@ $('.open-edit-modal').on('click', function() {
 </script>
 <script type="text/javascript">
 
-autoSortable($('#asanaTypes-list'));
+autoSortable($('#topics-list'));
 
 </script>
+<script type="text/javascript">
+checkName('articles');
+</script>
+
 @endsection

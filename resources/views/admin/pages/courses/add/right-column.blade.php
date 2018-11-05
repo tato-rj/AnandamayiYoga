@@ -1,17 +1,17 @@
 <div class="col-8">
   {{-- NAME --}}
   <div class="form-group">
-    @input(['required' => true, 'lang' => null, 'name' => 'name', 'label' => 'Course name', 'value' => old('name')])
+    @input(['lang' => null, 'name' => 'name', 'label' => 'Course name', 'value' => old('name')])
     <p class="m-0 ml-2 text-danger" id="validate-name" style="display: none;"><small>A course with this name already exists</small></p>
   </div>
   {{-- HEADLINE --}}
   <div class="form-group">
-    @textarea(['required' => true, 'lang' => null, 'name' => 'headline', 'label' => 'Short description', 'value' => old('headline')])
+    @textarea(['lang' => null, 'name' => 'headline', 'label' => 'Short description', 'value' => old('headline')])
   </div>
 
   {{-- DESCRIPTION --}}
   <div class="form-group">
-    @trix(['required' => true, 'lang' => null, 'name' => 'description', 'label' => 'Complete description', 'value' => old('description')])
+    @trix(['lang' => null, 'name' => 'description', 'label' => 'Complete description', 'value' => old('description')])
   </div>
 
   {{-- TEACHERS --}}

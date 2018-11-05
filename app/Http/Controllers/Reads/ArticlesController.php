@@ -19,7 +19,7 @@ class ArticlesController extends Controller
         $topics = ArticleTopic::orderBy('name')->get();
         $teachers = Teacher::orderBy('name')->get();
 
-        return view('admin/pages/articles/create/index', compact(['topics', 'teachers']));
+        return view('admin/pages/reads/articles/create/index', compact(['topics', 'teachers']));
     }
 
     /**
@@ -40,8 +40,11 @@ class ArticlesController extends Controller
         $article = Article::create([
             'slug' => str_slug($request->title),
             'title' => $request->title,
+            'title_pt' => $request->title_pt,
             'summary' => $request->summary,
+            'summary_pt' => $request->summary_pt,
             'content' => $request->content,
+            'content_pt' => $request->content_pt,
             'image_path' => $request->has('image') ? imageToS3($request, 'articles') : null,
             'subject' => $request->subject ?? null,
             'author_id' => $request->author_id
@@ -49,7 +52,7 @@ class ArticlesController extends Controller
 
         $article->topics()->attach($request->topic);
         
-        $route = $request->has('subject') ? route('admin.articles.index') : route('admin.articles.blog');
+        $route = $request->has('subject') ? route('admin.articles.learning') : route('admin.articles.articles');
 
         return redirect($route)->with('status', "The article {$article->title} has been successfully created.");
     }
@@ -84,7 +87,7 @@ class ArticlesController extends Controller
         $topics = ArticleTopic::orderBy('name')->get();
         $teachers = Teacher::orderBy('name')->get();
 
-        return view('admin/pages/articles/edit/index', compact(['article', 'topics', 'teachers']));
+        return view('admin/pages/reads/articles/edit/index', compact(['article', 'topics', 'teachers']));
     }
 
     /**
