@@ -34534,9 +34534,12 @@ module.exports = function(module) {
 
 __webpack_require__("./resources/assets/js/bootstrap.js");
 __webpack_require__("./resources/assets/js/jquerysession.js");
+
+__webpack_require__("./resources/assets/js/functions/index.js");
 __webpack_require__("./resources/assets/js/components/functions.js");
 __webpack_require__("./resources/assets/js/components/notifications.js");
 __webpack_require__("./resources/assets/js/components/charts.js");
+__webpack_require__("./resources/assets/js/components/uploads.js");
 
 $.ajaxSetup({
 	headers: {
@@ -34966,6 +34969,92 @@ $('.notifications-item').on('click', function () {
 		console.log(error);
 	});
 });
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/uploads.js":
+/***/ (function(module, exports) {
+
+///////////
+// IMAGE //
+///////////
+
+$('#upload-button').on('click', function () {
+  $('input#image-input').click();
+});
+
+$('#upload-cover-button').on('click', function () {
+  $('input#cover-input').click();
+});
+
+$('input#image-input, input#cover-input').change(function (event) {
+  var target = $(this).attr('data-target');
+  var file = event.target.files[0];
+  var maxSize = 800000;
+
+  if (file.name.match(/\.(jpg|jpeg|png)$/i)) {
+    if (file.size < maxSize) {
+      $(this).parent().find('button[type="submit"]').attr('disabled', false);
+      $('.file-info-image').hide();
+      readURL(this, target);
+    } else {
+      alert('This image is too large (' + formatBytes(file.size) + '). You can\'t upload images larger than 800 KB.');
+    }
+  } else {
+    alert('This is not a valid image format. Only jpg, jpeg or png will be accepted.');
+  }
+});
+
+///////////
+// VIDEO //
+///////////
+
+$('input[type="file"].video').change(function (e) {
+  var file = e.target.files[0];
+  var videoObject = void 0;
+  var maxSize = 50000000;
+
+  if (file.name.match(/\.(mp4|mpeg|ogg)$/i)) {
+    if (file.size < maxSize) {
+      var _videoObject = URL.createObjectURL(file);
+      $(this).closest('form').find('.video-object').attr('src', _videoObject);
+      $(this).siblings('label').text(file.name);
+      $('#video-preview source')[0].src = _videoObject;
+      $('#video-preview')[0].load();
+      $('#video-upload-button').show();
+    } else {
+      $(this).closest('form').find('.video-object').attr('src', null);
+      $(this).siblings('label').text('Choose video');
+      alert('You can continue, but we can\'t upload videos larger than 50 MB from here (this video has ' + formatBytes(file.size) + '). The class will appear on the site only after you manually upload the video to Amazon S3.');
+    }
+  } else {
+    $(this).closest('form').find('.video-object').attr('src', null);
+    $(this).siblings('label').text('Choose video');
+    alert('This is not a valid video format. Only mp4, mpeg or ogg will be accepted.');
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/assets/js/functions/_uploads.js":
+/***/ (function(module, exports) {
+
+readURL = function readURL(input, element) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $(element).attr('src', e.target.result);
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+};
+
+/***/ }),
+
+/***/ "./resources/assets/js/functions/index.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__("./resources/assets/js/functions/_uploads.js");
 
 /***/ }),
 

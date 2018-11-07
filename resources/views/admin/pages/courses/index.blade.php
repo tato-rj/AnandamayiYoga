@@ -37,7 +37,6 @@ Are you sure you want to delete this course?
 @endsection
 
 @section('scripts')
-<script src="{{asset('js/upload.image.js')}}"></script>
 <script src="{{asset('js/modal.delete.js')}}"></script>
 
 <script type="text/javascript">
@@ -45,7 +44,7 @@ checkName('courses');
 </script>
 
 <script type="text/javascript">
-if($('.is-invalid').length > 0) {
+if($('.is-invalid, .invalid-feedback').length > 0) {
   $('#add-modal').modal('show');
 }
 </script>

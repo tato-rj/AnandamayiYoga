@@ -22,8 +22,8 @@
   <div class="form-group">
     <select name="language" class="form-control">
       <option>Select language</option>
-      <option value="en">English</option>
-      <option value="pt">Português</option>
+      <option value="en" @old('language', 'en') selected @endold>English</option>
+      <option value="pt" @old('language', 'pt') selected @endold>Português</option>
     </select>
   </div>
 </div>

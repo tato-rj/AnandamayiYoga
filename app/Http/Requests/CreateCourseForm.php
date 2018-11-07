@@ -30,7 +30,6 @@ class CreateCourseForm extends FormRequest
             'description' => 'required',
             'language' => 'required',
             'image' => 'required|image|max:800',
-            'video' => 'required',
             'teachers' => 'required'
         ];
     }

@@ -1,8 +1,11 @@
 require('./bootstrap');
 require('./jquerysession');
+
+require('./functions/index');
 require('./components/functions');
 require('./components/notifications');
 require('./components/charts');
+require('./components/uploads');
 
 $.ajaxSetup({
     headers: {

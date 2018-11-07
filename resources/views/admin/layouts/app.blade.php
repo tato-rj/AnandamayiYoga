@@ -48,7 +48,7 @@
             </div>
 
             @include('admin/layouts/header')
-            @include('admin/layouts/menu')
+            @include('admin/layouts/menu/layout')
 
             <section class="content">
                 @yield('content')
@@ -64,7 +64,7 @@
         
         <!-- Javascript -->
         <!-- Vendors -->
-        <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('js/admin.js') }}"></script>
         <script src="{{asset('js/admin/vendor/jquery.scrollbar.min.js')}}"></script>
         <script src="{{asset('js/admin/vendor/jquery-scrollLock.min.js')}}"></script>
 
@@ -97,43 +97,11 @@
         });
 
         $('.video-object').on('canplaythrough', function(e) {
-          var duration = 0; 
+          let duration = 0; 
           duration = Math.round(e.currentTarget.duration);
           console.log('Video duration: '+duration+' sec.')
           $(this).closest('form').find('input[name="duration"]').val(duration);
         }); 
-
-        $('input[type="file"].video').change(function(e){
-            var file = e.target.files[0];
-            var videoObject; 
-            $infoContainer = $(this).parent().siblings('.file-info');
-  
-            if (file.name.match(/\.(avi|mp3|mp4|mpeg|ogg)$/i)) { 
-                videoObject = URL.createObjectURL(file);
-                $(this).closest('form').find('.video-object').attr('src', videoObject); 
-            } 
-
-            $('.custom-file-label').text(file.name);
-            $infoContainer.find('.size').text(formatBytes(file.size));
-            $infoContainer.show();
-        });
-
-        $('input[type="file"]#image-input, input[type="file"]#cover-input').change(function(e){
-            var file = e.target.files[0];
-            $infoContainer = $(this).parent().siblings('.file-info');
-
-            if (file.size > 800000) {
-                $infoContainer.find('.warning .size').text(formatBytes(file.size));
-                $('.warning').show();
-                $('.success').hide();
-                $infoContainer.show();
-            } else {
-                $infoContainer.find('.success .size').text(formatBytes(file.size));
-                $('.warning').hide();
-                $('.success').show();
-                $infoContainer.show();
-            }
-        });
         </script>
 
         <script type="text/javascript">
@@ -143,7 +111,7 @@
         Trix.config.textAttributes.small = { tagName: "small", inheritable: true }
 
         addEventListener("trix-initialize", function(event) {
-          var buttonHTML, buttonGroup
+          let buttonHTML, buttonGroup
           
           buttonHTML  = '<button type="button" class="trix-button" data-trix-attribute="sup"><i class="fas fa-superscript fa-lg mb-1"></i></button>'
           buttonHTML += '<button type="button" class="trix-button" data-trix-attribute="sub"><i class="fas fa-subscript fa-lg mt-1"></i></button>'

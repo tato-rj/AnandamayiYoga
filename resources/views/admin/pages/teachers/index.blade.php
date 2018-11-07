@@ -37,7 +37,6 @@ Are you sure you want to delete this teacher?
 @endsection
 
 @section('scripts')
-<script src="{{asset('js/upload.image.js')}}"></script>
 <script src="{{asset('js/modal.delete.js')}}"></script>
 
 <script type="text/javascript">

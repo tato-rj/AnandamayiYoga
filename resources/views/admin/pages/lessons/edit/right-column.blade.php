@@ -13,12 +13,12 @@
     ])
 
   @editInput([
-    'name' => 'name', 
-    'label' => 'The name of this lesson is', 
+    'name' => 'name_pt', 
+    'label' => 'O nome dessa aula é', 
     'lang' => 'pt', 
-    'id' => "name-{$lesson->id}", 
+    'id' => "name_pt-{$lesson->id}", 
     'path' => "/admin/classes/{$lesson->id}",
-    'value' => $lesson->name
+    'value' => $lesson->name_pt
     ])
 
   @editTextarea([
@@ -31,12 +31,12 @@
     ])
 
   @editTextarea([
-    'name' => 'description', 
-    'label' => 'This lesson is about', 
+    'name' => 'description_pt', 
+    'label' => 'Essa aula é sobre', 
     'lang' => 'pt', 
-    'id' => "description-{$lesson->id}", 
+    'id' => "description_pt-{$lesson->id}", 
     'path' => "/admin/classes/{$lesson->id}",
-    'value' => $lesson->description
+    'value' => $lesson->description_pt
     ])
 
     {{-- CATEGORIES --}}

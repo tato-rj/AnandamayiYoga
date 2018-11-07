@@ -27,7 +27,6 @@ class CreateSingleLessonForm extends FormRequest
             'name' => 'required|unique:lessons',
             'description' => 'required',
             'image' => 'required|image|max:800',
-            'video' => 'required',
             'is_free' => 'required',
             'category' => 'required',
             'levels' => 'required'

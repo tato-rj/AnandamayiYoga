@@ -11,13 +11,13 @@
   </div>
   {{-- ALSO KNOWN AS --}}
   <div class="form-group">
-    @input(['lang' => 'en', 'name' => 'also_knwon_as', 'label' => 'Also known as', 'value' => old('also_knwon_as')])
-    @input(['lang' => 'pt', 'name' => 'also_knwon_as_pt', 'label' => 'Também conhecido como', 'value' => old('also_knwon_as_pt')])
+    @input(['lang' => 'en', 'required' => false, 'name' => 'also_knwon_as', 'label' => 'Also known as', 'value' => old('also_knwon_as')])
+    @input(['lang' => 'pt', 'required' => false, 'name' => 'also_knwon_as_pt', 'label' => 'Também conhecido como', 'value' => old('also_knwon_as_pt')])
   </div>
   {{-- ETYMOLOGY --}}
   <div class="form-group">
-    @input(['lang' => 'en', 'name' => 'etymology', 'label' => 'Etymology', 'value' => old('etymology')])
-    @input(['lang' => 'pt', 'name' => 'etymology_pt', 'label' => 'Etimologia', 'value' => old('etymology_pt')])
+    @input(['lang' => 'en', 'required' => false, 'name' => 'etymology', 'label' => 'Etymology', 'value' => old('etymology')])
+    @input(['lang' => 'pt', 'required' => false, 'name' => 'etymology_pt', 'label' => 'Etimologia', 'value' => old('etymology_pt')])
   </div>
 
   {{-- BENEFITS --}}

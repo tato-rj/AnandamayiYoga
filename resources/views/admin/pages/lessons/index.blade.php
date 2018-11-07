@@ -46,7 +46,6 @@ Are you sure you want to delete this lesson?
 @endsection
 
 @section('scripts')
-<script src="{{asset('js/upload.image.js')}}"></script>
 <script src="{{asset('js/modal.delete.js')}}"></script>
 <script src="{{asset('js/edit.inputs.js')}}"></script>
 <script src="{{asset('js/play.sounds.js')}}"></script>

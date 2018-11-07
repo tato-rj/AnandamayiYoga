@@ -28,5 +28,4 @@
 
 @section('scripts')
 <script src="{{asset('js/edit.inputs.js')}}"></script>
-<script src="{{asset('js/upload.image.js')}}"></script>
 @endsection
