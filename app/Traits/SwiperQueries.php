@@ -4,18 +4,18 @@ namespace App\Traits;
 
 trait SwiperQueries
 {
-	public static function trending($number)
+	public function scopeTrending($query, $number)
 	{
-		return self::inRandomOrder()->limit($number)->get();
+		return $query->inRandomOrder()->limit($number)->get();
 	}
 
-	public static function recent($number)
+	public function scopeRecent($query, $number)
 	{
-		return self::latest()->limit($number)->get();
+		return $query->latest()->limit($number)->get();
 	}
 
-	public static function free($number)
+	public function scopeFree($query, $number)
 	{
-		return self::where('is_free', true)->limit($number)->get();
+		return $query->where('is_free', true)->limit($number)->get();
 	}
 }

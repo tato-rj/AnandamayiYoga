@@ -25,7 +25,7 @@ class CreateLessonsTable extends Migration
 
             $table->string('image_path')->nullable();
             $table->string('video_path')->nullable();
-            $table->unsignedInteger('duration');
+            $table->unsignedInteger('duration')->nullable();
             $table->unsignedInteger('program_id')->nullable();
             $table->unsignedInteger('order')->nullable();
             $table->boolean('is_free');

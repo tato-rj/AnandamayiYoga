@@ -43,7 +43,7 @@ class Program extends Anandamayi
 
     public function lessons()
     {
-        return $this->hasMany(Lesson::class)->orderBy('order');
+        return $this->hasMany(Lesson::class)->valid()->orderBy('order');
     }
 
     public function syncLessons($newLessons)

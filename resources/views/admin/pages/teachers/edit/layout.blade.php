@@ -35,6 +35,4 @@ Are you sure you want to delete this teacher?
 
 @section('scripts')
 <script src="{{asset('js/edit.inputs.js')}}"></script>
-
-<script src="{{asset('js/upload.image.js')}}"></script>
 @endsection

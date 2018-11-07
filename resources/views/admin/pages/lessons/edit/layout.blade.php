@@ -12,14 +12,17 @@
 
 <div class="row">
   <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
-    <div>
-      <div class="row">
+    @if(! $lesson->duration)
+    <div class="alert alert-warning">
+      <small><i class="fas fa-exclamation-triangle mr-2"></i>Upload this file to S3: <strong>{{$lesson->video_path}}</strong></small>
+    </div>
+    @endif
+    <div class="row">
 
-        @include('admin/pages/lessons/edit/left-column')
+      @include('admin/pages/lessons/edit/left-column')
 
-        @include('admin/pages/lessons/edit/right-column')
+      @include('admin/pages/lessons/edit/right-column')
 
-      </div>      
     </div>
   </div>
 </div>

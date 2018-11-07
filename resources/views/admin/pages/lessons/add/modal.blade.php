@@ -14,7 +14,7 @@
   <div class="text-right">
 
     @include('components/buttons/spinner', [
-      'classes' => 'btn btn-red block-screen-button',
+      'classes' => 'btn btn-xs btn-red block-screen-button',
       'label' => 'Create Class'])
 
   </div>

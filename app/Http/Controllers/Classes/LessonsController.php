@@ -18,7 +18,7 @@ class LessonsController extends Controller
      */
     public function index(Request $request, LessonFilters $filters)
     {
-        $lessons = Lesson::filter($filters)->paginate(12);
+        $lessons = Lesson::valid()->filter($filters)->paginate(12);
         
         // if ($request->ajax()){
         //     return view('pages/discover/lessons/show', ['lessons' => $lessons])->render();

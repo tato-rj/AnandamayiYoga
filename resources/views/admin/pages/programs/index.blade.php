@@ -58,7 +58,7 @@ checkName('programs');
 </script>
 
 <script type="text/javascript">
-if($('.is-invalid').length > 0) {
+if($('.is-invalid, .invalid-feedback').length > 0) {
   $('#add-modal').modal('show');
 }
 </script>

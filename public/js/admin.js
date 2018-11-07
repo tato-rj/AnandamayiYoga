@@ -34995,8 +34995,7 @@ $('input#image-input, input#cover-input').change(function (event) {
   if (file.name.match(/\.(jpg|jpeg|png)$/i)) {
     if (file.size < maxSize) {
       $(this).parent().find('button[type="submit"]').attr('disabled', false);
-      $('.file-info-image').hide();
-      readURL(this, target);
+      captureImage(this, target);
     } else {
       alert('This image is too large (' + formatBytes(file.size) + '). You can\'t upload images larger than 800 KB.');
     }
@@ -35016,20 +35015,14 @@ $('input[type="file"].video').change(function (e) {
 
   if (file.name.match(/\.(mp4|mpeg|ogg)$/i)) {
     if (file.size < maxSize) {
-      var _videoObject = URL.createObjectURL(file);
-      $(this).closest('form').find('.video-object').attr('src', _videoObject);
+      captureVideo(file);
       $(this).siblings('label').text(file.name);
-      $('#video-preview source')[0].src = _videoObject;
-      $('#video-preview')[0].load();
-      $('#video-upload-button').show();
     } else {
-      $(this).closest('form').find('.video-object').attr('src', null);
+      resetVideo();
       $(this).siblings('label').text('Choose video');
-      alert('You can continue, but we can\'t upload videos larger than 50 MB from here (this video has ' + formatBytes(file.size) + '). The class will appear on the site only after you manually upload the video to Amazon S3.');
+      alert('You can continue, but we can\'t upload videos larger than 50 MB from here (this video has ' + formatBytes(file.size) + '). The video will appear on the site only after you manually upload the video to Amazon S3.');
     }
   } else {
-    $(this).closest('form').find('.video-object').attr('src', null);
-    $(this).siblings('label').text('Choose video');
     alert('This is not a valid video format. Only mp4, mpeg or ogg will be accepted.');
   }
 });
@@ -35039,7 +35032,7 @@ $('input[type="file"].video').change(function (e) {
 /***/ "./resources/assets/js/functions/_uploads.js":
 /***/ (function(module, exports) {
 
-readURL = function readURL(input, element) {
+captureImage = function captureImage(input, element) {
   if (input.files && input.files[0]) {
     var reader = new FileReader();
     reader.onload = function (e) {
@@ -35047,6 +35040,28 @@ readURL = function readURL(input, element) {
     };
     reader.readAsDataURL(input.files[0]);
   }
+};
+
+captureVideo = function captureVideo(file) {
+  var videoObject = URL.createObjectURL(file);
+  $('#video-preview source')[0].src = videoObject;
+  $('#video-preview')[0].load();
+
+  timer = setInterval(function () {
+    if ($('#video-preview')[0].readyState > 0) {
+      $('input[name="duration"]').val(Math.round($('#video-preview')[0].duration));
+      $('#video-upload-button').show();
+      clearInterval(timer);
+    }
+  }, 500);
+};
+
+resetVideo = function resetVideo() {
+  $('input[name="video"]').val(null);
+  $('#video-preview source')[0].removeAttribute('src');
+  $('#video-preview')[0].load();
+  $('input[name="duration"]').val(null);
+  $('#video-upload-button').hide();
 };
 
 /***/ }),

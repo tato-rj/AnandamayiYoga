@@ -19,7 +19,13 @@
       'type' => 'classes'
     ])
     @slot('info')
-      <p class="m-0"><small><i class="far mr-1 text-muted fa-clock"></i>{{secondsToTime($lesson->duration)}}</small></p>
+      <p class="m-0"><small>
+      @if($lesson->duration)
+        <i class="far mr-1 text-muted fa-clock"></i>{{secondsToTime($lesson->duration)}}
+      @else
+        <span class="text-danger">Video is missing</span>
+      @endif
+      </small></p>
       <p class="m-0">
           @component('components/lesson/levels', ['lesson' => $lesson])
           @endcomponent
@@ -55,7 +61,7 @@ checkName('classes');
 </script>
 
 <script type="text/javascript">
-if($('.is-invalid').length > 0) {
+if($('.is-invalid, .invalid-feedback').length > 0) {
   $('#add-modal').modal('show');
 }
 </script>

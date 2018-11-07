@@ -8,7 +8,6 @@
     @csrf
     @method('PATCH')
     <input type="hidden" name="duration">
-    <video class="d-none" id="video-object"></video>
     <div class="custom-file">
       <input type="file" class="custom-file-input video" name="video" id="video">
       <label class="custom-file-label clamp-1" for="video">Choose video</label>

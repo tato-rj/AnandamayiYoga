@@ -14,5 +14,4 @@
   </div>
   @endif
 </div>
-<video class="d-none video-object" id="video-object"></video>
 <input type="hidden" name="duration">

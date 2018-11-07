@@ -68,6 +68,11 @@ class Lesson extends Anandamayi
         return route('discover.classes.show', $this->slug);
     }
 
+    public function scopeValid($query)
+    {
+        return $query->whereNotNull('duration');
+    }
+
     public function categoriesIds()
     {
         return $this->categories->pluck('id');

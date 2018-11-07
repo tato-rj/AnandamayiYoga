@@ -37,7 +37,7 @@ class Teacher extends Anandamayi
 
     public function lessons()
     {
-        return $this->hasMany(Lesson::class);
+        return $this->hasMany(Lesson::class)->valid();
     }
 
     public function programs()

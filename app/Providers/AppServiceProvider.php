@@ -52,15 +52,15 @@ class AppServiceProvider extends ServiceProvider
         });
 
         \View::composer('components/swiper/trending', function($view) {
-            $view->with('trending', Lesson::trending(10));
+            $view->with('trending', Lesson::valid()->trending(10));
         });
 
         \View::composer('components/swiper/latest', function($view) {
-            $view->with('latest', Lesson::recent(10));
+            $view->with('latest', Lesson::valid()->recent(10));
         });
 
         \View::composer('components/swiper/free', function($view) {
-            $view->with('freeClasses', Lesson::free(10));
+            $view->with('freeClasses', Lesson::valid()->free(10));
         });
 
         \View::composer('pages/user/dashboard/sections/recommended', function($view) {
