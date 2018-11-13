@@ -2,11 +2,11 @@
 
 namespace App;
 
-use App\Traits\FindBySlug;
+use App\Traits\{FindBySlug, Localizable};
 
 class AsanaType extends Anandamayi
 {
-	use FindBySlug;
+	use FindBySlug, Localizable;
 
 	protected $guarded =[];
 	protected $withCount = ['asanas'];

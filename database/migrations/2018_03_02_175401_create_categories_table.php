@@ -20,8 +20,8 @@ class CreateCategoriesTable extends Migration
             $table->string('name', 25)->unique();
             $table->string('name_pt', 25)->nullable();
             
-            $table->string('subtitle', 80);
-            $table->string('subtitle_pt', 80)->nullable();
+            $table->string('subtitle');
+            $table->string('subtitle_pt')->nullable();
             
             $table->text('description');
             $table->text('description_pt')->nullable();

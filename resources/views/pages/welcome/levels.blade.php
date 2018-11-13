@@ -1,8 +1,7 @@
-    {{-- @title(['title' => 'Choose the best practice for you']) --}}
-<div class="row bg-fusition-relative mb-7">
-    {{-- <div class="overlay-dark w-100 h-100 bg-light z-0"></div> --}}
-    {{-- <section class="container py-5"> --}}
-        {{-- <div class="row text-center"> --}}
+<div class="row bg-fusition-relative mb-7" style="background-image: url({{cloud('app/misc/mandala.png')}});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;">
 
             <div class="col-12 mb-5 text-center ">
                 <h2>@lang('Choose the best practice for you')</h2>
@@ -14,15 +13,10 @@
                     @foreach($levels as $level)
 
                             @include('pages/welcome/level-card', [
-                                'id' => $level->id,
-                                'name' => $level->name,
-                                'delay' => $loop->iteration*100
+                                'delay' => 200 + $loop->iteration*100
                             ])
 
                     @endforeach
                 </div>
         </div>
-{{-- 
-        </div>
-    </section> --}}
 </div>

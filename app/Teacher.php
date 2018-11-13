@@ -2,12 +2,12 @@
 
 namespace App;
 
-use App\Traits\{FindBySlug, InteractsWithCloud};
+use App\Traits\{FindBySlug, InteractsWithCloud, Localizable};
 use Illuminate\Notifications\Notifiable;
 
 class Teacher extends Anandamayi
 {
-	use FindBySlug, InteractsWithCloud, Notifiable;
+	use FindBySlug, InteractsWithCloud, Localizable, Notifiable;
 
     protected $guarded = [];
 

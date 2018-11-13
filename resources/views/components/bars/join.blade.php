@@ -3,12 +3,13 @@
     <div class="container">
         <div class="row text-white align-items-center">
             <div class="col-lg-8 col-md-8 col-sm-10 col-10 reveal" reveal-duration="800" reveal-origin="left" reveal-delay="0">
-                <h2>{{$title}}</h2>
-                <p class="lead mb-4">We offer a unique 4-week personalized Yoga routine and courses for extended learning. Check it out, you'll love it!</p>
+                <h2>@lang($title)</h2>
+                <p class="lead mb-4">@lang('We offer a unique 4-week personalized Yoga routine and courses for extended learning. Sign up now, you\'ll love it!')</p>
 
                 @include('components/buttons/simple', [
                     'path' => route('register'),
-                    'label' => 'START THE '.config('membership.trial_duration').'-DAY FREE TRIAL',
+                    'label' => __('Start your free trial'),
+                    'extra' => 'text-uppercase',
                     'color' => "outline-{$overlay}-empty"])
 
             </div>

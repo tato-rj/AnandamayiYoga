@@ -10,9 +10,9 @@
 
     <div class="row mt-4 mb-7">
         @foreach($categories as $category)
-            @component('pages/discover/browse/show', ['url' => route('discover.category', $category->slug)])
-            {{$category->name}}
-            @endcomponent
+            @include('pages/discover/browse/show', [
+                'url' => route('discover.category', $category->slug),
+                'name' => $category->name])
         @endforeach
     </div>
 </section>

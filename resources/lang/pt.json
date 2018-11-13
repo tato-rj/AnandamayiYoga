@@ -11,6 +11,11 @@
 		"Got it": "Entendi",
 
 
+	"_SECTION": "BARS",
+		"JOIN US TODAY": "VAMOS COMEÇAR",
+		"We offer a unique 4-week personalized Yoga routine and courses for extended learning. Sign up now, you'll love it!": "Nós oferecemos um programa único e personalizado de Yoga para o seu dia-a-dia, e cursos de aprofundamento. Faça a sua assinatura, você vai adorar!",
+
+
 	"_SECTION": "MENU",
 		"Discover": "Descubra",
 		"Our catalogue": "Nosso catálogo",
@@ -44,6 +49,7 @@
 		"Terms & Conditions": "Terms & condições",
 		"Support": "Suporte",
 		"Resources": "Conteúdo",
+		"Online yoga and meditation that is right for you. In as little as two hours per week, you can improve your physical and mental health through Yoga.": "Meditação e yoga online feita para você. Com apenas duas horas por semana, através do Yoga você irá melhorar a sua saúde física e mental.",
 
 
 	"_SECTION": "HELP BUTTON",
@@ -60,10 +66,11 @@
 		"Don't have an account yet?": "Não possui uma conta ainda?",
 		"Continue with": "Continuar com",
 
+
 	"_SECTION": "INTERESTS MODAL",
 		"Let's get started!": "Vamos começar!",
 		"Please select the styles and categories you are most interested in": "Selecione os estilos e categories que mais tem a ver com você",
-		"You'll get immediate and unlimited access to all of our classes and programs right away. The free trial begins the moment you sign up and we encourage you to explore our website to see all that we have to offer. If you have any questions please check out our support page or get in touch with us.": "Você terá acesso imediato e ilimitado a todos os nossos programas e aulas. O período gratuito começa no momento que você se registrar e nós recomendamos que você explore o site para conhecer tudo aquilo que temos a oferecer. Se você tiver qualquer dúvida, por favor entre na nossa página de suporte ou entre em contato conosco.",
+		"You'll get immediate and unlimited access to all of our classes and programs right away. The free trial begins the moment you sign up and we encourage you to explore our website to see all that we have to offer.": "Você terá acesso imediato e ilimitado a todos os nossos programas e aulas. O período gratuito começa no momento que você se registrar e nós recomendamos que você explore o site para conhecer tudo aquilo que temos a oferecer.",
 
 
 	"_SECTION": "SUBSCRIPTION",
@@ -97,5 +104,17 @@
 	    "Join our Membership": "Assine já",
 	    "GET STARTED": "COMEÇAR AGORA",
 	    "Publications": "Publicações",
-	    "Flexibility": "Flexibilidade"
+	    "Flexibility": "Flexibilidade",
+
+
+	"_SECTION": "ABOUT Anandamayi",
+		"AnandamayiYoga is an online platform for everyone to have a Yoga practice at home. Our platform is a journey to the spiritual dimension of Yoga with a diversity of classes, an asana library and articles covering a vast and varied range of subjects.": "AnandamayiYoga é uma plataforma online que oferece  instruções de  Yoga  para você praticar aonde você estiver. Nosso website é uma jornada para a dimensão espiritual do Yoga com uma diversidade de aulas, biblioteca de asanas e artigos, cobrindo uma vasta e variada gama de assuntos.",
+		"What we do": "Nossa proposta",
+		"We provide an online resource of Yoga for teachers, long-term practitioners and people who are new to Yoga. Users can explore our platform using filters for style, level, and duration. Our members can customize their homepage creating their playlists and tracking their progress.": "Nossa plataforma foi construída para atender as suas necessidades e expectativas. Nossas aulas alcançam praticantes de nível básico, intermediário e avançado. Os usuários podem explorar nossa plataforma usando filtros para estilo, nível e duração das aulas. Ao se tornar membro, você poderá personalizar sua página inicial, criando suas listas de reprodução e acompanhando seu progresso.",
+		"We also offer a customized service, where we create a Yoga practice for your personal needs. We are continually expanding our platform with new content to attend your needs. We welcome any suggestions or comments to improve your experience with us.": "Também oferecemos um serviço personalizado, onde criamos uma prática de Yoga para atender suas necessidades individuais. Estamos continuamente expandindo nossa plataforma, produzindo novos conteúdos e agradecemos quaisquer sugestões ou comentários para melhorar sua experiência conosco.",
+		"Our vision": "Nossa visão",
+		"We believe that having a true spirit of devotion is what will make Yoga transform your life. Devotion can take us beyond technique, opening our hearts and our intuitive perception to understand Yoga on a deeper level.": "Acreditamos que um verdadeiro espírito de devoção é o que fará com que o Yoga transforme sua vida. A devoção pode nos levar além da técnica, abrindo nossos corações e nossa percepção intuitiva para entender o Yoga em um nível mais profundo.",
+		"Whether in stillness or motion, meditation is a practice that aims to purify and transform the mind, invoking a shift in our consciousness to a higher level. All our classes are focused on helping you to reach a meditative state in your practice and build healthy habits that will make you recognize and develop your potentialities.": "Seja com ou sem movimento, a meditação é uma prática que visa purificar e transformar a mente, invocando uma mudança em nossa consciência para um nível mais elevado. Todas as nossas aulas estão focadas em ajudá-lo a alcançar um estado meditativo na sua prática e construir hábitos saudáveis que o farão reconhecer e desenvolver suas potencialidades.",
+		"Our classes": "Nossas aulas",
+		"There are many styles of Yoga, and they all descend from the classical Hatha Yoga. Some focus on the meditation aspect of Yoga, some on the relaxation of the body and mind, and some on the physical aspect. Here is a list of the classes we offer so you can choose the ones that better suits you.": "Existem muitos estilos de Yoga, e todos eles derivam do clássico Hatha Yoga. Alguns se concentram no aspecto de meditação do Yoga, alguns no relaxamento do corpo e da mente, e outros no aspecto físico. A seguir você verá uma lista das classes que oferecemos para que você possa escolher aquelas que melhor podem atender as suas expectativas."
 }

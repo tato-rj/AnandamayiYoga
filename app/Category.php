@@ -2,11 +2,11 @@
 
 namespace App;
 
-use App\Traits\{FindBySlug};
+use App\Traits\{FindBySlug, Localizable};
 
 class Category extends Anandamayi
 {
-    use FindBySlug;
+    use FindBySlug, Localizable;
 
     protected $guarded = [];
     protected $withCount = ['lessons', 'programs', 'users'];

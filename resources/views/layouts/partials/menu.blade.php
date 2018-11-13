@@ -63,7 +63,7 @@
         </a>
         <div class="shadow dropdown-menu  animated-fast fadeInUp dropdown-menu-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{{route('about.our-platform')}}">Anandamayi Yoga</a>
-          <a class="dropdown-item" href="{{route('about.ali-anandamayi')}}">Ali Anandamayi</a>
+          <a class="dropdown-item" href="{{route('about.anandamayi')}}">Anandamayi</a>
           <a class="dropdown-item" href="{{route('about.eranthus-books')}}">@lang('Eranthus books')</a>
         </div>
       </li>

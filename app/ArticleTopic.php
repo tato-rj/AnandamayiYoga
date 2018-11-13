@@ -2,11 +2,11 @@
 
 namespace App;
 
-use App\Traits\FindBySlug;
+use App\Traits\{FindBySlug, Localizable};
 
 class ArticleTopic extends Anandamayi
 {
-	use FindBySlug;
+	use FindBySlug, Localizable;
 	
     protected $guarded = [];
 

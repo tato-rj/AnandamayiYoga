@@ -2,14 +2,19 @@
 
 namespace App;
 
-use App\Traits\Localized;
+use App\Traits\Localizable;
 
 class Level extends Anandamayi
 {
-	use Localized;
+	use Localizable;
 	
     public function lessons()
     {
     	return $this->hasMany(Lesson::class);
+    }
+
+    public function getSlugName()
+    {
+    	return $this->name;
     }
 }

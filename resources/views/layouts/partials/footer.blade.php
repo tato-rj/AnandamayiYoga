@@ -45,7 +45,7 @@
 						</a>								
 					</li>
 					<li>
-						<a class="text-white" style="opacity: .5" href="{{route('about.ali-anandamayi')}}">
+						<a class="text-white" style="opacity: .5" href="{{route('about.anandamayi')}}">
 							<small>Ali Anandamayi</small>
 						</a>
 					</li>

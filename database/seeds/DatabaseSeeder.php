@@ -11,6 +11,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $this->call([
+        	AdminsTableSeeder::class,
+            AsanaTypesTableSeeder::class,
+            AsanaSubTypesTableSeeder::class,
+            CategoriesTableSeeder::class,
+        	LevelsTableSeeder::class,
+        	TeachersTableSeeder::class,
+            ArticleTopicsTableSeeder::class,
+            WallpaperCategoriesTableSeeder::class,
+        ]);
     }
 }
