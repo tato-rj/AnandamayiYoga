@@ -16,7 +16,10 @@ abstract class AppTest extends TestCase
         parent::setUp();
 
         $this->disableExceptionHandling();
+
         $this->withSession(['gate' => 'authorized']);
+
+        create('App\Teacher', ['name' => 'Anandamayi']);
     }
     
     protected function register($confirmed = true, $email = 'jdoe@email.com')
@@ -49,6 +52,7 @@ abstract class AppTest extends TestCase
     protected function signIn($user = null)
     {
     	$user = ($user) ?: create('App\User');
+
     	return $this->actingAs($user);
     }
 

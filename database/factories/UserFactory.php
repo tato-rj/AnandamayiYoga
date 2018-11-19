@@ -95,8 +95,11 @@ $factory->define(App\AsanaStep::class, function (Faker $faker) {
 });
 
 $factory->define(App\Level::class, function (Faker $faker) {
+    $name = $faker->unique()->word;
+
     return [
-        'name' => $faker->unique()->word
+        'slug' => str_slug($name),
+        'name' => $name
     ];
 });
 

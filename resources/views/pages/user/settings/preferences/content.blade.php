@@ -8,7 +8,7 @@
 			@endif
 		</small></p>
 		@foreach($levels as $level)
-			<button class="bounce-to-right position-relative btn-light text-muted btn unique select-class m-2 
+			<button class="rounded-0 bounce-to-right position-relative btn-light text-muted btn unique select-class m-2 
 			@if($level->id == auth()->user()->level_id)
 			bounce-to-right-active
 			@endif

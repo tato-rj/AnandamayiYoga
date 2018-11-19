@@ -2,11 +2,10 @@
 
 @section('content')
 
-@component('admin/components/page-title', [
+@include('admin/components/page-title', [
   'title' => 'Dashboard',
   'subtitle' => 'Here is where we\'ll manage the back-end and track user data for the platform'
 ])
-@endcomponent
 
 @include('admin/pages/dashboard/highlights')
 
@@ -35,13 +34,14 @@ var months = [
             moment().subtract(1, 'months').format("M"), 
             moment().subtract(0, 'months').format("M"),
         ];
+
 var data = [];
 
 months.forEach(function(month, index) {
     if (typeof counts[month] === 'undefined') {
         data.push(0);
     } else {
-        data.push(counts[index]);
+        data.push(counts[month]);
     }
 });
 

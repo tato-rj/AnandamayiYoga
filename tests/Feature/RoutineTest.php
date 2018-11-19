@@ -26,7 +26,7 @@ class RoutineTest extends AppTest
 	public function a_user_sees_on_the_dashboard_a_notification_indicating_that_the_routine_is_in_progress_until_it_is_created_by_the_admin()
 	{
 		$this->signIn();
-
+		
 		auth()->user()->update(['confirmed' => true]);
 
 		$this->submitRoutine();

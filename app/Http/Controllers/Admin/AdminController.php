@@ -18,7 +18,7 @@ class AdminController extends Controller
 		$membershipsAtGlance = UserRecord::monthly()->take(6)->pluck('count', 'month')->toArray();
         $numberOfClasses = Lesson::count();
         $latestUsers = User::latest()->take(30)->get();
-
+        
         return view('admin/pages/dashboard/index', compact(['membershipsAtGlance', 'numberOfClasses', 'membership', 'latestUsers']));
 	}
 

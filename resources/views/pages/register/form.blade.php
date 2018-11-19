@@ -1,4 +1,4 @@
-<form method="POST" id="{{$formId or 'register-form'}}" action="{{$action or route('register')}}">
+<form method="POST" id="{{$formId ?? 'register-form'}}" action="{{$action ?? route('register')}}">
     {{csrf_field()}}
     <input type="hidden" name="timezone" value="">
     <input type="hidden" name="level_id" value>
@@ -59,7 +59,7 @@
         <input id="password-confirm" type="password" class="form-control bg-light {{ $errors->has('password_confirmation') ? 'is-invalid' : 'border-0' }}" placeholder="Confirm your passowrd" name="password_confirmation" required>
     </div>
 
-    {{$stripe or null}}
+    {{$stripe ?? null}}
 
     <div class="form-group">
         <div class="form-check">

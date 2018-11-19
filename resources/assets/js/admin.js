@@ -4,8 +4,8 @@ require('./jquerysession');
 require('./functions/index');
 require('./components/functions');
 require('./components/notifications');
-require('./components/charts');
 require('./components/uploads');
+require('./components/charts');
 
 $.ajaxSetup({
     headers: {

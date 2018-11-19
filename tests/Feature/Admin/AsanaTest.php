@@ -13,7 +13,7 @@ class AsanaTest extends AppTest
 	use Administrator;
 
 	/** @test */
-	public function a_admin_can_create_a_new_asana()
+	public function an_admin_can_create_a_new_asana()
 	{
 		$this->adminSignIn();
 

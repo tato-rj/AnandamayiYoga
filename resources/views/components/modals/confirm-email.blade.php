@@ -14,7 +14,7 @@
             <div class="alert alert-danger" role="alert">{{session('purchase_error')}}</div>
             <p>Before you can fix the problem, we just need you to confirm your email.</p>
         @else
-            <h4 class="mb-2">Please confirm your email!</h4>
+            <p class="mb-2">Please confirm your email:</p>
             <p class="text-muted">{{session('confirm-email')}}</p>
         @endif
         

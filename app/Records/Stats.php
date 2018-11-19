@@ -43,9 +43,9 @@ class Stats extends AppStats
 	public function level()
 	{
 		$noLevel = $this->model->whereNull('level_id')->count();
-		$beginner = $this->model->where('level_id', 2)->count();
-		$intermediate = $this->model->where('level_id', 3)->count();
-		$advanced = $this->model->where('level_id', 4)->count();
+		$beginner = $this->model->where('level_id', 1)->count();
+		$intermediate = $this->model->where('level_id', 2)->count();
+		$advanced = $this->model->where('level_id', 3)->count();
 
 		return [$this->percentage($noLevel), $this->percentage($beginner), $this->percentage($intermediate), $this->percentage($advanced)];
 	}

@@ -22,24 +22,22 @@
 			<form id="resume-membership" method="POST" action="/membership/resume">
 				{{csrf_field()}}
 				<input type="hidden" name="user_id" value="{{auth()->user()->id}}">
-				@component('components/snippets/buttons/spinner', [
+				@include('components/buttons/spinner', [
 					'classes' => 'btn-sm btn-yellow block-screen-button mobile-block',
-					'onclick' => '$("#resume-membership").submit();'
+					'onclick' => '$("#resume-membership").submit();',
+					'label' => 'Resume my membership'
 					])
-					Resume my membership
-				@endcomponent
 			</form>
 			@elseif(auth()->user()->hasMembership())
 			<form id="stop-membership" method="POST" action="/membership">
 				{{csrf_field()}}
 				{{method_field('DELETE')}}
 				<input type="hidden" name="user_id" value="{{auth()->user()->id}}">
-				@component('components/snippets/buttons/spinner', [
+				@include('components/buttons/spinner', [
 					'classes' => 'btn-sm btn-danger block-screen-button mobile-block',
-					'onclick' => '$("#stop-membership").submit();'
+					'onclick' => '$("#stop-membership").submit();',
+					'label' => 'Stop my membership'
 					])
-					Stop my membership
-				@endcomponent
 			</form>		
 			@else
 			<a href="{{route('user.settings.payment')}}" class="btn-bold btn-sm btn-success mobile-block">Activate now</a>
