@@ -5,7 +5,7 @@
       <img src="{{cloud('app/brand/logo-pink.svg')}}" style="display:none; opacity:0.8">
     </div>
     <div class="d-none d-sm-block">
-      <h2 id="brand-name" class="mb-0 ml-2 text-white mt-1" style="font-family: yogafont; font-size: 1.8em"><strong>Anandamayi<span style="color:#d3eaff" class="ml-1">Yoga</span></strong></h2>
+      <h2 id="brand-name" class="mb-0 ml-2 text-white" style="font-size: 1.2em"><strong>Anandamayi<span style="color:#d3eaff">Yoga</span></strong></h2>
     </div>
   </a>
   <div class="d-flex align-items-center">
