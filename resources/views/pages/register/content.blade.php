@@ -5,7 +5,7 @@
     <div class="row">
 
         <div class="col-lg-10 col-md-12 col-sm-12 col-12 mx-auto">
-            <p class="lead mb-5">You're just one step away from your {{config('membership.trial_duration')}} day free trial! Just fill out the form below to enjoy full access to all of our classes, programs, articles and much more.</p>
+            <p class="lead mb-5 text-center">@lang('You\'re just one step away from your 15 day free trial! Just fill out the form below to enjoy full access to all of our classes, programs, articles and much more.')</p>
             <div class="row">
                 <div class="col-lg-7 col-md-7 col-sm-10 col-12 mx-auto mb-4">
                     @component('pages/register/form')
@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-10 col-xs-10 mx-auto">
                     <div class="bg-light p-2 rounded text-center">
-                        <p class="text-muted"><strong>Sign up with your social network</strong></p>
+                        <p class="text-muted"><strong>@lang('Sign up with your social network')</strong></p>
                         @include('pages/login/social')
                     </div>
                 </div>

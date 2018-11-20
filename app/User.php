@@ -63,6 +63,11 @@ class User extends Authenticatable
             UserRecord::markDeleted($user->id);
         });
     }
+    
+    public function preferredLocale()
+    {
+        return $this->lang;
+    }
 
     public function avatar()
     {

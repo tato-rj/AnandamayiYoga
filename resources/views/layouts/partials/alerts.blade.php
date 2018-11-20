@@ -49,7 +49,7 @@
         'type' => 'danger',
         'display' => 'block'])
         @slot('message')
-            We found {{$errors->count()}} {{str_plural('issue', $errors->count())}} with your request, please try again!
+            @lang('We found') {{$errors->count()}} {{__(str_plural('issue', $errors->count()))}} @lang('with your request, please try again.')
         @endslot
     @endcomponent
 @endif

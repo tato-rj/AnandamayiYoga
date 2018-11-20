@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
 class EmailConfirmation extends Mailable
 {
@@ -25,6 +26,6 @@ class EmailConfirmation extends Mailable
      */
     public function build()
     {
-        return $this->subject('Please verify your email with AnandamayiYoga')->markdown('emails/confirm-email');
+        return $this->subject(__('Please verify your email with AnandamayiYoga'))->markdown('emails/confirm-email');
     }
 }

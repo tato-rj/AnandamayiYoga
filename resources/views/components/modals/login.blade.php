@@ -33,7 +33,7 @@
 			</div>
 			<div>
 				<small>
-					<a href="{{ route('password.request') }}">@lang('Forgot password?')</a>
+					<a href="{{ route('password.request') }}">@lang('Forgot the password?')</a>
 				</small>
 			</div>
 		</div>

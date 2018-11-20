@@ -28,7 +28,7 @@
 
                 @include('components/buttons/simple', [
                     'path' => route('register'),
-                    'label' => __('Start your free trial'),
+                    'label' => 'Start your free trial',
                     'color' => 'red',
                     'id' => 'btn-hero',
                     'size' => 'lg', 

@@ -176,7 +176,7 @@
 	<div class="text-white position-relative">
 		<div class="container py-2">
 			<div class="d-flex justify-content-between">
-				<p class="m-0 text-left" style="opacity: .5"><small>Copyright ©{{date('Y')}} Anandamayi Yoga</small></p>
+				<p class="m-0 text-left" style="opacity: .5"><small>©{{date('Y')}} AnandamayiYoga. @lang('All rights reserved.')</small></p>
 				<div class="d-none d-sm-flex">
 					<form method="POST" action="{{route('localization.set')}}" class="mx-1">
 						@csrf

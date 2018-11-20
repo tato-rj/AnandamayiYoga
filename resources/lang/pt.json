@@ -9,6 +9,10 @@
 		"Hey there! We use cookies to ensure you get the best experience on our website.": "Olá! Nós usamos cookies para garantir a melhor experiência possível para você no nosso site.",
 		"Learn more": "Leia mais",
 		"Got it": "Entendi",
+		"We found": "Nós encontramos",
+		"with your request, please try again.": "com o seu pedido, por favor tente novamente.",
+		"issue": "problema",
+		"issues": "problemas",
 
 
 	"_SECTION": "BARS",
@@ -61,10 +65,23 @@
 
 	"_SECTION": "LOGIN MODAL",
 		"Remember me": "Lembrar de mim",
-		"Forgot password?": "Esquece o password?",
+		"Forgot the password?": "Esqueceu o password?",
 		"OR": "OU",
 		"Don't have an account yet?": "Não possui uma conta ainda?",
 		"Continue with": "Continuar com",
+
+
+	"_SECTION": "CONFIRM EMAIL MODAL",
+		"We're almost there!": "Estamos quase lá!",
+		"Thank you for your purchase!": "Obrigado pela sua compra!",
+		"Before you can start the course, we just need you to confirm your email.": "Antes de começar o curso, nós só precisamos que você confirme o seu email.",
+		"Thank you for signing up!": "Obrigado por assinar!",
+		"Your registration was successful, but we couldn't proccess your purchase.": "O seu registro foi realizado com sucesso, mas nós não conseguimos concluir a sua compra.",
+		"Before you can fix the problem, we just need you to confirm your email.": "Antes que você possa corrigir esse problema, nós precisamos confirmar o seu email.",
+		"Please confirm your email:": "Por favor confirme o seu email:",
+		"Your security and privacy are extremely important to us. Please verify your email address by clicking on the button in the email we sent you.": "A sua segurança e privacidade são de extrema importância para nós. Por favor confirme o seu email clicando no botão localizado na mensagem que acabamos de enviar para o seu inbox.",
+		"Haven't received anything?": "Não recebeu o nosso email de confirmação?",
+		"Click here to receive a new one": "Clique aqui para receber outro",
 
 
 	"_SECTION": "INTERESTS MODAL",
@@ -78,6 +95,36 @@
 		"Subscribe now to receive news and updates about our site.": "Receba notícias e novidades sobre o nosso site.",
 		"Subscribe me": "Quero receber os emails",
 		"This field is required": "Esse campo é obrigatório",
+
+
+	"_SECTION": "FORMS",
+		"First name": "Primeiro nome",
+		"Last name": "Sobrenome",
+		"Last name": "Sobrenome",
+		"Select your gender": "Selecione o seu gênero",
+		"Female": "Feminino",
+		"Male": "Masculino",
+		"Confirm your password": "Confirme o seu password",
+		"I agree to the": "Eu concordo com os",
+		"Terms & Conditions": "Termos & Condições",
+		"After registering, you will receive a confirmation email. Confirm your contact and your trial period will automatically begin! We encourage you to start customizing your profile and discover all of what our platform have to offer. Check out our resources about": "Ao se registrar, você receberá um email de confirmação. Clique no botão para confirmar e o seu período gratuito começará automaticamente. Você poderá começar a personalizar o seu cadastro e descobrir tudo o que a nossa plataforma tem a oferecer. Leia sobre os nossos",
+		"membership": "planos de assinatura",
+		"to learn how you can become a member.": "para aprender a como se tornar um membro.",
+		"Sign up with your social network": "Assine com a sua plataforma social",
+
+
+	"_SECTION": "GREETINGS",
+		"Success!": "Sucesso!",
+		"Great!": "Ótimo!",
+		"Perfect!": "Perfeito!",
+		"Awesome!": "Muito bom!",
+		"Sorry!": "Desculpa!",
+		"Ops...": "Opa...",
+
+	"_SECTION": "REGISTER PAGE",
+		"Let's get started": "Vamos começar",
+		"You're just one step away from your 15 day free trial! Just fill out the form below to enjoy full access to all of our classes, programs, articles and much more.": "Você está a apenas um passo de começar os seus 15 dias gratuitos! Preencha o formulário abaixo para aproveitar acesso integral às nossas aulas, programas, artigos e muito mais.",
+		"Create my account": "Criar a minha conta",
 
 
 	"_SECTION": "WELCOME PAGE",
@@ -116,5 +163,15 @@
 		"We believe that having a true spirit of devotion is what will make Yoga transform your life. Devotion can take us beyond technique, opening our hearts and our intuitive perception to understand Yoga on a deeper level.": "Acreditamos que um verdadeiro espírito de devoção é o que fará com que o Yoga transforme sua vida. A devoção pode nos levar além da técnica, abrindo nossos corações e nossa percepção intuitiva para entender o Yoga em um nível mais profundo.",
 		"Whether in stillness or motion, meditation is a practice that aims to purify and transform the mind, invoking a shift in our consciousness to a higher level. All our classes are focused on helping you to reach a meditative state in your practice and build healthy habits that will make you recognize and develop your potentialities.": "Seja com ou sem movimento, a meditação é uma prática que visa purificar e transformar a mente, invocando uma mudança em nossa consciência para um nível mais elevado. Todas as nossas aulas estão focadas em ajudá-lo a alcançar um estado meditativo na sua prática e construir hábitos saudáveis que o farão reconhecer e desenvolver suas potencialidades.",
 		"Our classes": "Nossas aulas",
-		"There are many styles of Yoga, and they all descend from the classical Hatha Yoga. Some focus on the meditation aspect of Yoga, some on the relaxation of the body and mind, and some on the physical aspect. Here is a list of the classes we offer so you can choose the ones that better suits you.": "Existem muitos estilos de Yoga, e todos eles derivam do clássico Hatha Yoga. Alguns se concentram no aspecto de meditação do Yoga, alguns no relaxamento do corpo e da mente, e outros no aspecto físico. A seguir você verá uma lista das classes que oferecemos para que você possa escolher aquelas que melhor podem atender as suas expectativas."
+		"There are many styles of Yoga, and they all descend from the classical Hatha Yoga. Some focus on the meditation aspect of Yoga, some on the relaxation of the body and mind, and some on the physical aspect. Here is a list of the classes we offer so you can choose the ones that better suits you.": "Existem muitos estilos de Yoga, e todos eles derivam do clássico Hatha Yoga. Alguns se concentram no aspecto de meditação do Yoga, alguns no relaxamento do corpo e da mente, e outros no aspecto físico. A seguir você verá uma lista das classes que oferecemos para que você possa escolher aquelas que melhor podem atender as suas expectativas.",
+
+
+	"_SECTION": "EMAILS",
+		"Please verify your email with AnandamayiYoga": "Por favor verifique o seu email com AnandamayiYoga",
+		"Hi": "Olá",
+		"Thank you for joining AnandamayiYoga. We're honored to be a part of your yoga and meditation practice.": "Obrigado por se registrar no nosso site. É para nós uma honra fazer parte da sua rotina de Yoga e meditação.",
+		"We need you to quickly verify your email address by clicking the button below.": "Por motivos de segurança, nós precisamos que você verifique o seu email clicando no botão abaixo.",
+		"Confirm my email": "Confirmar o meu email",
+		"If you have any issues verifying your account, please contact us at": "Se tiver qualquer problema para verificar esse email, por favor entre em contato conosco através de",
+		"All rights reserved.": "Todos os direitos reservados."
 }

@@ -27,7 +27,9 @@ function randomGreeting($type)
     if (! array_key_exists($type, $greetings))
         return null;
 
-    return $greetings[$type][array_rand($greetings[$type])];
+    $greeting = $greetings[$type][array_rand($greetings[$type])];
+
+    return __($greeting);
 }
 
 function cleanFileName($filename)

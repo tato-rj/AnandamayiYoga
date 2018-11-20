@@ -62,6 +62,8 @@ class BladeServiceProvider extends ServiceProvider
 
         Blade::include('admin.components.draggable.layout', 'draggable');
 
+        Blade::include('components.form.error');
+
         Blade::include('components.form.input');
 
         Blade::include('components.form.textarea');
