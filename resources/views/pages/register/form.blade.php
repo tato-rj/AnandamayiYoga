@@ -45,7 +45,7 @@
         <div class="form-check">
             <input class="form-check-input {{ $errors->has('agreement') ? 'is-invalid' : '' }}" required name="agreement" type="checkbox" value="1" id="agreement-checkbox">
             <label class="form-check-label" for="agreement-checkbox">
-                @lang('I agree to the') <a class="link-default" href="{{route('support.terms')}}" target="_blank">@lang('Terms & Conditions')</a>
+                <small>@lang('I agree to the') <a class="link-default" href="{{route('support.terms')}}" target="_blank">@lang('Terms & Conditions')</a></small>
             </label>
 
             @error(['field' => 'agreement'])
