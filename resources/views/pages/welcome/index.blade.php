@@ -21,7 +21,17 @@
     @endunless
 
     @auth
-        @include('components/bars/benefits')
+        <div class="mb-7">
+                
+            @include('components/swiper/trending')
+
+            @include('components/swiper/latest')
+
+            @include('components/swiper/free')
+
+            @include('components/swiper/category', ['category' => \App\Category::where('name', 'Morning Classes')->first()])
+        
+        </div>
     @else
         @include('pages/welcome/video')
     @endauth
@@ -39,6 +49,28 @@
 @endsection
 
 @section('scripts')
+
+<script type="text/javascript">
+var bgImageArray = ["buddha.jpg", "flower.jpg"],
+base = "https://anandamayiyoga.s3.amazonaws.com/app/images/backgrounds/",
+secs = 4;
+bgImageArray.forEach(function(img){
+    new Image().src = base + img; 
+    // caches images, avoiding white flash between background replacements
+});
+
+function backgroundSequence() {
+    window.clearTimeout();
+    var k = 0;
+    for (i = 0; i < bgImageArray.length; i++) {
+        setTimeout(function(){ 
+            $('#main-lead').css('background-image', "url(" + base + bgImageArray[k] + ")");
+        if ((k + 1) === bgImageArray.length) { setTimeout(function() { backgroundSequence() }, (secs * 1000))} else { k++; }            
+        }, (secs * 1000) * i)   
+    }
+}
+// backgroundSequence();
+</script>
 
 <script type="text/javascript">
 function toggleArrayItem(a, v) {

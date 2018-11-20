@@ -1,5 +1,6 @@
 <div class="row mb-7">
-    <section class="col-12 h-100vh bg-right" style="background-image:url({{cloud('app/images/backgrounds/buddha.jpg')}})">
+    <section class="col-12 h-100vh bg-right" id="main-lead" 
+    style="background-image:url({{cloud('app/images/backgrounds/buddha.jpg')}}); transition: 3s;">
         <div class="row align-items-center h-100">
             <div class="col-lg-6 col-md-8 col-10 offset-lg-2 offset-md-1 offset-1 z-10">
             @auth
@@ -19,7 +20,7 @@
 
                 @include('components/buttons/simple', [
                     'path' => route('user.home'),
-                    'label' => 'MY DASHBOARD',
+                    'label' => __('MY DASHBOARD'),
                     'color' => 'red', 
                     'weight' => 'bold',
                     'type' => 'pill'])
@@ -28,7 +29,7 @@
 
                 @include('components/buttons/simple', [
                     'path' => route('register'),
-                    'label' => 'Start your free trial',
+                    'label' => __('Start your free trial'),
                     'color' => 'red',
                     'id' => 'btn-hero',
                     'size' => 'lg', 

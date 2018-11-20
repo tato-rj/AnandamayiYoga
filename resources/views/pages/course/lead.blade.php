@@ -6,10 +6,10 @@
 				<div class="row align-items-center mb-4">
 					<div class="col-lg-12 mt-5 mb-4">
 						<h1 class="m-0 display-4">ANANDAMAYI<span class="mobile-d-block">YOGA</span></h1>
-						<h1 class="display-4"><strong>COURSES</strong></h1>
+						<h1 class="display-4"><strong>@lang('COURSES')</strong></h1>
 					</div>
 					<div class="col-12 border-top pt-4">
-						<p class="lead">Courses are extended learning experiences that provide continuing education on specific yoga subjects, taught by expert-level faculty.</p>
+						<p class="lead">@lang('Courses are extended learning experiences that provide continuing education on specific yoga subjects, taught by expert-level faculty.')</p>
 					</div>	
 				</div>
 			</div>

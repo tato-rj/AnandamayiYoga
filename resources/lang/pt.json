@@ -16,6 +16,7 @@
 
 
 	"_SECTION": "BARS",
+		"INVEST IN YOURSELF": "YOGA PARA VOCÊ",
 		"JOIN US TODAY": "VAMOS COMEÇAR",
 		"We offer a unique 4-week personalized Yoga routine and courses for extended learning. Sign up now, you'll love it!": "Nós oferecemos um programa único e personalizado de Yoga para o seu dia-a-dia, e cursos de aprofundamento. Faça a sua assinatura, você vai adorar!",
 
@@ -64,6 +65,7 @@
 
 
 	"_SECTION": "LOGIN MODAL",
+		"Login": "Área do assinante",
 		"Remember me": "Lembrar de mim",
 		"Forgot the password?": "Esqueceu o password?",
 		"OR": "OU",
@@ -111,6 +113,22 @@
 		"membership": "planos de assinatura",
 		"to learn how you can become a member.": "para aprender a como se tornar um membro.",
 		"Sign up with your social network": "Assine com a sua plataforma social",
+		"I'm looking for...": "Estou procurando por...",
+
+
+	"_SECTION": "FILTERS",
+		"Reset filters": "Apagar filtros",
+		"minutes": "minutos",
+		"Any duration": "Qualquer duração",
+		"Any style": "Qualquer estilo",
+		"Any level": "Qualquer nível",
+		"All discussions": "Todos os assuntos",
+		"Order by": "Ordenar por",
+		"Show only": "Mostrar somente",
+		"Name": "Nome",
+		"Newest": "Mais recente",
+		"Oldest": "Mais antigo",
+		"Sorry, we couldn't find any results...": "Não encontramos nenhum resultado...",
 
 
 	"_SECTION": "GREETINGS",
@@ -148,7 +166,7 @@
 	    "Choose the best practice for you": "Escolha os exercícios ideais para você",
 	    "Let's find you the right classes to start your <strong>15 day free trial.</strong>": "Vamos encontrar as melhores aulas para você começar os <strong>15 dias gratuitos</strong>.",
 	    "Newsletter": "Newsletter",
-	    "Join our Membership": "Assine já",
+	    "Join our Membership": "Assine agora",
 	    "GET STARTED": "COMEÇAR AGORA",
 	    "Publications": "Publicações",
 	    "Flexibility": "Flexibilidade",
@@ -164,6 +182,43 @@
 		"Whether in stillness or motion, meditation is a practice that aims to purify and transform the mind, invoking a shift in our consciousness to a higher level. All our classes are focused on helping you to reach a meditative state in your practice and build healthy habits that will make you recognize and develop your potentialities.": "Seja com ou sem movimento, a meditação é uma prática que visa purificar e transformar a mente, invocando uma mudança em nossa consciência para um nível mais elevado. Todas as nossas aulas estão focadas em ajudá-lo a alcançar um estado meditativo na sua prática e construir hábitos saudáveis que o farão reconhecer e desenvolver suas potencialidades.",
 		"Our classes": "Nossas aulas",
 		"There are many styles of Yoga, and they all descend from the classical Hatha Yoga. Some focus on the meditation aspect of Yoga, some on the relaxation of the body and mind, and some on the physical aspect. Here is a list of the classes we offer so you can choose the ones that better suits you.": "Existem muitos estilos de Yoga, e todos eles derivam do clássico Hatha Yoga. Alguns se concentram no aspecto de meditação do Yoga, alguns no relaxamento do corpo e da mente, e outros no aspecto físico. A seguir você verá uma lista das classes que oferecemos para que você possa escolher aquelas que melhor podem atender as suas expectativas.",
+		"Registered Yoga Teacher": "Professora de Yoga Registrada",
+		"500-hour Yoga teacher training": "500-horas de Yoga teacher training",
+
+
+	"_SECTION": "BROWSE",
+		"Our Catalogue": "Nosso Catálogo",
+		"Browse": "Categorias",
+		"Programs": "Programas",
+		"Classes": "Aulas",
+
+
+	"_SECTION": "COURSES",
+		"COURSES": "CURSOS",
+		"Courses are extended learning experiences that provide continuing education on specific yoga subjects, taught by expert-level faculty.": "Os nossos cursos são experiências de aprendizado extensivas que proporcionam o seu crescimento em áreas específicas do Yoga e são ministrados por professores renomados nos seus campos de estudo.",
+
+
+	"_SECTION": "ASANA",
+		"Category": "Categoria",
+		"Sub-category": "Sub-categoria",
+		"Level": "Nível",
+
+
+	"_SECTION": "WALLPAPERS",
+		"Yoga Wallpapers": "Papéis de Parede",
+		"The rest of the images are for only!": "Mais imagens disponíveis somente para assinantes!",
+		"To view all of our yoga wallpapers just click on the button below and sing up for our 15-day free trial, you'll love it": "Para ter acesso a todos os nossos papéis de parede basta clicar no botão abaixo e realizar a sua assinatura, você vai adorar",
+		"Already a member?": "Já possui uma assinatura?",
+		"Click here": "Clique aqui",
+
+
+	"_SECTION": "READS",
+		"Trending topics": "Tópicos populares",
+		"about": "sobre",
+		"Yoga Basics": "Fundamentos do Yoga",
+		"Yoga Philosophy": "Filosofia do Yoga",
+		"Share this article on": "Compartilhe esse artigo",
+		"last updated on": "atualizado no dia",
 
 
 	"_SECTION": "EMAILS",

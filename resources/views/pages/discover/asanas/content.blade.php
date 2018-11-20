@@ -10,11 +10,11 @@
                         <div class="input-group-prepend d-flex align-items-center justify-content-center pr-2 cursor-pointer">
                             <i class="text-muted fas fa-search"></i>
                         </div>
-                        <input type="text" value="{{request('search')}}" name="search" class="pl-1 form-control border-0 d-block" placeholder="I'm looking for...">
+                        <input type="text" value="{{request('search')}}" name="search" class="pl-1 form-control border-0 d-block" placeholder="@lang('I\'m looking for...')">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label><strong>Category</strong></label>               
+                    <label><strong>@lang('Category')</strong></label>               
                     @foreach($asanaTypes as $type)
                     <div class="form-check custom-control custom-checkbox"> 
                         <input class="custom-control-input"
@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label><strong>Sub-category</strong></label>               
+                    <label><strong>@lang('Sub-category')</strong></label>               
                     @foreach($asanaSubtypes as $type)
                     <div class="form-check custom-control custom-checkbox"> 
                         <input class="custom-control-input"
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label><strong>Level</strong></label>               
+                    <label><strong>@lang('Level')</strong></label>               
                     @foreach($levels as $level)
                     <div class="form-check custom-control custom-checkbox"> 
                         <input class="custom-control-input"

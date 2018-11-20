@@ -1,6 +1,6 @@
 @component('components/modals/layout', [
 	'id' => 'login',
-	'title' => 'Log In'])
+	'title' => __('Login')])
 	
 <div class="modal-body">
 	<form method="POST" action="{{ route('login') }}">
@@ -27,7 +27,7 @@
 				<div class="form-check">
 					<input class="form-check-input" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
 					<label class="form-check-label">
-						@lang('Remember me')
+						<small>@lang('Remember me')</small>
 					</label>
 				</div>
 			</div>

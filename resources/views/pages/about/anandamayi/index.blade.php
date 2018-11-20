@@ -17,8 +17,8 @@
 						<img src="{{cloud('app/images/alice/alliance.png')}}" class="mr-3 pr-3 border-right" style="width: 90px">
 					</a>
 					<div>
-						<p class="lead mb-0">Registered Yoga Teacher</p>
-						<p class="m-0"><small><strong>500-hour Yoga teacher training</strong></small></p>
+						<p class="lead mb-0">@lang('Registered Yoga Teacher')</p>
+						<p class="m-0"><small><strong>@lang('500-hour Yoga teacher training')</strong></small></p>
 					</div>
 				</div>
 				{!! anandamayi()->biography !!}

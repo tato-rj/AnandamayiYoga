@@ -10,7 +10,7 @@
                 <div class="col-12">
                     <div class="bg-light rounded px-2 py-1 text-right d-flex justify-content-between align-items-center">
                         <p class="m-0"><i class="fas fa-tags"></i></p>
-                        <p class="m-0">about <strong>{{str_replace('-', ' ', request('topic'))}}</strong></p>
+                        <p class="m-0">@lang('about') <strong>{{str_replace('-', ' ', request('topic'))}}</strong></p>
                     </div>
                 </div>
             </div>

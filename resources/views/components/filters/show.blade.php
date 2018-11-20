@@ -6,7 +6,7 @@
                     <div class="input-group-prepend d-flex align-items-center justify-content-center px-3 cursor-pointer">
                         <i class="text-muted fas fa-search"></i>
                     </div>
-                    <input type="text" class="pl-1 form-control border-0 d-block" placeholder="I'm looking for...">
+                    <input type="text" class="pl-1 form-control border-0 d-block" placeholder="@lang('I\'m looking for...')">
                 </div>
             </div>
         </form>
@@ -25,7 +25,7 @@
         </form> 
     </div>
 </div>
-<a href="{{$url}}" class="btn btn-link btn-sm link-none text-muted d-none d-sm-inline">Reset filters</a> 
+<a href="{{$url}}" class="btn btn-link btn-sm link-none text-muted d-none d-sm-inline">@lang('Reset filters')</a> 
 {{-- <div id="filters-container" class="mt-2" style="display: none;">
     <a href="{{route('discover/classes')}}" class="btn-not-bold btn-link btn-sm link-none text-muted">Reset filters</a>
     @component('components/snippets/search-filter')
