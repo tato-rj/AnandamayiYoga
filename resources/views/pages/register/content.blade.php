@@ -19,10 +19,7 @@
                     @endcomponent
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-10 col-xs-10 mx-auto">
-                    <div class="bg-light p-2 rounded text-center">
-                        <p class="text-muted"><strong>@lang('Sign up with your social network')</strong></p>
-                        @include('pages/login/social')
-                    </div>
+                    @include('pages/login/social')
                 </div>
             </div>
         </div>
