@@ -3,11 +3,11 @@
 namespace App;
 
 use App\Filters\LessonFilters;
-use App\Traits\{FindBySlug, Favoritable, SwiperQueries, InteractsWithCloud, Filterable};
+use App\Traits\{FindBySlug, Favoritable, SwiperQueries, InteractsWithCloud, Filterable, Localizable};
 
 class Lesson extends Anandamayi
 {
-    use FindBySlug, Favoritable, SwiperQueries, InteractsWithCloud, Filterable;
+    use FindBySlug, Favoritable, SwiperQueries, InteractsWithCloud, Filterable, Localizable;
 
     protected $guarded = [];
 

@@ -1,1 +1,1 @@
-<button type="submit" class="btn-{{$weight ?? null}} btn-{{$width ?? null}} btn-red">@lang($label)</button>
+<button type="submit" class="btn-{{$weight ?? null}} btn-{{$width ?? null}} btn-red">{{$label}}</button>

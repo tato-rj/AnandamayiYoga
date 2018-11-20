@@ -1,6 +1,6 @@
 @if($latest->count() > 0)
 
-@component('components/swiper/layout', ['title' => 'Our latest classes'])
+@component('components/swiper/layout', ['title' => __('Our latest classes')])
 
 	@foreach($latest as $lesson)
 	    @include('components/lesson/card', [

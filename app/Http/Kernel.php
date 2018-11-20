@@ -59,5 +59,6 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'email-confirmed' => \App\Http\Middleware\RedirectIfEmailNotConfirmed::class,
+        'en-locale' => \App\Http\Middleware\EnLocale::class
     ];
 }

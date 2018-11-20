@@ -1,8 +1,6 @@
 @if(! is_null($category) && $category->lessons_count > 0)
 
-@component('components/swiper/layout')
-    @slot('title')Good for {{$category->name}}
-    @endslot
+@component('components/swiper/layout', ['title' => __('Good for').' '.$category->name])
 
 	@foreach($category->lessons as $lesson)
 	    @include('components/lesson/card', [

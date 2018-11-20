@@ -1,6 +1,6 @@
 @if($trending->count() > 0)
 
-@component('components/swiper/layout', ['title' => 'Here is what\'s trending now'])
+@component('components/swiper/layout', ['title' => __('Here is what\'s trending now')])
 
 	@foreach($trending as $lesson)
 	    @include('components/lesson/card', [

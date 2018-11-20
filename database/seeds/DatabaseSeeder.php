@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
         	TeachersTableSeeder::class,
             ArticleTopicsTableSeeder::class,
             WallpaperCategoriesTableSeeder::class,
+            LessonsTableSeeder::class,
+            ProgramsTableSeeder::class,
         ]);
     }
 }

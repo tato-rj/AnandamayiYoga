@@ -1,6 +1,6 @@
 @if($freeClasses->count() > 0)
 
-@component('components/swiper/layout', ['title' => 'Watch our free classes'])
+@component('components/swiper/layout', ['title' => __('Watch our free classes')])
 
 	@foreach($freeClasses as $lesson)
 	    @include('components/lesson/card', [
