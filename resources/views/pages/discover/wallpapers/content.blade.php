@@ -24,7 +24,7 @@
 
     </div>
     @unless(auth()->check())
-    <div class="row mb-7">
+    <div class="row mb-7" style="margin-top: -50px">
         <div class="col-lg-8 col-md-8 col-sm-10 col-12 mx-auto bg-light shadow px-4 py-5 rounded border-thin">
             <h4 class="text-center">@lang('The rest of the images are for only!')</h4>
             <p class="lead m-4">@lang('To view all of our yoga wallpapers just click on the button below and sing up for our 15-day free trial, you\'ll love it') :)</p>

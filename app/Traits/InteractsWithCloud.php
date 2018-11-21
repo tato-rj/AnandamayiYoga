@@ -40,7 +40,8 @@ trait InteractsWithCloud
 
     public function deleteThumbnail()
     {
-        Storage::disk('s3')->delete($this->thumbnail);
+        if (strpos($this->thumbnail, 'demo') === false)
+            Storage::disk('s3')->delete($this->thumbnail);
     }
 
     public function getThumbnailAttribute()

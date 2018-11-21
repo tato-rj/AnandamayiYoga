@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
             WallpaperCategoriesTableSeeder::class,
             LessonsTableSeeder::class,
             ProgramsTableSeeder::class,
+            CoursesTableSeeder::class,
+            WallpapersTableSeeder::class,
         ]);
     }
 }

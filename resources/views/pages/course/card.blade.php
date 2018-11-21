@@ -6,7 +6,7 @@
 		<a href="{{route('courses.show', $course->slug)}}" class="link-none">
 			<div class="row no-gutters">
 				<div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 bg-full w-100 position-relative d-flex align-items-end" 
-				style="background-image:url({{cloud($course->image_path)}}); min-height: 250px">
+				style="background-image:url({{cloud($course->image_path)}}); min-height: 285px">
 
 				</div>
 				<div class="col-lg-7 col-md-12 col-sm-12 col-xs-12 p-5 position-relative">
