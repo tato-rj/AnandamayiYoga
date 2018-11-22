@@ -1,26 +1,16 @@
 <footer class="position-relative" style="overflow: hidden;">
 
-	<div class="" style="
-	    width: 200%;
-	    height: 420px;
-	    position: absolute;
-	    top: -368px;
-	    left:  50%;
-	    transform: translateX(-50%);
-	    background:  white;
-	    border-radius: 100%;
-	    z-index: 1;
-	"></div>
 	<img class="d-none d-sm-flex" src="{{cloud('app/misc/lotus-pattern.png')}}" style="
 	width: 80%;
     position: absolute;
     top: -132px;
     right: 0;
     opacity: .05;">
-	<div class="container py-5 mt-5">
+    
+	<div class="container py-5">
 		<div class="row pb-2">
 			<div class="col-lg-8 col-md-6 col-sm-12 col-xs-12 mb-4">
-				<h3 class="text-white mb-1" style="font-family: yogafont"><strong>Anandamayi<span style="opacity: 0.6" class="ml-1">Yoga</span></strong></h3>
+				<h3 class="text-white mb-1" style="font-size: 1.2em"><strong>Anandamayi<span style="opacity: 0.6" class="ml-1">Yoga</span></strong></h3>
 				<p class="text-white" style="max-width: 400px; opacity: .4"><small>@lang('Online yoga and meditation that is right for you. In as little as two hours per week, you can improve your physical and mental health through Yoga.')</small></p>
 			</div>
 			<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-4">

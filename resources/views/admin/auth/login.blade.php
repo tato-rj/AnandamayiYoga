@@ -32,7 +32,7 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
                             <label class="form-check-label">
-                                Remember me
+                                <small>Remember me</small>
                             </label>
                         </div>
                     </div>

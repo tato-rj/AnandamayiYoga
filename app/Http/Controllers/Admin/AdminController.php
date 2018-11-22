@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Records\Records;
 use App\Http\Requests\AdminEmailForm;
 use Carbon\Carbon;
-use App\{Lesson, Program, Level, User, Course, UserRecord, Admin, Asana, AsanaType, RoutineQuestionaire, Feedback, Teacher, Article, ArticleTopic};
+use App\{Lesson, Program, Level, User, Course, UserRecord, Admin, Asana, AsanaType, RoutineQuestionaire, Feedback, Teacher, Article, ArticleTopic, Wallpaper};
 use App\Billing\Membership;
 use App\Filters\UserFilters;
 use Illuminate\Http\Request;
@@ -16,10 +16,18 @@ class AdminController extends Controller
 	public function index(Membership $membership)
 	{
 		$membershipsAtGlance = UserRecord::monthly()->take(6)->pluck('count', 'month')->toArray();
-        $numberOfClasses = Lesson::count();
+        $lessonsCount = Lesson::count();
+        $programsCount = Program::count();
+        $coursesCount = Course::count();
+        $asanasCount = Asana::count();
+        $articlesCount = Article::count();
+        $wallpapersCount = Wallpaper::count();
         $latestUsers = User::latest()->take(30)->get();
         
-        return view('admin/pages/dashboard/index', compact(['membershipsAtGlance', 'numberOfClasses', 'membership', 'latestUsers']));
+        return view('admin/pages/dashboard/index', compact([
+        	'membershipsAtGlance', 'membership', 'latestUsers', 'wallpapersCount',
+        	'lessonsCount', 'programsCount', 'coursesCount', 'asanasCount', 'articlesCount'
+        ]));
 	}
 
 	public function statistics()

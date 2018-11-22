@@ -32,6 +32,7 @@ class ArticlesController extends Controller
     {
         $request->validate([
             'title' => 'unique:articles|required',
+            'summary' => 'sometimes|required',
             'content' => 'required',
             'author_id' => 'required',
             'subject' => 'sometimes|required|string'

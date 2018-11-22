@@ -4,6 +4,7 @@ require '_cloud.php';
 require '_calendar.php';
 require '_conversion.php';
 require '_string.php';
+require '_lorem.php';
 
 function anandamayi()
 {

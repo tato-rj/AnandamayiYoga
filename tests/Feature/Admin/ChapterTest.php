@@ -335,6 +335,7 @@ class ChapterTest extends AppTest
 		$this->adminSignIn();
 
 		$courseRequest = $this->createNewCourse();
+
 		$course = Course::where('name', $courseRequest->name)->first();
 
 		$chapter = $this->createNewChapter($course);

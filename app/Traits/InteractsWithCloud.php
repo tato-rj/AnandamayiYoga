@@ -8,19 +8,19 @@ trait InteractsWithCloud
 {
     public function deleteImage()
     {
-        if (strpos($this->image_path, 'demo') === false)
+        if (strpos($this->image_path, 'app/demo') === false)
             Storage::disk('s3')->delete($this->image_path);        
     }
 
     public function deleteCover()
     {
-        if (strpos($this->cover_path, 'demo') === false)
+        if (strpos($this->cover_path, 'app/demo') === false)
             Storage::disk('s3')->delete($this->cover_path);
     }
 
     public function deleteVideo()
     {
-        if (strpos($this->video_path, 'demo') === false)
+        if (strpos($this->video_path, 'app/demo') === false)
             Storage::disk('s3')->delete($this->video_path);
     }
 
@@ -40,7 +40,7 @@ trait InteractsWithCloud
 
     public function deleteThumbnail()
     {
-        if (strpos($this->thumbnail, 'demo') === false)
+        if (strpos($this->thumbnail, 'app/demo') === false)
             Storage::disk('s3')->delete($this->thumbnail);
     }
 
