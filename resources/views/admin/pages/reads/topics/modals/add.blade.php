@@ -1,5 +1,5 @@
 @component('admin/components/modals/add', ['title' => 'Create a new topic'])
-    <form method="POST" action="{{route('admin.articles.topics.store')}}">
+    <form method="POST" action="{{route('admin.reads.topics.store')}}">
       {{csrf_field()}}
       <div class="form-group">
         @input(['required' => true, 'lang' => 'en', 'name' => 'name', 'label' => 'Topic name', 'value' => old('name')])

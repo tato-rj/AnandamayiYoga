@@ -8,15 +8,15 @@ use App\Article;
 class ArticleTest extends AppTest
 {
 	/** @test */
-	public function it_has_many_topics()
+	public function it_belongs_to_a_topic()
 	{
 		$article = create('App\Article');
 
 		$topic = create('App\ArticleTopic');
 
-		$article->topics()->save($topic);
+		$article->topic()->associate($topic);
 
-		$this->assertInstanceOf('App\ArticleTopic', $article->topics()->first());
+		$this->assertInstanceOf('App\ArticleTopic', $article->topic);
 	}
 
 	/** @test */
@@ -30,24 +30,25 @@ class ArticleTest extends AppTest
 	}
 
 	/** @test */
-	public function it_fetches_articles_by_types()
+	public function it_can_be_found_by_topic()
 	{
-		create('App\Article');
-		create('App\Article');
-		create('App\Article', ['subject'=> 'subject']);
+		$article = create('App\Article');
 
-		$this->assertCount(2, Article::blog()->get());
-		$this->assertCount(1, Article::learning()->get());
+		$topic = create('App\ArticleTopic');
+
+		$article->topic()->associate($topic)->save();
+
+		$this->assertCount(1, Article::byTopic($topic->id)->get());		
 	}
 
 	/** @test */
-	public function non_blog_articles_can_be_selected_by_subject()
+	public function it_finds_other_articles_about_the_same_topic()
 	{
-		create('App\Article', ['subject' => 'yoga-basics']);
-		create('App\Article', ['subject' => 'yoga-philosophy']);
-		create('App\Article', ['subject' => 'yoga-philosophy']);
+		$topic = create('App\ArticleTopic');
 
-		$this->assertCount(1, Article::learning()->subject('yoga-basics')->get());
-		$this->assertCount(2, Article::learning()->subject('yoga-philosophy')->get());
+		$article = create('App\Article', ['topic_id' => $topic->id]);
+		$similar = create('App\Article', ['topic_id' => $topic->id]);
+
+		$this->assertCount(1, $article->similar()->get());
 	}
 }

@@ -22,7 +22,6 @@
                 'icon' => 'fas fa-book', 'label' => 'Reads',
                 'urls' => [
                     'admin/reads/topics' => 'Topics',
-                    'admin/reads/learning' => 'Learning',
                     'admin/reads/articles' => 'Articles']])
 
             <li class="navigation__sub">

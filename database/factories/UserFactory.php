@@ -301,8 +301,10 @@ $factory->define(App\Article::class, function(Faker $faker) {
     return [
         'slug' => str_slug($title),
         'title' => $title,
-        'summary' => $faker->paragraph,
         'content' => $faker->paragraph,
+        'topic_id' => function() {
+            return create('App\ArticleTopic')->id;
+        },
         'author_id' => function() {
             return create('App\Teacher')->id;
         }

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateAsanaForm extends FormRequest
+class CreateArticleForm extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,11 @@ class CreateAsanaForm extends FormRequest
     public function rules()
     {
         return [
-            'sanskrit' => 'required',
-            'name' => 'required|unique:asanas',
+            'title' => 'unique:articles|required',
+            'content' => 'required',
             'image' => 'required|image|max:800',
-            'types' => 'required',
-            'levels' => 'required'
+            'author_id' => 'required',
+            'topic_id' => 'required'
         ];
     }
 }

@@ -13,33 +13,17 @@ class ArticleTest extends AppTest
 	use Administrator;
 
 	/** @test */
-	public function a_admin_can_publish_an_article()
-	{
-		$this->adminSignIn();
-
-		$this->createNewArticle($blog = false);
-
-		$articles = Article::learning()->get();
-		$blog = Article::blog()->get();
-
-		$this->assertCount(1, $articles);
-		$this->assertCount(0, $blog);
-	}
-
-	/** @test */
-	public function a_admin_can_publish_a_blog_post()
+	public function an_admin_can_publish_an_article()
 	{
 		Storage::fake('s3');
 
 		$this->adminSignIn();
 
-		$this->createNewBlogPost();
+		$this->createNewArticle();
 
-		$articles = Article::learning()->get();
-		$blog = Article::blog()->get();
+		$articles = Article::all();
 
-		$this->assertCount(0, $articles);
-		$this->assertCount(1, $blog);
+		$this->assertCount(1, $articles);
 	}
 
 	/** @test */
@@ -51,7 +35,29 @@ class ArticleTest extends AppTest
 
 		$this->expectException('Illuminate\Validation\ValidationException');
 
-		$this->post(route('admin.articles.store'), $request->toArray());
+		$this->post(route('admin.reads.articles.store'), $request->toArray());
+	}
+
+	/** @test */
+	public function an_article_can_be_pinned_to_the_top()
+	{
+		$this->adminSignIn();
+
+		$topic = create('App\ArticleTopic');
+
+		$request = make('App\Article', ['topic_id' => $topic->id]);
+
+		$request->image = UploadedFile::fake()->image('image.jpg');
+
+		$this->post(route('admin.reads.articles.store'), $request->toArray());
+
+		$pinnedArticle = make('App\Article', ['topic_id' => $topic->id, 'is_pinned' => true]);
+
+		$pinnedArticle->image = UploadedFile::fake()->image('image.jpg');
+
+		$this->post(route('admin.reads.articles.store'), $pinnedArticle->toArray());
+
+		$this->assertEquals(Article::byTopic($topic->id)->pluck('is_pinned')->toArray(), [1,0]);
 	}
 
 	/** @test */
@@ -61,10 +67,10 @@ class ArticleTest extends AppTest
 
 		$request = $this->createNewArticle();
 
-		$this->json('POST', route('admin.articles.lookup'), ['title' => $request->title])
+		$this->json('POST', route('admin.reads.articles.lookup'), ['title' => $request->title])
 			 ->assertJson(['passes' => false]);
 
-		$this->json('POST', route('admin.articles.lookup'), ['title' => 'A new title'])
+		$this->json('POST', route('admin.reads.articles.lookup'), ['title' => 'A new title'])
 			 ->assertJson(['passes' => true]);
 	}
 
@@ -75,7 +81,7 @@ class ArticleTest extends AppTest
 
 		$article = create('App\Article');
 
-		$this->json('PATCH', route('admin.articles.update', $article->id), [
+		$this->json('PATCH', route('admin.reads.articles.update', $article->id), [
 			'key' => 'title',
 			'value' => 'new title'
 		])->assertSuccessful();
@@ -84,23 +90,6 @@ class ArticleTest extends AppTest
 			'slug' => str_slug('new title'),
 			'title' => 'new title'
 		]);
-	}
-
-	/** @test */
-	public function a_admin_can_update_the_article_topics()
-	{
-		$this->adminSignIn();
-
-		$request = $this->createNewArticle();
-
-		$article = Article::where('title', $request->title)->first();
-
-		$this->json('PATCH', route('admin.articles.update-topics', $article->id), [
-			'key' => 'topic',
-			'value' => create('App\ArticleTopic')
-		])->assertSuccessful();
-
-		$this->assertCount(1, $article->fresh()->topics);
 	}
 
 	/** @test */
@@ -118,7 +107,7 @@ class ArticleTest extends AppTest
 
 		Storage::disk('s3')->assertExists("local/articles/images/{$oldImage->hashName()}");
 
-		$this->patch(route('admin.articles.image.update', $createdArticle->slug), [
+		$this->patch(route('admin.reads.articles.image.update', $createdArticle->slug), [
 			'image' => $newImage
 		]);
 
@@ -133,31 +122,12 @@ class ArticleTest extends AppTest
 
 		$article = create('App\Article');
 
-		$this->delete(route('admin.articles.destroy', $article->slug))
+		$this->delete(route('admin.reads.articles.destroy', $article->slug))
 			 ->assertSessionHas('status');
 
 		$this->assertDatabaseMissing('articles', [
 			'title' => $article->title
 		]);
-	}
-
-	/** @test */
-	public function the_topics_relationships_are_removed_when_an_article_is_deleted()
-	{
-		$this->adminSignIn();
-
-		$article = create('App\Article');
-
-		$topic = create('App\ArticleTopic');
-
-		$article->topics()->save($topic);
-
-		$this->delete(route('admin.articles.destroy', $article->slug))
-			 ->assertSessionHas('status');
-
-		$this->assertDatabaseMissing('article_article_topic', [
-			'article_topic_id' => $topic->id
-		]);		 
 	}
 
 	/** @test */
@@ -169,7 +139,7 @@ class ArticleTest extends AppTest
 
 		$article = Article::where('title', $request->title)->first();
 
-		$this->delete(route('admin.articles.destroy', $article->slug))
+		$this->delete(route('admin.reads.articles.destroy', $article->slug))
 			 ->assertSessionHas('status');
 
 		Storage::disk('s3')->assertMissing($article->image_path);

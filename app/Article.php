@@ -2,15 +2,15 @@
 
 namespace App;
 
-use App\Traits\{FindBySlug, InteractsWithCloud};
+use App\Traits\{FindBySlug, InteractsWithCloud, Localizable};
 use Carbon\Carbon;
 
 class Article extends Anandamayi
 {
-	use FindBySlug, InteractsWithCloud;
+	use FindBySlug, InteractsWithCloud, Localizable;
 
     protected $guarded = [];
-    protected $subjects = ['Yoga Basics', 'Yoga Philosophy'];
+    protected $casts = ['is_pinned' => 'boolean'];
 
     protected static function boot()
     {
@@ -18,13 +18,12 @@ class Article extends Anandamayi
 
         self::deleting(function($article) {
             $article->deleteImage();
-            $article->topics()->detach();
         });
     }
 
-    public function topics()
+    public function topic()
     {
-        return $this->belongsToMany(ArticleTopic::class);
+        return $this->belongsTo(ArticleTopic::class);
     }
 
     public function author()
@@ -32,56 +31,21 @@ class Article extends Anandamayi
         return $this->belongsTo(Teacher::class, 'author_id');
     }
 
-    public function getIsBlogAttribute()
-    {
-        return ! is_null($this->subject);
-    }
-
-    public function scopeSubjects($query)
-    {
-        return $this->subjects;
-    }
 
     public function preview($length)
     {
         $text = strip_tags($this->content);
-        return substr($text, 0, $length).'...';
+        preg_match("/(?:\w+(?:\W+|$)){0,$length}/", $text, $matches);
+        return $matches[0].'...';
     }
 
-    public function scopeArchives($query)
+    public function scopeByTopic($query, $topic)
     {
-        return $query->selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')
-                ->groupBy('year', 'month')
-                ->orderByRaw('min(created_at) DESC');
+        return $query->where('topic_id', $topic)->orderBy('is_pinned', 'DESC');
     }
 
-    public function scopeFilter($query, $filters)
+    public function similar()
     {
-        if (! empty($filters['month']))
-            $query->whereMonth('created_at', Carbon::parse($filters['month'])->month);
-
-        if (! empty($filters['year']))
-            $query->whereYear('created_at', $filters['year']);
-
-        if (! empty($filters['topic'])){
-            $query->whereHas('topics', function($q) use ($filters) {
-                $q->where('slug', $filters['topic']);
-            });
-        }
-    }
-
-    public function scopeBlog($query)
-    {
-        return $query->whereNull('subject');
-    }
-
-    public function scopeLearning($query)
-    {
-        return $query->whereNotNull('subject')->orderBy('order');
-    }
-
-    public function scopeSubject($query, $subject)
-    {
-        return $query->where('subject', $subject)->orderBy('order');
+        return Article::where('topic_id', $this->topic_id)->except($this->id);
     }
 }

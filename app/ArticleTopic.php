@@ -15,12 +15,12 @@ class ArticleTopic extends Anandamayi
         parent::boot();
 
         self::deleting(function($topic) {
-            $topic->articles()->detach();
+            $topic->articles()->delete();
         });
     }
 
     public function articles()
     {
-    	return $this->belongsToMany(Article::class);
+    	return $this->hasMany(Article::class, 'topic_id');
     }
 }

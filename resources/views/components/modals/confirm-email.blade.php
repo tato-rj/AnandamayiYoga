@@ -27,7 +27,7 @@
     		<input type="hidden" name="email" value="{{session('confirm-email')}}">
             
             @include('components/buttons/form', [
-                'label' => 'Click here to receive a new one',
+                'label' => __('Click here to receive a new one'),
                 'weight' => 'bold'])
 
     	</form>

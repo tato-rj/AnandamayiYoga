@@ -88,19 +88,9 @@ class AdminController extends Controller
         return view('admin/pages/courses/index', compact(['courses', 'teachers']));
 	}
 	
-	public function learning()
-	{
-        $basics = Article::subject('yoga-basics')->get();
-        $philosophy = Article::subject('yoga-philosophy')->get();
-        $subjects['basics'] = $basics;
-        $subjects['philosophy'] = $philosophy;
-        $totalCount = count($basics) + count($philosophy);
-        return view('admin/pages/reads/learning/index', compact(['subjects', 'totalCount']));
-	}
-	
 	public function articles()
 	{
-        $articles = Article::blog()->paginate(12);
+        $articles = Article::paginate(12);
 
         return view('admin/pages/reads/articles/index', compact('articles'));
 	}

@@ -87,7 +87,7 @@
 						</a>								
 					</li>
 					<li>
-						<a class="text-white" style="opacity: .5" href="{{route('reads.articles.index')}}">
+						<a class="text-white" style="opacity: .5" href="{{route('reads.articles.index', 'asana')}}">
 							<small>@lang('Articles')</small>
 						</a>
 					</li>

@@ -33,7 +33,7 @@
                         <div class="form-check">
                             <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
                             <label class="form-check-label" for="invalidCheck3">
-                                Remember Me
+                                <small>@lang('Remember me')</small>
                             </label>
                             @if ($errors->has('remember'))
                             <div class="invalid-feedback">
@@ -50,16 +50,16 @@
                     </div>
                     <div class="text-right">
                         <small>
-                            <a class="link-default" href="{{ route('password.request') }}">Forgot Your Password?</a>
+                            <a class="link-default" href="{{ route('password.request') }}">@lang('Forgot the password?')</a>
                         </small>
                     </div>
                 </form>
                 <div class="text-center text-muted mb-4">
-                    <span>OR</span>
+                    <span>@lang('OR')</span>
                 </div>
                 @include('pages/login/social')
                 <div class="py-3 mt-4 border-top text-center">
-                    <p><small>Don't have an account yet? <a href="{{ route('register') }}">Click here</a> to sign up</small></p>
+                    <p><small>@lang('Don\'t have an account yet?') <a href="{{ route('register') }}">@lang('Join our Membership')</a></small></p>
                 </div>
             </article>
         </div>

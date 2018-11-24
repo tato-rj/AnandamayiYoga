@@ -4,11 +4,21 @@ namespace App\Http\Controllers\Reads;
 
 use App\{Article, ArticleTopic, Teacher};
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateArticleForm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class ArticlesController extends Controller
 {
+    public function index(ArticleTopic $topic)
+    {
+        $articles = Article::byTopic($topic->id)->paginate(12);
+        $currentTopic = $topic;
+        $topics = ArticleTopic::all();
+
+        return view("pages/reads/articles/index", compact(['articles', 'topics', 'currentTopic']));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -28,34 +38,21 @@ class ArticlesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, CreateArticleForm $form)
     {
-        $request->validate([
-            'title' => 'unique:articles|required',
-            'summary' => 'sometimes|required',
-            'content' => 'required',
-            'author_id' => 'required',
-            'subject' => 'sometimes|required|string'
-        ]);
-
         $article = Article::create([
             'slug' => str_slug($request->title),
             'title' => $request->title,
             'title_pt' => $request->title_pt,
-            'summary' => $request->summary,
-            'summary_pt' => $request->summary_pt,
             'content' => $request->content,
             'content_pt' => $request->content_pt,
-            'image_path' => $request->has('image') ? imageToS3($request, 'articles') : null,
-            'subject' => $request->subject ?? null,
-            'author_id' => $request->author_id
+            'image_path' => imageToS3($request, 'articles'),
+            'author_id' => $request->author_id,
+            'topic_id' => $request->topic_id,
+            'is_pinned' => $request->is_pinned ?? false
         ]);
-
-        $article->topics()->attach($request->topic);
-        
-        $route = $request->has('subject') ? route('admin.articles.learning') : route('admin.articles.articles');
-
-        return redirect($route)->with('status', "The article {$article->title} has been successfully created.");
+    
+        return redirect(route('admin.reads.articles.index'))->with('status', "The article {$article->title} has been successfully created.");
     }
 
     public function checkTitle(Request $request)
@@ -66,17 +63,10 @@ class ArticlesController extends Controller
         return response()->json(['passes' => true]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Article  $article
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Article $article)
+    public function show(ArticleTopic $topic, Article $article)
     {
-        return view('pages/reads/articles/show/layout', compact('article'));
+        return view("pages/reads/articles/show/index", compact('article'));
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -113,16 +103,6 @@ class ArticlesController extends Controller
             return 'The article has been successfully edited.';
     }
 
-    public function updateTopics(Request $request, $articleId)
-    {
-        Article::find($articleId)
-            ->topics()
-            ->sync($request->value);
-
-        if ($request->ajax())
-            return 'The topics have been successfully edited.';
-    }
-
     public function updateImage(Request $request, Article $article)
     {
         $newImage = imageToS3($request, 'articles');
@@ -136,22 +116,6 @@ class ArticlesController extends Controller
 
             return back()->with('status', 'The image has been successfully updated.');
         }
-    }
-
-    public function uploadImage(Request $request)
-    {
-        $image = imageToS3($request, "articles/{$request->article_id}");
-     
-        return cloud($image);
-    }
-
-    public function removeImage(Request $request)
-    {
-        $path = str_replace('https://anandamayiyoga.s3.amazonaws.com/', '', $request->image_path);
-
-        Storage::disk('s3')->delete($path);
-
-        return response(200);
     }
 
     /**

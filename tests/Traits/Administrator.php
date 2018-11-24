@@ -12,25 +12,11 @@ trait Administrator
 	{
 		Storage::fake('s3');
 		
-		$request = make('App\Article', ['subject' => 'yoga-basics']);
-
-		$request->topic = create('App\ArticleTopic', [], 4);
+		$request = make('App\Article');
 
 		$request->image = UploadedFile::fake()->image('image.jpg');
 
-		$this->post(route('admin.articles.store'), $request->toArray())
-			 ->assertSessionHas('status');
-
-		return $request;		
-	}
-
-	public function createNewBlogPost($section = null)
-	{
-		Storage::fake('s3');
-		
-		$request = make('App\Article', ['section' => $section ?? 'yoga-basics']);
-
-		$this->post(route('admin.articles.store'), $request->toArray())
+		$this->post(route('admin.reads.articles.store'), $request->toArray())
 			 ->assertSessionHas('status');
 
 		return $request;		

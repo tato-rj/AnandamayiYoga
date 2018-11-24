@@ -21,12 +21,6 @@ class CreateArticleTopicsTable extends Migration
             $table->smallInteger('order')->nullable();
             $table->timestamps();
         });
-
-        Schema::create('article_article_topic', function (Blueprint $table) {
-            $table->unsignedInteger('article_id');
-            $table->unsignedInteger('article_topic_id');
-            $table->primary(['article_id', 'article_topic_id']);
-        });
     }
 
     /**
@@ -37,6 +31,5 @@ class CreateArticleTopicsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('article_topics');
-        Schema::dropIfExists('article_article_topics');
     }
 }

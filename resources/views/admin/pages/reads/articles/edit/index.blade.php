@@ -10,19 +10,15 @@
 
 @section('content')
 
-@component('admin/components/page-title', ['title' => 'Create a new article'])
+@component('admin/components/page-title', ['title' => 'Edit the article'])
   @slot('subtitle')
-    <a href="{{$article->isBlog ? 
-              route('admin.articles.learning') : 
-              route('admin.articles.articles')}}" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all articles</a>
+    <a href="{{route('admin.reads.articles.index')}}" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all articles</a>
   @endslot
 @endcomponent
 
 <div class="row">
-    
-    @if(! $article->isBlog)
+  
     @include('admin/pages/reads/articles/edit/left-column')
-    @endif
     
     @include('admin/pages/reads/articles/edit/right-column')
 
@@ -31,12 +27,18 @@
 @endsection
 
 @section('scripts')
-<script src="{{asset('js/upload.image.js')}}"></script>
 <script src="{{asset('js/edit.inputs.js')}}"></script>
 <script src="{{asset('js/trix.files.js')}}"></script>
 
 <script type="text/javascript">
 checkName('articles');
 </script>
-
+<script type="text/javascript">
+$('#pin i').on('click', function() {
+	$value = $('input[name="is_pinned"]').val();
+	$('input[name="is_pinned"]').val($value == 1 ? 0 : 1);
+	$(this).toggleClass('text-blue');
+	patch($(this).attr('data-path'), {key: 'is_pinned', value: $('input[name="is_pinned"]').val()}, $showNotification = true);
+});
+</script>
 @endsection

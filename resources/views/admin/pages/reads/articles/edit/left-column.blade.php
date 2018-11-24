@@ -2,30 +2,39 @@
 	{{-- COVER IMAGE --}}
 	@include('admin/components/uploads/image-edit', [
 	'image' => $article->image_path,
-	'path' => "/admin/articles/{$article->slug}/image"])
+	'path' => route('admin.reads.articles.image.update', $article->slug)])
 
-    {{-- TOPICS --}}
-    <div class="form-group edit-control" id="topic-{{$article->id}}" name="topic">
+  {{-- TOPIC --}}
+  <div class="form-group edit-control" name="topic_id" id="topic_id-{{$article->id}}">
+    
+    @include('components.form.edit.label', [
+      'title' => 'This article is about',
+      'id' => "topic_id-{$article->id}",
+      'path' => route('admin.reads.articles.update', $article->id)
+    ])
 
-      @include('components/form/edit/label', [
-        'title' => 'This article is about',
-        'id' => "topic-{$article->id}",
-        'path' => "/admin/articles/{$article->id}/topics"
-      ])
+    <select disabled class="form-control">
+      @foreach($topics as $topic)
+        <option value="{{$topic->id}}" @match($article->topic_id, $topic->id) selected @endmatch>{{$topic->name}}</option>
+      @endforeach
+    </select>
 
-      <div class="row mx-2">
-        @foreach($topics as $topic)
-        <div class="form-check custom-control custom-checkbox col-lg-6 col-md-6 col-sm-12 col-12">
-          <input class="custom-control-input" 
-            disabled 
-            name="topic[]" 
-            type="checkbox" 
-            id="topic-{{$topic->id}}" 
-            value="{{$topic->id}}" 
-            @exists($article->topics, $topic->id) checked @endexists>
-          <label class="mb-2 custom-control-label text-muted" for="topic-{{$topic->id}}">{{$topic->name}}</label>
-        </div>
-        @endforeach
-      </div>
-    </div>
+  </div>
+  {{-- AUTHOR --}}
+  <div class="form-group edit-control" id="author-{{$article->id}}" name="author_id">
+
+    @component('components/form/edit/label', [
+      'title' => 'The author of this article is',
+      'id' => "author-{$article->id}",
+      'path' => route('admin.reads.articles.update', $article->id)
+    ])
+    @endcomponent
+    
+    <select class="form-control" name="author_id" disabled>
+      @foreach($teachers as $teacher)
+      <option value="{{$teacher->id}}" {{$article->author_id == $teacher->id ? 'selected' : null }}>{{$teacher->name}}</option>
+      @endforeach
+    </select>
+
+  </div>
 </div>

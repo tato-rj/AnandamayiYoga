@@ -12,12 +12,28 @@ trait Localizable
 		return $name;
 	}
 
+	public function getTitleAttribute($title)
+	{
+		if (app()->getLocale() == 'pt')
+			return $this->title_pt ?? $title;
+
+		return $title;
+	}
+
 	public function getSubtitleAttribute($subtitle)
 	{
 		if (app()->getLocale() == 'pt')
 			return $this->subtitle_pt ?? $subtitle;
 
 		return $subtitle;
+	}
+
+	public function getContentAttribute($content)
+	{
+		if (app()->getLocale() == 'pt')
+			return $this->content_pt ?? $content;
+
+		return $content;
 	}
 
 	public function getDescriptionAttribute($description)

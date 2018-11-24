@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix('/reads')->name('articles.')->group(function() {
+Route::prefix('/reads')->name('reads.')->group(function() {
 
     Route::prefix('/topics')->name('topics.')->group(function() {
 
@@ -14,24 +14,23 @@ Route::prefix('/reads')->name('articles.')->group(function() {
 
     });
 
-    Route::get('/learning', 'Admin\AdminController@learning')->name('learning');
+    Route::prefix('/articles')->name('articles.')->group(function() {
 
-    Route::get('/articles', 'Admin\AdminController@articles')->name('articles');
+        Route::get('', 'Admin\AdminController@articles')->name('index');
 
-    Route::get('/create', 'Reads\ArticlesController@create')->name('create');
+        Route::get('/create', 'Reads\ArticlesController@create')->name('create');
 
-    Route::get('/{article}', 'Reads\ArticlesController@edit')->name('edit');
+        Route::get('/{article}', 'Reads\ArticlesController@edit')->name('edit');
 
-    Route::post('', 'Reads\ArticlesController@store')->name('store');
+        Route::post('', 'Reads\ArticlesController@store')->name('store');
 
-    Route::post('/validate', 'Reads\ArticlesController@checkTitle')->name('lookup');
+        Route::post('/validate', 'Reads\ArticlesController@checkTitle')->name('lookup');
 
-    Route::patch('/{article}', 'Reads\ArticlesController@update')->name('update');
+        Route::patch('/{article}', 'Reads\ArticlesController@update')->name('update');
 
-    Route::patch('/{article}/topics', 'Reads\ArticlesController@updateTopics')->name('update-topics');
-
-    Route::patch('/{article}/image', 'Reads\ArticlesController@updateImage')->name('image.update');
-    
-    Route::delete('/{article}', 'Reads\ArticlesController@destroy')->name('destroy');
-
+        Route::patch('/{article}/image', 'Reads\ArticlesController@updateImage')->name('image.update');
+        
+        Route::delete('/{article}', 'Reads\ArticlesController@destroy')->name('destroy');
+        
+    });
 });

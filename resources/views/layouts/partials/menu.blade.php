@@ -51,8 +51,7 @@
           @lang('Reads')
         </a>
         <div class="shadow dropdown-menu  animated-fast fadeInUp dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{route('reads.learning.index', 'yoga-basics')}}">@lang('Learning about Yoga')</a>
-          <a class="dropdown-item" href="{{route('reads.articles.index')}}">@lang('Articles')</a>
+          <a class="dropdown-item" href="{{route('reads.articles.index', 'asana')}}">@lang('Articles')</a>
           <a class="dropdown-item" href="{{route('reads.books')}}">@lang('Books')</a>
         </div>
       </li>

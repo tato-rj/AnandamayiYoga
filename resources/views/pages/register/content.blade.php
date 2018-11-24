@@ -13,7 +13,7 @@
     
                             @include('components/buttons/spinner', [
                                 'classes' => 'btn-red btn-block',
-                                'label' => 'Create my account'])
+                                'label' => __('Create my account')])
                             
                         @endslot
                     @endcomponent

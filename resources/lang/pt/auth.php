@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'Sorry, looks like your email and/or password are not correct.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'failed' => 'O seu email e/ou password não estão corretos.',
+    'throttle' => 'Você excedeu o limite de tentativas. Por favor tente novamente em :seconds segundos.',
 
 ];

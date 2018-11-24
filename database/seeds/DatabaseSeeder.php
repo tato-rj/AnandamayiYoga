@@ -19,11 +19,13 @@ class DatabaseSeeder extends Seeder
         	LevelsTableSeeder::class,
         	TeachersTableSeeder::class,
             ArticleTopicsTableSeeder::class,
+            ArticlesTableSeeder::class,
             WallpaperCategoriesTableSeeder::class,
             LessonsTableSeeder::class,
             ProgramsTableSeeder::class,
             CoursesTableSeeder::class,
             WallpapersTableSeeder::class,
+            UsersTableSeeder::class,
         ]);
     }
 }
