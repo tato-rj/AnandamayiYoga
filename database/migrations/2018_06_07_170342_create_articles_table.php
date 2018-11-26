@@ -26,6 +26,7 @@ class CreateArticlesTable extends Migration
             $table->boolean('is_pinned')->default(false);
             $table->unsignedInteger('views')->default(0);
             $table->smallInteger('order')->nullable();
+            $table->string('unique_token')->nullable();
             $table->timestamps();
         });
     }

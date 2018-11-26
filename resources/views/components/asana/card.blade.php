@@ -1,4 +1,4 @@
-<div class="mb-4 p-3">
+<div class="mb-2 p-3">
     <div class="" style=" width: 120px">
         <a href="{{$asana->path()}}" class="link-none">
             <div class="bg-full position-relative mb-2 w-100" 

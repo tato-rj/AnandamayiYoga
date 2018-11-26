@@ -1,4 +1,4 @@
-<div class="row mb-7">
+<div class="row">
     <section class="col-12 h-100vh bg-right" id="main-lead" 
     style="background-image:url({{cloud('app/images/backgrounds/buddha.jpg')}}); transition: 3s;">
         <div class="row align-items-center h-100">

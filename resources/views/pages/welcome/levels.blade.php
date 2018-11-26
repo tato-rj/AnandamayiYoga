@@ -8,7 +8,7 @@
                 <p class="lead text-center m-0">@lang('Let\'s find you the right classes to start your <strong>15 day free trial.</strong>')</p>
             </div>
 
-                <div class="col-8 mx-auto">
+                <div class="col-lg-8 col-md-10 col-12 mx-auto">
                     <div class="row">
                     @foreach($levels as $level)
 

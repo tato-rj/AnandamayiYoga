@@ -1,5 +1,13 @@
 @extends('layouts/app')
 
+@section('head')
+<script type="text/javascript">
+window.article = <?php echo json_encode([
+    'id' => $article->unique_token
+]); ?>
+</script>
+@endsection
+
 @section('content')
 <div class="container-fluid">
 
@@ -22,9 +30,11 @@
 		    		<h2 class="text-center">{{$article->title}}</h2>
 		    		<p class="text-muted text-center"><small>{{$article->author->name}}</small></p>
 		    	</div>
-	    		<div class="trix-content">
+	    		<div id="limited-content" class="trix-content invisible">
 		    		{!! $article->content !!}
 		    	</div>
+		    	@include('components.alerts.blocked', [
+		    		'description' => __('You can read two articles per week for free. Full access to our content is available through our membership.')])
     		</div>
     		@if($article->similar()->count() > 0)
     		<div class="mb-5">
@@ -60,5 +70,9 @@ s.src = 'https://anandamayiyoga.disqus.com/embed.js';
 s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
+</script>
+<script type="text/javascript">
+// resetCounter('article');
+enforcePageLimit('article');
 </script>
 @endsection

@@ -13,10 +13,12 @@
     @endif
 
     @include('pages/welcome/lead')
-    @include('pages/welcome/intro')
+    @include('pages/welcome/features')
+    @include('pages/welcome/teacher')
     
     @unless(auth()->check())
         @include('components/bars/gift')
+        {{-- @include('pages/welcome/presentation') --}}
         @include('pages/welcome/levels')
     @endunless
 

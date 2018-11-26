@@ -15,8 +15,9 @@ class ArticlesTableSeeder extends Seeder
     		'content_pt' => null,
     		'author_id' => 1,
             'image_path' => 'app/demo/images/demo-1.jpg',
-            'topic_id' => 1
-    	]);
+            'topic_id' => 1,
+    	   'unique_token' => random_token()
+        ]);
 
         Article::create([
             'slug' => str_slug('Asanas: yogic physical postures'),
@@ -27,7 +28,8 @@ class ArticlesTableSeeder extends Seeder
             'author_id' => 1,
             'image_path' => 'app/demo/images/demo-2.jpg',
             'topic_id' => 1,
-            'is_pinned' => true
+            'is_pinned' => true,
+            'unique_token' => random_token()
         ]);
         
         Article::create([
@@ -38,7 +40,8 @@ class ArticlesTableSeeder extends Seeder
             'content_pt' => null,
             'author_id' => 1,
             'image_path' => 'app/demo/images/demo-3.jpg',
-            'topic_id' => 2
+            'topic_id' => 2,
+            'unique_token' => random_token()
         ]);
         
         Article::create([
@@ -49,7 +52,8 @@ class ArticlesTableSeeder extends Seeder
             'content_pt' => null,
             'author_id' => 1,
             'image_path' => 'app/demo/images/demo-4.jpg',
-            'topic_id' => 3
+            'topic_id' => 3,
+            'unique_token' => random_token()
         ]);
     }
 }

@@ -49,7 +49,8 @@ class ArticlesController extends Controller
             'image_path' => imageToS3($request, 'articles'),
             'author_id' => $request->author_id,
             'topic_id' => $request->topic_id,
-            'is_pinned' => $request->is_pinned ?? false
+            'is_pinned' => $request->is_pinned ?? false,
+            'unique_token' => random_token()
         ]);
     
         return redirect(route('admin.reads.articles.index'))->with('status', "The article {$article->title} has been successfully created.");

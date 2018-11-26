@@ -31,6 +31,36 @@ setCookie = function(cname, cvalue, exdays) {
   document.cookie = cname + "=" + cvalue + ";" + expires;
 }
 
+deleteCookie = function(cname) {
+    var d = new Date(); //Create an date object
+    d.setTime(d.getTime() - (1000*60*60*24)); //Set the time to the past. 1000 milliseonds = 1 second
+    var expires = "expires=" + d.toGMTString(); //Compose the expirartion date
+    window.document.cookie = cname+"="+"; "+expires;//Set the cookie with name and the expiration date
+ 
+}
+
+resetCounter = function(page) {
+  deleteCookie(page+'_block_page');
+  deleteCookie(page+'_views_count');
+}
+
+enforcePageLimit = function(page, limit = 2) {
+  if (parseInt(getCookie(page+'_views_count')) >= limit) {
+    setCookie(page+'_block_page', 'view_limit_exceeded', 7);
+  } else {
+    $('#limited-content').removeClass('invisible');
+  }
+
+  if (getCookie(page+'_block_page') == null) {
+    let view_limit = getCookie(page+'_views_count') ? parseInt(getCookie(page+'_views_count')) + 1 : 1;
+    setCookie(page+'_views_count', view_limit, 7);
+  } else {
+    deleteCookie(page+'_views_count');
+    $('#limited-content').remove();
+    $('#blocked').show();
+  }
+}
+
 submitFeedback = function(url, data) {
     $.post(url, data, 
       function(response){

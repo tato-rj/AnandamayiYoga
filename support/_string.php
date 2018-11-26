@@ -5,6 +5,13 @@ function firstThree($string)
 	return substr($string, 0, 3);
 }
 
+function preview($text, $length)
+{
+    $text = strip_tags($text);
+    preg_match("/(?:\w+(?:\W+|$)){0,$length}/", $text, $matches);
+    return $matches[0];
+}
+
 function splitName($name) {
     $name = trim($name);
     $last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);

@@ -34726,6 +34726,37 @@ setCookie = function setCookie(cname, cvalue, exdays) {
   document.cookie = cname + "=" + cvalue + ";" + expires;
 };
 
+deleteCookie = function deleteCookie(cname) {
+  var d = new Date(); //Create an date object
+  d.setTime(d.getTime() - 1000 * 60 * 60 * 24); //Set the time to the past. 1000 milliseonds = 1 second
+  var expires = "expires=" + d.toGMTString(); //Compose the expirartion date
+  window.document.cookie = cname + "=" + "; " + expires; //Set the cookie with name and the expiration date
+};
+
+resetCounter = function resetCounter(page) {
+  deleteCookie(page + '_block_page');
+  deleteCookie(page + '_views_count');
+};
+
+enforcePageLimit = function enforcePageLimit(page) {
+  var limit = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
+
+  if (parseInt(getCookie(page + '_views_count')) >= limit) {
+    setCookie(page + '_block_page', 'view_limit_exceeded', 7);
+  } else {
+    $('#limited-content').removeClass('invisible');
+  }
+
+  if (getCookie(page + '_block_page') == null) {
+    var view_limit = getCookie(page + '_views_count') ? parseInt(getCookie(page + '_views_count')) + 1 : 1;
+    setCookie(page + '_views_count', view_limit, 7);
+  } else {
+    deleteCookie(page + '_views_count');
+    $('#limited-content').remove();
+    $('#blocked').show();
+  }
+};
+
 submitFeedback = function submitFeedback(url, data) {
   $.post(url, data, function (response) {
     if (response.passes) {

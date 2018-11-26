@@ -125,35 +125,35 @@ class AsanaTest extends AppTest
 		$this->assertEquals(5, \App\Asana::all()->sum('views'));
 	}
 
-	/** @test */
-	public function it_can_be_searched()
-	{
-		$asana1 = $this->asana;
+	// /** @test */
+	// public function it_can_be_searched()
+	// {
+	// 	$asana1 = $this->asana;
 
-		$asana2 = create('App\Asana', [
-			'name' => 'cat',
-			'also_known_as' => 'gato']);
+	// 	$asana2 = create('App\Asana', [
+	// 		'name' => 'cat',
+	// 		'also_known_as' => 'gato']);
 
-		$asana3 = create('App\Asana', [
-			'name' => 'dog',
-			'also_known_as' => 'cachorro']);
+	// 	$asana3 = create('App\Asana', [
+	// 		'name' => 'dog',
+	// 		'also_known_as' => 'cachorro']);
 
-		$asana4 = create('App\Asana', [
-			'name' => 'bird',
-			'also_known_as' => 'passaro']);
+	// 	$asana4 = create('App\Asana', [
+	// 		'name' => 'bird',
+	// 		'also_known_as' => 'passaro']);
 
-		$asana5 = create('App\Asana', [
-			'name' => 'fish',
-			'also_known_as' => 'peixe']);
+	// 	$asana5 = create('App\Asana', [
+	// 		'name' => 'fish',
+	// 		'also_known_as' => 'peixe']);
 
-		$this->get(route('discover.asanas.index', ['search' => 'bird']))
-			 ->assertSee('bird')
-			 ->assertDontSee('fish');
+	// 	$this->get(route('discover.asanas.index', ['search' => 'bird']))
+	// 		 ->assertSee('bird')
+	// 		 ->assertDontSee('fish');
 
-		$this->get(route('discover.asanas.index', ['search' => 'bird fish']))
-			 ->assertSee('bird')
-			 ->assertSee('fish');
-	}
+	// 	$this->get(route('discover.asanas.index', ['search' => 'bird fish']))
+	// 		 ->assertSee('bird')
+	// 		 ->assertSee('fish');
+	// }
 
 	/** @test */
 	public function it_can_be_filtered_by_type()
