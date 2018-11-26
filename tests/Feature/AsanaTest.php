@@ -13,4 +13,14 @@ class AsanaTest extends AppTest
 
 		$this->get(route('discover.asanas.index'))->assertSee('Great asana'); 
 	}
+
+	/** @test */
+	public function unauthenticated_users_cannot_view_an_asana_details_page()
+	{
+		$this->expectException('Illuminate\Auth\AuthenticationException');
+		
+		$asana = create('App\Asana');
+
+		$this->get(route('discover.asanas.show', $asana->slug));
+	}
 }

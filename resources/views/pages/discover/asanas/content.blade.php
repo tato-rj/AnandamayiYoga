@@ -5,6 +5,7 @@
     <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-12 col-12">
             <form>
+{{--            SEARCH INPUT: NEEDS IMPROVEMENT
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-prepend d-flex align-items-center justify-content-center pr-2 cursor-pointer">
@@ -12,7 +13,7 @@
                         </div>
                         <input type="text" value="{{request('search')}}" name="search" class="pl-1 form-control border-0 d-block" placeholder="@lang('I\'m looking for...')">
                     </div>
-                </div>
+                </div> --}}
                 <div class="form-group">
                     <label><strong>@lang('Category')</strong></label>               
                     @foreach($asanaTypes as $type)
@@ -63,9 +64,7 @@
         </div>
         
         <div class="col-lg-9 col-md-9 col-sm-12 col-12">
-            <div id="asanas-container" class="row w-100 position-relative ml-0">
-                @include('pages/discover/asanas/show')
-            </div>
+          @include('pages/discover/asanas/show')
         </div>
     </div>
 

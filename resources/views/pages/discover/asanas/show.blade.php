@@ -1,7 +1,7 @@
 @if($asanas->count() > 0)
-<p class="m-0 text-muted"><small>Total of <span id="asanas-count">{{$asanas->total()}}</span> asanas</small></p>
+<p class="m-0 text-muted"><small>@lang('Total of') <span id="asanas-count">{{$asanas->total()}}</span> asanas</small></p>
 @endif
-<div class="d-flex align-items-center mt-2 flex-wrap w-100">
+<div id="asanas-container" class="d-flex align-items-center mt-2 flex-wrap w-100">
     @forelse($asanas as $asana)
 
         @include('components/asana/card')

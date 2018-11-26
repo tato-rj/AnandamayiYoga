@@ -34,7 +34,7 @@ function imageToS3($request, $folder)
 
 function videoToS3($request, $folder)
 {
-	if (! $request->file('video')) return cloudEnv()."/{$folder}/videos/".preg_replace("/[^a-zA-Z0-9]+/", "", bcrypt(time())).".mp4";
+	if (! $request->file('video')) return null;
 
 	return $request->file('video')->store(cloudEnv()."/{$folder}/videos", 's3');
 }

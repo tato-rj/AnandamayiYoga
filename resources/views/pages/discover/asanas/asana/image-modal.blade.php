@@ -5,7 +5,7 @@
       <div class="modal-footer text-center border-0 bg-light">
       	<div class="w-100">
           <h2>{{$asana->name}}</h2>
-          <h4 class="text-muted">{{$asana->sanskrit}}</h4>
+          <h4 class="lead">{{$asana->sanskrit}}</h4>
       	</div>
       </div>
     </div>

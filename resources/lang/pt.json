@@ -120,6 +120,24 @@
 		"membership": "planos de assinatura",
 		"to learn how you can become a member.": "para aprender a como se tornar um membro.",
 		"I'm looking for...": "Estou procurando por...",
+		"Total of": "Total de",
+
+
+	"_SECTION": "FEEDBACK",
+		"Did you find this page helpful?": "Você achou essa página útil?",
+		"How would you rate your experience?": "O que você está achando do site?",
+		"No": "Não",
+		"Yes": "Sim",
+		"Would you like to receive a follow up?": "Gostaria de receber uma resposta?",
+		"All set!": "Tudo certo!",
+		"Thank you for sharing your feedback.": "Obrigado por compartilhar a sua experiência.",
+		"Feedback": "Opinião",
+		"Hate": "Ruim",
+		"Dislike": "Razoável",
+		"It's ok": "Gostei",
+		"Like": "Adorei",
+		"Love": "Amei",
+		"Send": "Enviar",
 
 
 	"_SECTION": "FILTERS",
@@ -144,6 +162,7 @@
 		"Awesome!": "Muito bom!",
 		"Sorry!": "Desculpa!",
 		"Ops...": "Opa...",
+
 
 	"_SECTION": "REGISTER PAGE",
 		"Let's get started": "Vamos começar",
@@ -232,6 +251,18 @@
 		"More articles about": "Mais artigos sobre",
 		"Share your comments": "Deixe aqui o seu comentário",
 		"back to articles about": "voltar para os artigos sobre",
+
+
+	"_SECTION": "ASANAS",
+		"Click to enlarge": "Clique para aumentar",
+		"back to all asanas": "voltar para os asanas",
+		"Level": "Nível",
+		"Category": "Categoria",
+		"Etymology": "Etimologia",
+		"Also known as": "Também conhecido como",
+		"Step-by-step instructions": "Instruções passo a passo",
+		"The main benefits of this asana are": "Os principais benefícios desse asana são",
+
 
 	"_SECTION": "EMAILS",
 		"Please verify your email with AnandamayiYoga": "Por favor verifique o seu email com AnandamayiYoga",

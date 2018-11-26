@@ -96,6 +96,8 @@ class AsanaTest extends AppTest
 	/** @test */
 	public function it_keeps_track_of_the_number_of_visits()
 	{
+		$this->signIn(create('App\User', ['confirmed' => true]));
+
 		$asana = create('App\Asana');
 
 		$this->assertEquals(0, $asana->views);
@@ -108,6 +110,8 @@ class AsanaTest extends AppTest
 	/** @test */
 	public function the_app_knows_the_total_amount_of_asana_visits()
 	{
+		$this->signIn(create('App\User', ['confirmed' => true]));
+		
 		$asana1 = create('App\Asana');
 		$asana2 = create('App\Asana');
 		$asana3 = create('App\Asana');

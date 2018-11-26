@@ -35,7 +35,7 @@ Route::prefix('/discover')->name('discover.')->group(function() {
 
         Route::get('', 'AsanasController@index')->name('index');
     
-        Route::get('asanas/{asana}', 'AsanasController@show')->name('show');
+        Route::get('asanas/{asana}', 'AsanasController@show')->middleware(['auth', 'email-confirmed'])->name('show');
 
     });
 
