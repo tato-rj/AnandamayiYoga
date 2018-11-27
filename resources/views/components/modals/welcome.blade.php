@@ -16,9 +16,9 @@
                   <img src="{{cloud('app/welcome/welcome.png')}}" style="width: 80%; max-width: 20em;">
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mx-auto mt-4 text-center">
-                  <p class="lead mb-4">WELCOME TO <span class="text-red"><strong>ANANDAMAYI</strong></span> YOGA</p>
-                  <p>We're so glad you joined us! Your <strong>free trial</strong> period starts today and will end in 15 days.</p>
-                  <p>Feel free to explore the platform, you'll love it!</p>         
+                  <p class="lead mb-4">@lang('WELCOME TO') <span class="text-red"><strong>ANANDAMAYI</strong></span> YOGA</p>
+                  <p>{!! __('We\'re so glad you joined us! Your <strong>free trial</strong> period starts today and will end in 15 days.') !!}</p>
+                  <p>@lang('Feel free to explore the platform, you\'ll love it!')</p>         
                 </div>
               </div>
             </div>
@@ -29,9 +29,9 @@
                   <img src="{{cloud('app/welcome/browse.png')}}" style="width: 80%; max-width: 20em;">
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mx-auto mt-4 text-center">
-                  <p class="lead mb-4">FIND OUR CLASSES</p>
-                  <p>We'll show you recommended classes based on your preferences! You can find these right on your dashboard.</p>
-                  <p>On the discover tab you will find all of our courses and classes.</p>
+                  <p class="lead mb-4">@lang('FIND YOUR CLASSES')</p>
+                  <p>@lang('We\'ll show you recommended classes based on your preferences! You can find these right on your dashboard.')</p>
+                  <p>@lang('On the discover tab you will find all of our classes, programs and courses.')</p>
                 </div>
               </div>
             </div>
@@ -42,9 +42,9 @@
                   <img src="{{cloud('app/welcome/routine.png')}}" style="width: 80%; max-width: 20em;">
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 mx-auto mt-4 text-center">
-                  <p class="lead mb-4">CREATE A ROUTINE</p>
-                  <p>Personalized <strong>Yoga Routine</strong>! Just submit a routine request and we will create the perfect schedule for you.</p>
-                  <p>Follow your progress and feel the benefit of your commitment.</p>          
+                  <p class="lead mb-4">@lang('CREATE A ROUTINE')</p>
+                  <p>{!! __('Personalized <strong>Yoga Routine</strong>! Just submit a routine request and we will create the perfect schedule for you.') !!}</p>
+                  <p>@lang('Follow your progress and feel the benefit of your commitment').</p>          
                 </div>
               </div>
             </div>
@@ -60,7 +60,7 @@
       <div>  
       </div>
       <div class="modal-footer border-0 justify-content-center pb-4">
-        <button type="button" class="carousel-next btn btn-outline-red px-5" style="border-radius: 0.2rem;">Next</button>
+        <button type="button" class="carousel-next btn btn-outline-red px-5" style="border-radius: 0.2rem;">@lang('Next')</button>
       </div>
     </div>
   </div>

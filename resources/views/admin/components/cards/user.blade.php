@@ -1,7 +1,7 @@
   <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
     <div class="border rounded t-2 hover-shadow-light">
       <a href="/admin/users/{{$user->id}}" class="link-none">
-        <div class="m-3 bg-full rounded" 
+        <div class="bg-full rounded-top" 
         style="background-image:url({{$user->avatar()}}); height: 120px;
         @notActive($user)
           filter: grayscale(100);

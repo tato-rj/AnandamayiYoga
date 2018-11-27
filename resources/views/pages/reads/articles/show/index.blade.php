@@ -34,6 +34,8 @@ window.article = <?php echo json_encode([
 		    		{!! $article->content !!}
 		    	</div>
 		    	@include('components.alerts.blocked', [
+		    		'show' => false,
+		    		'title' => __('Sorry, you\'ve reached your weekly limit!'),
 		    		'description' => __('You can read two articles per week for free. Full access to our content is available through our membership.')])
     		</div>
     		@if($article->similar()->count() > 0)

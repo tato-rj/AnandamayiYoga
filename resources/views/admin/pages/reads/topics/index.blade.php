@@ -18,8 +18,8 @@
 		@foreach($topics as $topic)
       @draggable([
         'model' => $topic, 
-        'editPath' => route('admin.articles.topics.update', $topic->id), 
-        'deletePath' => route('admin.articles.topics.destroy', $topic->id)])
+        'editPath' => route('admin.reads.topics.update', $topic->id), 
+        'deletePath' => route('admin.reads.topics.destroy', $topic->id)])
 		@endforeach
 	</div>
 </div>

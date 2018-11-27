@@ -8,8 +8,8 @@
     @include('pages/reads/books/content')
 	
 	@include('components/bars/benefits', [
-		'title' => 'INVEST IN YOURSELF',
-		'description' => 'Sign up and get immediate access to the perfect program for you.'])
+		'title' => __('INVEST IN YOURSELF'),
+		'description' => __('Sign up and get immediate access to the perfect program for you.')])
 
 	@include('components/bars/testimonials')
 

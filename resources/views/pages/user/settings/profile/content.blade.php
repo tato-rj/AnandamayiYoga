@@ -2,15 +2,17 @@
 
 <div class="row">
 	<div class="col-lg-4">
-          <div id="upload-box" class="card">
+          <div id="upload-box" class="card border-0 rounded-0">
             <input type="file" id="avatar" name="image" style="display:none;" />
-            <img class="card-img-top" id="avatar-final" src="{{auth()->user()->avatar()}}" alt="Not an image">
-            <div class="card-body text-center">
-            	<button type="button" id="select-button" class="btn btn-block btn-outline-red mb-2">
-            		<i class="fas fa-image mr-2"></i>Select photo
+            <img class="w-100" id="avatar-final" src="{{auth()->user()->avatar()}}" alt="Not an image">
+            <div class="card-body text-center p-2 d-flex align-items-center justify-content-center">
+            	<button type="button" id="select-button" class="btn-link text-blue cursor-pointer border-0 px-4">
+            		<i class="fas fa-folder-open"></i>
+            		<div class="text-muted"><small>Select</small></div>
             	</button>
-            	<button type="button" id="upload-button" disabled class="btn btn-blue btn-block">
-            		<i class="fas fa-cloud-upload-alt mr-2"></i>Upload
+            	<button type="button" id="upload-button" disabled class="btn-link text-blue cursor-pointer border-0 px-4">
+            		<i class="fas fa-cloud-upload-alt"></i>
+            		<div class="text-muted"><small>Upload</small></div>
             	</button>
             	<div style="display: none;">
             		<p class="text-success mb-0"><i class="fas fa-check-circle mr-2"></i><strong>All set!</strong></p>

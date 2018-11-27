@@ -125,7 +125,7 @@
 				<ul class="p-0 list-style-none">
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('support.membership')}}">
-							<small>@lang('Site Map')</small>
+							<small>@lang('Site map')</small>
 						</a>
 					</li>
 					<li>

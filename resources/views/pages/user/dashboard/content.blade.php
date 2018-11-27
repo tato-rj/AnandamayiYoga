@@ -10,14 +10,14 @@
 
             @include('components/buttons/simple', [
                 'path' => route('user.settings.payment'),
-                'label' => 'Activate my account',
+                'label' => __('Activate my account'),
                 'color' => 'yellow', 
                 'size' => 'xs',
                 'weight' => 'bold',
                 'extra' => 'mobile-block'])
 
 			@endslot
-			Your free trial expires in {{auth()->user()->trial_ends_at->diffForHumans()}}
+			@lang('Your free trial expires in') {{auth()->user()->trial_ends_at->diffForHumans()}}
 		@endcomponent
 	</div>
 	@elseif(auth()->user()->isOnGracePeriod())
@@ -31,11 +31,11 @@
 				@include('components/buttons/spinner', [
 					'classes' => 'btn-sm btn-yellow btn-mobile-block',
 					'onclick' => '$("#resume-membership").submit();',
-					'label' => 'Resume my membership'])
+					'label' => __('Resume my membership')])
 					
 			</form>
 			@endslot
-			We're sorry to see you leaving! Your account will remain active until {{auth()->user()->membership->subscription_ends_at->toFormattedDateString()}}
+			@lang('We\'re sorry to see you leaving! Your account will remain active until') {{auth()->user()->membership->subscription_ends_at->toFormattedDateString()}}
 		@endcomponent
 	</div>
 	@elseif(auth()->user()->lastChargeFailed())
@@ -46,7 +46,7 @@
 				<div class="ml-3"> 
 	            @include('components/buttons/simple', [
 	                'path' => route('user.settings.payment'),
-	                'label' => 'Update my card',
+	                'label' => __('Update my card'),
 	                'color' => 'danger', 
 	                'size' => 'xs',
 	                'weight' => 'bold',
@@ -54,7 +54,7 @@
 	            </div>
 
 			@endslot
-			Your payment from {{auth()->user()->payments()->latest()->first()->created_at->toFormattedDateString()}} has failed. Please update your card to avoid losing your membership!
+			@lang('Your payment from') {{auth()->user()->payments()->latest()->first()->created_at->toFormattedDateString()}} @lang('has failed. Please update your card to avoid losing your membership!')
 		@endcomponent
 	</div>	
 	@endif

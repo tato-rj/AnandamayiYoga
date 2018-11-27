@@ -11,7 +11,7 @@
                     @lang('Welcome to Anandamayi Yoga')
                 </strong></h1>
                 <div class="text-white mb-4">
-                    <p class="lead mb-1">@lang('Online yoga and meditation that is right for you.')</p> 
+                    <p class="lead m-0">@lang('Online yoga and meditation that is right for you.')</p> 
                     <p class="lead">@lang('In as little as two hours per week, you can improve your physical and mental health through Yoga.')</p>
                 </div>
             @endauth

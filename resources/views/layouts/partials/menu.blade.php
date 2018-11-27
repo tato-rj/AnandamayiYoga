@@ -96,28 +96,28 @@
           <span class="d-block d-lg-none">My Profile</span>
         </a>
         <div class="shadow dropdown-menu  animated-fast fadeInUp dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/me"><small><i class="d-none d-lg-inline fas mr-3 text-muted fa-home"></i></small>Dashboard</a>
-          <a class="dropdown-item" href="{{route('user.recommended')}}"><small><i class="d-none d-lg-inline fas mr-3 text-muted fa-gift"></i></small>Recommended</a>
-          <a class="dropdown-item" href="{{route('user.favorites')}}"><small><i class="d-none d-lg-inline fas mr-3 text-muted fa-heart"></i></small>Favorites</a>
-          <a class="dropdown-item" href="{{route('user.courses')}}"><small><i class="d-none d-lg-inline fas mr-3 text-muted fa-book"></i></small>My courses</a>
+          <a class="dropdown-item" href="/me"><small><i class="d-none d-lg-inline fas mr-3 text-muted fa-home"></i></small>@lang('Dashboard')</a>
+          <a class="dropdown-item" href="{{route('user.recommended')}}"><small><i class="d-none d-lg-inline fas mr-3 text-muted fa-gift"></i></small>@lang('Recommended')</a>
+          <a class="dropdown-item" href="{{route('user.favorites')}}"><small><i class="d-none d-lg-inline fas mr-3 text-muted fa-heart"></i></small>@lang('Favorites')</a>
+          <a class="dropdown-item" href="{{route('user.courses')}}"><small><i class="d-none d-lg-inline fas mr-3 text-muted fa-book"></i></small>@lang('My courses')</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{{route('user.settings.profile')}}"><small><i class="d-none d-lg-inline fas mr-3 text-muted fa-cog"></i></small>Settings</a>
-          <a class="dropdown-item" href="{{route('user.settings.preferences')}}"><small><i class="d-none d-lg-inline fas mr-3 text-muted fa-tags"></i></small>Preferences 
+          <a class="dropdown-item" href="{{route('user.settings.profile')}}"><small><i class="d-none d-lg-inline fas mr-3 text-muted fa-cog"></i></small>@lang('Settings')</a>
+          <a class="dropdown-item" href="{{route('user.settings.preferences')}}"><small><i class="d-none d-lg-inline fas mr-3 text-muted fa-tags"></i></small>@lang('Preferences') 
 
             @include('components/snippets/yellow-dot', ['condition' => !auth()->user()->hasPreferencesSelected()])
 
           </a>
-          <a class="dropdown-item" href="{{route('user.settings.membership')}}"><small><i class="d-none d-lg-inline fas mr-3 text-muted fa-th-list"></i></small>Membership 
+          <a class="dropdown-item" href="{{route('user.settings.membership')}}"><small><i class="d-none d-lg-inline fas mr-3 text-muted fa-th-list"></i></small>@lang('Membership') 
 
             @include('components/snippets/yellow-dot', ['condition' => ! auth()->user()->membership && auth()->user()->isOnTrial()])
 
           </a>
-          <a class="dropdown-item" href="{{route('user.settings.invoices')}}"><small><i class="d-none d-lg-inline fas mr-3 text-muted fa-file-alt"></i></small>Invoices</a>
+          <a class="dropdown-item" href="{{route('user.settings.invoices')}}"><small><i class="d-none d-lg-inline fas mr-3 text-muted fa-file-alt"></i></small>@lang('Invoices')</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" 
             href="{{ route('logout') }}" 
             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            <small><i class="d-none d-lg-inline fas mr-3 text-muted fa-sign-out-alt"></i></small>Logout
+            <small><i class="d-none d-lg-inline fas mr-3 text-muted fa-sign-out-alt"></i></small>@lang('Logout')
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
             </form> 

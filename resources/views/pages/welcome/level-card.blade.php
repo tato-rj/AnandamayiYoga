@@ -1,4 +1,4 @@
-<div class="col-lg-3 col-md-4 col-sm-4 col-8 mb-4 mx-auto move-control reveal" 
+<div class="col-lg-4 col-md-4 col-sm-6 col-8 mx-auto move-control reveal p-4" 
 	reveal-origin="bottom" 
 	reveal-delay="{{$delay}}" 
 	reveal-duration="500">
