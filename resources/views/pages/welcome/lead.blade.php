@@ -1,6 +1,6 @@
 <div class="row">
     <section class="col-12 h-100vh bg-right" id="main-lead" 
-    style="background-image:url({{cloud('app/images/backgrounds/buddha.jpg')}}); transition: 3s;">
+    style="background-image:url({{cloud('app/images/backgrounds/buddha.jpg')}})">
         <div class="row align-items-center h-100">
             <div class="col-lg-6 col-md-8 col-10 offset-lg-2 offset-md-1 offset-1 z-10">
             @auth
@@ -12,7 +12,7 @@
                 </strong></h1>
                 <div class="text-white mb-4">
                     <p class="lead m-0">@lang('Online yoga and meditation that is right for you.')</p> 
-                    <p class="lead">@lang('In as little as two hours per week, you can improve your physical and mental health through Yoga.')</p>
+                    <p class="lead">@lang('Yoga, meditation and functional training to improve your physical, mental and spiritual health.')</p>
                 </div>
             @endauth
                        

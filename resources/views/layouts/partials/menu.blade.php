@@ -39,7 +39,7 @@
           @lang('Discover')
         </a>
         <div class="shadow dropdown-menu  animated-fast fadeInUp dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{route('discover.browse')}}">@lang('Our catalogue')</a>
+          <a class="dropdown-item" href="{{route('discover.browse')}}">@lang('Classes & Programs')</a>
           <a class="dropdown-item" href="{{route('courses.index')}}">@lang('Courses')</a>
           <a class="dropdown-item" href="{{route('discover.asanas.index')}}">@lang('Glossary of Asanas')</a>
           <a class="dropdown-item" href="{{route('discover.wallpapers')}}">@lang('Yoga wallpapers')</a>
@@ -48,10 +48,11 @@
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          @lang('Reads')
+          @lang('About yoga')
         </a>
         <div class="shadow dropdown-menu  animated-fast fadeInUp dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{route('reads.articles.index', 'asana')}}">@lang('Articles')</a>
+          <a class="dropdown-item" href="{{route('reads.articles.index', 'asana')}}">@lang('What is Yoga')</a>
+          <a class="dropdown-item" href="{{route('reads.articles.index', 'asana')}}">@lang('Articles archive')</a>
           <a class="dropdown-item" href="{{route('reads.books')}}">@lang('Books')</a>
         </div>
       </li>
@@ -63,15 +64,15 @@
         <div class="shadow dropdown-menu  animated-fast fadeInUp dropdown-menu-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{{route('about.our-platform')}}">Anandamayi Yoga</a>
           <a class="dropdown-item" href="{{route('about.anandamayi')}}">Anandamayi</a>
-          <a class="dropdown-item" href="{{route('about.eranthus-books')}}">@lang('Eranthus books')</a>
+          <a class="dropdown-item" href="{{route('about.eranthus-books')}}">@lang('Our teachers')</a>
         </div>
       </li>
-      <li class="nav-item">
+{{--       <li class="nav-item">
         <a class="nav-link" href="{{route('support.index')}}">@lang('Help')</a>
-      </li>
-   
+      </li> --}}
+
       <li class="nav-item">
-        <a class="nav-link" href="{{route('support.contact.show')}}">@lang('Contact us')</a>
+        <a class="nav-link" href="{{route('support.contact.show')}}">@lang('Contact')</a>
       </li>
 
       @auth

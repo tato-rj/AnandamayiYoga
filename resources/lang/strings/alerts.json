@@ -1,0 +1,30 @@
+{
+	"Success!": "Sucesso!",
+	"Great!": "Ótimo!",
+	"Perfect!": "Perfeito!",
+	"Awesome!": "Muito bom!",
+	"Sorry!": "Desculpa!",
+	"Ops...": "Opa...",
+
+
+	"Hey there! We use cookies to ensure you get the best experience on our website.": "Olá! Nós usamos cookies para garantir a melhor experiência possível para você no nosso site.",
+	"Learn more": "Leia mais",
+	"Got it": "Entendi",
+	"We found": "Nós encontramos",
+	"with your request, please try again.": "com o seu pedido, por favor tente novamente.",
+	"issue": "problema",
+	"issues": "problemas",
+	"Sorry, you've reached your weekly limit!": "Você atingiu o limite semanal!",
+	"You can read two articles per week for free. Full access to our content is available through our membership.": "Nós disponibilizamos 2 artigos grátis por semana. Acesso integral ao nosso conteúdo somente através da nossa assinatura.",
+	"Register now": "Assine agora",
+	"and enjoy unlimited access to our classes, programs and articles!": "e aproveite accesso ilimitado às nossas aulas, programas e artigos",
+	"Activate my account": "Ativar a minha conta",
+	"Your free trial expires in": "O seu período gratuito termina",
+	"Resume my membership": "Continuar a minha assinatura",
+	"We're sorry to see you leaving! Your account will remain active until": "Nós sentiremos a sua falta! A sua assinatura continua ativa até o dia",
+	"Update my card": "Atualizar a minha forma de pagamento",
+	"Your payment from": "O seu pagamento do dia",
+	"has failed. Please update your card to avoid losing your membership!": "não foi efetuado com sucesso. Por favor atualize a sua forma de pagamento para evitar que a sua assinatura seja cancelada!",
+	"It looks like your account has expired.": "Parece que a sua conta está desativada.",
+	"Click here to restore your membership": "Clique aqui para reativar a sua assinatura"
+}
