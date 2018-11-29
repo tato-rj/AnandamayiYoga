@@ -16,7 +16,16 @@
 @endsection
 
 @section('scripts')
-
+<script type="text/javascript">
+$('#video, #play-button').on('click', function() {
+    if ($('#video').get(0).paused) {
+        $('#video').get(0).play();
+    } else {
+        $('#video').get(0).pause();
+    }
+    $('#play-button').toggle();
+});
+</script>
 <script type="text/javascript">
 $('input[name="categories"]').val($.session.get('categories'));
 $('input[name="level_id"]').val($.session.get('level_id'));

@@ -10,7 +10,7 @@ class Lesson extends Anandamayi
     use FindBySlug, Favoritable, SwiperQueries, InteractsWithCloud, Filterable, Localizable;
 
     protected $guarded = [];
-
+    protected $casts = ['is_free' => 'boolean'];
     protected $with = ['categories'];
 
     protected static function boot()

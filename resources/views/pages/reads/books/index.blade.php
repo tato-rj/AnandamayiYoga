@@ -7,9 +7,7 @@
 
     @include('pages/reads/books/content')
 	
-	@include('components/bars/benefits', [
-		'title' => __('INVEST IN YOURSELF'),
-		'description' => __('Sign up and get immediate access to the perfect program for you.')])
+	@include('components/bars/devices')
 
 	@include('components/bars/testimonials')
 

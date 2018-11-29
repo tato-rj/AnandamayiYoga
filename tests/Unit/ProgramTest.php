@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use Tests\AppTest;
+use App\Program;
 
 class ProgramTest extends AppTest
 {
@@ -174,5 +175,36 @@ class ProgramTest extends AppTest
 		$this->get($program3->path());
 
 		$this->assertEquals(5, \App\Program::all()->sum('views'));
+	}
+
+	/** @test */
+	public function it_knows_if_all_its_lessons_are_free()
+	{
+		$programNotFree = create('App\Program');
+		$programNotFree->lessons()->save(create('App\Lesson', ['is_free' => false]));
+		$programNotFree->lessons()->save(create('App\Lesson', ['is_free' => true]));
+		
+		$this->assertFalse($programNotFree->is_free);
+
+		$programFree = create('App\Program');
+		$programFree->lessons()->save(create('App\Lesson', ['is_free' => true]));
+		$programFree->lessons()->save(create('App\Lesson', ['is_free' => true]));
+		
+		$this->assertTrue($programFree->is_free);
+	}
+
+	/** @test */
+	public function it_finds_all_free_programs()
+	{
+		Program::truncate();
+
+		$programNotFree = create('App\Program');
+		create('App\Lesson', ['is_free' => false, 'program_id' => $programNotFree->id]);
+
+		$programFree = create('App\Program');
+		create('App\Lesson', ['is_free' => true, 'program_id' => $programFree->id]);
+
+		$this->assertCount(2, Program::all());
+		$this->assertCount(1, Program::free());	 
 	}
 }

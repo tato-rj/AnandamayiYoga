@@ -110,7 +110,8 @@ $factory->define(App\Category::class, function(Faker $faker) {
         'slug' => str_slug($name),
         'name' => $faker->unique()->word,
         'subtitle' => $faker->sentence,
-        'description' => $faker->sentence
+        'short_description' => $faker->sentence,
+        'long_description' => $faker->sentence
     ];
 });
 
@@ -326,5 +327,16 @@ $factory->define(App\Subscription::class, function(Faker $faker) {
     return [
         'list' => $lists[array_rand($lists)],
         'email' => 'testemail@email.com'
+    ];
+});
+
+$factory->define(App\Book::class, function(Faker $faker) {
+    return [
+        'title' => $faker->word,
+        'subtitle' => $faker->sentence,
+        'description' => $faker->paragraph,
+        'lang' => $faker->word,
+        'image_path' => $faker->imageUrl(),
+        'amazon_url' => $faker->url
     ];
 });

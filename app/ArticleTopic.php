@@ -8,8 +8,6 @@ class ArticleTopic extends Anandamayi
 {
 	use FindBySlug, Localizable;
 	
-    protected $guarded = [];
-
     protected static function boot()
     {
         parent::boot();

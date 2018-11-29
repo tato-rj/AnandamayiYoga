@@ -62,7 +62,7 @@ class TeachersController extends Controller
     public function show(Teacher $teacher)
     {
         if ($teacher->name == 'Anandamayi')
-            return redirect()->route('about.ali-anandamayi');
+            return redirect()->route('about.anandamayi');
 
         return view('pages/about/teachers/show/index', compact('teacher'));
     }

@@ -31,15 +31,15 @@
         					class="card-header border-0 py-3 bg-light mb-2 cursor-pointer d-flex align-items-center justify-content-between" 
         					id="heading-{{$loop->iteration}}"
         					 data-toggle="collapse" data-target="#collapse-{{$loop->iteration}}">
-        					<p class="mb-0 text-muted"><strong>{{$category->name}}</strong></p>
+        					<p class="mb-0"><strong><span class="text-muted mr-3">{{$loop->iteration}}</span>{{$category->name}}</strong></p>
         					<span><i class="fas fa-caret-down text-muted"></i></span>
         				</div>
 
         				<div id="collapse-{{$loop->iteration}}" class="collapse mb-2" aria-labelledby="heading-{{$loop->iteration}}" data-parent="#categories-list">
         					<div class="card-body">
         						<p class="text-muted lead">{{$category->subtitle}}</p>
-        						<p class="mb-2">{{$category->description}}</p>
-        						<p class="text-right"><a class="link-blue" href="{{route('discover.category', $category->slug)}}">@lang('Click here to learn more')</a></p>
+        						<p class="mb-2">{{$category->short_description}}</p>
+        						<p class="text-right"><a class="link-blue category-long-description" data-name="{{$category->name}}" data-description="{{$category->long_description}}" data-toggle="modal" data-target="#category-modal" href="">@lang('Click here to learn more')</a></p>
         					</div>
         				</div>
         			</div>

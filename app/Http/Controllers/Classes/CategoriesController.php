@@ -25,6 +25,12 @@ class CategoriesController extends Controller
         return view('admin/pages/categories/index');
     }
 
+
+    public function create()
+    {
+        return view('admin/pages/categories/create');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -37,10 +43,12 @@ class CategoriesController extends Controller
             'slug' => str_slug($request->name),
             'name' => $request->name,
             'subtitle' => $request->subtitle,
-            'description' => $request->description,
+            'short_description' => $request->short_description,
+            'long_description' => $request->long_description,
             'name_pt' => $request->name_pt ?? null,
             'subtitle_pt' => $request->subtitle_pt ?? null,
-            'description_pt' => $request->description_pt ?? null
+            'short_description_pt' => $request->short_description_pt ?? null,
+            'long_description_pt' => $request->long_description_pt ?? null
         ]);
 
         return back()->with('status', "The category {$category->name} has been successfully created.");
@@ -70,7 +78,7 @@ class CategoriesController extends Controller
      */
     public function edit(Category $category)
     {
-
+        return view('admin/pages/categories/edit', compact('category'));
     }
 
     /**

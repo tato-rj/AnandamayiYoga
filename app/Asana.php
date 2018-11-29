@@ -9,8 +9,6 @@ class Asana extends Anandamayi
 {
     use FindBySlug, Favoritable, InteractsWithCloud, Filterable;
 
-    protected $guarded = [];
-
     protected $with = ['benefits', 'steps'];
 
     protected static function boot()

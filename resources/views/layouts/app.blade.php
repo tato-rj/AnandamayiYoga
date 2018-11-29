@@ -54,6 +54,7 @@
 
     @include('layouts/partials/alerts')
     @include('components/snippets/spinners/full-screen')
+    @include('components.modals.category')
 
     @if(session()->has('confirm-email'))
     @include('components/modals/confirm-email')
@@ -201,7 +202,14 @@ $('#cookie-alert button').on('click', function() {
     }, 500);
 });
 </script>
-
+<script type="text/javascript">
+$('.category-long-description').on('click', function() {
+    let name = $(this).attr('data-name');
+    let description = $(this).attr('data-description');
+    $('#category-modal #modal-title strong').text(name);
+    $('#category-modal #description').html(description);
+});
+</script>
 @yield('scripts')
 
 </body>

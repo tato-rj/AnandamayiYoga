@@ -2,10 +2,12 @@
   id="{{$category->id}}"
   data-name="{{$category->name}}"
   data-subtitle="{{$category->subtitle}}"
-  data-description="{{$category->description}}"
+  data-short_description="{{$category->short_description}}"
+  data-long_description="{{$category->long_description}}"
   data-name_pt="{{$category->name_pt}}"
   data-subtitle_pt="{{$category->subtitle_pt}}"
-  data-description_pt="{{$category->description_pt}}"
+  data-short_description_pt="{{$category->short_description_pt}}"
+  data-long_description_pt="{{$category->long_description_pt}}"
   data-path="{{route('admin.categories.update', $category->id)}}">
 
   {{-- SORT HANDLE --}}
@@ -19,9 +21,7 @@
   </div>
   {{-- ACTION BUTTONS --}}
   <div class="text-right px-1 py-1">
-    <span class="badge cursor-pointer text-warning open-edit-modal"
-      data-toggle="modal"      
-      data-target="#edit-modal">Edit</span>
+    <span class="badge cursor-pointer text-warning open-edit-modal"><a href="{{route('admin.categories.edit', $category->slug)}}" class="link-none">Edit</a></span>
     
     <i class="fas text-danger fa-trash-alt mx-2 cursor-pointer delete" 
       data-path="/admin/categories/{{$category->id}}" 

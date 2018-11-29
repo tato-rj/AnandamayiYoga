@@ -4,10 +4,13 @@
             @if($program->isFavorited())
                 @include('components/icons/heart', ['position' => 'absolute-top-right'])
             @endif
+            @if($program->is_free)
+            @include('components/icons/free')
+            @endif
             <div>
 	            <h2 class="text-white"><strong>{{$program->name}}</strong></h2>
                 @if($program->teacher()->exists())
-                <p class="mb-1 clamp-1 text-white"><small>with <strong>{{$program->teacher->name}}</strong></small></p>
+                <p class="mb-1 clamp-1 text-white"><small>@lang('with') <strong>{{$program->teacher->name}}</strong></small></p>
                 @endif
 	            <p class="text-white m-0"><small>{{$program->lessons()->count()}} videos | {{secondsToTime($program->duration)}}</small></p>
             </div>

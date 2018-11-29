@@ -1,4 +1,4 @@
-<section class="row position-relative bg-full bg-light" style="margin-top: 7.5rem !important; margin-bottom: 10rem !important;">
+<section class="row position-relative bg-full bg-light" style="margin-top: 8.5rem !important; margin-bottom: 12rem !important;">
     <div class="container">
         <div class="row align-items-center py-3">
             <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-center">

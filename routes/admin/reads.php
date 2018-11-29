@@ -33,4 +33,22 @@ Route::prefix('/reads')->name('reads.')->group(function() {
         Route::delete('/{article}', 'Reads\ArticlesController@destroy')->name('destroy');
         
     });
+
+    Route::prefix('/books')->namespace('Reads')->name('books.')->group(function() {
+
+        Route::get('', 'BooksController@admin')->name('admin');
+
+        Route::get('create', 'BooksController@create')->name('create');
+
+        Route::get('{book}', 'BooksController@edit')->name('edit');
+
+        Route::patch('{book}', 'BooksController@update')->name('update');
+
+        Route::patch('/{book}/image', 'BooksController@updateImage')->name('image.update');
+
+        Route::post('', 'BooksController@store')->name('store');
+
+        Route::delete('{book}', 'BooksController@destroy')->name('destroy');
+
+    });
 });

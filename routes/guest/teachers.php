@@ -2,6 +2,6 @@
 
 Route::prefix('/teachers')->name('teachers.')->group(function() {
 
-	Route::get('/{teacher}', 'TeachersController@show')->name('show');
+	Route::get('/{teacher}', 'Admin\TeachersController@show')->name('show');
 
 });

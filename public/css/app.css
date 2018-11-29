@@ -16097,6 +16097,7 @@ label.error {
   display: -webkit-box !important;
   -webkit-line-clamp: 1 !important;
   -webkit-box-orient: vertical;
+  line-height: 1.4;
 }
 
 .clamp-2 {
@@ -16106,6 +16107,7 @@ label.error {
   display: -webkit-box !important;
   -webkit-line-clamp: 2 !important;
   -webkit-box-orient: vertical;
+  line-height: 1.4;
 }
 
 .absolute-center {
@@ -17115,6 +17117,14 @@ footer > div:last-of-type {
   height: 200px;
 }
 
+.h-card {
+  height: 300px;
+}
+
+.h-card-sm {
+  height: 220px;
+}
+
 .badge-beg {
   background: #edd678;
   color: #5a4b0c;
@@ -17341,28 +17351,20 @@ footer .fa-envelope:hover {
   position: absolute;
   bottom: 13px;
   left: 0;
-  -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
 }
 
 .books-display .back {
   width: 18em;
   margin-right: 71px;
   margin-bottom: 106px;
-  -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
 }
 
 #poses-container figure {
   width: 25%;
-}
-
-.h-card {
-  height: 300px;
-}
-
-.h-card-sm {
-  height: 200px;
 }
 
 .favorite-icon {

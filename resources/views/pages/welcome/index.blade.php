@@ -13,12 +13,13 @@
     @endif
 
     @include('pages/welcome/lead')
-    @include('pages/welcome/features')
+    @include('pages/welcome/presentation')
     @include('pages/welcome/teacher')
     
     @unless(auth()->check())
         @include('components/bars/gift')
-        {{-- @include('pages/welcome/presentation') --}}
+        @include('pages/welcome/programs')
+        @include('components/bars/books')
         @include('pages/welcome/levels')
     @endunless
 
@@ -37,8 +38,6 @@
     @else
         @include('pages/welcome/video')
     @endauth
-
-    @include('components/bars/devices')
     
     @include('components/bars/partners')
 

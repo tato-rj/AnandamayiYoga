@@ -10,7 +10,8 @@
             <p class="lead">{{$category->subtitle}}</p>
         </div>
         <div class="col-lg-8 col-md-7 col-sm-12 col-12">
-            <p>{{$category->description}}</p>
+            <p>{{$category->short_description}}</p>
+            <p class="text-right"><a class="link-blue category-long-description" data-name="{{$category->name}}" data-description="{{$category->long_description}}" data-toggle="modal" data-target="#category-modal" href="">@lang('Click here to learn more')</a></p>
         </div>
     </div>
 

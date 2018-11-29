@@ -22,6 +22,20 @@ trait Administrator
 		return $request;		
 	}
 
+	public function createNewBook()
+	{
+		Storage::fake('s3');
+		
+		$request = make('App\Book');
+
+		$request->image = UploadedFile::fake()->image('image.jpg');
+
+		$this->post(route('admin.reads.books.store'), $request->toArray())
+			 ->assertSessionHas('status');
+
+		return $request;
+	}
+
 	public function createNewLesson()
 	{
 		Storage::fake('s3');

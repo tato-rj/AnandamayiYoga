@@ -4,7 +4,11 @@ Route::prefix('/categories')->namespace('Classes')->name('categories.')->group(f
 
     Route::get('', 'CategoriesController@admin')->name('index');
 
+    Route::get('/create', 'CategoriesController@create')->name('create');
+
     Route::post('', 'CategoriesController@store')->name('store');
+
+    Route::get('/{category}', 'CategoriesController@edit')->name('edit');
 
     Route::patch('/{category}', 'CategoriesController@update')->name('update');
 

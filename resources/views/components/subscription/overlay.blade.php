@@ -9,6 +9,9 @@
 			<p class="lead px-5">@lang('Subscribe now to receive news and updates about our site.')</p>
 			<input type="email" name="subscription_email" placeholder="E-mail" class="mb-4 form-control rounded-0 d-block" required style="border: 0; border-bottom: 1px solid lightgrey; background: transparent;">
 			<button type="submit" class="btn-bold btn-block btn-red">@lang('Subscribe me')</button>
+			<div class="mt-4 text-muted">
+				<small>@lang('When you give us your contact info, you will receive our monthly newsletter and info about our programs and classes. You can opt out from out list at any time, by just clicking on the link located at the end of each email.')</small>
+			</div>
 		</form>
 	</div>
 </div>

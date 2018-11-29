@@ -44,6 +44,22 @@ trait Localizable
 		return $description;
 	}
 
+	public function getShortDescriptionAttribute($short_description)
+	{
+		if (app()->getLocale() == 'pt')
+			return $this->short_description_pt ?? $short_description;
+
+		return $short_description;
+	}
+
+	public function getLongDescriptionAttribute($long_description)
+	{
+		if (app()->getLocale() == 'pt')
+			return $this->long_description_pt ?? $long_description;
+
+		return $long_description;
+	}
+
 	public function getBiographyAttribute($biography)
 	{
 		if (app()->getLocale() == 'pt')

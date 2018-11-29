@@ -9,7 +9,6 @@ class Article extends Anandamayi
 {
 	use FindBySlug, InteractsWithCloud, Localizable;
 
-    protected $guarded = [];
     protected $casts = ['is_pinned' => 'boolean'];
 
     protected static function boot()

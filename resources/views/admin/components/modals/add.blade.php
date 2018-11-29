@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body p-4">
-        @if($title != 'Create a new Course')
+        @if(! in_array($title, ['Create a new Course', 'Create a new Book']))
         <div class="form-group">
           @include('admin.components.input-lang')
         </div>

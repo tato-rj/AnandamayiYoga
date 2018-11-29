@@ -19,6 +19,7 @@ abstract class AppTest extends TestCase
 
         $this->withSession(['gate' => 'authorized']);
 
+        create('App\Book', [], 4);
         create('App\Teacher', ['name' => 'Anandamayi']);
     }
     

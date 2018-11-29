@@ -22,3 +22,16 @@
 .invalid-feedback {
 	@extend .d-block;
 }
+
+.image-container {
+	.controls {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		background: rgba(255,255,255,0.4);
+		width: 100%;
+		margin: 0;
+		padding: .25em;
+	}
+}

@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\{Lesson, Level, Category, Schedule, AsanaType, AsanaSubType, RoutineQuestionaire, WallpaperCategory, Article, ArticleTopic, Teacher};
+use App\{Lesson, Program, Level, Category, Schedule, AsanaType, AsanaSubType, RoutineQuestionaire, WallpaperCategory, Article, ArticleTopic, Teacher, Book};
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,12 +25,16 @@ class AppServiceProvider extends ServiceProvider
             ]);
         });
 
+        \View::composer('pages/welcome/index', function($view) {
+            $freePrograms = Program::free(3);
+
+            $view->with(['freePrograms' => $freePrograms]);
+        });
+
         \View::composer('pages/reads/articles/sidebar', function($view) {
             $topics = ArticleTopic::has('articles')->orderBy('name')->get();
 
-            $view->with([
-                'topics' => $topics
-            ]);
+            $view->with(['topics' => $topics]);
         });
 
         \View::composer('layouts/app', function($view) {
@@ -61,6 +65,10 @@ class AppServiceProvider extends ServiceProvider
 
         \View::composer('components/swiper/free', function($view) {
             $view->with('freeClasses', Lesson::valid()->free(10));
+        });
+
+        \View::composer('components/bars/books', function($view) {
+            $view->with('sampleBooks', Book::inRandomOrder()->take(2)->get());
         });
 
         \View::composer('pages/user/dashboard/sections/recommended', function($view) {

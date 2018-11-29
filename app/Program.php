@@ -2,17 +2,17 @@
 
 namespace App;
 
-use App\Traits\{FindBySlug, Favoritable, InteractsWithCloud};
+use App\Traits\{FindBySlug, Favoritable, InteractsWithCloud, Localizable};
 use Illuminate\Support\Facades\Storage;
 
 class Program extends Anandamayi
 {
-    use FindBySlug, Favoritable, InteractsWithCloud;
+    use FindBySlug, Favoritable, InteractsWithCloud, Localizable;
     
     protected $guarded = [];
 
     protected $with = ['categories'];
-    
+    protected $appends = ['is_free'];
     protected $withCount = ['lessons'];
 
     protected static function boot()
@@ -107,5 +107,22 @@ class Program extends Anandamayi
         $userCompletedLessonsFromThisProgram = auth()->user()->completedLessons->where('program_id', $this->id);
 
         return $programLessons->diff($userCompletedLessonsFromThisProgram)->first();
+    }
+
+    public function getIsFreeAttribute()
+    {
+        return ! $this->lessons->pluck('is_free')->contains(false);
+    }
+
+    public function scopeFree($query, $count = null)
+    {
+        $programs = $query->inRandomOrder()->get();
+
+        $programs->each(function($program, $key) use ($programs) {
+            if (! $program->is_free)
+                $programs->forget($key);
+        });
+
+        return $programs->take($count);
     }
 }

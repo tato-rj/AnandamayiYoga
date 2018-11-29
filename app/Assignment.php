@@ -8,8 +8,6 @@ class Assignment extends Anandamayi
 {
     use Completable;
     
-    protected $guarded = [];
-
     public function chapter()
     {
     	return $this->belongsTo(Chapter::class);

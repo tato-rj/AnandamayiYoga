@@ -43,7 +43,7 @@ class AsanaTest extends AppTest
 	}
 
 	/** @test */
-	public function a_admin_can_edit_an_asana()
+	public function an_admin_can_edit_an_asana()
 	{
 		$this->adminSignIn();
 
@@ -61,7 +61,7 @@ class AsanaTest extends AppTest
 	}
 
 	/** @test */
-	public function a_admin_can_update_the_asana_types()
+	public function an_admin_can_update_the_asana_types()
 	{
 		$this->adminSignIn();
 
@@ -78,7 +78,7 @@ class AsanaTest extends AppTest
 	}
 
 	/** @test */
-	public function a_admin_can_update_the_asana_subtypes()
+	public function an_admin_can_update_the_asana_subtypes()
 	{
 		$this->adminSignIn();
 
@@ -95,7 +95,7 @@ class AsanaTest extends AppTest
 	}
 
 	/** @test */
-	public function a_admin_can_update_the_asana_benefits()
+	public function an_admin_can_update_the_asana_benefits()
 	{
 		$this->adminSignIn();
 
@@ -115,7 +115,7 @@ class AsanaTest extends AppTest
 	}
 
 	/** @test */
-	public function a_admin_can_update_the_asana_steps()
+	public function an_admin_can_update_the_asana_steps()
 	{
 		$this->adminSignIn();
 
@@ -135,7 +135,7 @@ class AsanaTest extends AppTest
 	}
 
 	/** @test */
-	public function a_admin_can_update_the_asana_levels()
+	public function an_admin_can_update_the_asana_levels()
 	{
 		$this->adminSignIn();
 
@@ -198,7 +198,7 @@ class AsanaTest extends AppTest
 	}
 
 	/** @test */
-	public function a_admin_can_remove_an_asana()
+	public function an_admin_can_remove_an_asana()
 	{
 		$this->adminSignIn();
 

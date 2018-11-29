@@ -6,6 +6,4 @@ Route::namespace('Guests')->prefix('/about')->name('about.')->group(function() {
 
     Route::get('/anandamayi', 'PagesController@anandamayi')->name('anandamayi');
 
-    Route::get('/eranthus-books', 'PagesController@eranthus')->name('eranthus-books');
-
 });

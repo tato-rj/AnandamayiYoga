@@ -16,7 +16,7 @@ class LessonsTableSeeder extends Seeder
         	'image_path' => 'app/demo/images/demo-1.jpg',
         	'video_path' => 'app/demo/videos/demo-lesson.mp4',
         	'duration' => mt_rand(300,800),
-        	'program_id' => 1,
+        	'program_id' => 4,
         	'order' => null,
         	'is_free' => true,
         	'teacher_id' => 1
@@ -52,7 +52,7 @@ class LessonsTableSeeder extends Seeder
         	'image_path' => 'app/demo/images/demo-3.jpg',
         	'video_path' => 'app/demo/videos/demo-lesson.mp4',
         	'duration' => mt_rand(300,800),
-        	'program_id' => 1,
+        	'program_id' => 4,
         	'order' => null,
         	'is_free' => true,
         	'teacher_id' => 1
@@ -70,7 +70,7 @@ class LessonsTableSeeder extends Seeder
         	'image_path' => 'app/demo/images/demo-4.jpg',
         	'video_path' => 'app/demo/videos/demo-lesson.mp4',
         	'duration' => mt_rand(300,800),
-        	'program_id' => 2,
+        	'program_id' => 1,
         	'order' => null,
         	'is_free' => false,
         	'teacher_id' => 1
@@ -88,7 +88,7 @@ class LessonsTableSeeder extends Seeder
         	'image_path' => 'app/demo/images/demo-5.jpg',
         	'video_path' => 'app/demo/videos/demo-lesson.mp4',
         	'duration' => mt_rand(300,800),
-        	'program_id' => null,
+        	'program_id' => 2,
         	'order' => null,
         	'is_free' => true,
         	'teacher_id' => 1
@@ -124,7 +124,7 @@ class LessonsTableSeeder extends Seeder
         	'image_path' => 'app/demo/images/demo-7.jpg',
         	'video_path' => 'app/demo/videos/demo-lesson.mp4',
         	'duration' => mt_rand(300,800),
-        	'program_id' => null,
+        	'program_id' => 5,
         	'order' => null,
         	'is_free' => true,
         	'teacher_id' => 1
@@ -142,7 +142,7 @@ class LessonsTableSeeder extends Seeder
         	'image_path' => 'app/demo/images/demo-8.jpg',
         	'video_path' => 'app/demo/videos/demo-lesson.mp4',
         	'duration' => mt_rand(300,800),
-        	'program_id' => 2,
+        	'program_id' => 5,
         	'order' => null,
         	'is_free' => true,
         	'teacher_id' => 1
@@ -160,7 +160,7 @@ class LessonsTableSeeder extends Seeder
         	'image_path' => 'app/demo/images/demo-9.jpg',
         	'video_path' => 'app/demo/videos/demo-lesson.mp4',
         	'duration' => mt_rand(300,800),
-        	'program_id' => 2,
+        	'program_id' => 1,
         	'order' => null,
         	'is_free' => false,
         	'teacher_id' => 1

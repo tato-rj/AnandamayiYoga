@@ -6,13 +6,13 @@
 
 				@include('components/buttons/return', [
 					'path' => route('discover.programs.index'),
-					'label' => 'back to our programs',
+					'label' => __('back to our programs'),
 					'style' => 'link-none'])
 
 				<h1 class="mb-1"><strong>{{$program->name}}</strong></h1>
 		        @if($program->teacher()->exists())
 		        <div>
-		            <p><small>with <a href="{{route('teachers.show', $program->teacher->slug)}}" class="link-none"><strong>{{$program->teacher->fullName}}</strong></a></small></p>
+		            <p><small>@lang('with') <a href="{{route('teachers.show', $program->teacher->slug)}}" class="link-none"><strong>{{$program->teacher->name}}</strong></a></small></p>
 		        </div>
 		        @endif
 					<div>
@@ -20,7 +20,7 @@
 						<hr class="bg-light my-4">
 						<div class="d-flex justify-content-between">
 							<p>
-								<strong>Share this program on</strong>
+								<strong>@lang('Share this program on')</strong>
 								<a class="link-none" href="#"><i class="t-2 ml-2 mr-1 fab fa-lg fa-facebook-f"></i></a>
 								<a class="link-none" href="#"><i class="t-2 ml-2 mr-1 fab fa-lg fa-twitter"></i></a>
 								<a class="link-none" href="#"><i class="t-2 ml-2 mr-1 fab fa-lg fa-instagram"></i></a>
@@ -32,7 +32,7 @@
 					            	'color' => 'white',
 					            	'favorited_id' => $program->id,
 					            	'favorited_type' => get_class($program),
-					            	'label' => $program->isFavorited() ? 'Favorited!' : 'Add to favorites'])
+					            	'label' => $program->isFavorited() ? __('Favorited!') : __('Add to favorites')])
 
 							</div>
 							@endauth				
@@ -45,7 +45,7 @@
 							</div>
 							<div class="d-flex justify-content-center flex-column align-items-center mx-3">
 								<i class="mb-2 fas fa-2x mr-1 fa-video"></i>
-								<p class="lead m-0">{{$program->lessons_count}} lessons</p>
+								<p class="lead m-0">{{$program->lessons_count}} @lang('lessons')</p>
 							</div>
 							<div class="d-flex justify-content-center flex-column align-items-center">
 								@auth
@@ -57,7 +57,7 @@
 					<div class="mb-2">
 
 	                @component('components/buttons/simple', [
-	                    'label' => 'MY DASHBOARD',
+	                    'label' => __('MY DASHBOARD'),
 	                    'color' => 'red',
 	                    'weight' => 'bold',
 	                    'extra' => 'mobile-block'])
@@ -68,7 +68,7 @@
 							{{$program->path()}}/{{$list[0]}}
 							@endslot
 							@slot('label')
-							<i class="fas mr-3 fa-play"></i>PROGRAM COMPLETED!
+							<i class="fas mr-3 fa-play"></i>@lang('PROGRAM COMPLETED!')
 							@endslot
 						
 						@elseif(!$program->isCompleted() && $program->progress() > 0)
@@ -77,7 +77,7 @@
 							{{$program->lessonPath($program->lessonLeftOff())}}
 							@endslot
 							@slot('label')
-							<i class="fas mr-3 fa-play"></i>CONTINUE PROGRAM
+							<i class="fas mr-3 fa-play"></i>@lang('CONTINUE PROGRAM')
 							@endslot
 						
 						@else
@@ -87,14 +87,14 @@
 								{{$program->path()}}/{{$list[0]}}
 								@endslot
 								@slot('label')
-								<i class="fas mr-3 fa-play"></i>START PROGRAM
+								<i class="fas mr-3 fa-play"></i>@lang('START PROGRAM')
 								@endslot
 							@else
 								@slot('path')
 								{{$program->path()}}/{{$list[0]}}
 								@endslot
 								@slot('label')
-								LOGIN TO START
+								@lang('LOGIN TO START')
 								@endslot
 								@slot('attr')
 								data-toggle="modal" data-target="#login"

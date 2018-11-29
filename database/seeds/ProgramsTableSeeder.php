@@ -32,5 +32,44 @@ class ProgramsTableSeeder extends Seeder
         ]);
 
         \DB::insert('insert into category_program (program_id, category_id) values (2, 1), (2, 5)');
+
+        Program::create([
+            'slug' => str_slug('Meditation for a Better Night of Sleep'), 
+            'name' => 'Meditation for a Better Night of Sleep', 
+            'name_pt' => 'Meditação para uma Melhor Noite de Sono',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            'description_pt' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            'image_path' => 'app/demo/covers/demo-3.jpg',
+            'video_path' => 'app/demo/videos/demo-lesson.mp4',
+            'teacher_id' => 1
+        ]);
+
+        \DB::insert('insert into category_program (program_id, category_id) values (3, 2), (3, 9), (3, 4)');
+
+        Program::create([
+            'slug' => str_slug('Introduction to the History of Yoga'), 
+            'name' => 'Introduction to the History of Yoga', 
+            'name_pt' => 'Introdução à História do Yoga',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            'description_pt' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            'image_path' => 'app/demo/covers/demo-4.jpg',
+            'video_path' => 'app/demo/videos/demo-lesson.mp4',
+            'teacher_id' => 1
+        ]);
+
+        \DB::insert('insert into category_program (program_id, category_id) values (4, 10), (4, 5), (4, 3), (4, 11)');
+
+        Program::create([
+            'slug' => str_slug('How is Your Back Doing?'), 
+            'name' => 'How is Your Back Doing?', 
+            'name_pt' => 'Como Está a Sua Coluna?',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            'description_pt' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            'image_path' => 'app/demo/covers/demo-5.jpg',
+            'video_path' => 'app/demo/videos/demo-lesson.mp4',
+            'teacher_id' => 1
+        ]);
+
+        \DB::insert('insert into category_program (program_id, category_id) values (5, 1), (5, 5), (5, 2)');
     }
 }

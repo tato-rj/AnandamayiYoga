@@ -12562,6 +12562,7 @@ label.error {
   display: -webkit-box !important;
   -webkit-line-clamp: 1 !important;
   -webkit-box-orient: vertical;
+  line-height: 1.4;
 }
 
 .clamp-2 {
@@ -12571,6 +12572,7 @@ label.error {
   display: -webkit-box !important;
   -webkit-line-clamp: 2 !important;
   -webkit-box-orient: vertical;
+  line-height: 1.4;
 }
 
 .absolute-center {
@@ -13326,28 +13328,20 @@ label.error:before {
   position: absolute;
   bottom: 13px;
   left: 0;
-  -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
 }
 
 .books-display .back {
   width: 18em;
   margin-right: 71px;
   margin-bottom: 106px;
-  -webkit-box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
 }
 
 #poses-container figure {
   width: 25%;
-}
-
-.h-card {
-  height: 300px;
-}
-
-.h-card-sm {
-  height: 200px;
 }
 
 .favorite-icon {
@@ -13899,5 +13893,17 @@ trix-toolbar button[data-trix-action="increaseNestingLevel"] {
 
 .trix-content h1 {
   font-size: 1.25em;
+}
+
+.image-container .controls {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.4);
+  width: 100%;
+  margin: 0;
+  padding: .25em;
 }
 

@@ -8,12 +8,9 @@
 
 <div class="row mb-4">
 	<div class="col-12">
-		<button class="btn-bold btn-red btn-xs" 
-      type="button" 
-      data-toggle="modal" 
-      data-target="#add-modal">
+		<a href="{{route('admin.categories.create')}}" class="btn-bold btn-red btn-xs">
       <i class="fas fa-plus mr-2"></i>Create a new category
-    </button>
+    </a>
 	</div>
 </div>
 
@@ -24,10 +21,6 @@
     @endforeach
   </div>
 </div>
-
-@include('admin/pages/categories/add')
-
-@include('admin/pages/categories/edit')
 
 @component('admin/components/modals/delete', [
   'title' => 'Delete category'

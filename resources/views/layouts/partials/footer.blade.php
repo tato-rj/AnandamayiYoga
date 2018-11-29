@@ -41,7 +41,7 @@
 					</li>
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('support.membership')}}">
-							<small>@lang('Eranthus books')</small>
+							<small>@lang('Our teachers')</small>
 						</a>
 					</li>
 				</ul>
@@ -74,22 +74,22 @@
 			</div>
 
 			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
-				<p class="m-0 text-white text-uppercase"><small><strong>@lang('Reads')</strong></small></p>
+				<p class="m-0 text-white text-uppercase"><small><strong>@lang('About yoga')</strong></small></p>
 				<ul class="p-0 list-style-none">
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('support.membership')}}">
-							<small>@lang('Learning about Yoga')</small>
+							<small>@lang('What is yoga?')</small>
+						</a>
+					</li>
+					<li>
+						<a class="text-white" style="opacity: .5" href="{{route('reads.articles.index', 'asana')}}">
+							<small>@lang('Articles archive')</small>
 						</a>
 					</li>
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('reads.books')}}">
 							<small>@lang('Books')</small>
 						</a>								
-					</li>
-					<li>
-						<a class="text-white" style="opacity: .5" href="{{route('reads.articles.index', 'asana')}}">
-							<small>@lang('Articles')</small>
-						</a>
 					</li>
 				</ul>
 			</div>
@@ -156,7 +156,7 @@
 					</li>
 					<li>
 						<a class="text-white" style="opacity: .5" href="{{route('support.contact.show')}}">
-							<small>@lang('Contact us')</small>
+							<small>@lang('Contact')</small>
 						</a>
 					</li>
 				</ul>

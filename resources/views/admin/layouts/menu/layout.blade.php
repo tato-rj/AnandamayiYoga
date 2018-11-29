@@ -22,7 +22,8 @@
                 'icon' => 'fas fa-book', 'label' => 'Reads',
                 'urls' => [
                     'admin/reads/topics' => 'Topics',
-                    'admin/reads/articles' => 'Articles']])
+                    'admin/reads/articles' => 'Articles',
+                    'admin/reads/books' => 'Books']])
 
             <li class="navigation__sub">
                 <a href="" class="d-flex align-items-center"><i class="fas fa-images mr-2"></i>Wallpapers

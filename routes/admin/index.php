@@ -4,6 +4,6 @@ Route::middleware(['auth:admin', 'en-locale'])->prefix('/admin')->name('admin.')
 
     Route::get('', 'Admin\AdminController@index')->name('dashboard');
 
-    getRoutes(['admin.articles|asanas|categories|classes|courses|email|feedbacks|notifications|programs|routines|statistics|subscriptions|teachers|users|wallpapers']);
+    getRoutes(['admin.reads|asanas|categories|classes|courses|email|feedbacks|notifications|programs|routines|statistics|subscriptions|teachers|users|wallpapers']);
 
 });

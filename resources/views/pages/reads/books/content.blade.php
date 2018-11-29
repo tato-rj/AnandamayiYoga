@@ -5,66 +5,9 @@
     <div class="row">
     	
     	<div class="col-lg-10 col-md-12 col-sm-12 col-12 mx-auto">
-    		{{-- Livros --}}
-            @component('pages/reads/books/show')
-                @slot('book')saudacao_do_sol
-                @endslot
-                @slot('page')page
-                @endslot
-                @slot('paragraph_1')
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.</p>
-                @endslot
-                @slot('paragraph_2')
-                <p>Aenean rhoncus a arcu id mollis. Proin vitae congue neque, vel porttitor est. Integer vitae turpis pharetra, luctus turpis ut, mollis diam. Fusce ultrices mi nunc, vitae dignissim orci imperdiet quis.</p>
-                @endslot
-                @slot('paragraph_3')
-                <p>"Sed id neque arcu. Pellentesque dictum vitae purus non consequat. In at dictum augue. Vestibulum sed enim sem. Aenean eu dui vulputate, laoreet diam quis, fermentum velit. Aenean at mauris ultrices, posuere enim quis, congue turpis. Quisque iaculis tempor turpis convallis ultricies. Donec quis egestas nulla. Nulla vitae egestas quam. Praesent id est augue. Duis sodales laoreet augue ac interdum. Phasellus scelerisque orci metus, hendrerit sagittis orci feugiat vel."
-                <span class="blockquote-footer text-right">Quote source here</span></p>
-                @endslot
-            @endcomponent
-
-            @component('pages/reads/books/show')
-                @slot('book')saudacao_da_lua
-                @endslot
-                @slot('page')page
-                @endslot
-                @slot('paragraph_1')
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.</p>
-                @endslot
-                @slot('paragraph_2')
-                <p>Aenean rhoncus a arcu id mollis. Proin vitae congue neque, vel porttitor est. Integer vitae turpis pharetra, luctus turpis ut, mollis diam. Fusce ultrices mi nunc, vitae dignissim orci imperdiet quis.</p>
-                @endslot
-                @slot('paragraph_3')
-                <p>"Sed id neque arcu. Pellentesque dictum vitae purus non consequat. In at dictum augue. Vestibulum sed enim sem. Aenean eu dui vulputate, laoreet diam quis, fermentum velit. Aenean at mauris ultrices, posuere enim quis, congue turpis. Quisque iaculis tempor turpis convallis ultricies. Donec quis egestas nulla. Nulla vitae egestas quam. Praesent id est augue. Duis sodales laoreet augue ac interdum. Phasellus scelerisque orci metus, hendrerit sagittis orci feugiat vel."
-                <span class="blockquote-footer text-right">Quote source here</span></p>
-                @endslot
-            @endcomponent
-
-            @component('pages/reads/books/show')
-                @slot('book')asanas
-                @endslot
-                @slot('page')page
-                @endslot
-                @slot('paragraph_1')
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.</p>
-                @endslot
-                @slot('paragraph_2')
-                <p>Aenean rhoncus a arcu id mollis. Proin vitae congue neque, vel porttitor est. Integer vitae turpis pharetra, luctus turpis ut, mollis diam. Fusce ultrices mi nunc, vitae dignissim orci imperdiet quis.</p>
-                @endslot
-                @slot('paragraph_3')
-                <p>"Sed id neque arcu. Pellentesque dictum vitae purus non consequat. In at dictum augue. Vestibulum sed enim sem. Aenean eu dui vulputate, laoreet diam quis, fermentum velit. Aenean at mauris ultrices, posuere enim quis, congue turpis. Quisque iaculis tempor turpis convallis ultricies. Donec quis egestas nulla. Nulla vitae egestas quam. Praesent id est augue. Duis sodales laoreet augue ac interdum. Phasellus scelerisque orci metus, hendrerit sagittis orci feugiat vel."
-                <span class="blockquote-footer text-right">Quote source here</span></p>
-                @endslot
-            @endcomponent
+            @foreach($books as $book)
+            @include('pages.reads.books.show')
+            @endforeach
     	</div>
     </div>
 </section>

@@ -8,7 +8,6 @@ class AsanaSubType extends Anandamayi
 {
 	use FindBySlug, Localizable;
 
-	protected $guarded =[];
 	protected $withCount = ['asanas'];
 
     protected static function boot()

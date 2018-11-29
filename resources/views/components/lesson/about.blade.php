@@ -2,7 +2,7 @@
     <div>
         @if(isset($program))
             <h4 class="mb-0"><a href="{{$program->path()}}" class="link-default">{{$program->name}}</a></h4>
-            <h4 class="text-muted mb-3"><strong>Lesson {{$currentIndex}}</strong></h4>
+            <h4 class="text-muted mb-3"><strong>@lang('Lesson') {{$currentIndex}}</strong></h4>
         @endif
 
         <div class="d-flex align-items-center flex-wrap">
@@ -15,7 +15,7 @@
         </div>
         @if($mainLesson->teacher()->exists())
         <div>
-            <p><small>with <a href="{{route('teachers.show', $mainLesson->teacher->slug)}}" class="link-none"><strong>{{$mainLesson->teacher->name}}</strong></a></small></p>
+            <p><small>@lang('with') <a href="{{route('teachers.show', $mainLesson->teacher->slug)}}" class="link-none"><strong>{{$mainLesson->teacher->name}}</strong></a></small></p>
         </div>
         @endif
         <div class="text-muted d-flex align-items-center mb-2">
@@ -35,14 +35,14 @@
             'icon' => $mainLesson->isFavorited() ? 'fas' : 'far',
             'favorited_id' => $mainLesson->id,
             'favorited_type' => get_class($mainLesson),
-            'label' => $mainLesson->isFavorited() ? 'Favorited!' : 'Add to Favorites'])
+            'label' => $mainLesson->isFavorited() ? __('Favorited!') : __('Add to Favorites')])
 
     </div>
     @endauth
 </div>
 @if(auth()->check() && auth()->user()->completedLessons->contains($mainLesson))
 <div class="mx-2">
-    <p class="text-success">You last viewed this lesson <strong>{{auth()->user()->lastTimeCompleted($mainLesson)->diffForHumans()}}</strong></p>
+    <p class="text-success">@lang('You last viewed this lesson') <strong>{{auth()->user()->lastTimeCompleted($mainLesson)->diffForHumans()}}</strong></p>
 </div>
 @endif
 <div class="mx-1">

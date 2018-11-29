@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             CoursesTableSeeder::class,
             WallpapersTableSeeder::class,
             UsersTableSeeder::class,
+            BooksTableSeeder::class,
         ]);
     }
 }

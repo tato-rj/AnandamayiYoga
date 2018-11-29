@@ -26,7 +26,8 @@ class CreateCategoryForm extends FormRequest
         return [
             'name' => 'required|unique:categories',
             'subtitle' => 'required',
-            'description' => 'required'
+            'short_description' => 'required',
+            'long_description' => 'required'
         ];
     }
 }

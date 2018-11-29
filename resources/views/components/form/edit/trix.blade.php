@@ -1,6 +1,6 @@
 <div 
 	class="form-group edit-control {{$lang ?? null}}-field" 
-	style="display: {{$lang == 'pt' ? 'none' : null}}" 
+	style="display: {{! empty($lang) && $lang == 'pt' ? 'none' : null}}" 
 	id="{{$id ?? null}}" 
 	name="{{$name}}">
 
