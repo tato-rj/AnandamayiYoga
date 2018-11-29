@@ -7,12 +7,24 @@
     
     @include('components/bars/preview', ['model' => $program])
 
+    @if($program->is_free || auth()->check())
     @include('pages/program/list')
 
 	@include('components/feedback/stars', [
 		'model' => $program,
 		'name' => 'program'])
-
+	@else
+	<section id="scroll-mark" class="container-fluid pb-5 mt-4">
+		<div class="row">
+			<div class="col-lg-8 col-md-10 col-sm-12 col-12 mx-auto">
+		    	@include('components.alerts.blocked', [
+		    		'show' => true,
+		    		'title' => __('Sorry, must be logged in to view the contents of this program.'),
+		    		'description' => __('If you join now we\'ll give you 15 days to try out the website for free. You will be able to view our lessons, follow our programs, read our articles and much more!')])
+			</div>
+		</div>
+	</section>
+	@endif
 </div>
 @endsection
 
