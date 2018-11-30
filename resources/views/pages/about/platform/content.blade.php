@@ -1,26 +1,26 @@
 <section id="scroll-mark" class="container py-4">
 
-    @title(['title' => 'About Anandamayi Yoga'])
+    @title(['title' => __('About Anandamayi Yoga')])
 
     <div class="row">
 
-        <div class="col-lg-8 col-md-10 col-sm-12 col-12 mx-auto">
+        <div class="col-lg-8 col-md-10 col-sm-12 col-12 mx-auto mb-4">
             <p class="lead">@lang('AnandamayiYoga is an online platform for everyone to have a Yoga practice at home. Our platform is a journey to the spiritual dimension of Yoga with a diversity of classes, an asana library and articles covering a vast and varied range of subjects.')</p>
         </div>
 
-        <div class="col-lg-8 col-md-10 col-sm-12 col-12 mx-auto mt-4">
-        	<article>
+        <div class="col-lg-8 col-md-10 col-sm-12 col-12 mx-auto">
+        	<article class="mb-5">
 	        	<h4 class="text-red mb-4">@lang('What we do')</h4>
 	        	<p>@lang('We provide an online resource of Yoga for teachers, long-term practitioners and people who are new to Yoga. Users can explore our platform using filters for style, level, and duration. Our members can customize their homepage creating their playlists and tracking their progress.')</p>
 	        	<p>@lang('We also offer a customized service, where we create a Yoga practice for your personal needs. We are continually expanding our platform with new content to attend your needs. We welcome any suggestions or comments to improve your experience with us.')</p>
         	</article>
-        	<article class="mt-5">
+        	<article class="mb-5">
 	        	<h4 class="text-red mb-4">@lang('Our vision')</h4>
 
 	        	<p>@lang('We believe that having a true spirit of devotion is what will make Yoga transform your life. Devotion can take us beyond technique, opening our hearts and our intuitive perception to understand Yoga on a deeper level.')</p>
 	        	<p>@lang('Whether in stillness or motion, meditation is a practice that aims to purify and transform the mind, invoking a shift in our consciousness to a higher level. All our classes are focused on helping you to reach a meditative state in your practice and build healthy habits that will make you recognize and develop your potentialities.')</p>
         	</article>
-        	<article class="my-5">
+        	<article class="mb-5">
 	        	<h4 class="text-red mb-4">@lang('Our classes')</h4>
 	        	<p>@lang('There are many styles of Yoga, and they all descend from the classical Hatha Yoga. Some focus on the meditation aspect of Yoga, some on the relaxation of the body and mind, and some on the physical aspect. Here is a list of the classes we offer so you can choose the ones that better suits you.')</p>
 

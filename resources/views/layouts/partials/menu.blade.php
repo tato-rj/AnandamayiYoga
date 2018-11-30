@@ -64,12 +64,9 @@
         <div class="shadow dropdown-menu  animated-fast fadeInUp dropdown-menu-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{{route('about.our-platform')}}">Anandamayi Yoga</a>
           <a class="dropdown-item" href="{{route('about.anandamayi')}}">Anandamayi</a>
-          <a class="dropdown-item" href="{{route('about.anandamayi')}}">@lang('Our teachers')</a>
+          <a class="dropdown-item" href="{{route('teachers.index')}}">@lang('Our teachers')</a>
         </div>
       </li>
-{{--       <li class="nav-item">
-        <a class="nav-link" href="{{route('support.index')}}">@lang('Help')</a>
-      </li> --}}
 
       <li class="nav-item">
         <a class="nav-link" href="{{route('support.contact.show')}}">@lang('Contact')</a>

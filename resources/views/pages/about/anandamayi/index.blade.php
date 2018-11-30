@@ -5,7 +5,7 @@
 
     @component('components/sections/lead', ['image' => 'anandamayi'])
 		@slot('extra')
-		<img id="scroll-mark" src="{{cloud('app/images/alice/lead.jpg')}}" class="rounded-circle mb-2 mx-auto d-block lead-profile-image">
+		<img id="scroll-mark" src="{{cloud(anandamayi()->image_path)}}" class="rounded-circle mb-2 mx-auto d-block lead-profile-image">
 		@endslot
 	@endcomponent
 	
@@ -25,12 +25,7 @@
 			</div>
 		</div>
 	</div>
-	
-	@include('components/bars/join', [
-		'image' => 'mountain',
-		'overlay' => 'blue',
-		'title' => 'JOIN US TODAY'])
-
+	    
     @include('components/bars/books')
     
     @include('components/bars/testimonials')

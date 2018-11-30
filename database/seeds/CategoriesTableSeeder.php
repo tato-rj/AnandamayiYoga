@@ -13,7 +13,7 @@ class CategoriesTableSeeder extends Seeder
         	'name_pt' => 'Hatha Yoga',
         	'subtitle' => 'A slowly-paced style that balances and heals the body and mind',
         	'subtitle_pt' => 'Um estilo com ritmo lento que equilibra e cura o corpo e a mente',
-        	'short_description' => 'Hatha Yoga is often called Traditional or Classical Hatha Yoga. It focuses on the purification of the body and mind aiming for the spiritual development of the yogi.  A typical Hatha Yoga class is usually slowly-pace and brings the basic asanas (yoga postures) along with pranayamas (breathing exercises).',
+        	'short_description' => 'Hatha Yoga is often called Traditional or Classical Hatha Yoga. It focuses on the purification of the body and mind aiming for the spiritual development of the yogi. A typical Hatha Yoga class is usually slowly-pace and brings the basic asanas (yoga postures) along with pranayamas (breathing exercises).',
         	'short_description_pt' => 'O Hatha Yoga é frequentemente chamado de Hatha Yoga Tradicional ou Clássico. Centra-se na purificação do corpo e da mente visando o desenvolvimento espiritual do praticante.',
             'long_description' => '<div>Hatha Yoga is often called Traditional or Classical Hatha Yoga. It focuses on the purification of the body and mind aiming for the spiritual development of the yogi. A typical Hatha Yoga class is usually slowly-pace and brings the basic asanas (yoga postures) along with pranayamas (breathing exercises).<br><br>Hatha is a Sanskrit word that can be broken down into two smaller words: ha, meaning “sun,” and tha, meaning “moon.” The word Hatha also means “willful” or "forceful” and thus refers to a system of physical techniques to balances the flow of energies of the body, leading to physical health, mental stability, and spiritual development. In Yoga philosophy, Hatha yoga was originally indicated as a preparation for Raja-Yoga. Hatha Yoga is the first part of Raja Yoga because it prepares the body and mind for the higher conscious states.<br><br>Hatha yoga uses prana as a means to reach higher states of consciousness and realize the Self. It gives us a way to redirect the vital life force (prana) from the lower to the higher centers. The practices in Hatha Yoga which consist of the asanas (physical postures), pranayama (breathing exercises), mudras, bandhas (the "body locks") and shatkarmas (cleansing practices), balance the energies in the body, healing the body and mind.</div>',
         	'order' => 0
@@ -137,6 +137,19 @@ class CategoriesTableSeeder extends Seeder
             'short_description_pt' => 'Você já se perguntou: quem sou eu? Por que estou aqui? Para onde eu vou? Responder a perguntas como essas  parece estar além do nosso alcance. A filosofia do Yoga oferece uma nova perspectiva sobre você e o mundo ao seu redor, te levando além do aspecto físico do Yoga e proporcionando uma compreensão mais profunda do aspecto espiritual da prática. Aprender a integrar a filosofia à prática o ajudará a desenvolver a paz interior e a conectar a mente, o corpo e o espírito para descobrir sua verdadeira natureza, que é divina.',
             'long_description' => '<div>Have you ever asked: Who am I? Why am I here? Where am I going to? Answering questions like that seem to lie just beyond our reach. Yoga philosophy offers a new perspective on yourself and the world around you, taking you beyond the physical aspect of Yoga and providing a deeper understanding of the spiritual aspect of the practice. Learning to integrate philosophy with your practice will help you develop inner peace and connect the mind, body, and spirit to realize your true nature.</div>',
             'order' => 10
+        ]);
+
+      
+        Category::create([
+            'slug' => str_slug('Functional Yoga'),
+            'name' => 'Functional Yoga',
+            'name_pt' => 'Yoga Funcional',
+            'subtitle' => 'A journey to the spiritual dimension of Yoga',
+            'subtitle_pt' => 'Uma jornada para a dimensão espiritual do Yoga',
+            'short_description' => 'Have you ever asked: Who am I? Why am I here? Where am I going to? Answering questions like that seem to lie just beyond our reach. Yoga philosophy offers a new perspective on yourself and the world around you, taking you beyond the physical aspect of Yoga and providing a deeper understanding of the spiritual aspect of the practice. Learning to integrate philosophy with your practice will help you develop inner peace and connect the mind, body, and spirit to realize your true nature.',
+            'short_description_pt' => 'Você já se perguntou: quem sou eu? Por que estou aqui? Para onde eu vou? Responder a perguntas como essas  parece estar além do nosso alcance. A filosofia do Yoga oferece uma nova perspectiva sobre você e o mundo ao seu redor, te levando além do aspecto físico do Yoga e proporcionando uma compreensão mais profunda do aspecto espiritual da prática. Aprender a integrar a filosofia à prática o ajudará a desenvolver a paz interior e a conectar a mente, o corpo e o espírito para descobrir sua verdadeira natureza, que é divina.',
+            'long_description' => '<div>Have you ever asked: Who am I? Why am I here? Where am I going to? Answering questions like that seem to lie just beyond our reach. Yoga philosophy offers a new perspective on yourself and the world around you, taking you beyond the physical aspect of Yoga and providing a deeper understanding of the spiritual aspect of the practice. Learning to integrate philosophy with your practice will help you develop inner peace and connect the mind, body, and spirit to realize your true nature.</div>',
+            'order' => 11
         ]);
     }
 }

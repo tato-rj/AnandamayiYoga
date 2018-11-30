@@ -20,7 +20,9 @@ class PagesController extends Controller
 
     public function anandamayi()
     {
-    	return view('pages/about/anandamayi/index');
+        $teacher = anandamayi();
+
+    	return view('pages/about/anandamayi/index', compact('teacher'));
     }
 
     public function eranthus()

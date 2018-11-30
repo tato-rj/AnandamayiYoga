@@ -9,10 +9,8 @@
 
             </div>
             <div class="col-lg-6 text-right pt-5 pb-4 px-4" id="scroll-mark">
-                <h3 class="">Hello, my name is <strong>{{$teacher->name}}</strong>!</h3>
-                <p class="lead">My classes at AnandamayiYoga are related to
-                	{{listToSentence($teacher->categories()->pluck('name'))}}
-                     Have questions? <a href="{{route('support.contact.show')}}" class="link-default">We're here</a>.
+                <h3 class="">@lang('Hello, my name is') <strong>{{$teacher->name}}</strong>!</h3>
+                <p class="lead m-0">@lang('Here you\'ll find information about me and all my classes and programs.') @lang('Have questions?') <a href="{{route('support.contact.show')}}" class="link-default">@lang('We\'re here')</a>.
                 </p>
             </div>
         </div>

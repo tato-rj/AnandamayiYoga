@@ -91,7 +91,7 @@ class LessonsTableSeeder extends Seeder
         	'program_id' => 2,
         	'order' => null,
         	'is_free' => true,
-        	'teacher_id' => 1
+        	'teacher_id' => 2
         ]);
 
         \DB::insert('insert into lesson_level (lesson_id, level_id) values (5, 1), (5, 2), (5, 3)');
@@ -163,7 +163,7 @@ class LessonsTableSeeder extends Seeder
         	'program_id' => 1,
         	'order' => null,
         	'is_free' => false,
-        	'teacher_id' => 1
+        	'teacher_id' => 2
         ]);
 
         \DB::insert('insert into lesson_level (lesson_id, level_id) values (9, 1)');

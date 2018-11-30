@@ -19,7 +19,7 @@
             </div>
             <div class="col-lg-6 text-right pt-5 pb-4 px-4" id="scroll-mark">
                 <h3 class=""><strong>@lang('Hi') {{auth()->user()->first_name}}!</strong></h3>
-                <p class="lead">@lang('Welcome! This is where you will find your courses, favorite classes, programs and more. Have questions?') <a href="{{route('support.contact.show')}}" class="link-default">@lang('We\'re here')</a>.</p>      
+                <p class="lead">@lang('Welcome! This is where you will find your courses, favorite classes, programs and more.') @lang('Have questions?') <a href="{{route('support.contact.show')}}" class="link-default">@lang('We\'re here')</a>.</p>      
             </div>
         </div>
     </div>

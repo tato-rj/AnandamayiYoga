@@ -16,7 +16,9 @@ class TeachersController extends Controller
      */
     public function index()
     {
-        //
+        $teachers = Teacher::all();
+
+        return view('pages/about/teachers/index', compact('teachers'));
     }
 
     /**

@@ -57,3 +57,9 @@ function priceToCurrency($currency, $price)
 
     return "{$symbol}".number_format(($price /100), 2, '.', ' ');
 }
+
+function randomColor()
+{
+    $colors = ['#f6993f', '#38c172', '#4dc0b5', '#3490dc', '#6574cd', '#9561e2', '#f66d9b'];
+    return $colors[array_rand($colors)];   
+}

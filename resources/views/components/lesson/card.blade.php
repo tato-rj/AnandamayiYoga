@@ -16,7 +16,7 @@
     			<div>
     				<h5 class="m-0 clamp-2"><strong>{{$lesson->name}}</strong></h5>
                     @if($lesson->teacher()->exists())
-                    <p class="m-0 clamp-1 text-muted"><small>with <strong>{{$lesson->teacher->name}}</strong></small></p>
+                    <p class="m-0 clamp-1 text-muted"><small>@lang('with') <strong>{{$lesson->teacher->name}}</strong></small></p>
                     @endif
     				             
     			</div>

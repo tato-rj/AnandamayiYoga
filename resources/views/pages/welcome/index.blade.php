@@ -122,6 +122,7 @@
     @include('pages/welcome/lead')
     @include('pages/welcome/presentation')
     @include('pages/welcome/teacher')
+    @include('components.bars.teachers.renato')
     
     @unless(auth()->check())
         @include('components/bars/gift')
