@@ -15,5 +15,5 @@
 
 <div class="inner-addon left-addon mt-2">
   <i class="fas fa-tag"></i>
-  <input type="text" name="coupon" placeholder="Have a coupon code?" class="form-control border-top-0 border-right-0 border-left-0 border-bottom rounded-0">
+  <input type="text" name="coupon" placeholder="@lang('Have a coupon code?')" class="form-control border-top-0 border-right-0 border-left-0 border-bottom rounded-0">
 </div>

@@ -2,7 +2,7 @@
     
     @include('components/buttons/return', [
         'path' => route('user.home'),
-        'label' => 'return to my dashboard'])
+        'label' => __('return to my dashboard')])
 
     <div class="row my-3">
 

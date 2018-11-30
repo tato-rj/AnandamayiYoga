@@ -8,7 +8,7 @@
                     {{ csrf_field() }}
 
                     <div class="form-group">
-                        <input id="first_name" type="text" class="form-control bg-light {{ $errors->has('first_name') ? 'is-invalid' : 'border-0' }}" name="first_name" placeholder="First name" value="{{ old('first_name') }}" required autofocus>
+                        <input id="first_name" type="text" class="form-control bg-light {{ $errors->has('first_name') ? 'is-invalid' : 'border-0' }}" name="first_name" placeholder="@lang('First name')" value="{{ old('first_name') }}" required autofocus>
 
                         @if ($errors->has('first_name'))
                         <div class="invalid-feedback">
@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input id="last_name" type="text" class="form-control bg-light {{ $errors->has('last_name') ? 'is-invalid' : 'border-0' }}" name="last_name" placeholder="Last name" value="{{ old('last_name') }}" required autofocus>
+                        <input id="last_name" type="text" class="form-control bg-light {{ $errors->has('last_name') ? 'is-invalid' : 'border-0' }}" name="last_name" placeholder="@lang('Last name')" value="{{ old('last_name') }}" required autofocus>
 
                         @if ($errors->has('last_name'))
                         <div class="invalid-feedback">

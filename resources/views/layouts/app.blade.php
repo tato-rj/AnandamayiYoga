@@ -25,7 +25,12 @@
             'csrfToken' => csrf_token(),
             'user' => auth()->user(),
             'price' => config('membership.price.usd'),
-            'stripe_key' => config('services.stripe.key')
+            'stripe_key' => config('services.stripe.key'),
+            'locale' => [
+                'yesterday' => __('Yesterday'),
+                'today' => __('Today'),
+                'chart_label' => __('Classes watched')
+            ]
         ]); ?>
     </script>
 

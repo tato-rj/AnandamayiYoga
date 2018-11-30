@@ -1,10 +1,10 @@
-@component('pages/user/settings/show', ['title' => 'Preferences'])
+@component('pages/user/settings/show', ['title' => __('Preferences')])
 
 <div id="preferences-container">
 	<div class="my-4">
-		<p class="border-bottom px-2 py-1 rounded"><small><strong>My current Yoga level is</strong>
+		<p class="border-bottom px-2 py-1 rounded"><small><strong>@lang('My current Yoga level is')</strong>
 			@if(!auth()->user()->level)
-			<span class="text-warning">(you haven't selected your level)</span>
+			<span class="text-warning">@lang('(you haven\'t selected your level)')</span>
 			@endif
 		</small></p>
 		@foreach($levels as $level)
@@ -15,13 +15,12 @@
 			" data-id="{{$level->id}}" data-route="{{route('user.update.level', $level->id)}}">{{$level->name}}
 			</button>
 		@endforeach
-		<p class="ml-2 select-error" style="display: none;"><small class="text-muted">Sorry, we could not select your level. Please <a href="#" class="link-default">click here</a> to report this problem. Thank you!</small></p>
 	</div>
 
 	<div class="my-4">
-		<p class="border-bottom px-2 py-1 rounded"><small><strong>These are my favorite styles</strong>
+		<p class="border-bottom px-2 py-1 rounded"><small><strong>@lang('These are my favorite styles')</strong>
 			@if(count(auth()->user()->categories) == 0)
-			<span class="text-warning">(you haven't told us which styles you like)</span>
+			<span class="text-warning">@lang('(you haven\'t told us which styles you like)')</span>
 			@endif
 		</small></p>
 		@foreach($categories as $category)
@@ -33,7 +32,6 @@
 				<small><i style="display: none;" class="fas text-success absolute-top-right fa-check tiny"></i></small>
 			</button>
 		@endforeach
-		<p class="ml-2 select-error" style="display: none;"><small class="text-muted">Sorry, we could not select your category. Please <a href="#" class="link-default">click here</a> to report this problem. Thank you!</small></p>
 	</div>
 </div>
 @endcomponent

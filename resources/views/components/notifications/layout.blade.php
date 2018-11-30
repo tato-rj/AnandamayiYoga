@@ -3,11 +3,11 @@
   <div class="notifications-head text-center">
     <div>
       <small>
-        <strong class="text-danger">{{count($notifications)}}</strong> notifications
+        <strong class="text-danger">{{count($notifications)}}</strong> @lang('notifications')
       </small>
     </div>
     <div>
-      <small><a href="{{$guard ?? null}}/notifications" class="link-blue">see all</a></small>
+      <small><a href="{{$guard ?? null}}/notifications" class="link-blue">@lang('see all')</a></small>
     </div>
   </div>
   
@@ -22,7 +22,7 @@
         <div class="text-center mt-2">
           <form method="POST" action="{{$guard ?? null}}/notifications/mark-read">
             {{csrf_field()}}
-            <button type="submit" class="m-0 text-blue bg-transparent border-0 p-0 cursor-pointer"><small>mark all as read</small></button>
+            <button type="submit" class="m-0 text-blue bg-transparent border-0 p-0 cursor-pointer"><small>@lang('mark all as read')</small></button>
           </form>
         </div>
       @endif

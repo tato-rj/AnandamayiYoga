@@ -82,15 +82,15 @@ var myChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: [
-            moment().subtract(5, 'days').format("MMM Do"), 
-            moment().subtract(4, 'days').format("MMM Do"), 
-            moment().subtract(3, 'days').format("MMM Do"), 
-            moment().subtract(2, 'days').format("MMM Do"), 
-            "Yesterday", 
-            "Today"
+            moment().locale('pt').subtract(5, 'days').format("MMM D"), 
+            moment().locale('pt').subtract(4, 'days').format("MMM D"), 
+            moment().locale('pt').subtract(3, 'days').format("MMM D"), 
+            moment().locale('pt').subtract(2, 'days').format("MMM D"), 
+            app.locale.yesterday, 
+            app.locale.today
         ],
         datasets: [{
-            label: 'Classes watched',
+            label: app.locale.chart_label,
             data: records,
             pointBackgroundColor: 'rgba(255, 99, 132, 0.2)',
             pointBorderColor: 'rgba(255, 99, 132, 1)',

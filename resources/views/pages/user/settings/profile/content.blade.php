@@ -1,4 +1,4 @@
-@component('pages/user/settings/show', ['title' => 'My Profile'])
+@component('pages/user/settings/show', ['title' => __('My Profile')])
 
 <div class="row">
 	<div class="col-lg-4">
@@ -8,14 +8,14 @@
             <div class="card-body text-center p-2 d-flex align-items-center justify-content-center">
             	<button type="button" id="select-button" class="btn-link text-blue cursor-pointer border-0 px-4">
             		<i class="fas fa-folder-open"></i>
-            		<div class="text-muted"><small>Select</small></div>
+            		<div class="text-muted"><small>@lang('Select')</small></div>
             	</button>
             	<button type="button" id="upload-button" disabled class="btn-link text-blue cursor-pointer border-0 px-4">
             		<i class="fas fa-cloud-upload-alt"></i>
-            		<div class="text-muted"><small>Upload</small></div>
+            		<div class="text-muted"><small>@lang('Upload')</small></div>
             	</button>
             	<div style="display: none;">
-            		<p class="text-success mb-0"><i class="fas fa-check-circle mr-2"></i><strong>All set!</strong></p>
+            		<p class="text-success mb-0"><i class="fas fa-check-circle mr-2"></i><strong>@lang('All set!')</strong></p>
             	</div>
             </div>
           </div>	
@@ -25,17 +25,17 @@
 	</div>
 	<div class="col-lg-8">
 	    <div class="form-group">
-	    	<label class="text-muted"><small>First name</small></label>
+	    	<label class="text-muted"><small>@lang('First name')</small></label>
 	    	<div class="d-flex align-items-center">
-		        <input id="first_name" type="text" class="form-control bg-light border-0 mr-2" name="first_name" placeholder="First name" value="{{ auth()->user()->first_name }}"  disabled>
+		        <input id="first_name" type="text" class="form-control bg-light border-0 mr-2" name="first_name" placeholder="@lang('First name')" value="{{ auth()->user()->first_name }}"  disabled>
 		        @include('pages/user/settings/controls')	    		
 	    	</div>
 	    </div>
 
 	    <div class="form-group">
-	    	<label class="text-muted"><small>Last name</small></label>
+	    	<label class="text-muted"><small>@lang('Last name')</small></label>
 	    	<div class="d-flex align-items-center">
-		        <input id="last_name" type="text" class="form-control bg-light border-0 mr-2" name="last_name" placeholder="Last name" value="{{ auth()->user()->last_name }}"  disabled>
+		        <input id="last_name" type="text" class="form-control bg-light border-0 mr-2" name="last_name" placeholder="@lang('Last name')" value="{{ auth()->user()->last_name }}"  disabled>
 		    	@include('pages/user/settings/controls')
 		    </div>
 	    </div>
@@ -49,27 +49,27 @@
 	    </div>
 	    <hr class="mt-4 mb-3">
 	    <div class="form-group">
-	    	<label class="text-muted"><small>Gender</small></label>
+	    	<label class="text-muted"><small>@lang('Gender')</small></label>
 	    	<div class="d-flex align-items-center">
 		    	<select class="form-control mr-2" name="gender" disabled>
-		    		<option value="female" {{(auth()->user()->gender == 'female') ? 'selected' : null}}>Female</option>
-		    		<option value="male" {{(auth()->user()->gender == 'male') ? 'selected' : null}}>Male</option>
+		    		<option value="female" {{(auth()->user()->gender == 'female') ? 'selected' : null}}>@lang('Female')</option>
+		    		<option value="male" {{(auth()->user()->gender == 'male') ? 'selected' : null}}>@lang('Male')</option>
 		    	</select>	    	
 		    	@include('pages/user/settings/controls')	
 	    	</div>
 	    </div>
 	    <div class="form-group">
-	    	<label class="text-muted"><small>Language</small></label>
+	    	<label class="text-muted"><small>@lang('Language')</small></label>
 	    	<div class="d-flex align-items-center">
 		    	<select class="form-control mr-2" name="lang" disabled>
-		    		<option value="en" {{(auth()->user()->lang == 'en') ? 'selected' : null}}>English</option>
-		    		<option value="pt" {{(auth()->user()->lang == 'pt') ? 'selected' : null}}>Portuguese</option>
+		    		<option value="en" {{(auth()->user()->lang == 'en') ? 'selected' : null}}>@lang('English')</option>
+		    		<option value="pt" {{(auth()->user()->lang == 'pt') ? 'selected' : null}}>@lang('Portuguese')</option>
 		    	</select>	    	
 		    	@include('pages/user/settings/controls')	
 	    	</div>
 	    </div>
 	    <div class="form-group">
-	    	<label class="text-muted"><small>Timezone</small></label>
+	    	<label class="text-muted"><small>@lang('Timezone')</small></label>
 	    	<div class="d-flex align-items-center">
 		    	<select class="form-control mr-2" disabled name="timezone">
 		    		@foreach($timezones as $timezone)
@@ -80,7 +80,7 @@
 	    	</div>
 	    </div>
 	    <div class="form-group">
-	    	<label class="text-muted"><small>Currency</small></label>
+	    	<label class="text-muted"><small>@lang('Currency')</small></label>
 	    	<div class="d-flex align-items-center">
 		    	<select class="form-control mr-2" disabled name="currency">
 		    		@foreach($currencies as $code => $name)
@@ -92,7 +92,7 @@
 	    </div>
 	    <hr class="mt-4 mb-3">
 	    <div class="form-group">
-	    	<label class="text-muted"><small>Password</small></label>
+	    	<label class="text-muted"><small>@lang('Password')</small></label>
 	    	<div class="d-flex align-items-center">
 		        <input id="password" type="password" class="form-control bg-light border-0 mr-2" placeholder="&bullet;&bullet;&bullet;&bullet;&bullet;&bullet;" name="password" disabled>
 		    	@include('pages/user/settings/controls')
@@ -116,7 +116,7 @@
     </div>
       </div>
       <div class="modal-footer">
-        <button type="button" id="crop" class="btn-bold btn-red mx-auto"><i class="fas fa-check-circle mr-2"></i>Ready to upload my new picture</button>
+        <button type="button" id="crop" class="btn-bold btn-red mx-auto"><i class="fas fa-check-circle mr-2"></i>@lang('Ready to upload my new picture')</button>
       </div>
     </div>
   </div>

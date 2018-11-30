@@ -5,7 +5,7 @@
         
         <div class="mt-3">
           <button class="btn-bold btn-sm btn-block btn-red">
-            <span class="label">{{$buttonLabel ?? 'Submit'}}</span>
+            <span class="label">{{$buttonLabel ?? __('Submit')}}</span>
           </button>
         </div>
       </form>
