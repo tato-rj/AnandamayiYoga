@@ -60,9 +60,9 @@ class ProgramsTableSeeder extends Seeder
         \DB::insert('insert into category_program (program_id, category_id) values (4, 10), (4, 5), (4, 3), (4, 11)');
 
         Program::create([
-            'slug' => str_slug('How is Your Back Doing?'), 
-            'name' => 'How is Your Back Doing?', 
-            'name_pt' => 'Como Está a Sua Coluna?',
+            'slug' => str_slug('Moving Meditations'), 
+            'name' => 'Moving Meditations', 
+            'name_pt' => 'Meditações em Movimento',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             'description_pt' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             'image_path' => 'app/demo/covers/demo-5.jpg',

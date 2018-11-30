@@ -31,6 +31,6 @@
 
   </div>
   <div class="text-muted border-top pt-3 mb-3">
-    <small>@lang('You\'ll get immediate and unlimited access to all of our classes and programs right away. The free trial begins the moment you sign up and we encourage you to explore our website to see all that we have to offer. If you have any questions please check out our support page or get in touch with us.')</small>
+    <small>{!! __('You\'ll get immediate and unlimited access to all of our classes and programs right away. The free trial begins the moment you sign up and we encourage you to explore our website to see all that we have to offer. If you have any questions please check out our <a href="\support" class="link-red">support page</a> or <a href="\contact" class="link-red">get in touch</a> with us.') !!}</small>
   </div>
 @endcomponent
