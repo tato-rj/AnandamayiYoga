@@ -16,6 +16,7 @@ class CreateRoutineQuestionairesTable extends Migration
         Schema::create('routine_questionaires', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
+            $table->unsignedInteger('teacher_id');
             $table->json('schedule');
             $table->string('duration');
             $table->string('age');

@@ -3,11 +3,11 @@
 namespace App;
 
 use App\Events\CourseCreated;
-use App\Traits\{FindBySlug, InteractsWithCloud};
+use App\Traits\{FindBySlug, InteractsWithCloud, HasTeacher};
 
 class Course extends Anandamayi
 {
-	use FindBySlug, InteractsWithCloud;
+	use FindBySlug, InteractsWithCloud, HasTeacher;
 
 	protected $guarded = [];
     protected $with = ['chapters'];

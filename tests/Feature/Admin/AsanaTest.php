@@ -289,6 +289,8 @@ class AsanaTest extends AppTest
 			'favorited_type' => get_class($asana)
 		]);
 
+		$this->adminSignIn();
+		
 		$this->delete(route('admin.asanas.destroy', $asana->slug));
 
 		$this->assertDatabaseMissing('favorites', [

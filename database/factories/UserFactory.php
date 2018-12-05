@@ -39,6 +39,7 @@ $factory->define(App\Admin::class, function (Faker $faker) {
         'first_name' => $faker->firstName,
         'last_name' => $faker->lastName,
         'email' => $faker->unique()->safeEmail,
+        'role' => 'manager',
         'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
         'remember_token' => str_random(10),
     ];
@@ -335,8 +336,40 @@ $factory->define(App\Book::class, function(Faker $faker) {
         'title' => $faker->word,
         'subtitle' => $faker->sentence,
         'description' => $faker->paragraph,
-        'lang' => $faker->word,
+        'lang' => 'en',
         'image_path' => $faker->imageUrl(),
         'amazon_url' => $faker->url
+    ];
+});
+
+$factory->define(App\RoutineQuestionaire::class, function(Faker $faker) {
+    return [
+            'user_id' => function() {
+                return create('App\User')->id;
+            },
+            'teacher_id' => function() {
+                return create('App\Teacher')->id;
+            },
+            'schedule' => 'schedule',
+            'duration' => 'duration',
+            'age' => 'age',
+            'level' => 'level',
+            'categories' => 'categories',
+            'lifestyle' => 'lifestyle',
+            'reason' => 'reason',
+            'practice' => 'practice',
+            'physical' => 'physical',
+            'mental' => 'mental',
+            'spiritual' => 'spiritual',
+    ];
+});
+
+$factory->define(App\Routine::class, function(Faker $faker) {
+    $questionaire = create('App\RoutineQuestionaire');
+
+    return [
+            'request_id' => $questionaire->id,
+            'user_id' => $questionaire->user_id,
+            'teacher_id' => $questionaire->teacher_id
     ];
 });

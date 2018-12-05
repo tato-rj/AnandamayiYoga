@@ -8,10 +8,12 @@
 ])
 
 <div class="row">
+  @manager
   {{-- PLUS --}}
   <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4">
     @include('admin/components/plus-card')
   </div>
+  @endmanager
   {{-- CARDS --}}
   @foreach($lessons as $lesson)
     @component('admin/components/cards/lesson', [

@@ -13,6 +13,11 @@ class Admin extends Authenticatable
     protected $guarded = [];
     protected $hidden = ['password', 'remember_token'];
 
+    public function teacher()
+    {
+        return $this->belongsTo(Teacher::class);
+    }
+
     public function getFullNameAttribute()
     {
         return "{$this->first_name} {$this->last_name}";
@@ -25,5 +30,15 @@ class Admin extends Authenticatable
         });
 
         return $notifications;
+    }
+
+    public function isManager()
+    {
+        return $this->role == 'manager';
+    }
+
+    public function isTeacher()
+    {
+        return $this->role == 'teacher';
     }
 }

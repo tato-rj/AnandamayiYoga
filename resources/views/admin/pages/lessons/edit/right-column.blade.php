@@ -126,7 +126,7 @@
       </div>
     </div>
   </div>
-
+@manager
   <div class="row">
     {{-- TEACHER --}}
     <div class="form-group edit-control col" name="teacher_id" id="teacher_id-{{$lesson->id}}">
@@ -150,4 +150,5 @@
 
     </div>
   </div>
+  @endmanager
 </div>

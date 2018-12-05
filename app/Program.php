@@ -2,12 +2,12 @@
 
 namespace App;
 
-use App\Traits\{FindBySlug, Favoritable, InteractsWithCloud, Localizable};
+use App\Traits\{FindBySlug, Favoritable, InteractsWithCloud, Localizable, HasTeacher};
 use Illuminate\Support\Facades\Storage;
 
 class Program extends Anandamayi
 {
-    use FindBySlug, Favoritable, InteractsWithCloud, Localizable;
+    use FindBySlug, Favoritable, InteractsWithCloud, Localizable, HasTeacher;
     
     protected $guarded = [];
 

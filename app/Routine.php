@@ -4,9 +4,12 @@ namespace App;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
+use App\Traits\HasTeacher;
 
 class Routine extends Anandamayi
 {
+    use HasTeacher;
+    
     protected $guarded = [];
     protected $with = ['schedules', 'user'];
 

@@ -29,8 +29,8 @@ class LessonsController extends Controller
 
     public function admin()
     {
-        $lessons = Lesson::paginate(11);
-        $programs = Program::orderBy('name')->get();
+        $lessons = Lesson::authorized()->paginate(11);
+        $programs = Program::authorized()->orderBy('name')->get();
         $teachers = Teacher::orderBy('name')->get();
 
         return view('admin/pages/lessons/index', compact(['lessons', 'programs', 'teachers']));   
@@ -127,9 +127,9 @@ class LessonsController extends Controller
     {
         $lesson = Lesson::find($lessonId);
 
-        $lesson->update([
-            $request->key => $request->value
-        ]);
+        $this->authorize('update', $lesson);
+
+        $lesson->update([$request->key => $request->value]);
 
         $lesson->slug = str_slug($lesson->name);
         $lesson->save();
@@ -197,6 +197,8 @@ class LessonsController extends Controller
      */
     public function destroy(Lesson $lesson)
     {
+        $this->authorize('delete', $lesson);
+
         $lesson->delete();
 
         return back()->with('status', 'The lesson has been deleted.');

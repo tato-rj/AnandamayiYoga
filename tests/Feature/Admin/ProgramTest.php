@@ -242,6 +242,8 @@ class ProgramTest extends AppTest
 			'favorited_type' => get_class($program)
 		]);
 
+		$this->adminSignIn();
+		
 		$this->delete(route('admin.programs.destroy', $program->slug));
 
 		$this->assertDatabaseMissing('favorites', [

@@ -51,7 +51,7 @@
     'path' => "/admin/teachers/{$teacher->id}",
     'value' => $teacher->biography_pt
     ])
-
+    @manager
     {{-- CATEGORIES --}}
     <div class="form-group edit-control" id="category-{{$teacher->id}}" name="category">
 
@@ -76,5 +76,5 @@
         @endforeach
       </div>
     </div>
-
+    @endmanager
 </div>

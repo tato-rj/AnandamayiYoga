@@ -58,6 +58,14 @@ class BladeServiceProvider extends ServiceProvider
             return $user->isOnTrial();
         });
 
+        Blade::if('manager', function () {
+            return auth()->user()->isManager();
+        });
+
+        Blade::if('teacher', function () {
+            return auth()->user()->isTeacher();
+        });
+
         Blade::include('components.sections.title');
 
         Blade::include('admin.components.draggable.layout', 'draggable');

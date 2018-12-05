@@ -134,7 +134,7 @@ class ArticleTest extends AppTest
 	public function the_article_image_is_removed_when_the_article_is_deleted()
 	{
 		$this->adminSignIn();
-
+		
 		$request = $this->createNewArticle();
 
 		$article = Article::where('title', $request->title)->first();

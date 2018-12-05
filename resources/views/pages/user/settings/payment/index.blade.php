@@ -8,6 +8,7 @@
 <div class="container-fluid">
     @include('components/sections/lead', ['image' => 'contact'])
     @include('pages/user/settings/payment/content')
+    @include('components/bars/info')
 </div>
 @endsection
 

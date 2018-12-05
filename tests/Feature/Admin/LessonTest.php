@@ -13,10 +13,10 @@ class LessonTest extends AppTest
 	use Administrator, HasRoutine;
 
 	/** @test */
-	public function a_admin_can_create_a_new_lesson()
+	public function an_admin_can_create_a_new_lesson()
 	{
 		$this->adminSignIn();
-
+		
 		$lesson = $this->createNewLesson();
 
 		$this->assertDatabaseHas('lessons', [
@@ -68,7 +68,7 @@ class LessonTest extends AppTest
 	}
 
 	/** @test */
-	public function a_admin_can_edit_a_lesson()
+	public function an_admin_can_edit_a_lesson()
 	{
 		$this->adminSignIn();
 
@@ -86,7 +86,7 @@ class LessonTest extends AppTest
 	}
 
 	/** @test */
-	public function a_admin_can_update_the_lesson_categories()
+	public function an_admin_can_update_the_lesson_categories()
 	{
 		$this->adminSignIn();
 
@@ -103,7 +103,7 @@ class LessonTest extends AppTest
 	}
 
 	/** @test */
-	public function a_admin_can_update_the_lesson_levels()
+	public function an_admin_can_update_the_lesson_levels()
 	{
 		$this->adminSignIn();
 
@@ -167,7 +167,7 @@ class LessonTest extends AppTest
 	}
 
 	/** @test */
-	public function a_admin_can_remove_a_lesson()
+	public function an_admin_can_remove_a_lesson()
 	{
 		$this->adminSignIn();
 
@@ -258,6 +258,8 @@ class LessonTest extends AppTest
 			'favorited_type' => get_class($lesson)
 		]);
 
+		$this->adminSignIn();
+		
 		$this->delete(route('admin.classes.destroy', $lesson->slug));
 
 		$this->assertDatabaseMissing('favorites', [

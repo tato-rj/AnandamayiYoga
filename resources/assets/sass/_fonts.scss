@@ -1,4 +1,17 @@
 @font-face {
-    font-family: yogafont;
-    src: url('../fonts/yoga.otf');
+  font-family: 'themify';
+  src:url('../fonts/themify-icons/themify.eot?-fvbane');
+  src:url('../fonts/themify-icons/themify.eot?#iefix-fvbane') format('embedded-opentype'),
+    url('../fonts/themify-icons/themify.woff?-fvbane') format('woff'),
+    url('../fonts/themify-icons/themify.ttf?-fvbane') format('truetype'),
+    url('../fonts/themify-icons/themify.svg?-fvbane#themify') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: 'et-line';
+  src: url("../fonts/thin-icons/et-line.eot");
+  src: url("../fonts/thin-icons/et-line.eot?#iefix") format("embedded-opentype"), url("../fonts/thin-icons/et-line.woff") format("woff"), url("../fonts/thin-icons/et-line.ttf") format("truetype"), url("../fonts/thin-icons/et-line.svg#et-line") format("svg");
+  font-weight: normal;
+  font-style: normal; }

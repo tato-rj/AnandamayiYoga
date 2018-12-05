@@ -16,17 +16,18 @@ class AdminController extends Controller
 	public function index(Membership $membership)
 	{
 		$membershipsAtGlance = UserRecord::monthly()->take(6)->pluck('count', 'month')->toArray();
-        $lessonsCount = Lesson::count();
-        $programsCount = Program::count();
-        $coursesCount = Course::count();
+        $lessonsCount = auth()->user()->isManager() ? Lesson::count() : auth()->user()->teacher->lessons_count;
+        $programsCount = auth()->user()->isManager() ? Program::count() : auth()->user()->teacher->programs_count;
+        $coursesCount = auth()->user()->isManager() ? Course::count() : auth()->user()->teacher->courses_count;
         $asanasCount = Asana::count();
         $articlesCount = Article::count();
         $wallpapersCount = Wallpaper::count();
         $latestUsers = User::latest()->take(30)->get();
+        $routinesCount = auth()->user()->isTeacher() ? auth()->user()->teacher->routines()->count() : null;
         
         return view('admin/pages/dashboard/index', compact([
         	'membershipsAtGlance', 'membership', 'latestUsers', 'wallpapersCount',
-        	'lessonsCount', 'programsCount', 'coursesCount', 'asanasCount', 'articlesCount'
+        	'lessonsCount', 'programsCount', 'coursesCount', 'asanasCount', 'articlesCount', 'routinesCount'
         ]));
 	}
 
@@ -71,9 +72,9 @@ class AdminController extends Controller
 	
 	public function programs()
 	{
-        $programs = Program::paginate(11);
+        $programs = Program::authorized()->paginate(11);
 
-        $lessons = Lesson::whereNull('program_id')->orderBy('name')->get();
+        $lessons = Lesson::authorized()->whereNull('program_id')->orderBy('name')->get();
 
         $teachers = Teacher::orderBy('name')->get();
 
@@ -82,7 +83,7 @@ class AdminController extends Controller
 	
 	public function courses()
 	{
-        $courses = Course::paginate(8);
+        $courses = Course::authorized()->paginate(8);
         $teachers = Teacher::orderBy('name')->get();
 
         return view('admin/pages/courses/index', compact(['courses', 'teachers']));

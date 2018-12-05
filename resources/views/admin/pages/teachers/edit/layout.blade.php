@@ -2,10 +2,12 @@
 
 @section('content')
 
-@component('admin/components/page-title', ['title' => 'Edit Teacher'])
+@component('admin/components/page-title', ['title' => 'My profile'])
 
   @slot('subtitle')
+  	@manager
     <a href="/admin/teachers" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all teachers</a>
+    @endmanager
   @endslot
 
 @endcomponent
@@ -17,7 +19,7 @@
   @include('admin/pages/teachers/edit/right-column')
 
 </div>      
-
+@manager
 <div class="text-right mt-5">
   
   @include('admin/components/email', ['email' => $teacher->email])
@@ -30,7 +32,7 @@
 @component('admin/components/modals/delete', ['title' => 'Delete teacher'])
 Are you sure you want to delete this teacher?
 @endcomponent
-
+@endmanager
 @endsection
 
 @section('scripts')

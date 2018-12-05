@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Asana;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CreateAsanaForm extends FormRequest
@@ -13,7 +14,7 @@ class CreateAsanaForm extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return auth()->user()->can('create', new Asana);
     }
 
     /**

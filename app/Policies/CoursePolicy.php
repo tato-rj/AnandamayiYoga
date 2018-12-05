@@ -2,8 +2,7 @@
 
 namespace App\Policies;
 
-use App\User;
-use App\Course;
+use App\{User, Course, Admin};
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class CoursePolicy
@@ -28,9 +27,9 @@ class CoursePolicy
      * @param  \App\User  $user
      * @return mixed
      */
-    public function create(User $user)
+    public function create(Admin $admin)
     {
-        //
+        return $admin->isManager();
     }
 
     /**
@@ -40,9 +39,9 @@ class CoursePolicy
      * @param  \App\Course  $course
      * @return mixed
      */
-    public function update(User $user, Course $course)
+    public function update(Admin $admin, Course $course)
     {
-        //
+        return $admin->isManager() || $course->teachers->contains($admin->teacher_id);
     }
 
     /**
@@ -52,8 +51,8 @@ class CoursePolicy
      * @param  \App\Course  $course
      * @return mixed
      */
-    public function delete(User $user, Course $course)
+    public function delete(Admin $admin, Course $course)
     {
-        //
+        return $admin->isManager();
     }
 }

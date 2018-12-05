@@ -1,3 +1,4 @@
+@manager
 <div class="form-group">
   <div class="embed-responsive embed-responsive-16by9 mb-2 border rounded">
     <video id="video-preview" controls>
@@ -30,3 +31,4 @@
   </div>
   @endif
 </div>
+@endmanager

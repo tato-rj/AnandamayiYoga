@@ -5,6 +5,7 @@
 
             @include('admin.layouts.menu.link', ['url' => 'admin', 'icon' => 'fas fa-tachometer-alt', 'label' => 'Dashboard'])
 
+            @manager
             @include('admin.layouts.menu.group', [
                 'icon' => 'fas fa-chart-line', 'label' => 'Reports',
                 'urls' => [
@@ -46,7 +47,13 @@
             <div class="dropdown-divider"></div>
 
             @include('admin.layouts.menu.link', ['url' => 'admin/categories', 'icon' => 'fas fa-list-ul', 'label' => 'Categories'])
-
+            
+            @else
+            
+            @include('admin.layouts.menu.link', ['url' => 'admin/teachers/'.auth()->user()->teacher->slug, 'icon' => 'fas fa-user', 'label' => 'My profile'])
+            
+            @endmanager
+            
             @include('admin.layouts.menu.group', [
                 'icon' => 'fas fa-video', 'label' => 'Classes',
                 'urls' => [

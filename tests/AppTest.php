@@ -79,9 +79,12 @@ abstract class AppTest extends TestCase
         return $this->get("/register/confirm?token=".auth()->user()->confirmation_token);
     }
 
-    protected function submitRoutine()
+    protected function submitRoutine($teacher = null)
     {
+        $teacher = $teacher ?? create('App\Teacher');
+        
         return $this->post(route('user.routine.store', [
+            'teacher_id' => $teacher->id,
             'schedule' => '[{"day":"Monday", "time": "morning"}]',
             'duration' => '5 to 10 min',
             'age' => '29 to 39',

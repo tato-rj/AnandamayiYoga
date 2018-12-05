@@ -127,6 +127,8 @@ class ProgramsController extends Controller
     {
         $program = Program::find($programId);
 
+        $this->authorize('update', $program);
+
         $program->update([
             $request->key => $request->value
         ]);
@@ -198,6 +200,8 @@ class ProgramsController extends Controller
      */
     public function destroy(Program $program)
     {
+        $this->authorize('delete', $program);
+
         $program->delete();
 
         return back()->with('status', 'The program has been deleted.');

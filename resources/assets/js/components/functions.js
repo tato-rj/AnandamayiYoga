@@ -249,7 +249,7 @@ enableMultiTypeFields = function(element)
 
 disableAllInputs = function()
 {
-  $('.edit-control input, .edit-control textarea, .edit-control select').attr('disabled', true);
+  $('.edit-control input, .edit-control textarea, .edit-control select').not(':input[type=hidden], :input[type=file]').attr('disabled', true);
   $("#sortable-all, #sortable-selections").sortable('disable');
   $('.edit-control .save, .edit-control .loading').hide().siblings('.edit').show();
   $('.add-field').hide();

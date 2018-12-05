@@ -106,6 +106,8 @@ class CoursesController extends Controller
     {
         $course = Course::find($courseId);
 
+        $this->authorize('update', $course);
+
         $course->update([
             $request->key => $request->value
         ]);
@@ -180,6 +182,8 @@ class CoursesController extends Controller
      */
     public function destroy(Course $course)
     {
+        $this->authorize('delete', $course);
+
         $course->delete();
 
         return redirect('office/courses')->with('status', 'The course has been deleted.');

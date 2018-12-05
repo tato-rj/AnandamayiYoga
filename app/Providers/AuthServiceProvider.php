@@ -14,9 +14,15 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         'App\Lesson' => 'App\Policies\LessonPolicy',
+        'App\Program' => 'App\Policies\ProgramPolicy',
         'App\Course' => 'App\Policies\CoursePolicy',
         'App\Discussion' => 'App\Policies\DiscussionPolicy',
-        'App\Reply' => 'App\Policies\ReplyPolicy'
+        'App\Reply' => 'App\Policies\ReplyPolicy',
+        'App\Teacher' => 'App\Policies\TeacherPolicy',
+        'App\Asana' => 'App\Policies\AsanaPolicy',
+        'App\Wallpaper' => 'App\Policies\WallpaperPolicy',
+        'App\Article' => 'App\Policies\ArticlePolicy',
+        'App\RoutineQuestionaire' => 'App\Policies\RoutinePolicy'
     ];
 
     /**

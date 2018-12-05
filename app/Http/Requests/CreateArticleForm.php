@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Article;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CreateArticleForm extends FormRequest
@@ -13,7 +14,7 @@ class CreateArticleForm extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return auth()->user()->can('create', new Article);
     }
 
     /**

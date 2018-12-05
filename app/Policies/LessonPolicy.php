@@ -2,8 +2,7 @@
 
 namespace App\Policies;
 
-use App\User;
-use App\Lesson;
+use App\{User, Lesson, Admin};
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class LessonPolicy
@@ -28,9 +27,9 @@ class LessonPolicy
      * @param  \App\User  $user
      * @return mixed
      */
-    public function create(User $user)
+    public function create(Admin $admin)
     {
-        //
+        return $admin->isManager();
     }
 
     /**
@@ -40,9 +39,9 @@ class LessonPolicy
      * @param  \App\Lesson  $lesson
      * @return mixed
      */
-    public function update(User $user, Lesson $lesson)
+    public function update(Admin $admin, Lesson $lesson)
     {
-        //
+        return $admin->isManager() || $lesson->teacher_id == $admin->teacher_id;
     }
 
     /**
@@ -52,8 +51,8 @@ class LessonPolicy
      * @param  \App\Lesson  $lesson
      * @return mixed
      */
-    public function delete(User $user, Lesson $lesson)
+    public function delete(Admin $admin, Lesson $lesson)
     {
-        //
+        return $admin->isManager();
     }
 }

@@ -17,6 +17,7 @@ class CreateRoutinesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('request_id')->unique();
             $table->unsignedInteger('user_id')->unique();
+            $table->unsignedInteger('teacher_id');
             $table->text('comment')->nullable();
             $table->string('video_path')->nullable();
             $table->timestamp('started_at')->nullable();

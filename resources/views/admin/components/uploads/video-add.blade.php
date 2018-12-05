@@ -1,3 +1,4 @@
+@manager
 <div class="form-group">
   <div class="embed-responsive embed-responsive-16by9 mb-2 border rounded">
     <video id="video-preview" preload="none" controls>
@@ -15,3 +16,4 @@
   @endif
 </div>
 <input type="hidden" name="duration">
+@endmanager

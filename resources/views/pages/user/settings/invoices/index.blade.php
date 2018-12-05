@@ -4,5 +4,6 @@
 <div class="container-fluid">
     @include('components/sections/lead', ['image' => 'contact'])
     @include('pages/user/settings/invoices/content')
+    @include('components/bars/info')
 </div>
 @endsection

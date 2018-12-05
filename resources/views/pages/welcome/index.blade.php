@@ -153,6 +153,7 @@
         @include('components/bars/testimonials')
     @endif
 
+    @include('components/bars/info')
 </div>
 
 @endsection

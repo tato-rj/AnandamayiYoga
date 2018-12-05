@@ -18,7 +18,7 @@ class RoutinesController extends Controller
      */
     public function index()
     {
-        $routines = Routine::latest()->paginate(8);
+        $routines = Routine::authorized()->latest()->paginate(8);
 
         return view('/admin/pages/routines/active', compact('routines'));
     }
@@ -46,7 +46,12 @@ class RoutinesController extends Controller
      */
     public function store(Request $request)
     {
+        $questionaire = RoutineQuestionaire::find($request->request_id);
+        
+        $this->authorize('create', $questionaire);
+
         $routine = Routine::create([
+            'teacher_id' => $request->teacher_id,
             'request_id' => $request->request_id,
             'user_id' => $request->user_id,
             'comment' => $request->comment,
@@ -55,7 +60,7 @@ class RoutinesController extends Controller
 
         Schedule::createFrom($routine, $request->schedule);
 
-        RoutineQuestionaire::find($request->request_id)->publish();
+        $questionaire->publish();
 
         event(new RoutineCreated($routine));
 

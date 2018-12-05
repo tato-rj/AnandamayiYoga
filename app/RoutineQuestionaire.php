@@ -3,9 +3,12 @@
 namespace App;
 
 use Carbon\Carbon;
+use App\Traits\HasTeacher;
 
 class RoutineQuestionaire extends Anandamayi
 {
+    use HasTeacher;
+    
     protected $guarded = [];
     protected $with = ['user'];
     protected $casts = [

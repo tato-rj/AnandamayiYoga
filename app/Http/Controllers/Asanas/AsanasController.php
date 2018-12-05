@@ -102,6 +102,8 @@ class AsanasController extends Controller
     {
         $asana = Asana::find($asanaId);
 
+        $this->authorize('update', $asana);
+
         $asana->update([
             $request->key => $request->value
         ]);
@@ -207,6 +209,8 @@ class AsanasController extends Controller
      */
     public function destroy(Asana $asana)
     {
+        $this->authorize('delete', $asana);
+
         $asana->delete();
 
         return back()->with('status', 'The asana has been deleted.');

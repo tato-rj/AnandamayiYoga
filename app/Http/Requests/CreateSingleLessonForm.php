@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Lesson;
 
 class CreateSingleLessonForm extends FormRequest
 {
@@ -13,7 +14,7 @@ class CreateSingleLessonForm extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return auth()->user()->can('create', new Lesson);
     }
 
     /**

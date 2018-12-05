@@ -23,6 +23,7 @@ class CreateTeachersTable extends Migration
             $table->text('biography');
             $table->text('biography_pt')->nullable();
             $table->string('website')->nullable();
+            $table->unsignedInteger('admin_id')->nullable();
             $table->timestamps();
         });
 

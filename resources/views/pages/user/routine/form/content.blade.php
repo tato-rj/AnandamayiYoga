@@ -64,6 +64,18 @@
 				@include('pages/user/routine/form/sections/preferences')
 				@include('pages/user/routine/form/sections/personnal')
 				@include('pages/user/routine/form/sections/goals')
+
+		<div class="form-group">
+			<label>Teacher</label>
+			<select required class="form-control" name="teacher_id">
+				<option selected disabled></option>
+				@foreach($teachers as $teacher)
+				<option value="{{$teacher->id}}">{{$teacher->name}}</option>
+				@endforeach
+			</select>
+		</div>
+
+
 				<div class="text-center my-5">
 					<p class="lead">ALL SET!</p>
 					<p class="text-muted">After your schedule is complete, we will follow up with your progress to make sure you love it :)</p>	

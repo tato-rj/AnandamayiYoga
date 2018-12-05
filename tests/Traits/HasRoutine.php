@@ -8,9 +8,9 @@ use App\{RoutineQuestionaire, User, Routine};
 
 trait HasRoutine
 {
-	public function requestRoutine()
+	public function requestRoutine($teacher = null)
 	{
-		$request = $this->submitRoutine();
+		$request = $this->submitRoutine($teacher);
 
 		return RoutineQuestionaire::latest()->first();
 	}
@@ -20,6 +20,7 @@ trait HasRoutine
 		Storage::fake('s3');
 		
 		$this->post('admin/routines', [
+			'teacher_id' => $request->teacher_id,
 			'request_id' => $request->id,
 			'user_id' => $request->user->id,
 			'comment' => 'A new comment',

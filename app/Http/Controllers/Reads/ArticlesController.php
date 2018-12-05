@@ -93,6 +93,8 @@ class ArticlesController extends Controller
     {
         $article = Article::find($articleId);
 
+        $this->authorize('update', $article);
+
         $article->update([
             $request->key => $request->value
         ]);
@@ -127,6 +129,8 @@ class ArticlesController extends Controller
      */
     public function destroy(Article $article)
     {
+        $this->authorize('delete', $article);
+
         $article->delete();
 
         return back()->with('status', 'The article has been deleted.');

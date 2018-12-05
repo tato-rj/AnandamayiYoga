@@ -1,5 +1,5 @@
 @if($teacher->courses()->exists())
-<div class="container-fluid mb-4">
+<div class="mb-4">
     <div class="row">
         <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 mx-auto">
             <h4 class="mb-2 pb-3 border-bottom">@lang('My Courses')</h4>

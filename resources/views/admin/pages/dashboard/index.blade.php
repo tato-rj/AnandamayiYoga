@@ -4,11 +4,14 @@
 
 @include('admin/components/page-title', [
   'title' => 'Dashboard',
-  'subtitle' => 'Here is where we\'ll manage the back-end and track user data for the platform'
+  'subtitle' => auth()->user()->isManager() ? 
+    'Here is where we\'ll manage the back-end and track user data for the platform' :
+    'Hello ' . auth()->user()->first_name . '! Here you can manage the your content on AnandamayiYoga'
 ])
 
 @include('admin/pages/dashboard/highlights')
 
+@manager
 <div class="row mt-2">
     <div class="col-md-8">
         @include('admin/pages/dashboard/memberships')
@@ -18,6 +21,7 @@
         @include('admin/pages/dashboard/signups')
     </div>
 </div>
+@endmanager
 @endsection
 
 @section('scripts')

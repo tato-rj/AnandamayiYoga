@@ -80,4 +80,14 @@ class TeacherTest extends AppTest
 	{
 		$this->assertInstanceOf('App\Category', $this->teacher->categories()->first());
 	}
+
+	/** @test */
+	public function it_has_many_requests_for_routines()
+	{
+		$routine = create('App\Routine');
+		$routine->update(['teacher_id' => $this->teacher->id]);
+		$routine->questionaire->update(['teacher_id' => $this->teacher->id]);
+
+		$this->assertInstanceOf('App\Routine', $this->teacher->routines()->first());
+	}
 }

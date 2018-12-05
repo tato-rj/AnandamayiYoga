@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Program;
 use Illuminate\Foundation\Http\FormRequest;
 
 class AddProgramForm extends FormRequest
@@ -13,7 +14,7 @@ class AddProgramForm extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return auth()->user()->can('create', new Program);
     }
 
     /**

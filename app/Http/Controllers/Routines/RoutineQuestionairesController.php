@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Routines;
 
-use App\{RoutineQuestionaire, Lesson};
+use App\{RoutineQuestionaire, Lesson, Teacher};
 use App\Http\Requests\RoutineQuestionaireForm;
 use Illuminate\Http\Request;
 use App\Events\Routines\RoutineRequested;
@@ -17,15 +17,17 @@ class RoutineQuestionairesController extends Controller
      */
     public function index()
     {
-        $pendingRequests = RoutineQuestionaire::pending()->paginate(8);
+        $pendingRequests = RoutineQuestionaire::authorized()->pending()->paginate(8);
         
         return view('/admin/pages/routines/pending', compact('pendingRequests'));
     }
 
     public function form()
     {
+        $teachers = Teacher::all();
         $activities = ['Yoga', 'Gym', 'Cycling', 'Pilates', 'Walk', 'Run', 'Hike', 'Swim', 'Surf', 'Dance', 'Team sport', 'I don\'t exercise', 'Other'];
-        return view('pages/user/routine/form/index', compact('activities'));
+
+        return view('pages/user/routine/form/index', compact(['activities', 'teachers']));
     }
 
     /**
@@ -38,8 +40,6 @@ class RoutineQuestionairesController extends Controller
         $lessons = Lesson::orderBy('name')->get();
 
         $request->withSchedule();
-
-        // return $request;
 
         return view('admin/pages/routines/create', compact(['request', 'lessons']));
     }
@@ -57,6 +57,7 @@ class RoutineQuestionairesController extends Controller
 
         $questionaire =  RoutineQuestionaire::create([
             'user_id' => auth()->user()->id,
+            'teacher_id' => $request->teacher_id,
             'schedule' => $request->schedule,
             'duration' => $request->duration,
             'age' => $request->age,

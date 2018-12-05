@@ -13,6 +13,7 @@
 
     @include('components/bars/testimonials')
 
+    @include('components/bars/info')
 </div>
 
 @endsection

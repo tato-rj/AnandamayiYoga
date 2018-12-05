@@ -10,6 +10,7 @@ class Teacher extends Anandamayi
 	use FindBySlug, InteractsWithCloud, Localizable, Notifiable;
 
     protected $guarded = [];
+    protected $withCount = ['lessons', 'programs', 'courses'];
 
     protected static function boot()
     {
@@ -48,6 +49,13 @@ class Teacher extends Anandamayi
     public function articles()
     {
         return $this->hasMany(Article::class, 'author_id');
+    }
+
+    public function routines()
+    {
+        return Routine::whereHas('questionaire', function($query) {
+            $query->where('teacher_id', $this->id);
+        })->get();
     }
 
     public function categoriesIds()
