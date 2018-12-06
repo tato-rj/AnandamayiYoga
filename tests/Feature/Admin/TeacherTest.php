@@ -12,6 +12,16 @@ class TeacherTest extends AppTest
 {
 	use Administrator;
 
+	public function setUp()
+	{
+		parent::setUp();
+
+		$this->adminTeacher = create('App\Admin', ['role' => 'teacher']);
+		$this->teacher = create('App\Teacher');
+		$this->adminTeacher->update(['teacher_id' => $this->teacher->id]);
+		$this->teacher->update(['admin_id' => $this->adminTeacher->id]);
+	}
+
 	/** @test */
 	public function a_admin_can_create_a_new_teacher()
 	{
@@ -178,5 +188,58 @@ class TeacherTest extends AppTest
 		$program->teacher->delete();
 
 		$this->assertDatabaseMissing('programs', ['name' => $program->name]);
+	}
+
+	/** @test */
+	public function the_teachers_questionaire_is_removed_when_the_teacher_is_deleted()
+	{
+		$this->adminSignIn($this->adminTeacher);
+
+		$questionaire = create('App\TeacherQuestionaire', ['teacher_id' => $this->teacher->id]);
+
+		$teacherId = $this->teacher->id;
+
+		$this->teacher->delete();
+
+		$this->assertDatabaseMissing('teacher_questionaires', ['teacher_id' => $teacherId]);
+	}
+
+	/** @test */
+	public function teachers_can_create_a_questionaire()
+	{
+		$this->adminSignIn($this->adminTeacher);
+
+		$this->assertNull($this->teacher->questionaire);
+
+		$this->post(route('admin.teachers.questionaire.store'), [
+			'teacher_id' => $this->teacher->id,
+			'questions' => json_encode(['question 1', 'question 2'])
+		]);
+
+		$this->assertNotNull($this->teacher->fresh()->questionaire);
+	}
+
+	/** @test */
+	public function teachers_can_update_their_questionaire()
+	{
+		$this->adminSignIn($this->adminTeacher);
+		
+		$questionaire = create('App\TeacherQuestionaire', ['teacher_id' => $this->teacher->id]);
+
+		$this->patch(route('admin.teachers.questionaire.update', $questionaire->id), ['questions' => '["new question"]']);
+
+		$this->assertEquals($this->teacher->questionaire->questions, ['new question']);
+	}
+
+	/** @test */
+	public function teachers_can_delete_their_questionaire()
+	{
+		$this->adminSignIn($this->adminTeacher);
+		
+		$questionaire = create('App\TeacherQuestionaire', ['teacher_id' => $this->teacher->id]);
+
+		$this->delete(route('admin.teachers.questionaire.destroy', $questionaire->id));
+
+		$this->assertNull($this->teacher->questionaire);
 	}
 }

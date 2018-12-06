@@ -373,3 +373,12 @@ $factory->define(App\Routine::class, function(Faker $faker) {
             'teacher_id' => $questionaire->teacher_id
     ];
 });
+
+$factory->define(App\TeacherQuestionaire::class, function(Faker $faker) {
+    return [
+            'teacher_id' => function() {
+                return create('App\Teacher')->id;
+            },
+            'questions' => serialize($faker->paragraphs(3))
+    ];
+});

@@ -12,7 +12,7 @@
                 @if($program->teacher()->exists())
                 <p class="mb-1 clamp-1 text-white"><small>@lang('with') <strong>{{$program->teacher->name}}</strong></small></p>
                 @endif
-	            <p class="text-white m-0"><small>{{$program->lessons()->count()}} videos | {{secondsToTime($program->duration)}}</small></p>
+	            <p class="text-white m-0"><small>{{$program->lessons()->count()}} @lang('lessons') | {{secondsToTime($program->duration)}}</small></p>
             </div>
         </div>
     </a>

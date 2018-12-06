@@ -12,7 +12,7 @@
     </div>
 
     <ul class="top-nav d-flex">
-
+        @manager
         <li class="top-nav__notifications"><a href="{{route('admin.email.create')}}" class="nav-link"><h5 class="m-0"><i class="fas fa-envelope-open"></i></h5></a></li>
         <li class="nav-item dropdown">
             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -29,11 +29,11 @@
         </li>
 
     @include('/admin/components/apps')
-
+    @endmanager
     <li class="top-nav__notifications">
         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             <i class="fas fa-sign-out-alt fa-lg mt-1"></i>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            <form id="logout-form" action="{{ route('logout', ['guard' => 'admin']) }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
             </form> 
         </a>

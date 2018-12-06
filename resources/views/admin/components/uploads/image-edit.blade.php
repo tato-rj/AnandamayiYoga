@@ -4,7 +4,9 @@
     {{method_field('PATCH')}}
     <input type="file" id="image-input" name="image" data-target="#image" style="display:none;" />
     <div class="position-relative image-container">
-      <img class="w-100" id="image" src="{{cloud($image)}}" alt="Not an image">
+      @include('admin.components.uploads.label', ['text' => 'MAIN IAMGE', 'icon' => 'image'])
+      <img class="w-100 border" id="image" src="{{cloud($image)}}" alt="Not an image">
+      @manager
       <div class="controls text-center">
         <div class="d-flex justify-content-center align-items-center">
           <button type="button" id="upload-button" class="btn-link text-blue cursor-pointer border-0 px-4">
@@ -17,6 +19,7 @@
           </button>
         </div>
       </div>
+      @endmanager
     </div>
   </form>
 

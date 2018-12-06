@@ -2,7 +2,8 @@
   <div id="upload-box">
     <input required type="file" data-target="#image" id="image-input" name="image" style="display:none;" />
     <div class="position-relative image-container">
-      <img class="card-img-top" id="image" src="{{cloud('app/misc/no-image.png')}}">
+      @include('admin.components.uploads.label', ['text' => 'MAIN IMAGE', 'icon' => 'image'])
+      <img class="w-100 border" id="image" src="{{cloud('app/misc/no-image.png')}}">
       <div class="controls text-center">
         <button type="button" id="upload-button" class="btn-link text-blue cursor-pointer border-0">
           <i class="fas fa-folder-open fa-lg"></i>

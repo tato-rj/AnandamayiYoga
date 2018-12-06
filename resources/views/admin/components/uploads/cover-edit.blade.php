@@ -4,7 +4,9 @@
     @method('PATCH')
     <input type="file" id="cover-input" name="cover" data-target="#cover" style="display:none;" />
     <div class="position-relative image-container">
-      <img class="w-100" id="cover" src="{{cloud($cover)}}" alt="Not an image">
+      @include('admin.components.uploads.label', ['text' => 'COVER IMAGE', 'icon' => 'image'])
+      <img class="w-100 border" id="cover" src="{{cloud($cover)}}" alt="Not an image">
+      @manager
       <div class="controls text-center">
         <div class="d-flex justify-content-center align-items-center">
           <button type="button" id="upload-cover-button" class="btn-link text-blue cursor-pointer border-0 px-4">
@@ -17,6 +19,7 @@
           </button>
         </div>
       </div>
+      @endmanager
     </div>
   </form>
 

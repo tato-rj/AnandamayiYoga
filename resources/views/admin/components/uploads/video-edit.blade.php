@@ -1,10 +1,11 @@
-@manager
 <div class="form-group">
-  <div class="embed-responsive embed-responsive-16by9 mb-2 border rounded">
+  @include('admin.components.uploads.label', ['text' => 'VIDEO', 'icon' => 'video'])
+  <div class="embed-responsive embed-responsive-16by9 mb-2 border">
     <video id="video-preview" controls>
       <source src="{{cloud($video)}}" type="video/mp4">
     </video>
   </div>
+  @manager
   <form method="POST" action="{{$path}}" enctype="multipart/form-data">
     @csrf
     @method('PATCH')
@@ -30,5 +31,5 @@
     {{ $errors->first('video') }}
   </div>
   @endif
+  @endmanager
 </div>
-@endmanager

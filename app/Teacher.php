@@ -23,6 +23,7 @@ class Teacher extends Anandamayi
             $teacher->courses()->detach();
             $teacher->lessons->each->delete();
             $teacher->programs->each->delete();
+            $teacher->questionaire()->delete();
         });
     }
 
@@ -49,6 +50,11 @@ class Teacher extends Anandamayi
     public function articles()
     {
         return $this->hasMany(Article::class, 'author_id');
+    }
+
+    public function questionaire()
+    {
+        return $this->hasOne(TeacherQuestionaire::class);
     }
 
     public function routines()

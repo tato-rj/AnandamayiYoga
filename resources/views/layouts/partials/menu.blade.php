@@ -116,7 +116,7 @@
             href="{{ route('logout') }}" 
             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             <small><i class="d-none d-lg-inline fas mr-3 text-muted fa-sign-out-alt"></i></small>@lang('Logout')
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            <form id="logout-form" action="{{ route('logout', ['guard' => 'open']) }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
             </form> 
           </a>

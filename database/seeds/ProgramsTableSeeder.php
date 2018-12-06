@@ -21,30 +21,17 @@ class ProgramsTableSeeder extends Seeder
         \DB::insert('insert into category_program (program_id, category_id) values (1, 9), (1, 5), (1, 6), (1, 8)');
 
         Program::create([
-            'slug' => str_slug('Introducing Chair Yoga'), 
-            'name' => 'Introducing Chair Yoga', 
-            'name_pt' => 'Introdução ao Yoga na Cadeira',
+            'slug' => str_slug('12-day Functional Yoga Training'), 
+            'name' => '12-day Functional Yoga Training', 
+            'name_pt' => '12 dia de Treinamento em Yoga Funcional',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             'description_pt' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             'image_path' => 'app/demo/covers/demo-2.jpg',
             'video_path' => 'app/demo/videos/demo-lesson.mp4',
-            'teacher_id' => 1
+            'teacher_id' => 2
         ]);
 
         \DB::insert('insert into category_program (program_id, category_id) values (2, 1), (2, 5)');
-
-        Program::create([
-            'slug' => str_slug('Meditation for a Better Night of Sleep'), 
-            'name' => 'Meditation for a Better Night of Sleep', 
-            'name_pt' => 'Meditação para uma Melhor Noite de Sono',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-            'description_pt' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-            'image_path' => 'app/demo/covers/demo-3.jpg',
-            'video_path' => 'app/demo/videos/demo-lesson.mp4',
-            'teacher_id' => 1
-        ]);
-
-        \DB::insert('insert into category_program (program_id, category_id) values (3, 2), (3, 9), (3, 4)');
 
         Program::create([
             'slug' => str_slug('Introduction to the History of Yoga'), 

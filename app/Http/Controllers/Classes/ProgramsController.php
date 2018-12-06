@@ -110,7 +110,7 @@ class ProgramsController extends Controller
      */
     public function edit(Program $program)
     {
-        $lessons = Lesson::whereNull('program_id')->get();
+        $lessons = Lesson::authorized()->whereNull('program_id')->get();
         $teachers = Teacher::orderBy('name')->get();
 
         return view('admin/pages/programs/edit/layout', compact(['program', 'lessons', 'teachers']));

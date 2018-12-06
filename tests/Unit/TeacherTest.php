@@ -90,4 +90,14 @@ class TeacherTest extends AppTest
 
 		$this->assertInstanceOf('App\Routine', $this->teacher->routines()->first());
 	}
+
+	/** @test */
+	public function it_can_have_one_questionaire()
+	{        
+		$questionaire = create('App\TeacherQuestionaire');
+        
+        $this->teacher->questionaire()->save($questionaire);
+
+		$this->assertInstanceOf('App\TeacherQuestionaire', $this->teacher->questionaire);
+	}
 }

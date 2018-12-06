@@ -110,7 +110,7 @@ class LessonsController extends Controller
      */
     public function edit(Lesson $lesson)
     {
-        $programs = Program::all();
+        $programs = Program::authorized()->get();
         $teachers = \App\Teacher::orderBy('name')->get();
 
         return view('admin/pages/lessons/edit/layout', compact(['lesson', 'programs', 'teachers']));

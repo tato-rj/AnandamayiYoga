@@ -8,12 +8,11 @@
 ])
 
 <div class="row">
-  @manager
   {{-- PLUS --}}
   <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4">
-    @include('admin/components/plus-card')
+    @include('admin/components/plus-card', ['item' => 'course'])
   </div>
-  @endmanager
+
   {{-- CARDS --}}
   @foreach($courses as $course)
     @include('admin/components/cards/course')

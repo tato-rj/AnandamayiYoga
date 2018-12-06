@@ -8,7 +8,7 @@
   @include('admin/components/uploads/video-edit', [
     'video' => $program->video_path,
     'path' => "/admin/programs/{$program->slug}/video"])
-
+@manager
 {{-- TEACHER --}}
 <div class="form-group edit-control" name="teacher_id" id="teacher_id-{{$program->id}}">
   
@@ -26,5 +26,5 @@
   </select>
 
 </div>
-
+@endmanager
 </div>

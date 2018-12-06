@@ -20,4 +20,14 @@ Route::prefix('/teachers')->namespace('Admin')->name('teachers.')->group(functio
 
     Route::delete('/{teacher}', 'AdminController@destroyTeacher')->name('destroy');
 
+    Route::prefix('/questionaire')->name('questionaire.')->group(function() {
+
+    	Route::post('', 'TeacherQuestionairesController@store')->name('store');
+
+    	Route::patch('/{questionaire}', 'TeacherQuestionairesController@update')->name('update');
+	
+	    Route::delete('/{questionaire}', 'TeacherQuestionairesController@destroy')->name('destroy');
+
+    });
+
 });
