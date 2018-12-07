@@ -18,7 +18,7 @@ class LessonsController extends Controller
      */
     public function index(Request $request, LessonFilters $filters)
     {
-        $lessons = Lesson::valid()->filter($filters)->paginate(12);
+        $lessons = Lesson::valid()->published()->filter($filters)->paginate(12);
         
         // if ($request->ajax()){
         //     return view('pages/discover/lessons/show', ['lessons' => $lessons])->render();
@@ -79,6 +79,7 @@ class LessonsController extends Controller
             'program_id' => $request->program_id,
             'is_free' => $request->is_free,
             'teacher_id' => $request->teacher_id,
+            'published' => now()
         ]);
 
         $lesson->categories()->attach($request->category);

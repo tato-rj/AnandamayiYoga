@@ -2,7 +2,7 @@
 
 Route::prefix('/my-yoga-routine')->namespace('Routines')->name('routine.')->group(function() {
 
-    Route::get('/instructions', 'RoutinesController@instructions')->name('instructions');
+    Route::get('/instructions', 'RoutineQuestionairesController@instructions')->name('instructions');
 
     Route::get('/questionaire', 'RoutineQuestionairesController@form')->name('form');
 

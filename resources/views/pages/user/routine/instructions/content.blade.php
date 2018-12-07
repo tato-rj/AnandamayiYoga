@@ -1,9 +1,10 @@
 <section id="scroll-mark" class="container py-5">
 
-    @title(['title' => 'How do I create my 4-week Yoga Routine?'])
+    @title(['title' => 'Let\'s create your Yoga Routine'])
 
 	<div class="row">
 		<div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 mx-auto">
+			{!! trixLorem(1) !!}
 			@component('pages/user/routine/instructions/step', [
 				'number' => 1,
 				'title' => 'ANSWER OUR QUICK QUESTIONNAIRE'])

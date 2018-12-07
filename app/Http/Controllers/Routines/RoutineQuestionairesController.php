@@ -22,6 +22,13 @@ class RoutineQuestionairesController extends Controller
         return view('/admin/pages/routines/pending', compact('pendingRequests'));
     }
 
+    public function instructions()
+    {
+        $teachers = Teacher::hasPublishedQuestionaires()->get();
+        
+        return view('pages/user/routine/instructions/index', compact('teachers'));
+    }
+
     public function form()
     {
         $teachers = Teacher::all();

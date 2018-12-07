@@ -18,7 +18,7 @@ class ProgramsController extends Controller
      */
     public function index()
     {
-        $programs = Program::has('lessons')->paginate(12);
+        $programs = Program::has('lessons')->published()->paginate(12);
         return view('pages/discover/programs/index', compact('programs'));
     }
 
@@ -57,6 +57,7 @@ class ProgramsController extends Controller
             'image_path' => imageToS3($request, 'programs'),
             'video_path' => videoToS3($request, 'programs'),
             'teacher_id' => $request->teacher_id,
+            'published' => now()
         ]);
 
         $program->categories()->attach($request->category);

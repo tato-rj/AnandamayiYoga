@@ -23,11 +23,6 @@ class RoutinesController extends Controller
         return view('/admin/pages/routines/active', compact('routines'));
     }
 
-    public function instructions()
-    {
-        return view('pages/user/routine/instructions/index');
-    }
-
     /**
      * Show the form for creating a new resource.
      *

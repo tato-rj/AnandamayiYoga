@@ -24,12 +24,12 @@ class Category extends Anandamayi
 
     public function lessons()
     {
-        return $this->belongsToMany(Lesson::class);
+        return $this->belongsToMany(Lesson::class)->published();
     }
 
     public function programs()
     {
-        return $this->belongsToMany(Program::class);
+        return $this->belongsToMany(Program::class)->published();
     }
 
     public function users()

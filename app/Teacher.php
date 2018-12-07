@@ -39,12 +39,12 @@ class Teacher extends Anandamayi
 
     public function lessons()
     {
-        return $this->hasMany(Lesson::class)->valid();
+        return $this->hasMany(Lesson::class)->valid()->published();
     }
 
     public function programs()
     {
-        return $this->hasMany(Program::class);
+        return $this->hasMany(Program::class)->published();
     }
 
     public function articles()
@@ -72,5 +72,12 @@ class Teacher extends Anandamayi
     public function scopeAnandamayi($query)
     {
         return $query->where('name', 'LIKE', '%Anandamayi%')->first();
+    }
+
+    public function scopeHasPublishedQuestionaires($query)
+    {
+        return $query->whereHas('questionaire', function($q) {
+            $q->published();
+        });
     }
 }

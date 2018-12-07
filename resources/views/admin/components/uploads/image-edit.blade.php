@@ -4,7 +4,7 @@
     {{method_field('PATCH')}}
     <input type="file" id="image-input" name="image" data-target="#image" style="display:none;" />
     <div class="position-relative image-container">
-      @include('admin.components.uploads.label', ['text' => 'MAIN IAMGE', 'icon' => 'image'])
+      @include('admin.components.uploads.label', ['text' => 'MAIN IMAGE', 'icon' => 'image'])
       <img class="w-100 border" id="image" src="{{cloud($image)}}" alt="Not an image">
       @manager
       <div class="controls text-center">

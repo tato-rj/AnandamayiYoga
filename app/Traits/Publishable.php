@@ -4,6 +4,11 @@ namespace App\Traits;
 
 trait Publishable
 {
+	public function scopePublished($query)
+	{
+		return $query->whereNotNull('published');
+	}
+
 	public function updateStatus()
 	{
         if ($this->published) {

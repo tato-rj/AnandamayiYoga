@@ -12,7 +12,7 @@ class Schedule extends Anandamayi
 
     public function lesson()
     {
-        return $this->belongsTo(Lesson::class);
+        return $this->belongsTo(Lesson::class)->published();
     }
 
     public function routine()

@@ -62,7 +62,7 @@ class CategoriesController extends Controller
      */
     public function show(Request $request, Category $category, LessonFilters $filters)
     {
-        $lessons = Lesson::byCategory($category)->filter($filters)->paginate(12);
+        $lessons = $category->lessons()->filter($filters)->paginate(12);
         
         if ($request->ajax())
             return view('pages/discover/lessons/show', ['lessons' => $lessons])->render();

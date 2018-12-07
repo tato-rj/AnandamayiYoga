@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         \View::composer('pages/welcome/index', function($view) {
-            $freePrograms = Program::free(3);
+            $freePrograms = Program::published()->free(3);
 
             $view->with(['freePrograms' => $freePrograms]);
         });
@@ -56,15 +56,15 @@ class AppServiceProvider extends ServiceProvider
         });
 
         \View::composer('components/swiper/trending', function($view) {
-            $view->with('trending', Lesson::valid()->trending(10));
+            $view->with('trending', Lesson::valid()->published()->trending(10));
         });
 
         \View::composer('components/swiper/latest', function($view) {
-            $view->with('latest', Lesson::valid()->recent(10));
+            $view->with('latest', Lesson::valid()->published()->recent(10));
         });
 
         \View::composer('components/swiper/free', function($view) {
-            $view->with('freeClasses', Lesson::valid()->free(10));
+            $view->with('freeClasses', Lesson::valid()->published()->free(10));
         });
 
         \View::composer('components/bars/books', function($view) {

@@ -10,7 +10,7 @@ class Level extends Anandamayi
 	
     public function lessons()
     {
-    	return $this->hasMany(Lesson::class);
+    	return $this->hasMany(Lesson::class)->published();
     }
 
     public function getSlugName()
