@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             CategoriesTableSeeder::class,
         	LevelsTableSeeder::class,
         	TeachersTableSeeder::class,
+            TeacherQuestionairesTableSeeder::class,
             ArticleTopicsTableSeeder::class,
             ArticlesTableSeeder::class,
             WallpaperCategoriesTableSeeder::class,

@@ -15,7 +15,8 @@ class ProgramsTableSeeder extends Seeder
             'description_pt' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             'image_path' => 'app/demo/covers/demo-1.jpg',
             'video_path' => 'app/demo/videos/demo-lesson.mp4',
-            'teacher_id' => 1
+            'teacher_id' => 1,
+            'published' => now()
         ]);
 
         \DB::insert('insert into category_program (program_id, category_id) values (1, 9), (1, 5), (1, 6), (1, 8)');
@@ -28,7 +29,8 @@ class ProgramsTableSeeder extends Seeder
             'description_pt' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             'image_path' => 'app/demo/covers/demo-2.jpg',
             'video_path' => 'app/demo/videos/demo-lesson.mp4',
-            'teacher_id' => 2
+            'teacher_id' => 2,
+            'published' => now()
         ]);
 
         \DB::insert('insert into category_program (program_id, category_id) values (2, 1), (2, 5)');
@@ -41,7 +43,8 @@ class ProgramsTableSeeder extends Seeder
             'description_pt' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             'image_path' => 'app/demo/covers/demo-4.jpg',
             'video_path' => 'app/demo/videos/demo-lesson.mp4',
-            'teacher_id' => 1
+            'teacher_id' => 1,
+            'published' => now()
         ]);
 
         \DB::insert('insert into category_program (program_id, category_id) values (4, 10), (4, 5), (4, 3), (4, 11)');
@@ -54,7 +57,8 @@ class ProgramsTableSeeder extends Seeder
             'description_pt' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             'image_path' => 'app/demo/covers/demo-5.jpg',
             'video_path' => 'app/demo/videos/demo-lesson.mp4',
-            'teacher_id' => 1
+            'teacher_id' => 1,
+            'published' => now()
         ]);
 
         \DB::insert('insert into category_program (program_id, category_id) values (5, 1), (5, 5), (5, 2)');

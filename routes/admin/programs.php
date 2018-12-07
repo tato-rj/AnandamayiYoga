@@ -12,6 +12,8 @@ Route::prefix('/programs')->name('programs.')->group(function() {
 
     Route::patch('/{program}', 'Classes\ProgramsController@update')->name('update');
 
+    Route::patch('/{program}/status', 'Classes\ProgramsController@status')->name('status');
+
     Route::patch('/{program}/image', 'Classes\ProgramsController@updateImage')->name('image.update');
 
     Route::patch('/{program}/video', 'Classes\ProgramsController@updateVideo')->name('video.update');

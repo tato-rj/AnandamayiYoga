@@ -65,6 +65,13 @@
                     <small><i class="ml-2 fas fa-caret-down"></i></small>
                 </a>
                 <ul>
+                    @if(auth()->user()->teacher()->exists())
+                        @if(auth()->user()->teacher->questionaire()->exists())
+                        <li class="{{checkActive(['/admin/teachers/questionaire'])}}"><a href="/admin/teachers/{{auth()->user()->teacher->slug}}/questionaire">My questionaire</a></li>
+                        @else
+                        <li class="{{checkActive(['/admin/teachers/questionaire/create'])}}"><a href="/admin/teachers/{{auth()->user()->teacher->slug}}/questionaire/create">My questionaire</a></li>
+                        @endif
+                    @endif
                     <li class="{{checkActive(['admin/routines/pending'])}}">
                         <a href="/admin/routines/pending">New requests
                             @if($numberOfNewRequests > 0)

@@ -31,6 +31,7 @@ class CreateLessonsTable extends Migration
             $table->boolean('is_free');
             $table->unsignedInteger('views')->default(0);
             $table->unsignedInteger('teacher_id')->nullable();
+            $table->timestamp('published')->nullable();
             $table->timestamps();
         });
     }

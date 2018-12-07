@@ -12,6 +12,8 @@ Route::prefix('/classes')->namespace('Classes')->name('classes.')->group(functio
 
     Route::patch('/{lesson}', 'LessonsController@update')->name('update');
 
+    Route::patch('/{lesson}/status', 'LessonsController@status')->name('status');
+
     Route::patch('/{lesson}/image', 'LessonsController@updateImage')->name('image.update');
 
     Route::patch('/{lesson}/video', 'LessonsController@updateVideo')->name('video.update');

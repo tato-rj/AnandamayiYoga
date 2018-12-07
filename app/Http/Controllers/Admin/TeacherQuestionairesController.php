@@ -9,13 +9,14 @@ use App\Http\Controllers\Controller;
 class TeacherQuestionairesController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Show the form for editing the specified resource.
      *
+     * @param  \App\TeacherQuestionaire  $questionaire
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Teacher $teacher)
     {
-        //
+        return view('admin/pages/teachers/questionaire/index', compact('teacher'));
     }
 
     /**
@@ -25,7 +26,7 @@ class TeacherQuestionairesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/pages/teachers/questionaire/create');
     }
 
     /**
@@ -34,19 +35,19 @@ class TeacherQuestionairesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Teacher $teacher)
     {
         $request->validate([
-            'teacher_id' => 'required|unique:teacher_questionaires',
             'questions' => 'required'
         ]);
-
+        
         TeacherQuestionaire::create([
-            'teacher_id' => $request->teacher_id,
-            'questions' => serialize($request->questions)
+            'teacher_id' => $teacher->id,
+            'questions' => serialize($request->questions),
+            'questions_pt' => serialize($request->questions_pt)
         ]);
 
-        return back()->with('status', "The questionarie has been successfully created.");
+        return redirect(route('admin.teachers.questionaire.index', $teacher->slug))->with('status', "The questionarie has been successfully created.");
     }
 
     /**
@@ -66,9 +67,9 @@ class TeacherQuestionairesController extends Controller
      * @param  \App\TeacherQuestionaire  $questionaire
      * @return \Illuminate\Http\Response
      */
-    public function edit(TeacherQuestionaire $questionaire)
+    public function edit(Teacher $teacher)
     {
-        //
+        return view('admin/pages/teachers/questionaire/edit', compact('teacher'));
     }
 
     /**
@@ -78,11 +79,21 @@ class TeacherQuestionairesController extends Controller
      * @param  \App\TeacherQuestionaire  $questionaire
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TeacherQuestionaire $questionaire)
+    public function update(Request $request, Teacher $teacher, TeacherQuestionaire $questionaire)
     {
-        $questionaire->update(['questions' => serialize($request->questions)]);
+        $questionaire->update([
+            'questions' => serialize($request->questions),
+            'questions_pt' => serialize($request->questions_pt)
+        ]);
 
         return back()->with('status', "The questionarie has been successfully updated.");
+    }
+
+    public function status(Request $request, Teacher $teacher, TeacherQuestionaire $questionaire)
+    {
+        $questionaire->updateStatus();
+        
+        return back()->with('status', "Status updated.");
     }
 
     /**
@@ -91,10 +102,10 @@ class TeacherQuestionairesController extends Controller
      * @param  \App\TeacherQuestionaire  $questionaire
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TeacherQuestionaire $questionaire)
+    public function destroy(Teacher $teacher, TeacherQuestionaire $questionaire)
     {
         $questionaire->delete();
 
-        return back()->with('status', "The questionarie has been successfully deleted.");
+        return redirect(route('admin.teachers.questionaire.index', $teacher->slug))->with('status', "The questionarie has been successfully deleted.");
     }
 }

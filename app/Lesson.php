@@ -3,15 +3,16 @@
 namespace App;
 
 use App\Filters\LessonFilters;
-use App\Traits\{FindBySlug, Favoritable, SwiperQueries, InteractsWithCloud, Filterable, Localizable, HasTeacher};
+use App\Traits\{FindBySlug, Favoritable, SwiperQueries, InteractsWithCloud, Filterable, Localizable, HasTeacher, Publishable};
 
 class Lesson extends Anandamayi
 {
-    use FindBySlug, Favoritable, SwiperQueries, InteractsWithCloud, Filterable, Localizable, HasTeacher;
+    use FindBySlug, Favoritable, SwiperQueries, InteractsWithCloud, Filterable, Localizable, HasTeacher, Publishable;
 
     protected $guarded = [];
     protected $casts = ['is_free' => 'boolean'];
     protected $with = ['categories'];
+    protected $dates = ['published'];
 
     protected static function boot()
     {

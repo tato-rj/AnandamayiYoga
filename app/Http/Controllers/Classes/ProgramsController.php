@@ -140,6 +140,13 @@ class ProgramsController extends Controller
             return 'The program has been successfully edited.';
     }
 
+    public function status(Request $request, Program $program)
+    {
+        $program->updateStatus();
+                
+        return back()->with('status', "Status updated.");
+    }
+
     public function updateImage(Request $request, Program $program)
     {
         $newImage = imageToS3($request, 'programs');

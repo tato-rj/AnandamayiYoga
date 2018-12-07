@@ -16,7 +16,9 @@ class CreateTeacherQuestionairesTable extends Migration
         Schema::create('teacher_questionaires', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('teacher_id')->unique();
-            $table->json('questions');
+            $table->text('questions');
+            $table->text('questions_pt')->nullable();
+            $table->timestamp('published')->nullable();
             $table->timestamps();
         });
     }

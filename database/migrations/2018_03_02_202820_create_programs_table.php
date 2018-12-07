@@ -27,6 +27,7 @@ class CreateProgramsTable extends Migration
             $table->string('image_path')->nullable();
             $table->unsignedInteger('views')->default(0);
             $table->unsignedInteger('teacher_id')->nullable();
+            $table->timestamp('published')->nullable();
             $table->timestamps();
         });
     }

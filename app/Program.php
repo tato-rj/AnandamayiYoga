@@ -2,18 +2,19 @@
 
 namespace App;
 
-use App\Traits\{FindBySlug, Favoritable, InteractsWithCloud, Localizable, HasTeacher};
+use App\Traits\{FindBySlug, Favoritable, InteractsWithCloud, Localizable, HasTeacher, Publishable};
 use Illuminate\Support\Facades\Storage;
 
 class Program extends Anandamayi
 {
-    use FindBySlug, Favoritable, InteractsWithCloud, Localizable, HasTeacher;
+    use FindBySlug, Favoritable, InteractsWithCloud, Localizable, HasTeacher, Publishable;
     
     protected $guarded = [];
 
     protected $with = ['categories'];
     protected $appends = ['is_free'];
     protected $withCount = ['lessons'];
+    protected $dates = ['published'];
 
     protected static function boot()
     {

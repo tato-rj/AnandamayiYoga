@@ -20,11 +20,19 @@ Route::prefix('/teachers')->namespace('Admin')->name('teachers.')->group(functio
 
     Route::delete('/{teacher}', 'AdminController@destroyTeacher')->name('destroy');
 
-    Route::prefix('/questionaire')->name('questionaire.')->group(function() {
+    Route::prefix('/{teacher}/questionaire')->name('questionaire.')->group(function() {
+
+        Route::get('', 'TeacherQuestionairesController@index')->name('index');
+
+        Route::get('/create', 'TeacherQuestionairesController@create')->name('create');
+
+        Route::get('/edit', 'TeacherQuestionairesController@edit')->name('edit');
 
     	Route::post('', 'TeacherQuestionairesController@store')->name('store');
 
     	Route::patch('/{questionaire}', 'TeacherQuestionairesController@update')->name('update');
+
+        Route::patch('/{questionaire}/status', 'TeacherQuestionairesController@status')->name('status');
 	
 	    Route::delete('/{questionaire}', 'TeacherQuestionairesController@destroy')->name('destroy');
 

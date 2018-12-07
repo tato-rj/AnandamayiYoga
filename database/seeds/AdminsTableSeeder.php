@@ -20,6 +20,7 @@ class AdminsTableSeeder extends Seeder
         	'last_name' => 'Villar',
         	'email' => 'saldanhavillar@outlook.com',
         	'password' => bcrypt('aliceyoga'),
+            'teacher_id' => '1',
             'role' => 'manager'
         ]);
 

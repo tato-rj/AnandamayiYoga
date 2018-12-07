@@ -211,12 +211,33 @@ class TeacherTest extends AppTest
 
 		$this->assertNull($this->teacher->questionaire);
 
-		$this->post(route('admin.teachers.questionaire.store'), [
+		$this->post(route('admin.teachers.questionaire.store', $this->teacher->slug), [
 			'teacher_id' => $this->teacher->id,
 			'questions' => json_encode(['question 1', 'question 2'])
 		]);
 
 		$this->assertNotNull($this->teacher->fresh()->questionaire);
+	}
+
+	/** @test */
+	public function teachers_can_publish_or_unpublish_their_questionaire()
+	{
+		$this->adminSignIn($this->adminTeacher);
+
+		$this->post(route('admin.teachers.questionaire.store', $this->teacher->slug), [
+			'teacher_id' => $this->teacher->id,
+			'questions' => json_encode(['question 1', 'question 2'])
+		]);
+
+		$this->assertNull($this->teacher->questionaire->published);
+
+		$this->patch(route('admin.teachers.questionaire.status', [$this->teacher->slug, $this->teacher->questionaire->id]));
+
+		$this->assertNotNull($this->teacher->fresh()->questionaire->published);
+
+		$this->patch(route('admin.teachers.questionaire.status', [$this->teacher->slug, $this->teacher->questionaire->id]));
+
+		$this->assertNull($this->teacher->fresh()->questionaire->published);
 	}
 
 	/** @test */
@@ -226,9 +247,9 @@ class TeacherTest extends AppTest
 		
 		$questionaire = create('App\TeacherQuestionaire', ['teacher_id' => $this->teacher->id]);
 
-		$this->patch(route('admin.teachers.questionaire.update', $questionaire->id), ['questions' => '["new question"]']);
-
-		$this->assertEquals($this->teacher->questionaire->questions, ['new question']);
+		$this->patch(route('admin.teachers.questionaire.update', [$this->teacher->slug, $questionaire->id]), ['questions' => '["new question"]']);
+		
+		$this->assertEquals($this->teacher->questionaire->questions_en, ['new question']);
 	}
 
 	/** @test */
@@ -238,7 +259,7 @@ class TeacherTest extends AppTest
 		
 		$questionaire = create('App\TeacherQuestionaire', ['teacher_id' => $this->teacher->id]);
 
-		$this->delete(route('admin.teachers.questionaire.destroy', $questionaire->id));
+		$this->delete(route('admin.teachers.questionaire.destroy', [$this->teacher->slug, $questionaire->id]));
 
 		$this->assertNull($this->teacher->questionaire);
 	}

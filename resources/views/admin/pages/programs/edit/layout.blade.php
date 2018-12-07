@@ -2,27 +2,24 @@
 
 @section('content')
 
-@component('admin/components/page-title', [
-  'title' => 'Edit Program'])
-
-  @slot('subtitle')
-    <a href="/admin/programs" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to view all programs</a>
-  @endslot
-
-@endcomponent
+@include('admin/components/page-title', [
+  'title' => 'Edit Program', 
+  'subtitle' => [
+    'url' => '/admin/programs',
+    'label' => 'Return to view all programs',
+    'publishable' => [
+      'model' => $program,
+      'url' => route('admin.programs.status', [$program->slug])]
+  ]])
 
 <div class="row">
-  <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
-    <div>
-      <div class="row">
 
-        @include('admin/pages/programs/edit/left-column')
+  @include('admin.components.publishable', ['model' => $program, 'name' => 'program'])
 
-        @include('admin/pages/programs/edit/right-column')        
+  @include('admin/pages/programs/edit/left-column')
 
-      </div>      
-    </div>
-  </div>
+  @include('admin/pages/programs/edit/right-column')
+
 </div>
 
 @endsection

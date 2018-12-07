@@ -138,6 +138,13 @@ class LessonsController extends Controller
             return 'The lesson has been successfully edited.';
     }
 
+    public function status(Request $request, Lesson $lesson)
+    {
+        $lesson->updateStatus();
+
+        return back()->with('status', "Status updated.");
+    }
+
     public function updateImage(Request $request, Lesson $lesson)
     {
         $newImage = imageToS3($request, 'lessons');
