@@ -6,6 +6,8 @@ Route::prefix('/teachers')->namespace('Admin')->name('teachers.')->group(functio
 
     Route::get('/create', 'TeachersController@create')->name('create');
 
+    Route::get('/questionaire', 'TeacherQuestionairesController@index')->name('questionaire');
+
     Route::get('/{teacher}', 'TeachersController@edit')->name('edit');
 
     Route::post('', 'TeachersController@store')->name('store');
@@ -22,7 +24,7 @@ Route::prefix('/teachers')->namespace('Admin')->name('teachers.')->group(functio
 
     Route::prefix('/{teacher}/questionaire')->name('questionaire.')->group(function() {
 
-        Route::get('', 'TeacherQuestionairesController@index')->name('index');
+        Route::get('/show', 'TeacherQuestionairesController@show')->name('show');
 
         Route::get('/create', 'TeacherQuestionairesController@create')->name('create');
 

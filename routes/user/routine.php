@@ -4,7 +4,7 @@ Route::prefix('/my-yoga-routine')->namespace('Routines')->name('routine.')->grou
 
     Route::get('/instructions', 'RoutineQuestionairesController@instructions')->name('instructions');
 
-    Route::get('/questionaire', 'RoutineQuestionairesController@form')->name('form');
+    Route::get('/questionaire/{teacher}', 'RoutineQuestionairesController@form')->name('form');
 
     Route::get('/{routine}/{lesson}', 'RoutinesController@show')->name('show');
 

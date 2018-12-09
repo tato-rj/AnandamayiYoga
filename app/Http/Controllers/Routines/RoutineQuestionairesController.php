@@ -29,12 +29,12 @@ class RoutineQuestionairesController extends Controller
         return view('pages/user/routine/instructions/index', compact('teachers'));
     }
 
-    public function form()
+    public function form(Teacher $teacher)
     {
-        $teachers = Teacher::all();
-        $activities = ['Yoga', 'Gym', 'Cycling', 'Pilates', 'Walk', 'Run', 'Hike', 'Swim', 'Surf', 'Dance', 'Team sport', 'I don\'t exercise', 'Other'];
+        if (! $teacher->questionaire->published)
+            return redirect(route('user.routine.instructions'));
 
-        return view('pages/user/routine/form/index', compact(['activities', 'teachers']));
+        return view('pages/user/routine/form/index', compact('teacher'));
     }
 
     /**
@@ -44,7 +44,7 @@ class RoutineQuestionairesController extends Controller
      */
     public function create(RoutineQuestionaire $request)
     {
-        $lessons = Lesson::orderBy('name')->get();
+        $lessons = Lesson::authorized()->published()->orderBy('name')->get();
 
         $request->withSchedule();
 
@@ -59,23 +59,12 @@ class RoutineQuestionairesController extends Controller
      */
     public function store(Request $request, RoutineQuestionaireForm $form)
     {
-        if (auth()->user()->pendingRoutine() || auth()->user()->activeRoutine())
-            return back()->with('error', 'We have to wait until your current proccess is done. Please try again at another time!');
-
         $questionaire =  RoutineQuestionaire::create([
             'user_id' => auth()->user()->id,
             'teacher_id' => $request->teacher_id,
             'schedule' => $request->schedule,
-            'duration' => $request->duration,
-            'age' => $request->age,
-            'lifestyle' => $request->lifestyle,
-            'reason' => $request->reason,
-            'level' => $request->level,
-            'categories' => json_encode($request->categories),
-            'practice' => json_encode($request->practice),
-            'physical' => json_encode($request->physical),
-            'mental' => json_encode($request->mental),
-            'spiritual' => json_encode($request->spiritual)
+            'questions' => serialize($request->questions),
+            'answers' => serialize($request->answers)
         ]);
 
         event(new RoutineRequested(auth()->user()));

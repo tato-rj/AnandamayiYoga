@@ -14,9 +14,13 @@ class TeacherQuestionairesController extends Controller
      * @param  \App\TeacherQuestionaire  $questionaire
      * @return \Illuminate\Http\Response
      */
-    public function index(Teacher $teacher)
+    public function index()
     {
-        return view('admin/pages/teachers/questionaire/index', compact('teacher'));
+        auth()->user()->authorize();
+
+        $questionaires = TeacherQuestionaire::all();
+
+        return view('admin/pages/teachers/questionaire/index', compact('questionaires'));
     }
 
     /**
@@ -47,7 +51,7 @@ class TeacherQuestionairesController extends Controller
             'questions_pt' => serialize($request->questions_pt)
         ]);
 
-        return redirect(route('admin.teachers.questionaire.index', $teacher->slug))->with('status', "The questionarie has been successfully created.");
+        return redirect(route('admin.teachers.questionaire', $teacher->slug))->with('status', "The questionarie has been successfully created.");
     }
 
     /**
@@ -56,9 +60,9 @@ class TeacherQuestionairesController extends Controller
      * @param  \App\TeacherQuestionaire  $questionaire
      * @return \Illuminate\Http\Response
      */
-    public function show(TeacherQuestionaire $questionaire)
+    public function show(Teacher $teacher)
     {
-        //
+        return view('admin/pages/teachers/questionaire/show', compact('teacher'));
     }
 
     /**
@@ -106,6 +110,6 @@ class TeacherQuestionairesController extends Controller
     {
         $questionaire->delete();
 
-        return redirect(route('admin.teachers.questionaire.index', $teacher->slug))->with('status', "The questionarie has been successfully deleted.");
+        return redirect(route('admin.teachers.questionaire', $teacher->slug))->with('status', "The questionarie has been successfully deleted.");
     }
 }

@@ -13,6 +13,9 @@ class RoutineQuestionaireForm extends FormRequest
      */
     public function authorize()
     {
+        if (auth()->user()->pendingRoutine() || auth()->user()->activeRoutine())
+            return back()->with('error', 'We have to wait until your current proccess is done. Please try again at another time!');
+
         return auth()->check();
     }
 
@@ -25,12 +28,8 @@ class RoutineQuestionaireForm extends FormRequest
     {
         return [
             'schedule' => 'required',
-            'duration' => 'required',
-            'age' => 'required',
-            'lifestyle' => 'required',
-            'level' => 'required',
-            'categories' => 'required',
-            'practice' => 'required'
+            'questions' => 'required',
+            'answers' => 'required'
         ];
     }
 }

@@ -12,12 +12,11 @@
 
 <div class="container-fluid" id="weeks-accordion">
 
-	@component('admin/pages/routines/weeks', [
+	@include('admin/pages/routines/weeks', [
 		'isNew' => false,
 		'request' => $routine->questionaire,
 		'lessons' => $lessons
 	])
-	@endcomponent
 
 </div>
 

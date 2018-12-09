@@ -59,7 +59,7 @@ class RoutinesController extends Controller
 
         event(new RoutineCreated($routine));
 
-        return redirect('office/routines/active')->with('status', 'The Routine has been successfully created!');
+        return redirect(route('admin.routines.active'))->with('status', 'The Routine has been successfully created!');
     }
 
     public function complete(Routine $routine)
@@ -96,7 +96,7 @@ class RoutinesController extends Controller
      */
     public function edit(Routine $routine)
     {
-        $lessons = Lesson::orderBy('name')->get();
+        $lessons = Lesson::authorized()->published()->orderBy('name')->get();
         
         $routine->questionaire->withSchedule();
 

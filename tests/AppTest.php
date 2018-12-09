@@ -85,17 +85,9 @@ abstract class AppTest extends TestCase
         
         return $this->post(route('user.routine.store', [
             'teacher_id' => $teacher->id,
-            'schedule' => '[{"day":"Monday", "time": "morning"}]',
-            'duration' => '5 to 10 min',
-            'age' => '29 to 39',
-            'lifestyle' => 'Active. I exercise three or more times per week.',
-            'reason' => null,
-            'level' => 'Beginner',
-            'categories' => ["Yoga"],
-            'practice' => ["Run", "Gym"],
-            'physical' => ["Increase flexibility and balance"],
-            'mental' => ["Relieve anxiety and stress", "Overcome depression"],
-            'spiritual' => ["Understand the Philosophy behind Yoga", "Experience inner peace"]
+            'schedule' => '"[{\"day\":\"2\",\"time\":\"afternoon\",\"duration\":\"10\"},{\"day\":\"4\",\"time\":\"evening\",\"duration\":\"35\"}]"',
+            'questions' => 'a:4:{i:0;s:43:"Dapibus ultrices in iaculis nunc sed augue?";i:1;s:124:"A condimentum vitae sapien pellentesque habitant morbi. Aliquam vestibulum morbi blandit cursus risus at ultrices mi tempus?";i:2;s:252:"Morbi tristique senectus et netus et malesuada fames ac turpis. Leo vel orci porta non. Porttitor eget dolor morbi non arcu risus quis varius quam. Orci nulla pellentesque dignissim enim sit amet. Felis eget velit aliquet sagittis id consectetur purus?";i:3;s:58:"Sed ullamcorper morbi tincidunt ornare massa eget egestas?";}',
+            'answers' => 'a:4:{i:0;s:7:"asdssss";i:1;s:4:"adas";i:2;s:6:"asdasd";i:3;s:5:"asdas";}'
         ]));
     }
 

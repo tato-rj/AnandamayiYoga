@@ -40,6 +40,9 @@
         </a>
         <div class="shadow dropdown-menu  animated-fast fadeInUp dropdown-menu-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{{route('discover.browse')}}">@lang('Classes & Programs')</a>
+          @auth
+            <a class="dropdown-item" href="{{route('user.routine.instructions')}}">@lang('4-week Yoga Routine')</a>
+          @endauth
           <a class="dropdown-item" href="{{route('courses.index')}}">@lang('Courses')</a>
           <a class="dropdown-item" href="{{route('discover.asanas.index')}}">@lang('Glossary of Asanas')</a>
           <a class="dropdown-item" href="{{route('discover.wallpapers')}}">@lang('Yoga wallpapers')</a>

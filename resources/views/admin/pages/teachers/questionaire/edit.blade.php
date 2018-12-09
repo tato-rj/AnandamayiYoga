@@ -2,9 +2,9 @@
 
 @section('content')
 
-@component('admin/components/page-title', ['title' => 'Edit my questionaire'])
+@component('admin/components/page-title', ['title' => 'Edit the questionaire'])
   @slot('subtitle')
-    <a href="{{route('admin.teachers.questionaire.index', $teacher->slug)}}" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to the questionaire main page</a>
+    <a href="{{route('admin.teachers.questionaire.show', $teacher->slug)}}" class="link-blue"><i class="fas mr-2 fa-long-arrow-alt-left"></i>Return to the view the questionaire</a>
   @endslot
 @endcomponent
 

@@ -124,7 +124,7 @@ class NotificationTest extends AppTest
 		$routine = $this->createRoutine($request);
 
 		$this->signIn($user);
-
+		
 		$lessonOne = $routine->lessons()->first();
 
 		$this->get(route('user.routine.show', ['routine' => $routine->id, 'lesson' => $lessonOne]));

@@ -41,10 +41,10 @@ class RoutineTest extends AppTest
 	public function a_user_cannot_submit_a_new_request_while_there_is_a_request_pending()
 	{
 		$this->register();
+		
+		$teacher = create('App\Teacher');
 
-		$this->submitRoutine();
-
-		$this->get(route('user.routine.form'))->assertDontSee('Prepare my Yoga routine');
+		$this->submitRoutine($teacher);
 
 		$this->submitRoutine()->assertSessionHas('error');
 	}
@@ -61,8 +61,6 @@ class RoutineTest extends AppTest
 		$routine = $this->createRoutine($request);
 
 		$this->signIn($user);
-
-		$this->get(route('user.routine.form'))->assertDontSee('Prepare my Yoga routine');
 
 		$this->submitRoutine()->assertSessionHas('error');
 	}

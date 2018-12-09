@@ -65,9 +65,12 @@
                     <small><i class="ml-2 fas fa-caret-down"></i></small>
                 </a>
                 <ul>
+                    @manager
+                    <li class="{{checkActive(['admin/teachers/questionaire'])}}"><a href="/admin/teachers/questionaire">All questionaires</a></li>
+                    @endmanager
                     @if(auth()->user()->teacher()->exists())
                         @if(auth()->user()->teacher->questionaire()->exists())
-                        <li class="{{checkActive(['/admin/teachers/questionaire'])}}"><a href="/admin/teachers/{{auth()->user()->teacher->slug}}/questionaire">My questionaire</a></li>
+                        <li class="{{checkActive(['/admin/teachers/questionaire/show'])}}"><a href="/admin/teachers/{{auth()->user()->teacher->slug}}/questionaire/show">My questionaire</a></li>
                         @else
                         <li class="{{checkActive(['/admin/teachers/questionaire/create'])}}"><a href="/admin/teachers/{{auth()->user()->teacher->slug}}/questionaire/create">My questionaire</a></li>
                         @endif

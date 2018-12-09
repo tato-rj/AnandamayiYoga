@@ -6,7 +6,6 @@
         <div class="row justify-content-between">
             <div class="col-lg-6">
             	<img src="{{cloud($teacher->image_path)}}" class="lead-profile-image rounded-circle mb-2 d-block">
-
             </div>
             <div class="col-lg-6 text-right pt-5 pb-4 px-4" id="scroll-mark">
                 <h3 class="">@lang('Hello, my name is') <strong>{{$teacher->name}}</strong>!</h3>

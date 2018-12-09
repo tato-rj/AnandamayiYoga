@@ -25,6 +25,21 @@ class RoutineQuestionaire extends Anandamayi
     	return $this->belongsTo(User::class);
     }
 
+    public function teacher($value='')
+    {
+        return $this->belongsTo(Teacher::class);
+    }
+
+    public function getQuestionsAttribute($questions)
+    {
+        return unserialize($questions);
+    }
+
+    public function getAnswersAttribute($answers)
+    {
+        return unserialize($answers);
+    }
+
     public function scopePending($query)
     {
     	return $query->whereNull('completed_at');

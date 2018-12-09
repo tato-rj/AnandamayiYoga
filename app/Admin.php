@@ -37,6 +37,12 @@ class Admin extends Authenticatable
         return $this->role == 'manager';
     }
 
+    public function authorize()
+    {
+        if (! $this->isManager())
+            abort(403, 'You are not authorized to view this page.');
+    }
+
     public function isTeacher()
     {
         return $this->role == 'teacher';

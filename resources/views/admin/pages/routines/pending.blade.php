@@ -20,7 +20,7 @@
 			<a href="{{route('admin.routines.create', ['request' => $request])}}" class="list-group-item list-group-item-action border-0">
 				<p class="m-0 text-muted">
 					<i class="fas fa-magic text-blue mr-2"></i>
-					<strong>{{$request->user->fullName}}</strong> made a request <span class="text-red">{{$request->created_at->diffForHumans()}}</span>
+					<strong>{{$request->user->fullName}}</strong> made a request for {{$request->teacher->name}} <span class="text-red">{{$request->created_at->diffForHumans()}}</span>
 				</p>
 			</a>
 			@endforeach

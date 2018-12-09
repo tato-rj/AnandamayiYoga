@@ -10,6 +10,11 @@ class TeacherQuestionaire extends Anandamayi
     
     protected $dates = ['published'];
 
+    public function teacher()
+    {
+        return $this->belongsTo(Teacher::class);
+    }
+
     public function getQuestionsArrayAttribute()
     {
         $array = [];
