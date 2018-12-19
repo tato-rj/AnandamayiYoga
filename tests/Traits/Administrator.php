@@ -15,6 +15,7 @@ trait Administrator
 		$request = make('App\Article');
 
 		$request->image = UploadedFile::fake()->image('image.jpg');
+		$request->topics = create('App\ArticleTopic');
 
 		$this->post(route('admin.reads.articles.store'), $request->toArray())
 			 ->assertSessionHas('status');

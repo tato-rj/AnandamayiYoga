@@ -19,6 +19,6 @@ class ArticleTopic extends Anandamayi
 
     public function articles()
     {
-    	return $this->hasMany(Article::class, 'topic_id');
+    	return $this->belongsToMany(Article::class, 'article_article_topic', 'article_id', 'topic_id');
     }
 }

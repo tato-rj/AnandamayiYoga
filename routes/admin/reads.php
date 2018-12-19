@@ -28,6 +28,8 @@ Route::prefix('/reads')->name('reads.')->group(function() {
 
         Route::patch('/{article}', 'Reads\ArticlesController@update')->name('update');
 
+        Route::patch('/{article}/topics', 'Reads\ArticlesController@updateTopics')->name('topics.update');
+
         Route::patch('/{article}/image', 'Reads\ArticlesController@updateImage')->name('image.update');
         
         Route::delete('/{article}', 'Reads\ArticlesController@destroy')->name('destroy');

@@ -10,5 +10,5 @@
 		<trix-editor 
 			class="{{$classes ?? null}} trix-disabled" 
 			input="trix-{{$name}}"
-			style="height: {{$height ?? '280px'}}"></trix-editor>
+			style="height: {{$height ?? '480px'}}"></trix-editor>
 </div>

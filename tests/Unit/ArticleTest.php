@@ -8,15 +8,18 @@ use App\Article;
 class ArticleTest extends AppTest
 {
 	/** @test */
-	public function it_belongs_to_a_topic()
+	public function it_has_many_topics()
 	{
 		$article = create('App\Article');
 
-		$topic = create('App\ArticleTopic');
+		$topic1 = create('App\ArticleTopic');
+		$topic2 = create('App\ArticleTopic');
 
-		$article->topic()->associate($topic);
+		$article->topics()->save($topic1);
+		$article->topics()->save($topic2);
 
-		$this->assertInstanceOf('App\ArticleTopic', $article->topic);
+		$this->assertInstanceOf('App\ArticleTopic', $article->topics->first());
+		$this->assertCount(2, $article->topics);
 	}
 
 	/** @test */
@@ -36,18 +39,24 @@ class ArticleTest extends AppTest
 
 		$topic = create('App\ArticleTopic');
 
-		$article->topic()->associate($topic)->save();
+		$article->topics()->save($topic);
 
-		$this->assertCount(1, Article::byTopic($topic->id)->get());		
+		$this->assertCount(1, Article::byTopic($topic->slug)->get());		
 	}
 
 	/** @test */
 	public function it_finds_other_articles_about_the_same_topic()
 	{
 		$topic = create('App\ArticleTopic');
+		$anotherTopic = create('App\ArticleTopic');
 
-		$article = create('App\Article', ['topic_id' => $topic->id]);
-		$similar = create('App\Article', ['topic_id' => $topic->id]);
+		$article = create('App\Article');
+		$nonSimilar = create('App\Article');
+		$similar = create('App\Article');
+
+		$article->topics()->save($topic);
+		$nonSimilar->topics()->save($anotherTopic);
+		$similar->topics()->save($topic);
 
 		$this->assertCount(1, $article->similar()->get());
 	}

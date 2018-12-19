@@ -4,22 +4,6 @@
 	'image' => $article->image_path,
 	'path' => route('admin.reads.articles.image.update', $article->slug)])
 
-  {{-- TOPIC --}}
-  <div class="form-group edit-control" name="topic_id" id="topic_id-{{$article->id}}">
-    
-    @include('components.form.edit.label', [
-      'title' => 'This article is about',
-      'id' => "topic_id-{$article->id}",
-      'path' => route('admin.reads.articles.update', $article->id)
-    ])
-
-    <select disabled class="form-control">
-      @foreach($topics as $topic)
-        <option value="{{$topic->id}}" @match($article->topic_id, $topic->id) selected @endmatch>{{$topic->name}}</option>
-      @endforeach
-    </select>
-
-  </div>
   {{-- AUTHOR --}}
   <div class="form-group edit-control" id="author-{{$article->id}}" name="author_id">
 
@@ -37,4 +21,27 @@
     </select>
 
   </div>
+{{-- TOPICS --}}
+<div class="form-group edit-control" id="topics-{{$article->id}}" name="topics">
+
+  @include('components.form.edit.label', [
+    'title' => 'Article\'s topics',
+    'id' => "topics-{$article->id}",
+    'path' => "/admin/reads/articles/{$article->id}/topics"
+  ])
+  
+  @foreach($topics as $topic)
+  <div class="form-check custom-control custom-checkbox m-2">
+    <input class="custom-control-input" 
+      disabled 
+      name="topics[]" 
+      type="checkbox" 
+      id="topic-{{$topic->id}}" 
+      value="{{$topic->id}}"
+      @exists($article->topics->pluck('id'), $topic->id) checked @endexists>
+    <label class="mb-2 custom-control-label text-muted" for="topic-{{$topic->id}}">{{$topic->name}}</label>
+  </div>
+  @endforeach
+
+</div>
 </div>

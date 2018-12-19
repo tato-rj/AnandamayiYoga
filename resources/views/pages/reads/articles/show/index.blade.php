@@ -40,7 +40,7 @@ window.article = <?php echo json_encode([
     		</div>
     		@if($article->similar()->count() > 0)
     		<div class="mb-5">
-    			<h4 class="mb-4"><strong>@lang('More articles about') {{$article->topic->name}}</strong></h4>
+    			<h4 class="mb-4"><strong>@lang('More articles like this one')</strong></h4>
 			    <div>
 			        @foreach($article->similar()->take(6)->get() as $article)
 			        	@include('pages.reads.articles.card')

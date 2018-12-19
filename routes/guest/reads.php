@@ -6,9 +6,9 @@ Route::prefix('reads')->name('reads.')->group(function() {
 
     Route::namespace('Reads')->prefix('articles')->name('articles.')->group(function() {
 
-        Route::get('/{topic}', 'ArticlesController@index')->name('index');
+        Route::get('/about/{topic}', 'ArticlesController@index')->name('index');
 
-        Route::get('/{topic}/{article}', 'ArticlesController@show')->name('show');
+        Route::get('/{article}', 'ArticlesController@show')->name('show');
 
     });
 });

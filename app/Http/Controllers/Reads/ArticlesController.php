@@ -12,7 +12,7 @@ class ArticlesController extends Controller
 {
     public function index(ArticleTopic $topic)
     {
-        $articles = Article::byTopic($topic->id)->paginate(12);
+        $articles = Article::byTopic($topic->slug)->paginate(12);
         $currentTopic = $topic;
         $topics = ArticleTopic::all();
 
@@ -48,10 +48,11 @@ class ArticlesController extends Controller
             'content_pt' => $request->content_pt,
             'image_path' => imageToS3($request, 'articles'),
             'author_id' => $request->author_id,
-            'topic_id' => $request->topic_id,
             'is_pinned' => $request->is_pinned ?? false,
             'unique_token' => random_token()
         ]);
+
+        $article->topics()->attach($request->topics);
     
         return redirect(route('admin.reads.articles.index'))->with('status', "The article {$article->title} has been successfully created.");
     }
@@ -64,7 +65,7 @@ class ArticlesController extends Controller
         return response()->json(['passes' => true]);
     }
 
-    public function show(ArticleTopic $topic, Article $article)
+    public function show(Article $article)
     {
         return view("pages/reads/articles/show/index", compact('article'));
     }
@@ -104,6 +105,16 @@ class ArticlesController extends Controller
 
         if ($request->ajax())
             return 'The article has been successfully edited.';
+    }
+
+    public function updateTopics(Request $request, $articleId)
+    {
+        Article::find($articleId)
+            ->topics()
+            ->sync($request->value);
+
+        if ($request->ajax())
+            return 'The topics have been successfully edited.';
     }
 
     public function updateImage(Request $request, Article $article)

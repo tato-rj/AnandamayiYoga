@@ -48,20 +48,22 @@ class ArticleTest extends AppTest
 		$request = make('App\Article', ['topic_id' => $topic->id]);
 
 		$request->image = UploadedFile::fake()->image('image.jpg');
+		$request->topics = $topic;
 
 		$this->post(route('admin.reads.articles.store'), $request->toArray());
 
 		$pinnedArticle = make('App\Article', ['topic_id' => $topic->id, 'is_pinned' => true]);
 
 		$pinnedArticle->image = UploadedFile::fake()->image('image.jpg');
+		$pinnedArticle->topics = $topic;
 
 		$this->post(route('admin.reads.articles.store'), $pinnedArticle->toArray());
-
-		$this->assertEquals(Article::byTopic($topic->id)->pluck('is_pinned')->toArray(), [1,0]);
+		
+		$this->assertEquals(Article::byTopic($topic->slug)->pluck('is_pinned')->toArray(), [1,0]);
 	}
 
 	/** @test */
-	public function if_the_name_of_a_lesson_exists_the_admin_is_notified_right_after_typing_it()
+	public function if_the_name_of_an_article_exists_the_admin_is_notified_right_after_typing_it()
 	{
 		$this->adminSignIn();
 
@@ -75,7 +77,7 @@ class ArticleTest extends AppTest
 	}
 
 	/** @test */
-	public function a_admin_can_edit_an_article()
+	public function an_admin_can_edit_an_article()
 	{
 		$this->adminSignIn();
 
@@ -90,6 +92,23 @@ class ArticleTest extends AppTest
 			'slug' => str_slug('new title'),
 			'title' => 'new title'
 		]);
+	}
+
+	/** @test */
+	public function an_admin_can_update_the_articles_topics()
+	{
+		$this->adminSignIn();
+
+		$request = $this->createNewArticle();
+
+		$article = Article::where('title', $request->title)->first();
+
+		$this->json('PATCH', route('admin.reads.articles.topics.update', $article->id), [
+			'key' => 'levels',
+			'value' => create('App\ArticleTopic')
+		])->assertSuccessful();
+
+		$this->assertCount(1, $article->fresh()->topics);
 	}
 
 	/** @test */
@@ -116,7 +135,7 @@ class ArticleTest extends AppTest
 	}
 
 	/** @test */
-	public function a_admin_can_remove_an_article()
+	public function an_admin_can_remove_an_article()
 	{
 		$this->adminSignIn();
 

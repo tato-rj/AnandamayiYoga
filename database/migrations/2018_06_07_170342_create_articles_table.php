@@ -22,7 +22,6 @@ class CreateArticlesTable extends Migration
             $table->text('content_pt')->nullable();
             $table->string('image_path')->nullable();
             $table->unsignedInteger('author_id');
-            $table->unsignedInteger('topic_id');
             $table->boolean('is_pinned')->default(false);
             $table->unsignedInteger('views')->default(0);
             $table->smallInteger('order')->nullable();

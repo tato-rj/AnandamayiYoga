@@ -18,7 +18,9 @@
         @endif
       </div>
       <p class="clamp-1 text-muted"><small>by {{$article->author->name}}</small></p>
-      <p class="clamp-1 m-0"><small>about <strong>{{$article->topic->name}}</strong></small></p>
+      <div>
+        @include('components.articles.badges')
+      </div>
   </div>
 </div>
 </div>

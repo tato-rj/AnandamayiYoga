@@ -20,9 +20,9 @@ class Article extends Anandamayi
         });
     }
 
-    public function topic()
+    public function topics()
     {
-        return $this->belongsTo(ArticleTopic::class);
+        return $this->belongsToMany(ArticleTopic::class, 'article_article_topic', 'article_id', 'topic_id');
     }
 
     public function author()
@@ -40,11 +40,15 @@ class Article extends Anandamayi
 
     public function scopeByTopic($query, $topic)
     {
-        return $query->where('topic_id', $topic)->orderBy('is_pinned', 'DESC');
+        return $query->whereHas('topics', function($q) use ($topic) {
+            $q->where('slug', $topic);
+        })->orderBy('is_pinned', 'DESC');
     }
 
     public function similar()
     {
-        return Article::where('topic_id', $this->topic_id)->except($this->id);
+        return Article::whereHas('topics', function($query) {
+            $query->whereIn('id', $this->topics->pluck('id'));
+        })->except($this->id);
     }
 }

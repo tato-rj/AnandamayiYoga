@@ -29,7 +29,7 @@ class CreateArticleForm extends FormRequest
             'content' => 'required',
             'image' => 'required|image|max:800',
             'author_id' => 'required',
-            'topic_id' => 'required'
+            'topics' => 'required'
         ];
     }
 }
