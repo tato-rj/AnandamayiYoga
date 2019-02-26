@@ -9,7 +9,7 @@
         </div>
 
         <div class="col-lg-8 col-md-10 col-sm-12 col-12 mx-auto">
-            @foreach($teachers->first() as $teacher)
+            @foreach($teachers as $teacher)
                 @include('components.teacher.display', ['link' => route('teachers.show', $teacher->slug)])
             @endforeach
         </div>

@@ -17,16 +17,16 @@ class TeachersTableSeeder extends Seeder
             'biography_pt' => '<div><strong>Anandamayi</strong> é professora de Yoga certificada pelo Curso Internacional de Formação de Professores Sivananda Yoga (TTC), que compartilha ensinamentos de Hatha Yoga e Vedanta (Filosofia do Yoga) como um meio para alcançar o bem-estar físico, mental, espiritual e a auto realização.<br><br>Em 2018, concluiu a Formação Avançada para Professores  (ATTC), que permite aos professores graduados aprofundarem sua prática espiritual e estudar Hatha Yoga, Filosofia Vedanta, Raja Yoga, Anatomia e Sânscrito. Ela completou ambos os cursos no Ashram Sivananda Yoga Camp, em Val-Morin, Quebec (Canadá). Atualmente ministra aulas de Yoga como professora registrada pela Fundação Yoga Alliance (YA ID: 249811- E-RYT 500), que reconhece a certificação de professores de Yoga em Escolas de Yoga Registradas (RYS).<br><br>Anandamayi é autora de diversos artigos e dos livros: “Saudação ao Sol: um guia para transformar sua prática em uma meditação em movimento”, “Os 32 Asanas Fundamentais e suas variações” e “Os 46 benefícios do Yoga: autorealização física, mental e espiritual”.<br><br>Anandamayi é a fundadora da ANANDAMAYIYOGA, uma plataforma online que trabalha no sentido de facilitar o acesso de praticantes de nível básico, intermediário e avançado ao imenso arcabouço de ensinamentos do Yoga. A plataforma oferece cursos e palestras que contemplam os diversos estilos do Yoga e suas aplicações, Filosofia do Yoga, Terapia do Yoga, Pranayamas, Asanas e Meditação.</div>'
         ]);
 
-        Teacher::create([
-            'slug' => str_slug('Renato Meireles'),
-            'name' => 'Renato Meireles',
-            'image_path' => 'app/demo/images/teacher-1.jpg',
-            'cover_path' => 'app/demo/covers/teacher-1.jpg',
-            'email' => 'renato@email.com',
-            'biography' => trixLorem(3),
-            'biography_pt' => trixLorem(4)
-        ]);
+        // Teacher::create([
+        //     'slug' => str_slug('Renato Meireles'),
+        //     'name' => 'Renato Meireles',
+        //     'image_path' => 'app/demo/images/teacher-1.jpg',
+        //     'cover_path' => 'app/demo/covers/teacher-1.jpg',
+        //     'email' => 'renato@email.com',
+        //     'biography' => trixLorem(3),
+        //     'biography_pt' => trixLorem(4)
+        // ]);
 
-        \DB::insert('insert into category_teacher (teacher_id, category_id) values (2, 12)');
+        // \DB::insert('insert into category_teacher (teacher_id, category_id) values (2, 12)');
     }
 }
