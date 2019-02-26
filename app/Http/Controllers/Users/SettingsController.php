@@ -38,13 +38,13 @@ class SettingsController extends Controller
 
 	public function invoices()
 	{
-        $upcomingPayment;
+        $upcomingPayment = 0;
 
         if (auth()->user()->hasMembership()) {
             $invoice = auth()->user()->membership->upcomingInvoice();
             $upcomingPayment = priceToCurrency($invoice->currency, $invoice->amount_due);
         }
-        
+
         return view('pages/user/settings/invoices/index', compact('upcomingPayment'));
 	}
 

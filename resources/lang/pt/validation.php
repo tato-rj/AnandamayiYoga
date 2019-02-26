@@ -120,7 +120,7 @@ return [
         'first_name' => 'primeiro nome',
         'last_name' => 'sobrenome',
         'gender' => 'gênero',
-        'agreement' => 'campo de termos e condições'
+        'agreement' => 'campo de termos e condições',
     ],
 
 ];
