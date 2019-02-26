@@ -1,4 +1,4 @@
-<section class="row mb-7">
+{{-- <section class="row mb-7">
     <div class="container">
 
       <h2 class="text-center mb-4">@lang('Our Partners')</h2>
@@ -34,4 +34,4 @@
         </div>
       </div>
     </div>
-</section>
+</section> --}}

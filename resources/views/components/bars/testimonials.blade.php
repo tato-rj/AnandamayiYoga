@@ -1,4 +1,4 @@
-<section class="container py-5 mb-7">
+{{-- <section class="container py-5 mb-7">
     <div class="row text-center">
         <div class="col-12">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -67,4 +67,4 @@
         </div>
     </div>
 </div>
-</section>
+</section> --}}

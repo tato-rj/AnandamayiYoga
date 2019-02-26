@@ -1,4 +1,4 @@
-<section class="d-none d-md-block">
+{{-- <section class="d-none d-md-block">
     <div class="row bg-light">
         <div class="container text-muted">
             <div class="row align-items-center py-3">
@@ -14,4 +14,4 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}

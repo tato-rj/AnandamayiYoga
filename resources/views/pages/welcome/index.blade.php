@@ -120,13 +120,13 @@
     @endif
 
     @include('pages/welcome/lead')
-    @include('pages/welcome/presentation')
+    {{-- @include('pages/welcome/presentation') --}}
     @include('pages/welcome/teacher')
     @include('components.bars.teachers.renato')
     
     @unless(auth()->check())
         @include('components/bars/gift')
-        @include('pages/welcome/programs')
+        {{-- @include('pages/welcome/programs') --}}
         @include('components/bars/books')
         @include('pages/welcome/levels')
     @endunless

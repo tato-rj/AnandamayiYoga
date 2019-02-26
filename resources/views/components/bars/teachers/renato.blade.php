@@ -1,4 +1,4 @@
-<section class="row mb-7 py-6">
+{{-- <section class="row mb-7 py-6">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6 col-sm-12 col-8 mx-auto">
@@ -21,3 +21,4 @@
         </div>
     </div>
 </section>
+ --}}

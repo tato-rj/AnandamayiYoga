@@ -43,7 +43,7 @@
           @auth
             <a class="dropdown-item" href="{{route('user.routine.instructions')}}">@lang('4-week Yoga Routine')</a>
           @endauth
-          <a class="dropdown-item" href="{{route('courses.index')}}">@lang('Courses')</a>
+          {{-- <a class="dropdown-item" href="{{route('courses.index')}}">@lang('Courses')</a> --}}
           <a class="dropdown-item" href="{{route('discover.asanas.index')}}">@lang('Glossary of Asanas')</a>
           <a class="dropdown-item" href="{{route('discover.wallpapers')}}">@lang('Yoga wallpapers')</a>
         </div>
@@ -67,7 +67,7 @@
         <div class="shadow dropdown-menu  animated-fast fadeInUp dropdown-menu-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{{route('about.our-platform')}}">Anandamayi Yoga</a>
           <a class="dropdown-item" href="{{route('about.anandamayi')}}">Anandamayi</a>
-          <a class="dropdown-item" href="{{route('teachers.index')}}">@lang('Our teachers')</a>
+          {{-- <a class="dropdown-item" href="{{route('teachers.index')}}">@lang('Our teachers')</a> --}}
         </div>
       </li>
 

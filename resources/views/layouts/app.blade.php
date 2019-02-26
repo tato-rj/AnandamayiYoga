@@ -65,7 +65,7 @@
     @include('components/modals/confirm-email')
     @endif
 
-    @include('components/buttons/help')
+    {{-- @include('components/buttons/help') --}}
 
     <div id="validator-messages" data-required="@lang('This field is required')"></div>
     <!-- Scripts -->

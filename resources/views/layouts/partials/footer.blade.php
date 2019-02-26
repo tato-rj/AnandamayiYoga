@@ -94,7 +94,7 @@
 				</ul>
 			</div>
 
-			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
+{{-- 			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
 				<p class="m-0 text-white text-uppercase"><small><strong>@lang('Membership')</strong></small></p>
 				<ul class="p-0 list-style-none">
 					<li>
@@ -118,9 +118,9 @@
 						</a>
 					</li>
 				</ul>
-			</div>
+			</div> --}}
 
-			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
+{{-- 			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
 				<p class="m-0 text-white text-uppercase"><small><strong>@lang('Services')</strong></small></p>
 				<ul class="p-0 list-style-none">
 					<li>
@@ -139,9 +139,9 @@
 						</a>								
 					</li>
 				</ul>
-			</div>
+			</div> --}}
 
-			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
+{{-- 			<div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
 				<p class="m-0 text-white text-uppercase"><small><strong>@lang('Support')</strong></small></p>
 				<ul class="p-0 list-style-none">
 					<li>
@@ -160,7 +160,7 @@
 						</a>
 					</li>
 				</ul>
-			</div>
+			</div> --}}
 		</div>
 	</div>
 	<div class="text-white position-relative">
