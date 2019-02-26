@@ -2,7 +2,7 @@
     <section class="col-12 h-100vh bg-right" id="main-lead" 
     style="background-image:url({{cloud('app/images/backgrounds/flute.jpg')}})">
         <div class="row align-items-center h-100">
-            <div class="col-lg-6 col-md-8 col-10 offset-lg-2 offset-md-1 offset-1 z-10">
+            <div class="col-lg-8 col-md-8 col-10 offset-lg-2 offset-md-1 offset-1 z-10">
             @auth
                 <h1 class="text-white mb-4"><strong>@lang('We\'re glad to see you here!')</strong></h1>
                 <p class="lead text-white mb-4">@lang('To view your recommendations, favorites, progress and more, just click below.')</p>
