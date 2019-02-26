@@ -8,13 +8,10 @@
     <div id="error-message" data-error="Error was coused by: {{ $exception->getMessage() }}"></div>
 	<section id="scroll-mark" class="container py-4 mb-4">
 	    <div class="row my-3">
-
-	        @component('components/sections/title', ['title' => "Whoops, something went wrong"])
-	        @slot('subtitle')
-	        {{$message or null}} In case you run into this issue again, please <a href="{{route('support.contact.show')}}" class="link-blue">let us know</a>.
-	        @endslot
-	        @endcomponent
-
+	    	<div class="col-12"> 
+		        @include('components/sections/title', ['title' => "Whoops, something went wrong"])
+		        <p>{{$message or null}} In case you run into this issue again, please <a href="{{route('support.contact.show')}}" class="link-blue">let us know</a>.</p>
+		    </div>
 	        <div class="col-lg-8 col-md-8 col-sm-10 col-12 mx-auto">
 
 	        	<h1 class="text-center text-red mb-3" style="font-size: 7em; opacity: .3;"><strong>{{$status or 'SORRY'}}</strong></h1>
