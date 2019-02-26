@@ -10,7 +10,7 @@
 	    <div class="row my-3">
 	    	<div class="col-12"> 
 		        @include('components/sections/title', ['title' => "Whoops, something went wrong"])
-		        <p>{{$message or null}} In case you run into this issue again, please <a href="{{route('support.contact.show')}}" class="link-blue">let us know</a>.</p>
+		        <p class="text-center">In case you run into this issue again, please <a href="{{route('support.contact.show')}}" class="link-blue">let us know</a>.</p>
 		    </div>
 	        <div class="col-lg-8 col-md-8 col-sm-10 col-12 mx-auto">
 
