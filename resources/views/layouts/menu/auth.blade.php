@@ -49,9 +49,9 @@
 </div>
 </li>   
 @else
-<li class="nav-item">
+{{-- <li class="nav-item">
   <a class="nav-link" data-toggle="modal" data-target="#login" href="">Login</a>
-</li>
+</li> --}}
 <li class="nav-item nav-item-signup">
   <a class="nav-link signup" href="{{route('register')}}"><strong>@lang('Sign up')</strong></a>
 </li>

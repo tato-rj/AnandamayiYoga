@@ -3,7 +3,7 @@
 use App\Http\Controllers\Auth\GateController;
 
 // For development only
-GateController::auth();
+// GateController::auth();
 
 Auth::routes();
 

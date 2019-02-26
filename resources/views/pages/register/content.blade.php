@@ -2,7 +2,8 @@
 
     @title(['title' => 'Let\'s get started'])
 
-    <div class="row">
+@include('components.temp')  
+{{--     <div class="row">
 
         <div class="col-lg-10 col-md-12 col-sm-12 col-12 mx-auto">
             <p class="lead mb-5 text-center">@lang('You\'re just one step away from your 15 day free trial! Just fill out the form below to enjoy full access to all of our classes, programs, articles and much more.')</p>
@@ -31,5 +32,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </section>

@@ -5,8 +5,9 @@
     <div class="row">        
         
         @include('pages/discover/menu', ['programs' => 'btn-red'])
-        
-        <div class="col-12 mb-2">
+     
+     @include('components.temp')      
+{{--         <div class="col-12 mb-2">
             @include('components/filters/show', [
                 'url' => route('discover.programs.index'),
                 'include' => ['duration', 'categories']
@@ -17,7 +18,7 @@
             
             @include('pages/discover/programs/show')
 
-        </div>
+        </div> --}}
         
     </div>
 

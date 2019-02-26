@@ -6,7 +6,8 @@
 
         @include('pages/discover/menu', ['classes' => 'btn-red'])
         
-        <div class="col-12 mb-2">
+        @include('components.temp')   
+{{--         <div class="col-12 mb-2">
             @include('components/filters/show', [
                 'url' => route('discover.classes.index'),
                 'include' => ['levels', 'categories', 'duration']
@@ -15,7 +16,7 @@
 
         <div id="lessons-container" class="row justify-content-center w-100 position-relative ml-0">
             @include('pages/discover/lessons/show')
-        </div>
+        </div> --}}
     
     </div>
 
