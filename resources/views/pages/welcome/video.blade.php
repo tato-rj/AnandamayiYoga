@@ -29,7 +29,7 @@
                     'color' => 'outline-blue-empty', 
                     'size' => 'lg'])
 
-                <p class="mb-0 mt-1">@lang('just $15/month')</p>
+                {{-- <p class="mb-0 mt-1">@lang('just $15/month')</p> --}}
             </div>
         </div>
     </div>

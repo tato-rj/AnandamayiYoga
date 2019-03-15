@@ -11,17 +11,16 @@
 		<div class="row pb-2">
 			<div class="col-lg-8 col-md-6 col-sm-12 col-xs-12 mb-4">
 				<h3 class="text-white mb-1" style="font-size: 1.2em"><strong>Anandamayi<span style="opacity: 0.6" class="ml-1">Yoga</span></strong></h3>
-				<p class="text-white" style="max-width: 400px; opacity: .4"><small>@lang('Online yoga and meditation that is right for you. In as little as two hours per week, you can improve your physical and mental health through Yoga.')</small></p>
+				<p class="text-white" style="max-width: 400px; opacity: .4"><small>@lang('Online yoga and meditation that is right for you.')</small></p>
 			</div>
 			<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-4">
 				<p class="text-white m-0"><strong>@lang('Connect with us')</strong></p>
 				<div class="d-flex align-items-center">
 					<h4 class="m-2 text-white" style="opacity: .5"><a class="link-none" href="#"><i class="t-2 fab fa-facebook-f"></i></a></h4>
-					<h4 class="m-2 text-white" style="opacity: .5"><a class="link-none" href="#"><i class="t-2 fab fa-youtube"></i></a></h4>
-					<h4 class="m-2 text-white" style="opacity: .5"><a class="link-none" href="#"><i class="t-2 fab fa-twitter"></i></a></h4>
-					<h4 class="m-2 text-white" style="opacity: .5"><a class="link-none" href="#"><i class="t-2 fab fa-instagram"></i></a></h4>
-					<h4 class="m-2 text-white" style="opacity: .5"><a class="link-none" href="#"><i class="t-2 fab fa-pinterest"></i></a></h4>
-					<h4 class="m-2 text-white" style="opacity: .5"><a class="link-none" href="#"><i class="t-2 fab fa-google-plus-g"></i></a></h4>
+					{{-- <h4 class="m-2 text-white" style="opacity: .5"><a class="link-none" href="#"><i class="t-2 fab fa-youtube"></i></a></h4> --}}
+					<h4 class="m-2 text-white" style="opacity: .5"><a class="link-none" href="https://twitter.com/YAnandamayi"><i class="t-2 fab fa-twitter"></i></a></h4>
+					<h4 class="m-2 text-white" style="opacity: .5"><a class="link-none" href="https://www.instagram.com/yoginianandamayi/"><i class="t-2 fab fa-instagram"></i></a></h4>
+					<h4 class="m-2 text-white" style="opacity: .5"><a class="link-none" href="https://www.pinterest.com/ yoginianandamayi"><i class="t-2 fab fa-pinterest"></i></a></h4>
 				</div>
 			</div>
 		</div>

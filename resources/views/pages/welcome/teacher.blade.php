@@ -4,8 +4,8 @@
             <img src="{{cloud('app/images/alice/lead.jpg')}}" class="w-100 border p-1" style="border-color: rgba(0,0,0,0.075) !important">
         </div>
         <div class="col-lg-9 col-md-8 col-12">
-            <h5 class="m-0"><strong>@lang('About') Anandamayi</strong></h5>
-            <p class="text-muted"><small>@lang('YogaAlliance Registered Yoga Teacher')</small></p>
+            <h5 class="m-0"><strong>@lang('About') Yogini Anandamayi</strong></h5>
+            <p class="text-muted"><small>@lang('Yoga Alliance Registered Yoga Teacher')</small></p>
             <p>{{preview(anandamayi()->biography, 27)}}</p>
             <a href="{{route('about.anandamayi')}}" class="link-blue">@lang('Learn more')</a>
         </div>

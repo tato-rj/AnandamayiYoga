@@ -6,7 +6,7 @@
                 <img class="reveal back" reveal-origin="right" reveal-delay="100" reveal-duration="750" src="{{cloud($sampleBooks[1]->image_path)}}">
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
-                <p class="mb-1 text-uppercase" style="opacity: .4"><small><strong>@lang('Publications')</strong></small></p>
+                <p class="mb-1 text-uppercase" style="opacity: .4"><small><strong>@lang('Our Publications')</strong></small></p>
                 <h4>@lang('LEARNING ABOUT YOGA')</h4>
                 <p class="lead mb-4">@lang('Whether you are looking to deepen your knowloedge of Yoga or want to start learning about it, our books will guide you through your journey.')</p>
 

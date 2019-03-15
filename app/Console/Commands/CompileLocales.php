@@ -66,6 +66,7 @@ class CompileLocales extends Command
     public function clean($array)
     {
         $result = str_replace(['[', ']', '},{'], '', json_encode($array));
+        $result = str_replace('},null,{', ',', $result);   
         return str_replace('""', '","', $result);   
     }
 }

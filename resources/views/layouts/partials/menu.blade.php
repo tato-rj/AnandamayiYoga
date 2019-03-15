@@ -54,7 +54,7 @@
           @lang('About yoga')
         </a>
         <div class="shadow dropdown-menu  animated-fast fadeInUp dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{route('reads.articles.index', 'asana')}}">@lang('What is yoga?')</a>
+          {{-- <a class="dropdown-item" href="{{route('reads.articles.index', 'asana')}}">@lang('What is yoga?')</a> --}}
           <a class="dropdown-item" href="{{route('reads.articles.index', 'asana')}}">@lang('Articles archive')</a>
           <a class="dropdown-item" href="{{route('reads.books')}}">@lang('Books')</a>
         </div>
@@ -66,7 +66,7 @@
         </a>
         <div class="shadow dropdown-menu  animated-fast fadeInUp dropdown-menu-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{{route('about.our-platform')}}">Anandamayi Yoga</a>
-          <a class="dropdown-item" href="{{route('about.anandamayi')}}">Anandamayi</a>
+          <a class="dropdown-item" href="{{route('about.anandamayi')}}">Yogini Anandamayi</a>
           {{-- <a class="dropdown-item" href="{{route('teachers.index')}}">@lang('Our teachers')</a> --}}
         </div>
       </li>
