@@ -14,3 +14,13 @@ Route::post('/release', function() {
 	return redirect()->back()->with('status', 'Nós avisaremos quando o conteúdo estiver pronto!');
 
 })->name('notify');
+
+Route::get('fix-asanas', function() {
+	$asanas = \App\Asana::all();
+
+	foreach ($asanas as $asana) {
+		$asana->update(['slug' => str_slug($asana->sanskrit)]);
+	}
+
+	return 'All good!';
+});

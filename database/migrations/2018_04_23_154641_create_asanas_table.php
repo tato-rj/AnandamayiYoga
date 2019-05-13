@@ -17,9 +17,9 @@ class CreateAsanasTable extends Migration
             $table->increments('id');
             $table->string('slug');
 
-            $table->string('name')->unique();
+            $table->string('name');
             $table->string('name_pt')->nullable();
-            $table->string('sanskrit');
+            $table->string('sanskrit')->unique();
             $table->string('also_known_as')->nullable();
             $table->string('also_known_as_pt')->nullable();
             $table->string('etymology')->nullable();

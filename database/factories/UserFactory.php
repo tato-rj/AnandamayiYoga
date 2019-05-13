@@ -46,11 +46,11 @@ $factory->define(App\Admin::class, function (Faker $faker) {
 });
 
 $factory->define(App\Asana::class, function (Faker $faker) {
-    $name = $faker->unique()->sentence;
+    $name = $faker->unique()->word;
 
     return [
-        'sanskrit' => $faker->word,
-        'name' => $name,
+        'sanskrit' => $name,
+        'name' => $faker->sentence,
         'slug' => str_slug($name),
         'etymology' => $faker->word,
         'also_known_as' => $faker->sentence,
