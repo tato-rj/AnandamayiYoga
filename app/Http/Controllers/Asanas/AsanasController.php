@@ -18,7 +18,7 @@ class AsanasController extends Controller
      */
     public function index(Request $request, AsanaFilters $filters)
     {
-        $asanas = Asana::filter($filters)->paginate(20);
+        $asanas = Asana::paginate(20);
 
         return view('pages/discover/asanas/index', compact('asanas'));
     }
