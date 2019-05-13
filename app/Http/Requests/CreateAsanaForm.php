@@ -25,8 +25,8 @@ class CreateAsanaForm extends FormRequest
     public function rules()
     {
         return [
-            'sanskrit' => 'required',
-            'name' => 'required|unique:asanas',
+            'sanskrit' => 'required|unique:asanas',
+            'name' => 'required',
             'image' => 'required|image|max:800',
             'types' => 'required',
             'levels' => 'required'

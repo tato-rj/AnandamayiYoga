@@ -41,7 +41,7 @@ class AsanasController extends Controller
     {
         $asana = Asana::create([
             'sanskrit' => $request->sanskrit,
-            'slug' => str_slug($request->name),
+            'slug' => str_slug($request->sanskrit),
             'name' => $request->name,
             'name_pt' => $request->name_pt,
             'etymology' => $request->etymology,
@@ -108,7 +108,7 @@ class AsanasController extends Controller
             $request->key => $request->value
         ]);
 
-        $asana->slug = str_slug($asana->name);
+        $asana->slug = str_slug($asana->sanskrit);
         $asana->save();
 
         if ($request->ajax())
