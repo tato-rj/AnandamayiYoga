@@ -13,7 +13,7 @@
 
 @if($asana->etymology)
 <p class="text-muted m-0"><small>@lang('Etymology')</small></p>
-<p class="text-uppercase">{{$asana->etymology}}</p>
+<p>{{$asana->etymology}}</p>
 @endif
 
 <p class="text-muted m-0"><small>@lang('Level')</small></p>
