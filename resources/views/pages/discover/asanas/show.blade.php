@@ -1,6 +1,6 @@
-@if($asanas->count() > 0)
+{{-- @if($asanas->count() > 0)
 <p class="m-0 text-muted"><small>@lang('Total of') <span id="asanas-count">{{$asanas->total()}}</span> asanas</small></p>
-@endif
+@endif --}}
 <div id="asanas-container" class="d-flex align-items-center mt-2 flex-wrap w-100">
 	@if($asanas->count() >= 60)
 	    @forelse($asanas as $asana)
@@ -21,7 +21,7 @@
 		    	style="color: lightgrey">@lang('Coming out soon...')</h3>
 		</div>
     @endif
-    <div class="d-flex align-items-center w-100 justify-content-center my-4">
+{{--     <div class="d-flex align-items-center w-100 justify-content-center my-4">
     {{ $asanas->links() }}    
-    </div>
+    </div> --}}
 </div>
