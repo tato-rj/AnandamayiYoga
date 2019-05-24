@@ -16,7 +16,7 @@ class WallpapersController extends Controller
      */
     public function index(WallpaperFilters $filters)
     {
-        $wallpaperCategories = WallpaperCategory::orderBy('name')->get();
+        $wallpaperCategories = WallpaperCategory::orderBy('order')->get();
         $request = Wallpaper::filter($filters);
         
         if (! auth()->check())
@@ -32,11 +32,11 @@ class WallpapersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(WallpaperCategory $category)
+    public function create()
     {
-        $wallpapers = $category->wallpapers;
+        $wp_categories = WallpaperCategory::orderBy('order')->get();
 
-        return view('admin/pages/wallpapers/index', compact(['category', 'wallpapers']));
+        return view('admin/pages/wallpapers/index', compact(['wp_categories']));
     }
 
     /**
@@ -60,15 +60,60 @@ class WallpapersController extends Controller
         return response()->json(200);
     }
 
+    public function categoryStore(Request $request)
+    {
+        $request->validate(['name' => 'required', 'name_pt' => 'required']);
+
+        WallpaperCategory::create(['name' => $request->name, 'name_pt' => $request->name_pt]);
+
+        return redirect()->back()->with('status', 'The category has been created!');        
+    }
+
+    public function categoryEdit(Request $request, WallpaperCategory $category)
+    {
+        return view('admin/pages/wallpapers/edit', compact(['category']));      
+    }
+
+    public function categoryUpdate(Request $request, WallpaperCategory $category)
+    {
+        $request->validate(['name' => 'required', 'name_pt' => 'required']);
+
+        $category->update(['name' => $request->name, 'name_pt' => $request->name_pt]);
+
+        return redirect()->back()->with('status', 'The category has been updated!');        
+    }
+
+    public function categorySort(Request $request, $categoryId)
+    {
+        $category = Category::find($categoryId);
+
+        $category->update([
+            $request->key => $request->value
+        ]);
+
+        $category->slug = str_slug($category->name);
+        $category->save();
+
+        if ($request->ajax())
+            return 'The category has been successfully edited';
+    }
+
+    public function categoryDestroy(Request $request, WallpaperCategory $category)
+    {
+        $category->delete();
+
+        return redirect()->back()->with('status', 'The category has been removed!');        
+    }
+
     /**
      * Display the specified resource.
      *
      * @param  \App\Wallpaper  $wallpaper
      * @return \Illuminate\Http\Response
      */
-    public function show(Wallpaper $wallpaper)
+    public function show(WallpaperCategory $category)
     {
-        //
+        return view('admin/pages/wallpapers/show', compact(['category']));        
     }
 
     /**

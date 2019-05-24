@@ -26,24 +26,16 @@
                     'admin/reads/articles' => 'Articles',
                     'admin/reads/books' => 'Books']])
 
-            <li class="navigation__sub">
-                <a href="" class="d-flex align-items-center"><i class="fas fa-images mr-2"></i>Wallpapers
-                    <small><i class="ml-2 fas fa-caret-down"></i></small>
-                </a>
-                <ul>
-                    @foreach($wallpaperCategories as $wpCategory)
-                    <li class="{{checkActive(["admin/wallpapers/category/{$wpCategory->id}"])}}"><a href="{{route('admin.wallpapers.create', $wpCategory->id)}}">{{$wpCategory->name}}</a></li>
-                    @endforeach
-                </ul>
-            </li>
-
             @include('admin.layouts.menu.group', [
                 'icon' => 'fas fa-child', 'label' => 'Asanas',
                 'urls' => [
                     'admin/asana-types' => 'Types',
                     'admin/asana-subtypes' => 'Sub Types',
                     'admin/asanas' => 'Poses']])
-            
+
+
+            @include('admin.layouts.menu.link', ['url' => 'admin/wallpapers', 'icon' => 'fas fa-images', 'label' => 'Wallpapers'])
+
             <div class="dropdown-divider"></div>
 
             @include('admin.layouts.menu.link', ['url' => 'admin/categories', 'icon' => 'fas fa-list-ul', 'label' => 'Categories'])

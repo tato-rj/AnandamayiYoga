@@ -18,7 +18,7 @@
 				<div class="d-flex align-items-center">
 					<h4 class="m-2 text-white" style="opacity: .5"><a class="link-none" href="https://www.facebook.com/nandamayiyoga/"><i class="t-2 fab fa-facebook-f"></i></a></h4>
 					{{-- <h4 class="m-2 text-white" style="opacity: .5"><a class="link-none" href="#"><i class="t-2 fab fa-youtube"></i></a></h4> --}}
-					<h4 class="m-2 text-white" style="opacity: .5"><a class="link-none" href="https://twitter.com/anandamayiyoga"><i class="t-2 fab fa-twitter"></i></a></h4>
+					<h4 class="m-2 text-white" style="opacity: .5"><a class="link-none" href="https://twitter.com/anandamayi_yoga"><i class="t-2 fab fa-twitter"></i></a></h4>
 					<h4 class="m-2 text-white" style="opacity: .5"><a class="link-none" href="https://www.instagram.com/anandamayiyoga"><i class="t-2 fab fa-instagram"></i></a></h4>
 					<h4 class="m-2 text-white" style="opacity: .5"><a class="link-none" href="https://www.pinterest.com/anandamayiyoga"><i class="t-2 fab fa-pinterest"></i></a></h4>
 				</div>
