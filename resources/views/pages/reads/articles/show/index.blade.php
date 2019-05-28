@@ -41,7 +41,7 @@ window.article = <?php echo json_encode([
     		@if($article->similar()->count() > 0)
     		<div class="mb-5">
     			<h4 class="mb-4"><strong>@lang('More articles like this one')</strong></h4>
-			    <div>
+			    <div class="d-flex flex-wrap">
 			        @foreach($article->similar()->take(6)->get() as $article)
 			        	@include('pages.reads.articles.card')
 			        @endforeach
