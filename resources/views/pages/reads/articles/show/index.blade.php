@@ -30,7 +30,7 @@ window.article = <?php echo json_encode([
 		    		<h2 class="text-center">{{$article->title}}</h2>
 		    		<p class="text-muted text-center"><small>{{$article->author->name}}</small></p>
 		    	</div>
-	    		<div id="limited-content" class="trix-content invisible">
+	    		<div id="limited-content" class="trix-content invisible-not-for-now">
 		    		{!! $article->content !!}
 		    	</div>
 {{-- 		    	@include('components.alerts.blocked', [
