@@ -33,10 +33,10 @@ window.article = <?php echo json_encode([
 	    		<div id="limited-content" class="trix-content invisible">
 		    		{!! $article->content !!}
 		    	</div>
-		    	@include('components.alerts.blocked', [
+{{-- 		    	@include('components.alerts.blocked', [
 		    		'show' => false,
 		    		'title' => __('Sorry, you\'ve reached your weekly limit!'),
-		    		'description' => __('You can read two articles per week for free. Full access to our content is available through our membership.')])
+		    		'description' => __('You can read two articles per week for free. Full access to our content is available through our membership.')]) --}}
     		</div>
     		@if($article->similar()->count() > 0)
     		<div class="mb-5">
