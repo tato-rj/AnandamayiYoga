@@ -75,6 +75,6 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 <script type="text/javascript">
 // resetCounter('article');
-enforcePageLimit('article');
+// enforcePageLimit('article');
 </script>
 @endsection
