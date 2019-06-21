@@ -38,7 +38,7 @@
 </head>
 <body>
     {{-- TEMPORARY PASSWORD FOR DEVELOPMENT PHASE --}}
-    {{-- @if(session()->has('gate')) --}}
+    @if(session()->has('gate'))
     @include('components/subscription/overlay')
     
     @include('components/modals/login')
@@ -52,9 +52,9 @@
         @yield('content')
         @include('layouts/partials/footer')
     </div>
-{{--     @else
+    @else
         @include('layouts/partials/development')
-    @endif     --}}
+    @endif    
 
 
     @include('layouts/partials/alerts')

@@ -1,5 +1,7 @@
 <?php
 
+App\Http\Controllers\Auth\GateController::auth();
+
 getRoutes([
 	'api.webhooks|services',
 	'admin.index',
