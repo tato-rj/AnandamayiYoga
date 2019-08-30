@@ -2,7 +2,7 @@
 <section class="container pt-5 pb-4 mt-5">
     <div class="row">
         <div class="col-12">
-            <video id="video-lead" reveal-delay="0" reveal-duration="500" reveal-origin="bottom" class="reveal video-area cursor-pointer w-100 h-100">
+            <video id="video-lead" poster="{{cloud('app/videos/promo-cover.jpg')}}" reveal-delay="0" reveal-duration="500" reveal-origin="bottom" class="reveal video-area cursor-pointer w-100 h-100">
                 <source src="{{cloud('app/videos/promo.mp4')}}" type="video/mp4">
             </video>
             <div class="absolute-center z-10 cursor-pointer">
